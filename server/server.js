@@ -14,26 +14,26 @@ const app = express();
 
 //hooking up to the database
 //NO DB CONNECTION STRING YET 3/30
-massive(CONNECTION_STRING)
-  .then(db => {
-    app.set("db", db);
-  })
-  .catch(err => {
-    console.log(err);
-  });
+// massive(CONNECTION_STRING)
+//   .then(db => {
+//     app.set("db", db);
+//   })
+//   .catch(err => {
+//     console.log(err);
+//   });
 
 //Top Level Middlewares
 app.use(cors());
-app.use(
-  session({
-    secret: SESSION_SECRET,
-    resave: false,
-    saveUninitialized: false,
-    cookie: {
-      maxAge: 100000
-    }
-  })
-);
+// app.use(
+//   session({
+//     secret: SESSION_SECRET,
+//     resave: false,
+//     saveUninitialized: false,
+//     cookie: {
+//       maxAge: 100000
+//     }
+//   })
+// );
 
 //body-parser
 app.use(json());
