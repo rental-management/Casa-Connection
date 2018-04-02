@@ -5,11 +5,8 @@ import { HashRouter as Router } from 'react-router-dom';
 import './index.css';
 import App from './App';
 import store from './store';
-<<<<<<< HEAD
  
-=======
 import MuiThemeProvider from '../node_modules/material-ui/styles/MuiThemeProvider';
->>>>>>> master
 
 
 ReactDOM.render(
