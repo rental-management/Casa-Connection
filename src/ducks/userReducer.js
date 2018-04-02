@@ -10,7 +10,7 @@ export function getUser(){
         payload: axios
             .get("/api/user")
             .then(res => {
-                return response.data;
+                return res.data;
             })
             .catch(err => err)
     };
@@ -19,7 +19,9 @@ export function getUser(){
 //INITIAL STATE
 const initialState = {
     user: {},
-    isLoading: false
+    isLoading: false,
+    didErr: false,
+    errMessage: null
 }; 
 
 export default function userReducer(state = initialState, action){
@@ -37,6 +39,13 @@ export default function userReducer(state = initialState, action){
                isLoading: false,
                user: action.payload
            };
+        case `${GET_USER}_REJECTED`:
+           return {
+               ...state,
+               isLoading: false,
+               didErr: true,
+               errMessage: action.payload
+           }
 
            default: 
             return state;
