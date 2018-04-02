@@ -13,7 +13,7 @@ const port = process.env.PORT || 3002;
 //initialize express
 const app = express();
 
-
+// Database Connection //
 massive(CONNECTION_STRING)
   .then(db => {
     app.set("db", db);
