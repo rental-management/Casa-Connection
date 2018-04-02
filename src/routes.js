@@ -8,8 +8,8 @@ import SplashLanding from './components/SplashLanding/SplashLanding';
 
 export default (
     <Switch>
-        <Route exact path="/" component={Properties} />
-        <Route path="/home" component={SplashLanding} />
+        <Route exact path="/" component={SplashLanding} />
+        <Route path="/home" component={Properties} />
         <Route path="/service" component={Service} />
         {/* <Route path="/property/:id" component={SingleProperty} /> */}
     </Switch>

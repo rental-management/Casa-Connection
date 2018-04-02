@@ -6,3 +6,5 @@ CREATE TABLE users (
   email VARCHAR(40)
 ),
 
+
+
