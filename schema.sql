@@ -4,4 +4,5 @@ CREATE TABLE users (
   f_name VARCHAR(40),
   l_name VARCHAR(40),
   email VARCHAR(40)
-)
+),
+
