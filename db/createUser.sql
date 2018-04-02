@@ -1,0 +1,1 @@
+INSERT INTO users (auth_id, f_name, l_name) VALUES ($1, $2, $3) RETURNING*;
