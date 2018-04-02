@@ -5,7 +5,7 @@ import userReducer from './ducks/userReducer';
 
 // Combine Reducers
 const store = createStore(
-    combineReducers({ userReduccer }),
+    combineReducers({ userReducer }),
     applyMiddleware(promiseMiddleware())
 );
 
