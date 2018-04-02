@@ -1,5 +1,5 @@
 import { createStore, applyMiddleware, combineReducers } from "redux";
-import promiseMiddleware from 'redux-promise-middle';
+import promiseMiddleware from 'redux-promise-middleware';
 import userReducer from './ducks/userReducer';
 
 
