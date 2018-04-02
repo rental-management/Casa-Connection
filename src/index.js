@@ -5,7 +5,7 @@ import { HashRouter as Router } from 'react-router-dom';
 import './index.css';
 import App from './App';
 import store from './store';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+ 
 
 
 ReactDOM.render(
