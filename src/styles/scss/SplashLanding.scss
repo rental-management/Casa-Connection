@@ -1,0 +1,80 @@
+.splash {
+    // background: linear-gradient(
+    //     rgba(243, 251, 255, 0.5)  
+    //     rgba(243, 251, 255, 0.4),
+    //     rgba(243, 251, 255, 0.3)),
+    //   url("../../assets/apt.jpg");
+    background: #149ddc;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    height: 500px;
+    clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+}
+
+.logo {
+    height: 5vh;
+}
+
+.first-container > div:first-of-type {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-content: space-between;
+    padding: 25px 60px 0 60px;
+}
+
+.first-container > div:nth-child(2) {
+    margin-top: 60px;
+    font-size: 26px;
+    margin-left: 90px;
+    width: 600px;
+    h2 {
+        text-align: left;
+    }
+    p {
+        text-align: left;
+        font-size: 24px;
+        padding-bottom: 20px;
+        width: 550px;
+    }
+}
+
+.started-btn {
+    background-color: white;
+    border: 1px solid white;
+    padding: 12px 60px 12px 60px;
+    color: black;
+    cursor: pointer;
+    border-radius: 10px;;
+    font-size: 18px;
+}
+
+.second-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    justify-content: space-around;
+    div {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid gray;
+    padding: 10px;
+    height: 300px;
+    width: 300px;
+    margin-top: 80px;
+    p {
+    text-align: center;
+    }
+  }
+}
+
+.footer {
+    background: #149ddc;
+    height: 30vh;
+    clip-path: polygon(0 55%, 100% 0, 100% 100%, 0% 100%);
+}
+
+
+
+
+
