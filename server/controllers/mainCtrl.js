@@ -17,5 +17,4 @@ module.exports = {
         .addProperty([req.user.id, prop_name, street, city, state, zip])
         .then(response => res.status(200).json(response))
         .catch( () => res.status(500).json())
-    }
-}
+    }}

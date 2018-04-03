@@ -1,9 +1,13 @@
 import React, {Component} from 'react';
 import PdfUploader from './../ImageUploader/PdfUploader';
+
+import AddPropForm from './../AddPropForm/AddPropForm';
+
 import {connect} from 'react-redux';
 import {getProperties} from './../../ducks/propertiesReducer';
 
-import AddPropForm from '../AddPropForm/AddPropForm';
+
+
 
 
 class Properties extends Component {
@@ -29,10 +33,14 @@ class Properties extends Component {
             })
         }
         return(
-            <div> {propertiesList}
-            <AddPropForm/>
-             </div>
-            
+
+            <div>
+            <div> Properties Page </div>
+            <AddPropForm />
+            {propertiesList}        
+            <PdfUploader />
+            </div>
+
         )
     }
 }
