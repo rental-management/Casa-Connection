@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import PdfUploader from './../ImageUploader/PdfUploader';
+import AddPropForm from './../AddPropForm/AddPropForm';
 
 class Properties extends Component {
 
@@ -8,6 +9,7 @@ class Properties extends Component {
         return(
             <div>
             <div> Properties Page </div>
+            <AddPropForm />
             
             <PdfUploader />
             </div>
