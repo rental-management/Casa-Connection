@@ -83,12 +83,16 @@ body {
   height: 30vh;
   clip-path: polygon(0 55%, 100% 0, 100% 100%, 0% 100%); }
 
-.login-btn {
+button {
   background-color: transparent;
   border: 1px solid white;
   padding: 10px 15px 10px 15px;
   color: white;
   cursor: pointer;
   border-radius: 12%; }
+
+.toggle-btn {
+  display: flex;
+  align-content: flex-start; }
 
 /*# sourceMappingURL=index.css.map */
