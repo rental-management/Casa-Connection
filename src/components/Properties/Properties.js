@@ -21,6 +21,7 @@ class Properties extends Component {
                 return(
                     <div key={index}>
                      <h1> {curr.prop_name} </h1>
+                     <img src={curr.img} />
                     </div>
                 )
             })
