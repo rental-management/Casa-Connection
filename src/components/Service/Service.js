@@ -6,8 +6,9 @@ class Service extends Component {
         return(
             <div>
             <div> Service Page </div>
-                <PdfUploader />
+               <PdfUploader />
             </div>
+            
         )
     }
 }

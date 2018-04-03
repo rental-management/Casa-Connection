@@ -53,6 +53,8 @@ class PdfUploader extends Component {
                     this.handlePreview(event.target.files)
                 }}/>
                 <button onClick={this.handleUpload}>Handle Upload</button>
+
+                <button style={{ color: 'black'} } onClick={this.handleUpload}>Handle Upload</button>
                 </div>
         );
     }

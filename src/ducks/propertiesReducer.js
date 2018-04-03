@@ -44,14 +44,15 @@ export default function reducer(state = initialState, action) {
         case `${GET_PROPERTIES}_PENDING`:
             return Object.assign({}, state, { isLoading: true });
 
-        case `${GET_PROPERTIES}_FULFILLED`:       
+        case `${GET_PROPERTIES}_FULFILLED`:
+        console.log(action.payload)
             return Object.assign({}, state, { isLoading: false, properties: action.payload });
 
         case `${GET_PROPERTIES}_REJECTED`:
             return Object.assign({}, state, { isLoading: false, didErr: true, errMessage: action.payload });
 
-        //ADD PROPERTY
-        case `${ADD_PROPERTY}_PENDING`:
+            //ADD PROPERTY
+             case `${ADD_PROPERTY}_PENDING`:
             return Object.assign({}, state, {isLoading: true});
 
         case `${ADD_PROPERTY}_FULFILLED`:
@@ -59,7 +60,8 @@ export default function reducer(state = initialState, action) {
 
         case `${ADD_PROPERTY}_REJECTED`:
             return Object.assign({}, state, {isLoading: false, didErr: true, errMessage: action.payload});
-        
+         
+
     default:
         return state;
     }
