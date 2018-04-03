@@ -27,7 +27,7 @@ constructor(){
 
 handleSubmit(propertyName, street, city, state, zip){
     console.log(this.state);
-    this.props.addProperty();
+    this.props.addProperty(propertyName, street, city, state, zip);
 }
 
 render(){

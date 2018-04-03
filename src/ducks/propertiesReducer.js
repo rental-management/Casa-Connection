@@ -25,10 +25,16 @@ export function getProperties() {
     }
 }
 
-export function addProperty(){
+export function addProperty(propertyName, street, city, state, zip){
     return {
         type: ADD_PROPERTY,
-        payload: axios.post('/addproperty').then(response => {
+        payload: axios.post('/addproperty', {
+            prop_name: propertyName,
+            street: street,
+            city: city,
+            state: state,
+            zip: zip
+        }).then(response => {
             console.log("add property action creator", response);
             return response.data;
         }).catch(err => {console.log(err)})
