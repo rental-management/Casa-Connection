@@ -60,6 +60,7 @@ passport.use(
                     app.get('db').createUser([profile.id, profile.name.givenName, profile.name.familyName]).then(createdUser => done(null, createdUser[0]));
                 } else {
                     console.log(profile);
+
                     return done(null, response[0]);
                 }
             });
