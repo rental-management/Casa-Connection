@@ -8,7 +8,8 @@ const initialState = {
     properties: [],
     isLoading: false,
     didErr: false,
-    errMessage: null
+    errMessage: null,
+    
 };
 
 // ACTION CREATORS //
