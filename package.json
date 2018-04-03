@@ -31,5 +31,6 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "sass": "sass --watch src/styles/scss:src/styles/css"
-  }
+  },
+  "proxy": "http://localhost:3002"
 }
