@@ -29,10 +29,6 @@ class NavBar extends Component {
           onClick={this.handleToggle}
         />
         <Drawer open={this.state.open}>
-          
-          <Link to="/">
-          <MenuItem>Home</MenuItem>
-            </Link>
           <Link to="/properties">
           <MenuItem>Properties</MenuItem>
           </Link>
