@@ -10,9 +10,11 @@ module.exports = {
         .catch( (err) => res.status(500).json(err));
     },
 
-    // getPropertyImg: (req, res) => {
-    //     console.log( req.body, "HIT")
-    //     const db = req.app.get("db")
-
-    // }
-}
+    addProperty: (req, res) => {
+        const db = req.app.get("db");
+        const { prop_name, street, city, state, zip }= req.body;
+        db
+        .addProperty([req.user.id, prop_name, street, city, state, zip])
+        .then(response => res.status(200).json(response))
+        .catch( () => res.status(500).json())
+    }}
