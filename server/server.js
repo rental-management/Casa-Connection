@@ -57,7 +57,7 @@ passport.use(
             app.get('db').getUserByAuthId([profile.id]).then(response => {
                 if(!response[0]){
                     console.log(profile);
-                    app.get('db').createUser([profile.id, profile.displayName, profile.name.familyName]).then(createdUser => done(null, createdUser[0]));
+                    app.get('db').createUser([profile.id, profile.name.givenName, profile.name.familyName]).then(createdUser => done(null, createdUser[0]));
                 } else {
                     console.log(profile);
 
