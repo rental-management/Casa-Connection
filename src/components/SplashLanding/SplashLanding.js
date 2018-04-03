@@ -20,7 +20,7 @@ class SplashLanding extends Component {
                         </div>
                     </div>
                 </div>
-                    <div className="second-container">
+                <div className="second-container">
                         <div> 
                             <h1> Organize property info </h1>
                             <p> aslkdjfas </p> 
@@ -33,9 +33,11 @@ class SplashLanding extends Component {
                             <h1> Streamline service requests </h1> 
                             <p> lahsdf </p>
                         </div>
-                    </div>
-                    <div className="third-container">
-                    </div>
+                </div>
+                <div className="third-container">
+                </div>
+                <div className="footer">
+                </div>
             </div>
         )
     }
