@@ -84,6 +84,7 @@ app.get('/auth', passport.authenticate('auth0', {
 })
 );
 app.get('/properties', mainCtrl.getProperties);
+app.post('/addproperty', mainCtrl.addProperty);
 
 // get request for the property image
 // app.get('/api/getImg', mainCtrl.getPropertyImg);
