@@ -8,6 +8,7 @@ class Properties extends Component {
         return(
             <div>
             <div> Properties Page </div>
+            
             <PdfUploader />
             </div>
           
