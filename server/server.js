@@ -8,6 +8,7 @@ const massive = require('massive');
 const Auth0Strategy = require('passport-auth0');
 const { CONNECTION_STRING, SESSION_SECRET, DOMAIN, CLIENT_SECRET, CLIENT_ID } = process.env;
 const port = process.env.PORT || 3002;
+const mainCtrl = require("./controllers/mainCtrl");
 
 
 //initialize express
@@ -82,6 +83,7 @@ app.get('/auth', passport.authenticate('auth0', {
     failureFlash: true
 })
 );
+app.get('/properties', mainCtrl.getProperties);
 
 
 
