@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import axios from 'axios';
 
 class AddServicesForm extends Component {
     constructor(){
@@ -38,4 +40,10 @@ class AddServicesForm extends Component {
         }
     }
 
-export default AddServicesForm;
+    function mapStateToProps(state){
+        return {
+            state
+        }
+    }
+
+export default connect( mapStateToProps ) ( AddServicesForm );
