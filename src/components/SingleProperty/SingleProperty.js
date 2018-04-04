@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import {getProperty} from '../../ducks/propertiesReducer';
 
-
 class SingleProperty extends Component {
     constructor(props) {
         super(props);

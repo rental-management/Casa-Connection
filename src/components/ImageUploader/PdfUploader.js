@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import firebase from './../../fire';
+import axios from 'axios';
+import { addProperty } from '../../ducks/propertiesReducer';
+import { connect } from 'react-redux';
 
 class PdfUploader extends Component {
     constructor(props){
@@ -20,7 +23,7 @@ class PdfUploader extends Component {
             this.setState({
                 file: file[0],
                 imagePreview: reader.result
-            });
+            }, () => this.handleUpload());
         };
         reader.readAsDataURL(file[0]);
     }
@@ -35,15 +38,21 @@ class PdfUploader extends Component {
             (snapshot) => {
                 console.log(snapshot) // change this
             },
-            (error) => {},
-            (sucess) => {
-                console.log(uploadTask.snapshot.downloadURL); 
-            }
-        )
+            (error) => {
+                console.log("handleUpload error msg: ",error);
+            },
+            (success) => { 
+                
+                console.log(uploadTask.snapshot.downloadURL, "NAME");
+                console.log(this.props);
+                this.props.handleImg(uploadTask.snapshot.downloadURL);
+            },
+        );
     }
 
     render(){
-        console.log(this.state, "HERE")
+        console.log(this.props, "img func")
+        console.log(this.state, "STATE")
         return (
             <div>
                 <h1>Image uploader</h1>
@@ -53,10 +62,18 @@ class PdfUploader extends Component {
                     this.handlePreview(event.target.files)
                 }}/>
 
-                <button style={{ color: 'black'} } onClick={this.handleUpload}>Handle Upload</button>
+                {/* <button style={{ color: 'black'} } onClick={this.handleUpload}>Handle Upload</button> */}
                 </div>
         );
     }
 }
 
-export default PdfUploader;
+function mapStateToProps( state ) {
+    return {
+        properties: state.propertiesreducer,
+        state
+        
+    }
+}
+
+export default connect( mapStateToProps, { addProperty } )( PdfUploader );

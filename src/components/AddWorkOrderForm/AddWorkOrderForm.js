@@ -5,7 +5,7 @@ import Paper from "material-ui/Paper";
 import TextField from "material-ui/TextField";
 import RaisedButton from "material-ui/RaisedButton";
 
-class AddServicesForm extends Component {
+class AddWorkOrderForm extends Component {
     constructor(){
         super();
 
@@ -71,4 +71,4 @@ class AddServicesForm extends Component {
         }
     }
 
-export default connect( mapStateToProps ) ( AddServicesForm );
+export default connect( mapStateToProps ) ( AddWorkOrderForm );
