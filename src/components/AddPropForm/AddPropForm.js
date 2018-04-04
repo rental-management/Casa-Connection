@@ -6,7 +6,7 @@ import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 
 //local imports
-import {addProperty} from './../../ducks/propertiesReducer';
+import {addProperty, getProperties} from './../../ducks/propertiesReducer';
 
 
 class AddPropForm extends Component {
@@ -21,14 +21,24 @@ constructor(){
     }
 
     this.handleSubmit = this.handleSubmit.bind(this);
+    
 
 
 }
+
+
+
 
 handleSubmit(propertyName, street, city, state, zip){
     console.log(this.state);
-    this.props.addProperty(propertyName, street, city, state, zip);
+    this.props.addProperty(propertyName, street, city, state, zip).then(() => {              
+        this.props.getProperties();
+    });
+       
+    
 }
+
+
 
 render(){
     console.log('form info: ', this.props.properties);
@@ -44,35 +54,36 @@ const style = {
     padding: 30
 
 }
-    return(
-        <div>
-            <h1>Add A Property</h1>
-            <Paper zDepth = {3} style = {style}>
-            <form>
-                <TextField
-                floatingLabelText="Property Name" onChange = {e => {this.setState({propertyName: e.target.value})}}/>
-                <br />
-                <TextField
-                floatingLabelText="Street" onChange = {e => {this.setState({street: e.target.value})}}/>
-                <br />
-                <TextField
-                floatingLabelText="City" onChange = {e => {this.setState({city: e.target.value})}}/>
-                <br />
-                <TextField
-                floatingLabelText="State" onChange = {e => {this.setState({state: e.target.value})}}/>
-                <br />
-                <TextField
-                floatingLabelText="Zipcode" onChange = {e => {this.setState({zip: e.target.value})}}/>
-                <br />
-                <RaisedButton label = "Submit" onClick = {() => {this.handleSubmit(propertyName, street, city, state, zip)}}/>
-                
-            </form>
-            </Paper>
-        
-        
-        
-        </div>
-    );
+    return <div>
+        <h1>Add A Property</h1>
+        <Paper zDepth={3} style={style}>
+          <form>
+            <TextField floatingLabelText="Property Name" onChange={e => {
+                this.setState({ propertyName: e.target.value });
+              }} className="add-prop-input" />
+            <br />
+            <TextField floatingLabelText="Street" onChange={e => {
+                this.setState({ street: e.target.value });
+              }} className="add-prop-input" />
+            <br />
+            <TextField floatingLabelText="City" onChange={e => {
+                this.setState({ city: e.target.value });
+              }} className="add-prop-input" />
+            <br />
+            <TextField floatingLabelText="State" onChange={e => {
+                this.setState({ state: e.target.value });
+              }} className="add-prop-input" />
+            <br />
+            <TextField floatingLabelText="Zipcode" onChange={e => {
+                this.setState({ zip: e.target.value });
+              }} className="add-prop-input" />
+            <br />
+            <RaisedButton label="Submit" onClick={() => {
+                this.handleSubmit(propertyName, street, city, state, zip);
+              }} />
+          </form>
+        </Paper>
+      </div>;
 }
 
 
@@ -85,4 +96,4 @@ return {
 }
 };
 
-export default connect(mapStateToProps, {addProperty})(AddPropForm); 
+export default connect(mapStateToProps, {addProperty, getProperties})(AddPropForm); 
