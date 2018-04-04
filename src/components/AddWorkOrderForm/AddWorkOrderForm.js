@@ -21,12 +21,7 @@ class AddWorkOrderForm extends Component {
 
     handleSubmit(){
 
-
     }
-
-
-
-
         render(){
 
            
