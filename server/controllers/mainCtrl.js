@@ -5,7 +5,7 @@ module.exports = {
         db
         .getProperties([req.user.id])
         .then(response => {
-            console.log(response, "hello")
+            console.log("all properties for curr user:", response);
             res.status(200).json(response)})
         .catch( (err) => res.status(500).json(err));
     },
