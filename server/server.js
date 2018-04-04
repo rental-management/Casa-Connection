@@ -78,13 +78,13 @@ passport.deserializeUser((user, done) => done(null, user));
 
 //auth endpoint
 app.get('/auth', passport.authenticate('auth0', {
-    successRedirect: "http://localhost:3000",
+    successRedirect: "http://localhost:3000/#/properties",
     failureRedirect: "/auth",
     failureFlash: true
 })
 );
 app.get('/properties', mainCtrl.getProperties);
-// app.post('/addproperty', mainCtrl.addProperty);
+app.post('/addproperty', mainCtrl.addProperty);
 
 // get request for the property image
 // app.get('/api/getImg', mainCtrl.getPropertyImg);
