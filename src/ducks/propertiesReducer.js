@@ -4,12 +4,14 @@ import axios from 'axios';
 const GET_PROPERTIES = 'GET_PROPERTIES';
 const ADD_PROPERTY = 'ADD_PROPERTY';
 const GET_PROPERTY = "GET_PROPERTY";
+const ADD_WORK_ORDER = "ADD_WORK_ORDER";
 
 
 // STATE //
 const initialState = {
     properties: [],
     property: [],
+    workOrder: [],
     isLoading: false,
     didErr: false,
     errMessage: null,
@@ -56,6 +58,17 @@ export function getProperty(id) {
             console.log(response, "getProperty")
             return response.data
         }).catch(console.log)
+    }
+}
+
+export function addWorkOrder(propId, type, memo){
+   
+    return {
+        type: ADD_WORK_ORDER,
+        payload: axios.post('/addworkorder', {prop_id: propId, type: type, memo: memo}).then((res) => {
+
+
+        })
     }
 }
 
