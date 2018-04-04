@@ -4,9 +4,11 @@ import axios from 'axios';
 const GET_PROPERTIES = 'GET_PROPERTIES';
 const ADD_PROPERTY = 'ADD_PROPERTY';
 
+
 // STATE //
 const initialState = {
     properties: [],
+   
     isLoading: false,
     didErr: false,
     errMessage: null,
@@ -26,6 +28,7 @@ export function getProperties() {
     }
 }
 
+
 export function addProperty(propertyName, street, city, state, zip){
     return {
         type: ADD_PROPERTY,
@@ -41,6 +44,8 @@ export function addProperty(propertyName, street, city, state, zip){
         }).catch(err => {console.log(err)})
     }
 }
+
+
 
 // REDUCER //
 export default function reducer(state = initialState, action) {
@@ -66,6 +71,7 @@ export default function reducer(state = initialState, action) {
 
         case `${ADD_PROPERTY}_REJECTED`:
             return Object.assign({}, state, {isLoading: false, didErr: true, errMessage: action.payload});
+      
          
 
     default:
