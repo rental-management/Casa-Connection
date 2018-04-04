@@ -7,7 +7,7 @@ import RaisedButton from 'material-ui/RaisedButton';
 import PdfUploader from './../ImageUploader/PdfUploader';
 
 //local imports
-import {addProperty, saveImg} from './../../ducks/propertiesReducer';
+import {addProperty, getProperties} from './../../ducks/propertiesReducer';
 
 
 class AddPropForm extends Component {
@@ -96,4 +96,4 @@ return {
 }
 };
 
-export default connect(mapStateToProps, {addProperty, saveImg})(AddPropForm); 
+export default connect(mapStateToProps, {addProperty, getProperties})(AddPropForm); 

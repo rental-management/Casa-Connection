@@ -3,16 +3,16 @@ import axios from 'axios';
 // CONSTANTS //
 const GET_PROPERTIES = 'GET_PROPERTIES';
 const ADD_PROPERTY = 'ADD_PROPERTY';
-const SAVE_IMG = 'SAVE_IMG';
+const GET_PROPERTY = "GET_PROPERTY";
+
 
 // STATE //
 const initialState = {
     properties: [],
+    property: [],
     isLoading: false,
     didErr: false,
     errMessage: null,
-    img: ''
-    
 };
 
 // ACTION CREATORS //
@@ -45,11 +45,17 @@ export function addProperty(propertyName, street, city, state, zip, img){
     }
 }
 
-export function saveImg(img){
-    console.log(img, "IMAGE HERE")
+export function getProperty(id) {
     return {
-        type: SAVE_IMG,
-        payload: img
+        type: GET_PROPERTY,
+        payload: axios
+        .get(`/property/${id}`,{
+            id: id
+        })
+        .then(response => {
+            console.log(response, "getProperty")
+            return response.data
+        }).catch(console.log)
     }
 }
 
@@ -69,7 +75,7 @@ export default function reducer(state = initialState, action) {
             return Object.assign({}, state, { isLoading: false, didErr: true, errMessage: action.payload });
 
             //ADD PROPERTY
-             case `${ADD_PROPERTY}_PENDING`:
+        case `${ADD_PROPERTY}_PENDING`:
             return Object.assign({}, state, {isLoading: true});
 
         case `${ADD_PROPERTY}_FULFILLED`:
@@ -78,11 +84,15 @@ export default function reducer(state = initialState, action) {
         case `${ADD_PROPERTY}_REJECTED`:
             return Object.assign({}, state, {isLoading: false, didErr: true, errMessage: action.payload});
 
-        case `${SAVE_IMG}_PENDING`:
+        // GET SINGLE PROPERTY
+        case `${GET_PROPERTY}_PENDING`:
             return Object.assign({}, state, { isLoading: true });
-        case `${SAVE_IMG}_FULFILLED`:
-            return Object.assign({}, state, { isLoading: false, properties: action.payload });
-        case `${SAVE_IMG}_REJECTED`:
+
+        case `${GET_PROPERTY}_FULFILLED`:
+        console.log(action.payload, "get prop full")
+            return Object.assign({}, state, { isLoading: false, property: action.payload });
+
+        case `${GET_PROPERTY}_REJECTED`:
             return Object.assign({}, state, { isLoading: false, didErr: true, errMessage: action.payload });
          
 
