@@ -1,7 +1,7 @@
 import { default as fb } from 'firebase';
 
 const config = {
-    apiKey: "AIzaSyCB5KuAzteRb_nnkS826_OTszGg6dkGFWY",
+    apiKey: "AIzaSyDfMgH3x3vEUJv6GuoPDJ-pe3oe-NGQdyg",
     authDomain: "casa-connect-b4cb7.firebaseapp.com",
     databaseURL: "https://casa-connect-b4cb7.firebaseio.com",
     projectId: "casa-connect-b4cb7",
