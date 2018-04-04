@@ -57,7 +57,7 @@ class PdfUploader extends Component {
             <div>
                 <h1>Image uploader</h1>
                 {this.state.imagePreview && <img src={this.state.imagePreview} />}
-
+                
                 <input placeholder="ImageUpload" type="file" onChange={(event) => {
                     this.handlePreview(event.target.files)
                 }}/>
