@@ -11,7 +11,7 @@ export default (
         <Route exact path="/" component={SplashLanding} />
         <Route path="/properties" component={Properties} />
         <Route path="/service" component={Service} />
-        {/* <Route path="/property/:id" component={SingleProperty} /> */}
+        <Route path="/property/:id" component={SingleProperty} />
     </Switch>
 );
 
