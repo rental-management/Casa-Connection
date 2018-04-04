@@ -4,9 +4,10 @@ import {connect} from 'react-redux';
 import Paper from 'material-ui/Paper';
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
+import PdfUploader from './../ImageUploader/PdfUploader';
 
 //local imports
-import {addProperty} from './../../ducks/propertiesReducer';
+import {addProperty, saveImg} from './../../ducks/propertiesReducer';
 
 
 class AddPropForm extends Component {
@@ -17,23 +18,32 @@ constructor(){
         street: [],
         city: [],
         state: [],
-        zip: []
+        zip: [],
+        img: []
     }
 
     this.handleSubmit = this.handleSubmit.bind(this);
-
+    this.handleImg = this.handleImg.bind(this);
 
 }
 
-handleSubmit(propertyName, street, city, state, zip){
+
+handleSubmit(propertyName, street, city, state, zip, img){
     console.log(this.state);
-    this.props.addProperty(propertyName, street, city, state, zip);
+    this.props.addProperty(propertyName, street, city, state, zip, img);
 }
+
+handleImg(img){
+    console.log('This is img passed up from child: ', img);
+    this.setState({ img: img })
+    console.log(this.state, "img state")
+}
+
 
 render(){
     console.log('form info: ', this.props.properties);
     //userId, propertyName, street, city, state, zip
-const {propertyName, street, city, state, zip} = this.state;
+const {propertyName, street, city, state, zip, img} = this.state;
 
 
 //Material Ui Inline Styles
@@ -49,6 +59,7 @@ const style = {
             <h1>Add A Property</h1>
             <Paper zDepth = {3} style = {style}>
             <form>
+            <PdfUploader handleImg={ this.handleImg }/>
                 <TextField
                 floatingLabelText="Property Name" onChange = {e => {this.setState({propertyName: e.target.value})}}/>
                 <br />
@@ -64,7 +75,7 @@ const style = {
                 <TextField
                 floatingLabelText="Zipcode" onChange = {e => {this.setState({zip: e.target.value})}}/>
                 <br />
-                <RaisedButton label = "Submit" onClick = {() => {this.handleSubmit(propertyName, street, city, state, zip)}}/>
+                <RaisedButton label = "Submit" onClick = {() => {this.handleSubmit(propertyName, street, city, state, zip, img)}}/>
                 
             </form>
             </Paper>
@@ -85,4 +96,4 @@ return {
 }
 };
 
-export default connect(mapStateToProps, {addProperty})(AddPropForm); 
+export default connect(mapStateToProps, {addProperty, saveImg})(AddPropForm); 

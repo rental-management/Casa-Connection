@@ -3,6 +3,7 @@ import axios from 'axios';
 // CONSTANTS //
 const GET_PROPERTIES = 'GET_PROPERTIES';
 const ADD_PROPERTY = 'ADD_PROPERTY';
+const SAVE_IMG = 'SAVE_IMG';
 
 // STATE //
 const initialState = {
@@ -10,6 +11,7 @@ const initialState = {
     isLoading: false,
     didErr: false,
     errMessage: null,
+    img: ''
     
 };
 
@@ -26,7 +28,7 @@ export function getProperties() {
     }
 }
 
-export function addProperty(propertyName, street, city, state, zip){
+export function addProperty(propertyName, street, city, state, zip, img){
     return {
         type: ADD_PROPERTY,
         payload: axios.post('/addproperty', {
@@ -34,11 +36,20 @@ export function addProperty(propertyName, street, city, state, zip){
             street: street,
             city: city,
             state: state,
-            zip: zip
+            zip: zip,
+            img: img
         }).then(response => {
             console.log("add property action creator", response);
             return response.data;
         }).catch(err => {console.log(err)})
+    }
+}
+
+export function saveImg(img){
+    console.log(img, "IMAGE HERE")
+    return {
+        type: SAVE_IMG,
+        payload: img
     }
 }
 
@@ -66,6 +77,13 @@ export default function reducer(state = initialState, action) {
 
         case `${ADD_PROPERTY}_REJECTED`:
             return Object.assign({}, state, {isLoading: false, didErr: true, errMessage: action.payload});
+
+        case `${SAVE_IMG}_PENDING`:
+            return Object.assign({}, state, { isLoading: true });
+        case `${SAVE_IMG}_FULFILLED`:
+            return Object.assign({}, state, { isLoading: false, properties: action.payload });
+        case `${SAVE_IMG}_REJECTED`:
+            return Object.assign({}, state, { isLoading: false, didErr: true, errMessage: action.payload });
          
 
     default:
