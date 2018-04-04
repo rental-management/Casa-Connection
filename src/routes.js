@@ -5,6 +5,7 @@ import Properties from './components/Properties/Properties';
 import Service from './components/Service/Service';
 import SingleProperty from './components/SingleProperty/SingleProperty';
 import SplashLanding from './components/SplashLanding/SplashLanding';
+import PropertyDetails from './components/PropertyDetails/PropertyDetails';
 
 export default (
     <Switch>

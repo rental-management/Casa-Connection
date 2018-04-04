@@ -7,6 +7,7 @@ const ADD_PROPERTY = 'ADD_PROPERTY';
 // STATE //
 const initialState = {
     properties: [],
+    property: [],
     isLoading: false,
     didErr: false,
     errMessage: null,
@@ -41,6 +42,8 @@ export function addProperty(propertyName, street, city, state, zip){
         }).catch(err => {console.log(err)})
     }
 }
+
+
 
 // REDUCER //
 export default function reducer(state = initialState, action) {
