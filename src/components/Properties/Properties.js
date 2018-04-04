@@ -9,8 +9,6 @@ import { Link } from "react-router-dom";
 
 
 
-
-
 class Properties extends Component {
     constructor(props) {
         super(props);
