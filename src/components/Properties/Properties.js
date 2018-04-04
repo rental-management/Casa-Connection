@@ -40,7 +40,7 @@ class Properties extends Component {
             <div> Properties Page </div>
             <AddPropForm />
             {propertiesList}        
-            <PdfUploader />
+            
             </div>
 
         )
