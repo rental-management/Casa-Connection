@@ -30,7 +30,9 @@ constructor(){
 
 handleSubmit(propertyName, street, city, state, zip, img){
     console.log(this.state);
-    this.props.addProperty(propertyName, street, city, state, zip, img);
+    this.props.addProperty(propertyName, street, city, state, zip, img).then( (res) => {
+        this.props.getProperties();
+    });
 }
 
 handleImg(img){
