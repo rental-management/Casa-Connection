@@ -8,8 +8,6 @@ import {getProperties} from './../../ducks/propertiesReducer';
 
 
 
-
-
 class Properties extends Component {
     constructor(props) {
         super(props);

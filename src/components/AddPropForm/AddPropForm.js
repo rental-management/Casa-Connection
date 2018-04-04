@@ -21,13 +21,7 @@ constructor(){
     }
 
     this.handleSubmit = this.handleSubmit.bind(this);
-    
-
-
 }
-
-
-
 
 handleSubmit(propertyName, street, city, state, zip){
     console.log(this.state);
@@ -37,8 +31,6 @@ handleSubmit(propertyName, street, city, state, zip){
        
     
 }
-
-
 
 render(){
     console.log('form info: ', this.props.properties);
