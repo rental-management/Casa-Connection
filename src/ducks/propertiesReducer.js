@@ -5,6 +5,7 @@ const GET_PROPERTIES = 'GET_PROPERTIES';
 const ADD_PROPERTY = 'ADD_PROPERTY';
 const GET_PROPERTY = "GET_PROPERTY";
 
+
 // STATE //
 const initialState = {
     properties: [],
@@ -26,6 +27,7 @@ export function getProperties() {
             }).catch(console.log)
     }
 }
+
 
 export function addProperty(propertyName, street, city, state, zip){
     return {
