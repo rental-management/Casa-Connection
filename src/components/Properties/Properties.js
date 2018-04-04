@@ -5,6 +5,7 @@ import AddPropForm from './../AddPropForm/AddPropForm';
 
 import {connect} from 'react-redux';
 import {getProperties} from './../../ducks/propertiesReducer';
+import { Link } from "react-router-dom";
 
 
 
@@ -24,7 +25,8 @@ class Properties extends Component {
             propertiesList = this.props.properties.properties.map((curr, index) => {
                 return(
                     <div key={index}>
-                     <h1> {curr.prop_name} </h1>
+                    <Link to = {`/property/${curr.id}`} key = {index}>
+                     <h1> {curr.prop_name} </h1></Link>
                      <img src={curr.img} />
                     </div>
                 )

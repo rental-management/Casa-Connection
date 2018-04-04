@@ -19,4 +19,13 @@ module.exports = {
         .then(response => res.status(200).json(response))
         .catch( () => res.status(500).json())
     },
+
+    getProperty: (req, res) => {
+        const db = req.app.get("db");
+        console.log(req.params.id, "req params")
+        db
+        .getProperty([req.params.id])
+        .then(response => res.status(200).json(response))
+        .catch( () => res.status(500).json())
+    }
 }
