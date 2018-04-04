@@ -4,10 +4,11 @@ import axios from 'axios';
 const GET_PROPERTIES = 'GET_PROPERTIES';
 const ADD_PROPERTY = 'ADD_PROPERTY';
 
+
 // STATE //
 const initialState = {
     properties: [],
-    property: [],
+   
     isLoading: false,
     didErr: false,
     errMessage: null,
@@ -26,6 +27,7 @@ export function getProperties() {
             }).catch(console.log)
     }
 }
+
 
 export function addProperty(propertyName, street, city, state, zip){
     return {
@@ -69,6 +71,7 @@ export default function reducer(state = initialState, action) {
 
         case `${ADD_PROPERTY}_REJECTED`:
             return Object.assign({}, state, {isLoading: false, didErr: true, errMessage: action.payload});
+      
          
 
     default:
