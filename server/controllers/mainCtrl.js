@@ -27,5 +27,15 @@ module.exports = {
         .getProperty([req.params.id])
         .then(response => res.status(200).json(response))
         .catch( () => res.status(500).json())
+    },
+
+    addWorkOrder: (req, res) => {
+        const db = req.app.get("db");
+        const { type, memo } = req.body;
+        console.log(req.body);
+        db
+        .addWorkOrder([req.body.prop_id, type, memo])
+        .then(response => res.status(200).json(response))
+        .catch( () => res.status(500).json())
     }
 }

@@ -86,9 +86,7 @@ app.get('/auth', passport.authenticate('auth0', {
 app.get('/properties', mainCtrl.getProperties);
 app.post('/addproperty', mainCtrl.addProperty);
 app.get('/property/:id', mainCtrl.getProperty);
-
-// get request for the property image
-// app.get('/api/getImg', mainCtrl.getPropertyImg);
+app.post('/addworkorder', mainCtrl.addWorkOrder);
 
 
 //server setup 

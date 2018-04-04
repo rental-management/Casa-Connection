@@ -23,12 +23,7 @@ class AddWorkOrderForm extends Component {
     handleSubmit(propId,type, memo){
         this.props.addWorkOrder(propId,type, memo);
 
-
     }
-
-
-
-
         render(){
             const {type, memo} = this.state;
             console.log("params id ", this.props);
