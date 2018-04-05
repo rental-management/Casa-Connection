@@ -5,7 +5,7 @@ import AddPropForm from './../AddPropForm/AddPropForm';
 import NavBar from './../NavBar/NavBar';
 
 import {connect} from 'react-redux';
-import {getProperties} from './../../ducks/propertiesReducer';
+import {getProperties, deleteProperty} from './../../ducks/propertiesReducer';
 import { Link } from "react-router-dom";
 
 
@@ -13,10 +13,19 @@ import { Link } from "react-router-dom";
 class Properties extends Component {
     constructor(props) {
         super(props);
+
+        this.handleDelete = this.handleDelete.bind(this);
     }
 
     componentDidMount() {
         this.props.getProperties();
+    }
+
+    handleDelete(propId){
+        this.props.deleteProperty(propId).then(() => {
+            this.props.getProperties();
+        });
+
     }
 
     render() {
@@ -28,6 +37,7 @@ class Properties extends Component {
                     <div key={index}>
                     <Link to = {`/property/${curr.id}`} key = {index}>
                      <h1> {curr.prop_name} </h1></Link>
+                     <button className = 'delete-prop-btn' onClick = {() => {this.handleDelete(curr.id)}}>Delete</button>
                      <img src={curr.img} />
                     </div>
                 )
@@ -51,4 +61,4 @@ const mapStateToProps = state => {
         properties: state.propertiesReducer
     }
 };
-export default connect(mapStateToProps, {getProperties})(Properties);
+export default connect(mapStateToProps, {getProperties, deleteProperty})(Properties);
