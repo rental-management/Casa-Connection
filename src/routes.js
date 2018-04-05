@@ -6,6 +6,9 @@ import WorkOrders from './components/WorkOrders/WorkOrders';
 import SingleProperty from './components/SingleProperty/SingleProperty';
 import SplashLanding from './components/SplashLanding/SplashLanding';
 import Contractors from './components/Contractors/Contractors';
+import About from './components/About/About';
+import Contact from './components/Contact/Contact';
+
 
 export default (
     <Switch>
@@ -14,6 +17,8 @@ export default (
         <Route path="/workorders" component={WorkOrders} />
         <Route path="/property/:id" component={SingleProperty} />
         <Route path="/contractors" component={Contractors} />
+        <Route path="/contact" component={Contact} />
+        <Route path="/about" component={About} />
     </Switch>
 );
 

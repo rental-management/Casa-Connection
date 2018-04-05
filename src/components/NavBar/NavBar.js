@@ -4,14 +4,22 @@ import { Link, withRouter } from 'react-router-dom';
 import Drawer from 'material-ui/Drawer';
 import FlatButton from 'material-ui/FlatButton';
 import RaisedButton from 'material-ui/RaisedButton';
+import Menu from 'material-ui/Menu';
 import MenuItem from 'material-ui/MenuItem';
+import IconMenu from 'material-ui';
+import {Toolbar, ToolbarGroup, ToolbarSeparator, ToolbarTitle} from 'material-ui/Toolbar';
+import IconButton from 'material-ui/IconButton';
+import FontIcon from 'material-ui/FontIcon';
+import NavigationExpandMoreIcon from 'material-ui/svg-icons/navigation/expand-more';
+import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
+import DropDownMenu from 'material-ui/DropDownMenu';
+import Paper from 'material-ui/Paper';
 
 class NavBar extends Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
             open: false
-            
         
         };
 
@@ -21,29 +29,45 @@ class NavBar extends Component {
   handleClose = () => this.setState({open: false});
 
   render() {
-      return (
-      <div className="toggle-btn">
 
-      
-        <RaisedButton
-          label="Toggle Drawer"
-          onClick={this.handleToggle}
-          
-        />
-        <Drawer onClick={this.handleToggle} open={this.state.open}>
+    const style = {
+      display: 'flex',
+      justifyContent: 'space-between',
+      width: '100%',
+      display: 'inline-block',
+      margin: '16px 32px 16px 0',
+    };
+
+      return (
+      <div>
+        <Toolbar>
+        <ToolbarGroup firstChild={true}>
+
+        {/* <Paper style={style}>
+      <Menu> */}
+      {/* <Drawer onClick={this.handleToggle} open={this.state.open}> */}
           <Link to="/properties">
           <MenuItem onClick={this.handleClose}>Properties</MenuItem>
           </Link>
           <Link to="/workorders">
           <MenuItem onClick={this.handleClose}>Work Orders</MenuItem>
           </Link>
+          <Link to="/about">
+          <MenuItem onClick={this.handleClose}>About</MenuItem>
+          </Link>
+          <Link to="/contact">
+          <MenuItem onClick={this.handleClose}>Contact</MenuItem>
+          </Link>
+      {/* </Drawer>  */}
+      {/* </Menu>
+    </Paper> */}
+    </ToolbarGroup>
 
-            
-
-        </Drawer>
-      </div>
+    </Toolbar>
+       </div> 
     );
   }
 }
 
 export default NavBar;
+
