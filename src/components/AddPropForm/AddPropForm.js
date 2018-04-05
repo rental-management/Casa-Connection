@@ -13,7 +13,7 @@ import PdfUploader from './../ImageUploader/PdfUploader';
 
 
 //local imports
-import {addProperty, getProperties} from './../../ducks/propertiesReducer';
+import {addProperty, getProperties, addTenant } from './../../ducks/propertiesReducer';
 
 
 class AddPropForm extends Component {
@@ -45,11 +45,12 @@ handleClose = () => {
 };
 
 
-handleSubmit(propertyName, street, city, state, zip, img){
+handleSubmit(propertyName, street, city, state, zip, img, firstName, lastName, phone, email, emergContact, emergNum, propId){
     console.log(this.state);
     this.props.addProperty(propertyName, street, city, state, zip, img).then( (res) => {
         this.props.getProperties();
     });
+    this.props.addTenant(firstName, lastName, phone, email, emergContact, emergNum, propId);
 }
 
 handleImg(img){
@@ -61,8 +62,16 @@ handleImg(img){
 
 render(){
     console.log('form info: ', this.props.properties);
+    console.log('tenant info', this.props)
     //userId, propertyName, street, city, state, zip
 const {propertyName, street, city, state, zip, img, open} = this.state;
+const {firstName, lastName, phone, email, emergContact, emergNum} = this.state;
+// let propertyArr = this.props.properties;
+// let propId;
+// if(propertyArr.length !== 0 && propertyArr !== undefined) {
+//     propId = this.props.properties.tenant;
+//     console.log('propId add prop form', propId);
+// }
 
 
 //Material Ui Inline Styles
@@ -90,14 +99,11 @@ const style = {
             </FloatingActionButton>
                 <Dialog
                 contentStyle={customContentStyle}
-                
+                autoScrollBodyContent={true}
                 open={this.state.open}
                 onClose={this.handleClose}
                 >
-                <h1>New Property</h1>
-              
-               
-                    
+                <h1>Add Property</h1>   
             
             <PdfUploader handleImg={ this.handleImg }/>
                 
@@ -117,18 +123,32 @@ const style = {
                    floatingLabelText="Zipcode" onChange = {e => {this.setState({zip: e.target.value})}}/>
                 <br />
                
-                
+                <h1> Tenant </h1> 
+
+                 <TextField
+                   floatingLabelText="First Name" onChange = {e => {this.setState({firstName: e.target.value})}}/>
+                <br />
+                <TextField
+                   floatingLabelText="Last Name" onChange = {e => {this.setState({lastName: e.target.value})}}/>
+                <br />
+                <TextField
+                   floatingLabelText="Phone" onChange = {e => {this.setState({phone: e.target.value})}}/>
+                <br />
+                <TextField
+                   floatingLabelText="Email" onChange = {e => {this.setState({email: e.target.value})}}/>
+                <br />
+                <TextField
+                   floatingLabelText="Emergency Contact" onChange = {e => {this.setState({emergContact: e.target.value})}}/>
+                <br />
+                <TextField
+                   floatingLabelText="Emergency Contact Number" onChange = {e => {this.setState({emergNum: e.target.value})}}/>
+                <br />
             
-       
-              
-                    
-                        <RaisedButton onClick={this.handleClose} label="Cancel" secondary="true" />
-                        <RaisedButton label="Submit" onClick = {() => {this.handleSubmit(propertyName, street, city, state, zip, img)}}/>
+        
+                <RaisedButton onClick={this.handleClose} label="Cancel" secondary="true" />
+                <RaisedButton label="Submit" onClick = {() => {this.handleSubmit(propertyName, street, city, state, zip, img, firstName, lastName, phone, email, emergContact, emergNum)}}/>
                  
-            </Dialog>
-        
-        
-        
+            </Dialog>    
         </div>
     );
 }
@@ -143,4 +163,4 @@ return {
 }
 };
 
-export default connect(mapStateToProps, {addProperty, getProperties})(AddPropForm); 
+export default connect(mapStateToProps, {addProperty, getProperties, addTenant })(AddPropForm); 

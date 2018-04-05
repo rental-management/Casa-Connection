@@ -76,5 +76,15 @@ module.exports = {
         }).catch( (err) => {
             res.status(500).json(err);
         });
+    },
+
+    addTenants: (req, res) => {
+        const db = req.app.get("db");
+        const { f_name, l_name, phone, email, emerg_contact_name, emerg_contact_phone} = req.body;
+        db
+        .addTenant([f_name, l_name, phone, email, emerg_contact_name, emerg_contact_phone, req.body.prop_id, req.body.id])
+        .then(response => res.status(200).json(response))
+        .catch( () => res.status(500).json())
     }
+
 }

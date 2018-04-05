@@ -86,6 +86,7 @@ app.get('/auth', passport.authenticate('auth0', {
 
 app.get('/properties', mainCtrl.getProperties);
 app.post('/addproperty', mainCtrl.addProperty);
+app.post('/addtenants', mainCtrl.addTenants);
 app.get('/property/:id', mainCtrl.getProperty);
 app.post('/addworkorder', mainCtrl.addWorkOrder);
 app.get('/contractors', mainCtrl.getContractors);
