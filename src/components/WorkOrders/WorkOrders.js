@@ -10,8 +10,8 @@ class WorkOrders extends Component {
     render() {
         return(
             <div>
-            <div> Work Orders </div>
                <NavBar />
+            <div> Work Orders </div>
                {/* <PdfUploader /> */}
                <AddWorkOrderForm />
                <AddExpensesForm />
