@@ -39,6 +39,24 @@ module.exports = {
         .catch( () => res.status(500).json())
     },
 
+    getContractors: (req, res) => {
+        const db = req.app.get("db");
+        console.log(req.user.id, "get contract")
+        db
+        .getContractors([req.user.id])
+        .then(response => res.status(200).json(response))
+        .catch( (err) => res.status(500).json(err))
+    },
+
+    addContractor: (req, res) => {
+        const db = req.app.get("db");
+        const { company_name, type, f_name, l_name, phone, email, street, city, state, zip } = req.body;
+        console.log(req.body, "add contract");
+        db.addContractor([req.user.id, company_name, type, f_name, l_name, phone, email, street, city, state, zip ])
+        .then(response => res.status(200).json(response))
+        .catch( (err) => res.status(500).json(err))
+    },
+
     addExpenses: (req, res) => {
         const db = req.app.get("db");
         const { assessed_value, down_payment, monthly_mortgage, monthly_dues, monthly_taxes, monthly_insurance, monthly_utilities } = req.body;
@@ -58,6 +76,5 @@ module.exports = {
         }).catch( (err) => {
             res.status(500).json(err);
         });
-
     }
 }
