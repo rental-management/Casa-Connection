@@ -7,13 +7,14 @@ const GET_PROPERTY = "GET_PROPERTY";
 const ADD_WORK_ORDER = "ADD_WORK_ORDER";
 const ADD_EXPENSES = 'ADD_EXPENSES';
 const DELETE_PROPERTY = "DELETE_PROPERTY";
-const ADD_TENANT = 'ADD_TENANT';
+const GET_WORK_ORDERS = "GET_WORK_ORDERS";
 
 
 // STATE //
 const initialState = {
     properties: [],
     property: [],
+    workOrders: [],
     workOrder: [],
     expenses: [],
     tenant: [],
@@ -124,6 +125,12 @@ export function addTenant(firstName, lastName, phone, email, emergContact, emerg
         .then(response => {
             return response.data
         }).catch(console.log)
+export function getWorkOrders(){
+    return {
+        type: GET_WORK_ORDERS,
+        payload: axios.get('/workorders').then( (res) => {
+            return res.data;
+        })
     }
 }
 
@@ -192,6 +199,15 @@ export default function reducer(state = initialState, action) {
             return Object.assign({}, state, {isLoading: false, tenant: action.payload});
 
         case `${ADD_TENANT}_REJECTED`:
+         
+        //GET WORK ORDERS
+        case `${GET_WORK_ORDERS}_PENDING`:
+            return Object.assign({}, state, {isLoading: true});
+
+        case `${GET_WORK_ORDERS}_FULFILLED`:
+            return Object.assign({}, state, {isLoading: false, workOrders: action.payload});
+
+        case `${GET_WORK_ORDERS}_REJECTED`:
             return Object.assign({}, state, {isLoading: false, didErr: true, errMessage: action.payload});
 
     default:
