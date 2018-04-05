@@ -37,5 +37,15 @@ module.exports = {
         .addWorkOrder([req.body.prop_id, type, memo])
         .then(response => res.status(200).json(response))
         .catch( () => res.status(500).json())
+    },
+
+    addExpenses: (req, res) => {
+        const db = req.app.get("db");
+        const { assessed_value, down_payment, monthly_mortgage, monthly_dues, monthly_taxes, monthly_insurance, monthly_utilities } = req.body;
+        console.log(req.body, "expenses");
+        db
+        .addExpenses([ assessed_value, down_payment, monthly_mortgage, monthly_dues, monthly_taxes, monthly_insurance, monthly_utilities, req.body.id])
+        .then(response => res.status(200).json(response))
+        .catch( () => res.status(500).json())
     }
 }

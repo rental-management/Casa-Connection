@@ -3,6 +3,8 @@ import PdfUploader from './../ImageUploader/PdfUploader';
 import AddWorkOrderForm from '../AddWorkOrderForm/AddWorkOrderForm';
 
 import NavBar from '../NavBar/NavBar';
+import AddExpensesForm from '../AddExpensesForm/AddExpensesForm';
+
 
 class WorkOrders extends Component {
     render() {
@@ -12,7 +14,7 @@ class WorkOrders extends Component {
                <NavBar />
                {/* <PdfUploader /> */}
                <AddWorkOrderForm />
-        
+               <AddExpensesForm />
             </div>
             
         )

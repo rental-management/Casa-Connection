@@ -34,9 +34,7 @@ class AddWorkOrderForm extends Component {
                 propId = this.props.state.propertiesReducer.property[0].id;
                 console.log('propId', propId);
 
-
              }
-             
 
             //  for(let i = 0; i <propertiesArr.length; i ++){
             //      let id = propertiesArr[i].id;
@@ -44,11 +42,6 @@ class AddWorkOrderForm extends Component {
             //          //Do something
             //      }
             //  }
-
-            
-
-
-           
             const style = {
                 height: 'auto',
                 width: '80%',

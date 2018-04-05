@@ -93,7 +93,7 @@ const style = {
 
 const mapStateToProps = state => {
 return {
-    properties: state.propertiesreducer,
+    properties: state.propertiesReducer,
     state
 }
 };
