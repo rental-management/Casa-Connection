@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
-import {getProperty} from '../../ducks/propertiesReducer';
+import {getProperty, getWorkOrders} from '../../ducks/propertiesReducer';
 import AddWorkOrderForm from '../AddWorkOrderForm/AddWorkOrderForm';
 import AddExpensesForm from '../AddExpensesForm/AddExpensesForm';
 
@@ -11,9 +11,11 @@ class SingleProperty extends Component {
         super(props);
     }
 
-    componentDidMount() {
+    componentDidMount(propId) {
         const {id} = this.props.match.params;       
-        this.props.getProperty(id);
+        this.props.getProperty(id).then(res => {
+            this.props.getWorkOrders(propId);
+        });
     }
 
     render() {
@@ -53,4 +55,4 @@ const mapStateToProps = state => {
     }
 };
 
-export default connect(mapStateToProps, {getProperty})(SingleProperty);
+export default connect(mapStateToProps, {getProperty, getWorkOrders})(SingleProperty);

@@ -80,10 +80,10 @@ module.exports = {
     },
 
     getWorkOrders: (req, res) => {
-        const user = req.user.id;
+    
        
         const db = req.app.get("db");
-        db.getWorkOrders([user]).then(response => {
+        db.getWorkOrders([propId]).then(response => {
             res.status(200).json(response);
         }).catch( (err) => {
             res.status(500).json(err);

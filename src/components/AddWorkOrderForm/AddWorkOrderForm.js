@@ -27,6 +27,8 @@ class AddWorkOrderForm extends Component {
         this.handleClose = this.handleClose.bind(this);
     }
 
+
+
     handleSubmit(propId,type, memo){
         this.props.addWorkOrder(propId,type, memo);
     }
