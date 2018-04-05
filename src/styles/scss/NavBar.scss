@@ -1,6 +1,16 @@
-.toggle-btn {
- display: flex;
- align-content: flex-start;
-
+.navbar {
+    width: 500px;
 }
 
+.toggle-btn{
+    width: 500px;
+    color: red;
+}
+
+
+@media screen and (max-width: 700px){
+    .toggle-btn {
+        width: 500px;
+
+    }
+}
