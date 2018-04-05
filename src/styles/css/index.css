@@ -90,7 +90,7 @@ body {
   height: 30vh;
   clip-path: polygon(0 55%, 100% 0, 100% 100%, 0% 100%); }
 
-button {
+.login-btn {
   background-color: transparent;
   border: 1px solid white;
   padding: 10px 15px 10px 15px;
@@ -101,5 +101,14 @@ button {
 .toggle-btn {
   display: flex;
   align-content: flex-start; }
+
+.delete-prop-btn {
+  text-decoration: none;
+  border-style: none;
+  padding: 10px;
+  border-radius: 40px;
+  background-color: #149ddc;
+  color: white;
+  cursor: pointer; }
 
 /*# sourceMappingURL=index.css.map */

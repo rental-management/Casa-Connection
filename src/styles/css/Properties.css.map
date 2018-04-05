@@ -1,7 +1,7 @@
 {
 "version": 3,
-"mappings": "",
-"sources": [],
+"mappings": "AAAA,gBAAiB;EACb,eAAe,EAAE,IAAI;EACrB,YAAY,EAAE,IAAI;EAClB,OAAO,EAAE,IAAI;EACb,aAAa,EAAE,IAAI;EACnB,gBAAgB,EAAE,OAAO;EACzB,KAAK,EAAE,KAAK;EACZ,MAAM,EAAE,OAAO",
+"sources": ["../scss/Properties.scss"],
 "names": [],
 "file": "Properties.css"
 }

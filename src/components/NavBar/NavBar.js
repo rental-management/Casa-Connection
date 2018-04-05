@@ -18,6 +18,7 @@ class NavBar extends Component {
     }
 
   handleToggle = () => this.setState({open: !this.state.open});
+  handleClose = () => this.setState({open: false});
 
   render() {
       return (
@@ -27,13 +28,14 @@ class NavBar extends Component {
         <RaisedButton
           label="Toggle Drawer"
           onClick={this.handleToggle}
+          
         />
-        <Drawer open={this.state.open}>
+        <Drawer onClick={this.handleToggle} open={this.state.open}>
           <Link to="/properties">
-          <MenuItem>Properties</MenuItem>
+          <MenuItem onClick={this.handleClose}>Properties</MenuItem>
           </Link>
           <Link to="/workorders">
-          <MenuItem>Work Orders</MenuItem>
+          <MenuItem onClick={this.handleClose}>Work Orders</MenuItem>
           </Link>
 
             

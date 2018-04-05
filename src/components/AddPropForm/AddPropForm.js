@@ -2,9 +2,15 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 //material ui imports
 import Paper from 'material-ui/Paper';
-import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
+import TextField from 'material-ui/TextField';
+import Dialog from 'material-ui/Dialog';
+import FloatingActionButton from 'material-ui/FloatingActionButton';
+import ContentAdd from 'material-ui/svg-icons/content/add'
+
 import PdfUploader from './../ImageUploader/PdfUploader';
+
+
 
 //local imports
 import {addProperty, getProperties} from './../../ducks/propertiesReducer';
@@ -19,13 +25,24 @@ constructor(){
         city: [],
         state: [],
         zip: [],
-        img: []
+        img: [],
+        open: false
     }
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleImg = this.handleImg.bind(this);
+    this.handleClickOpen = this.handleClickOpen.bind(this);
+    this.handleClose = this.handleClose.bind(this);
 
 }
+
+handleClickOpen = () => {
+    this.setState({ open: true });
+};
+
+handleClose = () => {
+    this.setState({ open: false });
+};
 
 
 handleSubmit(propertyName, street, city, state, zip, img){
@@ -45,42 +62,70 @@ handleImg(img){
 render(){
     console.log('form info: ', this.props.properties);
     //userId, propertyName, street, city, state, zip
-const {propertyName, street, city, state, zip, img} = this.state;
+const {propertyName, street, city, state, zip, img, open} = this.state;
 
 
 //Material Ui Inline Styles
-const style = {
+// const style = {
+//     height: 'auto',
+//     width: '80%',
+//     margin: 'auto',
+//     padding: 30
+// }
+
+const customContentStyle = {
+    width: '100%',
     height: 'auto',
-    width: '80%',
     margin: 'auto',
     padding: 30
+}
 
+const style = {
+    marginRight: -50
 }
     return(
         <div>
-            <h1>Add A Property</h1>
-            <Paper zDepth = {3} style = {style}>
-            <form>
-            <PdfUploader handleImg={ this.handleImg }/>
-                <TextField
-                floatingLabelText="Property Name" />
-                <br />
-                <TextField
-                floatingLabelText="Street" onChange = {e => {this.setState({street: e.target.value})}}/>
-                <br />
-                <TextField
-                floatingLabelText="City" onChange = {e => {this.setState({city: e.target.value})}}/>
-                <br />
-                <TextField
-                floatingLabelText="State" onChange = {e => {this.setState({state: e.target.value})}}/>
-                <br />
-                <TextField
-                floatingLabelText="Zipcode" onChange = {e => {this.setState({zip: e.target.value})}}/>
-                <br />
-                <RaisedButton label = "Submit" onClick = {() => {this.handleSubmit(propertyName, street, city, state, zip, img)}}/>
+            <FloatingActionButton style={style} secondary={true} onClick={this.handleClickOpen}>
+             <ContentAdd />
+            </FloatingActionButton>
+                <Dialog
+                contentStyle={customContentStyle}
                 
-            </form>
-            </Paper>
+                open={this.state.open}
+                onClose={this.handleClose}
+                >
+                <h1>New Property</h1>
+              
+               
+                    
+            
+            <PdfUploader handleImg={ this.handleImg }/>
+                
+                <TextField
+                   floatingLabelText="Property Name" onChange = {e => {this.setState({propertyName: e.target.value})}}/>
+                <br />
+                <TextField
+                   floatingLabelText="Street" onChange = {e => {this.setState({street: e.target.value})}}/>
+                <br />
+                <TextField
+                   floatingLabelText="City" onChange = {e => {this.setState({city: e.target.value})}}/>
+                <br />
+                <TextField
+                   floatingLabelText="State" onChange = {e => {this.setState({state: e.target.value})}}/>
+                <br />
+                <TextField
+                   floatingLabelText="Zipcode" onChange = {e => {this.setState({zip: e.target.value})}}/>
+                <br />
+               
+                
+            
+       
+              
+                    
+                        <RaisedButton onClick={this.handleClose} label="Cancel" secondary="true" />
+                        <RaisedButton label="Submit" onClick = {() => {this.handleSubmit(propertyName, street, city, state, zip, img)}}/>
+                 
+            </Dialog>
         
         
         

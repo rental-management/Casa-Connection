@@ -55,5 +55,16 @@ module.exports = {
         db.addContractor([req.user.id, company_name, type, f_name, l_name, phone, email, street, city, state, zip ])
         .then(response => res.status(200).json(response))
         .catch( (err) => res.status(500).json(err))
+    },
+
+    deleteProperty: (req, res) => {
+        console.log("deleteProperty req object: ",req.body);
+        const db = req.app.get("db");
+        db.deleteProperty([req.body.id]).then(response => {
+            res.status(200).json(response);
+
+        }).catch( (err) => {
+            res.status(500).json(err);
+        });
     }
 }

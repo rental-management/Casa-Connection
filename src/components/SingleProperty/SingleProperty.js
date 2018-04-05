@@ -11,7 +11,8 @@ class SingleProperty extends Component {
     }
 
     componentDidMount() {
-        this.props.getProperty(this.props.match.params.id);
+        const {id} = this.props.match.params;       
+        this.props.getProperty(id);
     }
 
     render() {
@@ -19,11 +20,17 @@ class SingleProperty extends Component {
         console.log(this.props, "single property render")
         if(this.props.properties.property !== undefined && this.props.properties.property.length !==0) {
             property = this.props.properties.property.map((curr, index) => {
-                return (
-                    <div key = {index}>
-                        <h1>{curr.prop_name}</h1>
-                    </div>
-                )
+                console.log(curr);
+                return <div key={index}>
+                    <h1>{curr.prop_name}</h1>
+                    <span>Street: {curr.street}</span>
+                    <br />
+                    <span>City: {curr.city}</span>
+                    <br />
+                    <span>State: {curr.state}</span>
+                    <br />
+                    <span>Zipcode: {curr.zip}</span>                   
+                  </div>;
             })
         }
         return(
