@@ -49,8 +49,15 @@ class AddWorkOrderForm extends Component {
                 propId = this.props.state.propertiesReducer.property[0].id;
                 console.log('propId', propId);
 
-
              }
+
+            //  for(let i = 0; i <propertiesArr.length; i ++){
+            //      let id = propertiesArr[i].id;
+            //      if (id === id){
+            //          //Do something
+            //      }
+            //  }
+           
            
             // MUI COLORS
             const muiTheme = getMuiTheme({
