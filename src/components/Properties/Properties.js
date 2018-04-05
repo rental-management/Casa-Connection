@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import PdfUploader from './../ImageUploader/PdfUploader';
 
 import AddPropForm from './../AddPropForm/AddPropForm';
+import NavBar from './../NavBar/NavBar';
 
 import {connect} from 'react-redux';
 import {getProperties} from './../../ducks/propertiesReducer';
@@ -35,6 +36,7 @@ class Properties extends Component {
         return(
 
             <div>
+                <NavBar />
             <div> Properties Page </div>
             <AddPropForm />
             {propertiesList}        

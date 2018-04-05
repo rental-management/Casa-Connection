@@ -56,12 +56,14 @@ const style = {
         </div>
     );
 
-};
+  };
+}
 
 const mapStateToProps = state => {
     return state;
-};
-
-export default connect(mapStateToProps)(AddContractorForm);
+    };
+    
+export default connect(mapStateToProps)(AddContractorForm); 
+    
 
 
