@@ -88,8 +88,9 @@ app.get('/properties', mainCtrl.getProperties);
 app.post('/addproperty', mainCtrl.addProperty);
 app.get('/property/:id', mainCtrl.getProperty);
 app.post('/addworkorder', mainCtrl.addWorkOrder);
+app.get('/contractors', mainCtrl.getContractors);
+app.post('/addcontractor', mainCtrl.addContractor);
 app.post('/expenses', mainCtrl.addExpenses);
-
 app.delete('/deleteproperty', mainCtrl.deleteProperty);
 
 //server setup 

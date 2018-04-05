@@ -1,15 +1,45 @@
-import react, {Component} from 'react';
+import React, {Component} from 'react';
 import {connect} from 'react-redux';
+import Paper from 'material-ui/Paper';
+import TextField from 'material-ui/TextField';
+import RaisedButton from 'material-ui/RaisedButton';
+
+import {addContractor, getContractors} from '../../ducks/contractorsReducer';
+
 
 class AddContractorForm extends Component {
     constructor(){
         super();
-    }
+        this.state = {
+            compName: [],
+            type: [],
+            firstName: [],
+            lastName: [],
+            phone: [],
+            email: [],
+            street: [],
+            city: [],
+            state: [],
+            zip: []
+        }
+
+        this.handleSubmit = this.handleSubmit.bind(this);
+}
+
+handleSubmit(compName, type, firstName, lastName, phone, email, street, city, state, zip){
+    console.log(this.state);
+    this.props.addContractor(compName, type, firstName, lastName, phone, email, street, city, state, zip).then( (res) => {
+        this.props.getContractors();
+    });
+}
 
 
 
 
-    render(){
+render(){
+
+const { compName, type, firstName, lastName, phone, email, street, city, state, zip} = this.state;
+
 const style = {
     height: 'auto',
     width: '80%',
@@ -23,47 +53,49 @@ const style = {
             <Paper zDepth = {3} style = {style}>
             <form>
                 <TextField
-                floatingLabelText="First Name" />
+                floatingLabelText="Company Name" onChange = {e => {this.setState({compName: e.target.value})}}/>
                 <br />
                 <TextField
-                floatingLabelText="Last Name" />
+                floatingLabelText="Type" onChange = {e => {this.setState({type: e.target.value})}}/>
+                <br />                 
+                <TextField
+                floatingLabelText="First Name" onChange = {e => {this.setState({firstName: e.target.value})}}/>
                 <br />
                 <TextField
-                floatingLabelText="Company Name" />
-                <br />                
-                <TextField
-                floatingLabelText="Street" />
+                floatingLabelText="Last Name" onChange = {e => {this.setState({lastName: e.target.value})}}/>
                 <br />
                 <TextField
-                floatingLabelText="City" />
+                floatingLabelText="Phone" onChange = {e => {this.setState({phone: e.target.value})}}/>
                 <br />
                 <TextField
-                floatingLabelText="State" />
+                floatingLabelText="Email" onChange = {e => {this.setState({email: e.target.value})}}/>
                 <br />
                 <TextField
-                floatingLabelText="Zipcode" />
+                floatingLabelText="Street" onChange = {e => {this.setState({street: e.target.value})}}/>
                 <br />
                 <TextField
-                floatingLabelText="Phone" />
+                floatingLabelText="City" onChange = {e => {this.setState({city: e.target.value})}}/>
                 <br />
                 <TextField
-                floatingLabelText="Email" />
+                floatingLabelText="State" onChange = {e => {this.setState({state: e.target.value})}}/>
                 <br />
-                <RaisedButton label = "Submit"/>
+                <TextField
+                floatingLabelText="Zipcode" onChange = {e => {this.setState({zip: e.target.value})}}/>
+                <br />
+                <RaisedButton label = "Submit" onClick = {() => {this.handleSubmit(compName, type,firstName, lastName, phone, email, street, city, state, zip)}}/>
                 
             </form>
             </Paper>              
-        </div>
-    );
-
-  };
+        </div>);
+    }
 }
 
 const mapStateToProps = state => {
-    return state;
-    };
-    
-export default connect(mapStateToProps)(AddContractorForm); 
+    return {
+        contractors: state.contractorsReducer
+    }
+};
+export default connect(mapStateToProps, {addContractor, getContractors})(AddContractorForm); 
     
 
 
