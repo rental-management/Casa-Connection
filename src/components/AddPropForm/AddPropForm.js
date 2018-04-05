@@ -5,7 +5,8 @@ import Paper from 'material-ui/Paper';
 import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
 import Dialog from 'material-ui/Dialog';
-
+import FloatingActionButton from 'material-ui/FloatingActionButton';
+import ContentAdd from 'material-ui/svg-icons/content/add'
 
 import PdfUploader from './../ImageUploader/PdfUploader';
 
@@ -78,15 +79,22 @@ const customContentStyle = {
     margin: 'auto',
     padding: 30
 }
+
+const style = {
+    marginRight: -50
+}
     return(
         <div>
-            <RaisedButton primary="true" onClick={this.handleClickOpen}>Add Property</RaisedButton>
+            <FloatingActionButton style={style} secondary={true} onClick={this.handleClickOpen}>
+             <ContentAdd />
+            </FloatingActionButton>
                 <Dialog
                 contentStyle={customContentStyle}
                 
                 open={this.state.open}
                 onClose={this.handleClose}
-                aria-labelledby="form-dialog-title">
+                >
+                <h1>New Property</h1>
               
                
                     
