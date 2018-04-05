@@ -32,9 +32,10 @@ module.exports = {
     addWorkOrder: (req, res) => {
         const db = req.app.get("db");
         const { type, memo } = req.body;
+        const user = req.user.id;
         console.log(req.body);
         db
-        .addWorkOrder([req.body.prop_id, type, memo])
+        .addWorkOrder([req.body.prop_id, type, memo, user])
         .then(response => res.status(200).json(response))
         .catch( () => res.status(500).json())
     },
@@ -73,6 +74,17 @@ module.exports = {
         db.deleteProperty([req.body.id]).then(response => {
             res.status(200).json(response);
 
+        }).catch( (err) => {
+            res.status(500).json(err);
+        });
+    },
+
+    getWorkOrders: (req, res) => {
+        const user = req.user.id;
+       
+        const db = req.app.get("db");
+        db.getWorkOrders([user]).then(response => {
+            res.status(200).json(response);
         }).catch( (err) => {
             res.status(500).json(err);
         });
