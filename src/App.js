@@ -6,9 +6,9 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+      
         <div className="routes">
          {routes}
-        <NavBar />
         </div>        
       </div>
     );

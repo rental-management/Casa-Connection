@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import {getProperty} from '../../ducks/propertiesReducer';
 import AddWorkOrderForm from '../AddWorkOrderForm/AddWorkOrderForm';
 
+import NavBar from '../NavBar/NavBar';
+
 class SingleProperty extends Component {
     constructor(props) {
         super(props);
@@ -27,6 +29,7 @@ class SingleProperty extends Component {
         }
         return(
             <div> Single Property Page
+            <NavBar />
             {property}
             <AddWorkOrderForm />
             </div>
