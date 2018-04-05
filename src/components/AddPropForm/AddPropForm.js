@@ -4,12 +4,7 @@ import {connect} from 'react-redux';
 import Paper from 'material-ui/Paper';
 import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
-import Dialog, {
-  DialogActions,
-  DialogContent,
-  DialogContentText,
-  DialogTitle,
-} from 'material-ui/Dialog';
+import Dialog from 'material-ui/Dialog';
 
 
 import PdfUploader from './../ImageUploader/PdfUploader';
@@ -30,7 +25,7 @@ constructor(){
         state: [],
         zip: [],
         img: [],
-        open: ''
+        open: false
     }
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -66,53 +61,62 @@ handleImg(img){
 render(){
     console.log('form info: ', this.props.properties);
     //userId, propertyName, street, city, state, zip
-const {propertyName, street, city, state, zip, img} = this.state;
+const {propertyName, street, city, state, zip, img, open} = this.state;
 
 
 //Material Ui Inline Styles
-const style = {
+// const style = {
+//     height: 'auto',
+//     width: '80%',
+//     margin: 'auto',
+//     padding: 30
+// }
+
+const customContentStyle = {
+    width: '100%',
     height: 'auto',
-    width: '80%',
     margin: 'auto',
     padding: 30
-
 }
     return(
         <div>
-            <RaisedButton onClick={this.handleClickOpen}>Add Property</RaisedButton>
-            <Dialog
+            <RaisedButton primary="true" onClick={this.handleClickOpen}>Add Property</RaisedButton>
+                <Dialog
+                contentStyle={customContentStyle}
+                
                 open={this.state.open}
                 onClose={this.handleClose}
                 aria-labelledby="form-dialog-title">
-            <DialogTitle>Details</DialogTitle>
-            <DialogContent>
-            <Paper zDepth = {3} style = {style}>
+              
+               
+                    
             
             <PdfUploader handleImg={ this.handleImg }/>
+                
                 <TextField
-                floatingLabelText="Property Name" onChange = {e => {this.setState({propertyName: e.target.value})}}/>
+                   floatingLabelText="Property Name" onChange = {e => {this.setState({propertyName: e.target.value})}}/>
                 <br />
                 <TextField
-                floatingLabelText="Street" onChange = {e => {this.setState({street: e.target.value})}}/>
+                   floatingLabelText="Street" onChange = {e => {this.setState({street: e.target.value})}}/>
                 <br />
                 <TextField
-                floatingLabelText="City" onChange = {e => {this.setState({city: e.target.value})}}/>
+                   floatingLabelText="City" onChange = {e => {this.setState({city: e.target.value})}}/>
                 <br />
                 <TextField
-                floatingLabelText="State" onChange = {e => {this.setState({state: e.target.value})}}/>
+                   floatingLabelText="State" onChange = {e => {this.setState({state: e.target.value})}}/>
                 <br />
                 <TextField
-                floatingLabelText="Zipcode" onChange = {e => {this.setState({zip: e.target.value})}}/>
+                   floatingLabelText="Zipcode" onChange = {e => {this.setState({zip: e.target.value})}}/>
                 <br />
-                {/* <RaisedButton label = "Submit" onClick = {() => {this.handleSubmit(propertyName, street, city, state, zip, img)}}/> */}
+               
                 
             
-            </Paper>
-               </DialogContent>
-                    <DialogActions>
-                        <RaisedButton onClick={this.handleClose} color="primary">Cancel</RaisedButton>
-                        <RaisedButton onClick={this.handleClose} color="primary">Continue</RaisedButton>
-                    </DialogActions>
+       
+              
+                    
+                        <RaisedButton onClick={this.handleClose} label="Cancel" secondary="true" />
+                        <RaisedButton label="Submit" onClick = {() => {this.handleSubmit(propertyName, street, city, state, zip, img)}}/>
+                 
             </Dialog>
         
         
