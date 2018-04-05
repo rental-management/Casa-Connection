@@ -83,7 +83,7 @@ class AddWorkOrderForm extends Component {
                    contentStyle={customContentStyle}
                    open={this.state.open}
                    onClose={this.handleClose}>
-                <h1>Services</h1>
+                <h1>Work Orders</h1>
                             
                     <TextField floatingLabelText="Type" onChange={e => {
                         this.setState({ type: e.target.value });
@@ -95,7 +95,7 @@ class AddWorkOrderForm extends Component {
                     <br />
                     
                     <RaisedButton onClick={this.handleClose} label="Cancel" secondary="true" />
-                    <RaisedButton label="Submit" onClick = {() => {this.handleSubmit(propId, type, memo)}}/>
+                    <RaisedButton onClick={this.handleClose} label="Submit" onClick = {() => {this.handleSubmit(propId, type, memo)}}/>
                
                 </Dialog>
                 </MuiThemeProvider>
