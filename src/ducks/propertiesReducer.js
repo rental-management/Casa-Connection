@@ -5,6 +5,7 @@ const GET_PROPERTIES = 'GET_PROPERTIES';
 const ADD_PROPERTY = 'ADD_PROPERTY';
 const GET_PROPERTY = "GET_PROPERTY";
 const ADD_WORK_ORDER = "ADD_WORK_ORDER";
+const ADD_EXPENSES = 'ADD_EXPENSES';
 const DELETE_PROPERTY = "DELETE_PROPERTY";
 
 
@@ -13,6 +14,7 @@ const initialState = {
     properties: [],
     property: [],
     workOrder: [],
+    expenses: [],
     isLoading: false,
     didErr: false,
     errMessage: null,
@@ -67,10 +69,31 @@ export function addWorkOrder(propId, type, memo){
    
     return {
         type: ADD_WORK_ORDER,
-        payload: axios.post('/addworkorder', {prop_id: propId, type: type, memo: memo}).then((res) => {
+        payload: axios
+        .post('/addworkorder', {prop_id: propId, type: type, memo: memo})
+        .then((res) => {
+            return res.data
+        }).catch(console.log)
+    }
+}
 
-
+export function addExpenses( assessedValue, downPayment, monthlyMortgage, monthlyDues, monthlyTaxes, monthlyInsurance, monthlyUtilities, propId) {
+    return {
+        type: ADD_EXPENSES,
+        payload: axios
+        .post('/expenses', {
+            assessed_value:assessedValue,
+            down_payment: downPayment,
+            monthly_mortgage: monthlyMortgage,
+            monthly_dues:  monthlyDues,
+            monthly_taxes: monthlyTaxes,
+            monthly_insurance: monthlyInsurance,
+            monthly_utilities: monthlyUtilities,
+            id: propId
         })
+        .then(response => {
+            return response.data
+        }).catch(console.log)
     }
 }
 
@@ -119,6 +142,16 @@ export default function reducer(state = initialState, action) {
 
         case `${GET_PROPERTY}_REJECTED`:
             return Object.assign({}, state, { isLoading: false, didErr: true, errMessage: action.payload });
+        
+        // ADD EXPENSES //
+        case `${ADD_EXPENSES}_PENDING`:
+            return Object.assign({}, state, {isLoading: true});
+
+        case `${ADD_EXPENSES}_FULFILLED`:
+            return Object.assign({}, state, {isLoading: false, expenses: action.payload});
+
+        case `${ADD_EXPENSES}_REJECTED`:
+            return Object.assign({}, state, {isLoading: false, didErr: true, errMessage: action.payload});
 
         //DELETE PROPERTY
         case `${DELETE_PROPERTY}_PENDING`:
