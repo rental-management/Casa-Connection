@@ -32,8 +32,8 @@ class NavBar extends Component {
           <Link to="/properties">
           <MenuItem>Properties</MenuItem>
           </Link>
-          <Link to="/service">
-          <MenuItem>Service</MenuItem>
+          <Link to="/workorders">
+          <MenuItem>Work Orders</MenuItem>
           </Link>
 
             
