@@ -2,9 +2,19 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 //material ui imports
 import Paper from 'material-ui/Paper';
-import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
+import TextField from 'material-ui/TextField';
+import Dialog, {
+  DialogActions,
+  DialogContent,
+  DialogContentText,
+  DialogTitle,
+} from 'material-ui/Dialog';
+
+
 import PdfUploader from './../ImageUploader/PdfUploader';
+
+
 
 //local imports
 import {addProperty, getProperties} from './../../ducks/propertiesReducer';
@@ -19,13 +29,24 @@ constructor(){
         city: [],
         state: [],
         zip: [],
-        img: []
+        img: [],
+        open: ''
     }
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleImg = this.handleImg.bind(this);
+    this.handleClickOpen = this.handleClickOpen.bind(this);
+    this.handleClose = this.handleClose.bind(this);
 
 }
+
+handleClickOpen = () => {
+    this.setState({ open: true });
+};
+
+handleClose = () => {
+    this.setState({ open: false });
+};
 
 
 handleSubmit(propertyName, street, city, state, zip, img){
@@ -58,9 +79,15 @@ const style = {
 }
     return(
         <div>
-            <h1>Add A Property</h1>
+            <RaisedButton onClick={this.handleClickOpen}>Add Property</RaisedButton>
+            <Dialog
+                open={this.state.open}
+                onClose={this.handleClose}
+                aria-labelledby="form-dialog-title">
+            <DialogTitle>Details</DialogTitle>
+            <DialogContent>
             <Paper zDepth = {3} style = {style}>
-            <form>
+            
             <PdfUploader handleImg={ this.handleImg }/>
                 <TextField
                 floatingLabelText="Property Name" onChange = {e => {this.setState({propertyName: e.target.value})}}/>
@@ -77,10 +104,16 @@ const style = {
                 <TextField
                 floatingLabelText="Zipcode" onChange = {e => {this.setState({zip: e.target.value})}}/>
                 <br />
-                <RaisedButton label = "Submit" onClick = {() => {this.handleSubmit(propertyName, street, city, state, zip, img)}}/>
+                {/* <RaisedButton label = "Submit" onClick = {() => {this.handleSubmit(propertyName, street, city, state, zip, img)}}/> */}
                 
-            </form>
+            
             </Paper>
+               </DialogContent>
+                    <DialogActions>
+                        <RaisedButton onClick={this.handleClose} color="primary">Cancel</RaisedButton>
+                        <RaisedButton onClick={this.handleClose} color="primary">Continue</RaisedButton>
+                    </DialogActions>
+            </Dialog>
         
         
         
