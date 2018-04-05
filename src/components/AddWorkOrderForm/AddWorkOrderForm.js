@@ -25,6 +25,7 @@ class AddWorkOrderForm extends Component {
 
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleClose = this.handleClose.bind(this);
+        this.handleClickOpen = this.handleClickOpen.bind(this);
     }
 
     handleSubmit(propId,type, memo){
@@ -66,6 +67,7 @@ class AddWorkOrderForm extends Component {
                 }
             })
 
+            // CUSTOM
             const customContentStyle = {
                 width: '100%',
                 height: 'auto',
