@@ -61,18 +61,17 @@ handleImg(img){
 
 
 render(){
-    console.log('form info: ', this.props.properties);
-    console.log('tenant info', this.props)
+    // console.log('form info: ', this.props.properties);
     //userId, propertyName, street, city, state, zip
 const {propertyName, street, city, state, zip, img, open} = this.state;
 const {firstName, lastName, phone, email, emergContact, emergNum} = this.state;
-// let propertyArr = this.props.properties;
-// let propId;
-// if(propertyArr.length !== 0 && propertyArr !== undefined) {
-//     propId = this.props.properties.tenant;
-//     console.log('propId add prop form', propId);
-// }
 
+let propId = this.props;
+console.log(this.props);
+// if(tenantArr.length !== 0 && tenantArr !== undefined) {
+//     propId = this.props.properties;
+//     console.log(this.props);
+// }
 
 //Material Ui Inline Styles
 // const style = {
@@ -146,7 +145,7 @@ const style = {
             
         
                 <RaisedButton onClick={this.handleClose} label="Cancel" secondary="true" />
-                <RaisedButton label="Submit" onClick = {() => {this.handleSubmit(propertyName, street, city, state, zip, img, firstName, lastName, phone, email, emergContact, emergNum)}}/>
+                <RaisedButton label="Submit" onClick = {() => {this.handleSubmit(propertyName, street, city, state, zip, img, firstName, lastName, phone, email, emergContact, emergNum, propId)}}/>
                  
             </Dialog>    
         </div>

@@ -8,6 +8,7 @@ const ADD_WORK_ORDER = "ADD_WORK_ORDER";
 const ADD_EXPENSES = 'ADD_EXPENSES';
 const DELETE_PROPERTY = "DELETE_PROPERTY";
 const GET_WORK_ORDERS = "GET_WORK_ORDERS";
+const ADD_TENANT = 'ADD_TENANT';
 
 
 // STATE //
@@ -125,6 +126,9 @@ export function addTenant(firstName, lastName, phone, email, emergContact, emerg
         .then(response => {
             return response.data
         }).catch(console.log)
+    }
+}
+
 export function getWorkOrders(){
     return {
         type: GET_WORK_ORDERS,
@@ -199,6 +203,7 @@ export default function reducer(state = initialState, action) {
             return Object.assign({}, state, {isLoading: false, tenant: action.payload});
 
         case `${ADD_TENANT}_REJECTED`:
+            return Object.assign({}, state, {isLoading: false, didErr: true, errMessage: action.payload});
          
         //GET WORK ORDERS
         case `${GET_WORK_ORDERS}_PENDING`:
