@@ -5,7 +5,7 @@ import Properties from './components/Properties/Properties';
 import WorkOrders from './components/WorkOrders/WorkOrders';
 import SingleProperty from './components/SingleProperty/SingleProperty';
 import SplashLanding from './components/SplashLanding/SplashLanding';
-import Contractors from './components/Contractors/Contractors'
+import Contractors from './components/Contractors/Contractors';
 
 export default (
     <Switch>

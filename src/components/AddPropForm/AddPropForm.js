@@ -63,7 +63,7 @@ const style = {
             <form>
             <PdfUploader handleImg={ this.handleImg }/>
                 <TextField
-                floatingLabelText="Property Name" onChange = {e => {this.setState({propertyName: e.target.value})}}/>
+                floatingLabelText="Property Name" />
                 <br />
                 <TextField
                 floatingLabelText="Street" onChange = {e => {this.setState({street: e.target.value})}}/>
@@ -93,7 +93,7 @@ const style = {
 
 const mapStateToProps = state => {
 return {
-    properties: state.propertiesreducer,
+    properties: state.propertiesReducer,
     state
 }
 };
