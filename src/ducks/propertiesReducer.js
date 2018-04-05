@@ -6,6 +6,7 @@ const ADD_PROPERTY = 'ADD_PROPERTY';
 const GET_PROPERTY = "GET_PROPERTY";
 const ADD_WORK_ORDER = "ADD_WORK_ORDER";
 const ADD_EXPENSES = 'ADD_EXPENSES';
+const DELETE_PROPERTY = "DELETE_PROPERTY";
 
 
 // STATE //
@@ -63,6 +64,7 @@ export function getProperty(id) {
     }
 }
 
+
 export function addWorkOrder(propId, type, memo){
    
     return {
@@ -94,6 +96,16 @@ export function addExpenses( assessedValue, downPayment, monthlyMortgage, monthl
         }).catch(console.log)
     }
 }
+
+export function deleteProperty(propId){
+    return {
+        type: DELETE_PROPERTY,
+        payload: axios.delete('/deleteproperty', {data: {id: propId}}).then( (res) => {
+            return res.data;
+        })
+    }
+}
+
 
 // REDUCER //
 export default function reducer(state = initialState, action) {
@@ -140,6 +152,16 @@ export default function reducer(state = initialState, action) {
 
         case `${ADD_EXPENSES}_REJECTED`:
             return Object.assign({}, state, {isLoading: false, didErr: true, errMessage: action.payload});
+
+        //DELETE PROPERTY
+        case `${DELETE_PROPERTY}_PENDING`:
+            return Object.assign({}, state, {isLoading: true});
+
+        case `${DELETE_PROPERTY}_FULFILLED`:
+            return Object.assign({}, state, {isLoading: false, property: action.payload});
+
+        case `${DELETE_PROPERTY}_REJECTED`:
+            return Object.assign({}, state, {isLoading: false, didErr: true, errMessage: action.payload});    
          
 
     default:

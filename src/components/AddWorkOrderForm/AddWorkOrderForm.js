@@ -1,10 +1,15 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 //Material UI Imports
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import Paper from "material-ui/Paper";
 import TextField from "material-ui/TextField";
 import RaisedButton from "material-ui/RaisedButton";
-
+import Dialog from 'material-ui/Dialog';
+import FloatingActionButton from 'material-ui/FloatingActionButton';
+import ContentAdd from 'material-ui/svg-icons/content/add';
+import getMuiTheme from 'material-ui/styles/getMuiTheme';
+import {lightBlue900} from 'material-ui/styles/colors';
 import {addWorkOrder} from './../../ducks/propertiesReducer';
 
 class AddWorkOrderForm extends Component {
@@ -13,17 +18,27 @@ class AddWorkOrderForm extends Component {
 
         this.state = {
             type: [],
-            memo: []
+            memo: [],
+            open: false
            
         }
 
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleClose = this.handleClose.bind(this);
     }
 
     handleSubmit(propId,type, memo){
         this.props.addWorkOrder(propId,type, memo);
-
     }
+
+    handleClose = () => {
+        this.setState({ open: false });
+    };
+
+    handleClickOpen = () => {
+        this.setState({ open: true });
+    };
+
         render(){
             const {type, memo} = this.state;
             console.log("params id ", this.props);
@@ -42,17 +57,34 @@ class AddWorkOrderForm extends Component {
             //          //Do something
             //      }
             //  }
-            const style = {
+           
+           
+            // MUI COLORS
+            const muiTheme = getMuiTheme({
+                palette: {
+                    primary1Color: lightBlue900,
+                }
+            })
+
+            const customContentStyle = {
+                width: '100%',
                 height: 'auto',
-                width: '80%',
                 margin: 'auto',
-                padding: 30
-            
+                padding: 30,
+             
             }
+
             return <div>
+                <MuiThemeProvider muiTheme={muiTheme}>
+                <FloatingActionButton onClick={this.handleClickOpen}>
+                   <ContentAdd />
+                  </FloatingActionButton>
+                  <Dialog
+                   contentStyle={customContentStyle}
+                   open={this.state.open}
+                   onClose={this.handleClose}>
                 <h1>Services</h1>
-                <Paper zDepth={3} style={style}>
-                  <form>                   
+                            
                     <TextField floatingLabelText="Type" onChange={e => {
                         this.setState({ type: e.target.value });
                       }} />
@@ -61,10 +93,12 @@ class AddWorkOrderForm extends Component {
                         this.setState({ memo: e.target.value });
                       }} />
                     <br />
-
+                    
+                    <RaisedButton onClick={this.handleClose} label="Cancel" secondary="true" />
                     <RaisedButton label="Submit" onClick = {() => {this.handleSubmit(propId, type, memo)}}/>
-                  </form>
-                </Paper>
+               
+                </Dialog>
+                </MuiThemeProvider>
               </div>;
         }
     }

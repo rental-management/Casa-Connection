@@ -31,6 +31,7 @@ class PdfUploader extends Component {
     handleUpload(){
         const storageRef = firebase.storage().ref();
         const uploadTask = storageRef
+        
         .child(`casa/${this.state.file.name}`)
         .put(this.state.file);
         uploadTask.on(
@@ -55,8 +56,8 @@ class PdfUploader extends Component {
         console.log(this.state, "STATE")
         return (
             <div>
-                <h1>Image uploader</h1>
-                {this.state.imagePreview && <img src={this.state.imagePreview} />}
+                
+                {this.state.imagePreview && this.state.imagePreview}
                 
                 <input placeholder="ImageUpload" type="file" onChange={(event) => {
                     this.handlePreview(event.target.files)

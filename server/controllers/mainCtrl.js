@@ -47,5 +47,15 @@ module.exports = {
         .addExpenses([ assessed_value, down_payment, monthly_mortgage, monthly_dues, monthly_taxes, monthly_insurance, monthly_utilities, req.body.id])
         .then(response => res.status(200).json(response))
         .catch( () => res.status(500).json())
+    deleteProperty: (req, res) => {
+        console.log("deleteProperty req object: ",req.body);
+        const db = req.app.get("db");
+        db.deleteProperty([req.body.id]).then(response => {
+            res.status(200).json(response);
+
+        }).catch( (err) => {
+            res.status(500).json(err);
+        });
+
     }
 }

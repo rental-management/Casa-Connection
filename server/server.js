@@ -83,12 +83,14 @@ app.get('/auth', passport.authenticate('auth0', {
     failureFlash: true
 })
 );
+
 app.get('/properties', mainCtrl.getProperties);
 app.post('/addproperty', mainCtrl.addProperty);
 app.get('/property/:id', mainCtrl.getProperty);
 app.post('/addworkorder', mainCtrl.addWorkOrder);
 app.post('/expenses', mainCtrl.addExpenses);
 
+app.delete('/deleteproperty', mainCtrl.deleteProperty);
 
 //server setup 
 app.listen(port, () => {

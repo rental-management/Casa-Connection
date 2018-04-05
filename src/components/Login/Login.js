@@ -7,11 +7,11 @@ const Login = props => {
         <div>
             {!props.user.user_name ? (
                 <a href={REACT_APP_LOGIN}>
-                <button>LOGIN</button>
+                <button className = 'login-btn'>LOGIN</button>
                 </a>
             ) : (
                 <a href={REACT_APP_LOGOUT}>
-                <button>LOGOUT</button>
+                <button className = 'login-btn'>LOGOUT</button>
                 </a>
             )}
         </div>
