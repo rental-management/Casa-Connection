@@ -1,23 +1,52 @@
 import React, {Component} from 'react';
-import PdfUploader from './../ImageUploader/PdfUploader';
+import {connect} from 'react-redux';
 import AddWorkOrderForm from '../AddWorkOrderForm/AddWorkOrderForm';
-
 import NavBar from '../NavBar/NavBar';
-import AddExpensesForm from '../AddExpensesForm/AddExpensesForm';
+import {getWorkOrders} from './../../ducks/propertiesReducer';
 
 
 class WorkOrders extends Component {
+    constructor(){
+        super();
+    };
+
+    componentDidMount(){
+        this.props.getWorkOrders();
+
+
+    }
+
+    
+    
     render() {
+        console.log("work orders on props", this.props);
+let workOrderArr = this.props.properties.workOrders;
+let workOrdersList;
+if(workOrderArr.length !== 0 && workOrderArr !== undefined){
+    workOrdersList = workOrderArr.map((curr, index) => {
+        return(<div key = {index}>
+            <h2>{curr.type}</h2>
+            <h3>{curr.memo}</h3>
+        </div>);
+    })
+
+
+}
+
         return(
             <div>
             <div> Work Orders </div>
-               <NavBar />
-               {/* <PdfUploader /> */}
-               <AddWorkOrderForm />
-               <AddExpensesForm />
+               <NavBar />             
+               <AddWorkOrderForm />              
+               {workOrdersList}
             </div>
             
         )
     }
 }
-export default WorkOrders;
+
+const mapStateToProps = state => {
+    return  {properties: state.propertiesReducer};
+}
+
+export default connect(mapStateToProps, {getWorkOrders})(WorkOrders);
