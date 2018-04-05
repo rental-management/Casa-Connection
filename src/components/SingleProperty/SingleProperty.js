@@ -9,7 +9,8 @@ class SingleProperty extends Component {
     }
 
     componentDidMount() {
-        this.props.getProperty(this.props.match.params.id);
+        const {id} = this.props.match.params;       
+        this.props.getProperty(id);
     }
 
     render() {
