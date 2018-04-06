@@ -45,17 +45,28 @@ lol
                 </div>
             })
             expensesList = this.props.properties.singlePropExpenses.map( (curr, index) => {
+                console.log("expensesList: ", curr);
                 return <div key={index}>
-                    <span>{curr.assessed_value}</span>
-                    <span>{curr.down_payment}</span>
-                    <span>{curr.monthly_mortgage}</span>
-                    <span>{curr.monthly_dues}</span>
-                    <span>{curr.monthly_taxes}</span>
-                    <span>{curr.monthly_insurance}</span>
-                    <span>{curr.monthly_utilities}</span>
+                    <span>
+                      Assessed Property Value: {curr.assessed_value}
+                    </span>
+                    <br />
+                    <span>Down Payment: {curr.down_payment}</span>
+                    <br />
+                    <span>Monthly Mortgage: {curr.monthly_mortgage}</span>
+                    <br />
+                    <span>Monthly Dues: {curr.monthly_dues}</span>
+                    <br />
+                    <span>Monthly Taxes: {curr.monthly_taxes}</span>
+                    <br />
+                    <span>Monthly Insurance:{curr.monthly_insurance}</span>
+                    <br />
+                    <span>Monthly Utilities: {curr.monthly_utilities}</span>
+                    <br />
                   </div>;
             })
         }
+        
         return(
             <div> 
             <NavBar />
