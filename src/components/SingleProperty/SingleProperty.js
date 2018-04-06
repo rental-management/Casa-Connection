@@ -38,7 +38,6 @@ lol
             })
              workOrdersList = this.props.properties.workOrders.map( (curr, index) => {
                 return <div key = {index}>
-                <h2>Open Work Orders</h2>
                 <span>Repair type: {curr.type}</span><br />
                 <span>Memo: {curr.memo}</span><br />
                 </div>
@@ -50,6 +49,7 @@ lol
             {property}
             <AddWorkOrderForm />
             <AddExpensesForm />
+            <h2>Open Work Orders</h2>
             {workOrdersList}
             </div>
             

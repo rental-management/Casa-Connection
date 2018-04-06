@@ -97,6 +97,7 @@ class AddWorkOrderForm extends Component {
                         this.setState({ memo: e.target.value });
                       }} />
                     <br />
+                    <br />
                     
                     <RaisedButton onClick={this.handleClose} label="Cancel" secondary="true" />
                     <RaisedButton onClick={this.handleClose} label="Submit" onClick = {() => {this.handleSubmit(propId, type, memo)}}/>

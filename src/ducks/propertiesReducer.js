@@ -8,6 +8,7 @@ const ADD_WORK_ORDER = "ADD_WORK_ORDER";
 const ADD_EXPENSES = 'ADD_EXPENSES';
 const DELETE_PROPERTY = "DELETE_PROPERTY";
 const GET_WORK_ORDERS = "GET_WORK_ORDERS";
+const DELETE_WORK_ORDERS = "DELETE_WORK_ORDERS";
 
 
 
@@ -115,6 +116,16 @@ export function deleteProperty(propId){
     }
 }
 
+export function deleteWorkOrders(propId) {
+    return {
+        type: DELETE_WORK_ORDERS,
+        payload: axios.delete('/deleteworkorders', {data: { prop_id: propId  }})
+        .then((res) => {
+            return res.data;
+        })
+    }
+}
+
 export function getWorkOrders(id){
     return {
         type: GET_WORK_ORDERS,
@@ -191,6 +202,15 @@ export default function reducer(state = initialState, action) {
         case `${GET_WORK_ORDERS}_REJECTED`:
             return Object.assign({}, state, {isLoading: false, didErr: true, errMessage: action.payload});
 
+        // DELETE WORK ORDERS //
+        case `${DELETE_WORK_ORDERS}_PENDING`:
+            return Object.assign({}, state, {isLoading: true});
+
+        case `${DELETE_WORK_ORDERS}_FULFILLED`:
+            return Object.assign({}, state, {isLoading: false, workOrders: action.payload});
+
+        case `${DELETE_WORK_ORDERS}_REJECTED`:
+            return Object.assign({}, state, {isLoading: false, didErr: true, errMessage: action.payload});    
     default:
         return state;
     }
