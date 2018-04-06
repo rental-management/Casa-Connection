@@ -39,8 +39,8 @@ class Properties extends Component {
                     <div className="individual-property" key={index}>
                     <Link to = {`/property/${curr.id}`} key = {index}>
                      <h1> {curr.prop_name} </h1>
-                     <img className="properties-img" src={curr.img} />
                      </Link>
+                     <img className="properties-img" src={curr.img} />
                      <button className = 'delete-prop-btn' onClick = {() => {this.handleDelete(curr.id)}}>Delete</button>
                     </div>
                 )
