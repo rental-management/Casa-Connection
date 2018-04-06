@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
-import {getProperty, getWorkOrders} from '../../ducks/propertiesReducer';
+import {getProperty, getWorkOrders, getExpensesById} from '../../ducks/propertiesReducer';
 import AddWorkOrderForm from '../AddWorkOrderForm/AddWorkOrderForm';
 import AddExpensesForm from '../AddExpensesForm/AddExpensesForm';
 import NavBar from '../NavBar/NavBar';
@@ -15,14 +15,16 @@ lol
         const {id} = this.props.match.params;       
         this.props.getProperty(id).then(res => {
             this.props.getWorkOrders(id);
+            this.props.getExpensesById(id);
         });
     }
 
-    render() {     
-        console.log('Work Orders', this.props.properties.workOrders);  
+    render() {    
+      
         
         let property;    
-        let workOrdersList;   
+        let workOrdersList;
+        let expensesList;   
         if(this.props.properties.property !== undefined && this.props.properties.property.length !==0) {
             property = this.props.properties.property.map((curr, index) => {              
                 return <div key={index}>
@@ -42,6 +44,17 @@ lol
                 <span>Memo: {curr.memo}</span><br />
                 </div>
             })
+            expensesList = this.props.properties.singlePropExpenses.map( (curr, index) => {
+                return <div key={index}>
+                    <span>{curr.assessed_value}</span>
+                    <span>{curr.down_payment}</span>
+                    <span>{curr.monthly_mortgage}</span>
+                    <span>{curr.monthly_dues}</span>
+                    <span>{curr.monthly_taxes}</span>
+                    <span>{curr.monthly_insurance}</span>
+                    <span>{curr.monthly_utilities}</span>
+                  </div>;
+            })
         }
         return(
             <div> 
@@ -51,6 +64,8 @@ lol
             <AddExpensesForm />
             <h2>Open Work Orders</h2>
             {workOrdersList}
+            <h2>Expenses for this Property:</h2>
+            {expensesList}
             </div>
             
         )
@@ -64,4 +79,4 @@ const mapStateToProps = state => {
     }
 };
 
-export default connect(mapStateToProps, {getProperty, getWorkOrders})(SingleProperty);
+export default connect(mapStateToProps, {getProperty, getWorkOrders, getExpensesById})(SingleProperty);

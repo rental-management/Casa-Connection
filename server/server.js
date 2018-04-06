@@ -95,6 +95,7 @@ app.delete('/deleteproperty', mainCtrl.deleteProperty);
 app.delete('/deleteworkorders', mainCtrl.deleteWorkOrders);
 app.get('/workorders', mainCtrl.getWorkOrders);
 app.post('/workorders', mainCtrl.getWorkOrders);
+app.post("/getexpenses", mainCtrl.getExpensesById);
 
 //server setup 
 app.listen(port, () => {

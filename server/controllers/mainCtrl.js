@@ -87,6 +87,13 @@ module.exports = {
         });
     },
 
+    getExpensesById: (req, res) => {
+        const db = req.app.get("db");        
+        db.getExpensesById([req.body.prop_id]).then( (response) => {
+            res.status(200).json(response);
+        }).catch( (err) => {
+            res.status(500).json(err);
+                });
     deleteWorkOrders: (req, res) => {
         const db = req.app.get("db");
         db
