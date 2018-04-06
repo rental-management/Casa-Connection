@@ -54,26 +54,27 @@ class NavBar extends Component {
 
 <div style={style}>
 <Toolbar style={style}>
+  
   <div>
-  <IconButton className="material-icons md-48">&#xE3C7;</IconButton> 
+  <IconMenu iconButtonElement={<IconButton className="hamburger"> <i class="material-icons">&#xE5D2;</i> </IconButton>}>
+      <MenuItem primaryText = { <Link to="/properties" > Properties </Link> } />
+      <MenuItem primaryText = { <Link to="/workorders" > Work Orders </Link> } />
+      <MenuItem primaryText = { <Link to="/contractors" > Contractors </Link> } />
+      <MenuItem primaryText = { <Link to="/contact" > Contact </Link> } />
+ </IconMenu>
  </div>
 
  <div className="full-screen-menu">
-      <DropDownMenu value={this.state.value}  onChange={this.handleChange}>
+      
            <MenuItem primaryText = { <Link to="/properties" > Properties </Link> } label="properties" label={"Dashboard"}  value={1} onClick={this.handleClose} />
         <Link to="/workorders">
           <MenuItem value={2} onClick={this.handleClose}>Work Orders</MenuItem>
         </Link>
-      </DropDownMenu>
+      
       <Link to="/contractors">
           <MenuItem onClick={this.handleClose}>Contractors</MenuItem>
         </Link>
-    <Link to="/about">
-        <MenuItem onClick={this.handleClose}>About</MenuItem>
-        </Link>
-        <Link to="/contact">
-          <MenuItem onClick={this.handleClose}>Contact</MenuItem>
-          </Link>
+        
   </div>
 
 </Toolbar>
