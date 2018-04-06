@@ -70,7 +70,6 @@ class NavBar extends Component {
         <Link to="/workorders">
           <MenuItem value={2} onClick={this.handleClose}>Work Orders</MenuItem>
         </Link>
-      
       <Link to="/contractors">
           <MenuItem onClick={this.handleClose}>Contractors</MenuItem>
         </Link>
