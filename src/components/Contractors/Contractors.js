@@ -14,7 +14,9 @@ class Contractors extends Component {
         this.props.getContractors();
     }
 
-    handleDelete
+    handleDelete(){
+        
+    }
 
     render() {
         const contractorsData = this.props.contractors.contractors;
