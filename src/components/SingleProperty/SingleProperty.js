@@ -20,8 +20,7 @@ class SingleProperty extends Component {
         });
     }
 
-    render() {    
-        console.log("Looking for tenant: ", this.props);
+    render() {   
       
         //declaring list variables
         let property;    
@@ -71,7 +70,7 @@ class SingleProperty extends Component {
 
             //maps over expenses which are then rendered in the return
             expensesList = this.props.properties.singlePropExpenses.map( (curr, index) => {
-                console.log("expensesList: ", curr);
+                
                 return <div key={index}>
                     <span>
                       Assessed Property Value: {curr.assessed_value}
@@ -90,7 +89,7 @@ class SingleProperty extends Component {
                     <span>Monthly Utilities: {curr.monthly_utilities}</span>
                     <br />
                   </div>;
-            })
+            }) 
             
         }
         
