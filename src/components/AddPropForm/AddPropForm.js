@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 //material ui imports
-import Paper from 'material-ui/Paper';
+// import Paper from 'material-ui/Paper';
 import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
 import Dialog from 'material-ui/Dialog';
@@ -147,7 +147,7 @@ const style = {
                 <TextField
                    floatingLabelText="Emergency Contact Number" onChange = {e => {this.setState({emergNum: e.target.value})}}/>
                 <br />
-            
+                <br />
         
                 <RaisedButton onClick={this.handleClose} label="Cancel" secondary="true" />
                 <RaisedButton label="Submit" onClick = {() => {this.handleSubmit(propertyName, street, city, state, zip, img, firstName, lastName, phone, email, emergContact, emergNum)}}/>

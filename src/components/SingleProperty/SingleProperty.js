@@ -10,7 +10,7 @@ class SingleProperty extends Component {
     constructor(props) {
         super(props);
     }
-
+lol
     componentDidMount() {
         const {id} = this.props.match.params;       
         this.props.getProperty(id).then(res => {
@@ -40,7 +40,6 @@ class SingleProperty extends Component {
             })
              workOrdersList = this.props.properties.workOrders.map( (curr, index) => {
                 return <div key = {index}>
-                <h2>Open Work Orders</h2>
                 <span>Repair type: {curr.type}</span><br />
                 <span>Memo: {curr.memo}</span><br />
                 </div>
@@ -58,11 +57,12 @@ class SingleProperty extends Component {
             })
         }
         return(
-            <div> Single Property Page
+            <div> 
             <NavBar />
             {property}
             <AddWorkOrderForm />
             <AddExpensesForm />
+            <h2>Open Work Orders</h2>
             {workOrdersList}
             <h2>Expenses for this Property:</h2>
             {expensesList}
