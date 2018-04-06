@@ -115,11 +115,10 @@ export function deleteProperty(propId){
     }
 }
 
-
-export function getWorkOrders(){
+export function getWorkOrders(id){
     return {
         type: GET_WORK_ORDERS,
-        payload: axios.get('/workorders').then( (res) => {
+        payload: axios.post('/workorders',{prop_id: id}).then( (res) => {
             return res.data;
         })
     }

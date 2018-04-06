@@ -1,2 +1,2 @@
 SELECT * FROM work_orders
-WHERE user_id = $1;
+WHERE prop_id = $1;

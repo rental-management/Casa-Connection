@@ -36,9 +36,8 @@ if(workOrderArr.length !== 0 && workOrderArr !== undefined){
         return(
             <div>
                <NavBar />             
-            <div> Work Orders </div>
-               <AddWorkOrderForm />              
-               {workOrdersList}
+               {/* <AddWorkOrderForm />              
+               {workOrdersList} */}
             </div>
             
         )
