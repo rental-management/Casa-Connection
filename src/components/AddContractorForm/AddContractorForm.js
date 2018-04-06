@@ -5,12 +5,15 @@ import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 
 import {addContractor, getContractors} from '../../ducks/contractorsReducer';
+import { getProperties } from '../../ducks/propertiesReducer';
+import { DropDownMenu, MenuItem } from 'material-ui';
 
 
 class AddContractorForm extends Component {
     constructor(){
         super();
         this.state = {
+            propName: [],
             compName: [],
             type: [],
             firstName: [],
@@ -20,38 +23,63 @@ class AddContractorForm extends Component {
             street: [],
             city: [],
             state: [],
-            zip: []
+            zip: [],
+            value: 1
         }
 
+        this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
 }
 
-handleSubmit(compName, type, firstName, lastName, phone, email, street, city, state, zip){
+componentDidMount() {
+    this.props.getProperties();
+}
+
+handleChange = (event, index, value) => {
+    this.setState({value});
+    console.log(this.props.properties.properties[value].prop_name)
+    let propName = this.props.properties.properties[value].prop_name
+    this.setState({propName: propName});
+}
+
+
+handleSubmit(propName, compName, type, firstName, lastName, phone, email, street, city, state, zip){
     console.log(this.state);
-    this.props.addContractor(compName, type, firstName, lastName, phone, email, street, city, state, zip).then( (res) => {
+    console.log(propName);
+    this.props.addContractor(propName, compName, type, firstName, lastName, phone, email, street, city, state, zip).then( (res) => {
         this.props.getContractors();
     });
 }
 
 
-
-
 render(){
 
-const { compName, type, firstName, lastName, phone, email, street, city, state, zip} = this.state;
+    let propertiesList;
+        if(this.props.properties.properties !== undefined && this.props.properties.properties.length !== 0) {
+            propertiesList = this.props.properties.properties.map((curr, index) => {
+                return(
+                     <MenuItem value={index} key={index} primaryText={curr.prop_name}/>
+                )
+            })
+        }
 
-const style = {
-    height: 'auto',
-    width: '80%',
-    margin: 'auto'
+    const { propName, compName, type, firstName, lastName, phone, email, street, city, state, zip} = this.state;
 
-}
+    const style = {
+        height: 'auto',
+        width: '80%',
+        margin: 'auto'
+    }
 
     return(
         <div>
             <h1>Add A Contractor</h1>
             <Paper zDepth = {3} style = {style}>
             <form>
+                <DropDownMenu value={this.state.value} onChange={this.handleChange}>
+                    {propertiesList}
+                </DropDownMenu>
+                <br />
                 <TextField
                 floatingLabelText="Company Name" onChange = {e => {this.setState({compName: e.target.value})}}/>
                 <br />
@@ -80,10 +108,9 @@ const style = {
                 floatingLabelText="State" onChange = {e => {this.setState({state: e.target.value})}}/>
                 <br />
                 <TextField
-                floatingLabelText="Zipcode" onChange = {e => {this.setState({zip: e.target.value})}}/>
+                floatingLabelText="Zip code" onChange = {e => {this.setState({zip: e.target.value})}}/>
                 <br />
-                <br />
-                <RaisedButton label = "Submit" onClick = {() => {this.handleSubmit(compName, type,firstName, lastName, phone, email, street, city, state, zip)}}/>
+                <RaisedButton label = "Submit" onClick = {() => {this.handleSubmit(propName, compName, type, firstName, lastName, phone, email, street, city, state, zip)}}/>
                 
             </form>
             </Paper>              
@@ -93,10 +120,11 @@ const style = {
 
 const mapStateToProps = state => {
     return {
-        contractors: state.contractorsReducer
+        contractors: state.contractorsReducer,
+        properties: state.propertiesReducer
     }
 };
-export default connect(mapStateToProps, {addContractor, getContractors})(AddContractorForm); 
+export default connect(mapStateToProps, {addContractor, getContractors, getProperties})(AddContractorForm); 
     
 
 

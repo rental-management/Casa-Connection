@@ -51,9 +51,9 @@ module.exports = {
 
     addContractor: (req, res) => {
         const db = req.app.get("db");
-        const { company_name, type, f_name, l_name, phone, email, street, city, state, zip } = req.body;
-      
-        db.addContractor([req.user.id, company_name, type, f_name, l_name, phone, email, street, city, state, zip ])
+        const { prop_name, company_name, type, f_name, l_name, phone, email, street, city, state, zip } = req.body;
+        console.log(req.body, "add contract");
+        db.addContractor([req.user.id, prop_name, company_name, type, f_name, l_name, phone, email, street, city, state, zip ])
         .then(response => res.status(200).json(response))
         .catch( (err) => res.status(500).json(err))
     },
