@@ -1,0 +1,1 @@
+DELETE FROM contractors WHERE id = $1;
