@@ -98,16 +98,16 @@ body {
   cursor: pointer;
   border-radius: 12%; }
 
-.navbar {
-  width: 500px; }
+.material-icons.md-48 {
+  font-size: 48px;
+  padding: 20px;
+  justify-content: flex-start; }
 
-.toggle-btn {
-  width: 500px;
-  color: red; }
+.full-screen-menu {
+  display: flex;
+  justify-content: space-between;
+  font-size: 2em; }
 
-@media screen and (max-width: 700px) {
-  .toggle-btn {
-    width: 500px; } }
 .delete-prop-btn {
   text-decoration: none;
   border-style: none;
