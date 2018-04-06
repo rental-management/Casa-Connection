@@ -82,6 +82,7 @@ const style = {
                 <TextField
                 floatingLabelText="Zipcode" onChange = {e => {this.setState({zip: e.target.value})}}/>
                 <br />
+                <br />
                 <RaisedButton label = "Submit" onClick = {() => {this.handleSubmit(compName, type,firstName, lastName, phone, email, street, city, state, zip)}}/>
                 
             </form>

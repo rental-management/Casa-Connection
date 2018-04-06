@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 //Material UI Imports
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import Paper from "material-ui/Paper";
+// import Paper from "material-ui/Paper";
 import TextField from "material-ui/TextField";
 import RaisedButton from "material-ui/RaisedButton";
 import Dialog from 'material-ui/Dialog';

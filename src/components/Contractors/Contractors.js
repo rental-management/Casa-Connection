@@ -27,7 +27,6 @@ class Contractors extends Component {
         }
         return(
             <div>
-            <div>Contractors Page</div>
             <AddContractorForm />
             {contractorsList}
             </div>

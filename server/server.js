@@ -92,6 +92,7 @@ app.get('/contractors', mainCtrl.getContractors);
 app.post('/addcontractor', mainCtrl.addContractor);
 app.post('/expenses', mainCtrl.addExpenses);
 app.delete('/deleteproperty', mainCtrl.deleteProperty);
+app.delete('/deleteworkorders', mainCtrl.deleteWorkOrders);
 app.get('/workorders', mainCtrl.getWorkOrders);
 
 //server setup 
