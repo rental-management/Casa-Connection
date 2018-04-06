@@ -8,6 +8,7 @@ const ADD_WORK_ORDER = "ADD_WORK_ORDER";
 const ADD_EXPENSES = 'ADD_EXPENSES';
 const DELETE_PROPERTY = "DELETE_PROPERTY";
 const GET_WORK_ORDERS = "GET_WORK_ORDERS";
+const GET_EXPENSES_BY_ID = "GET_EXPENSES_BY_ID";
 
 
 
@@ -18,6 +19,7 @@ const initialState = {
     workOrders: [],
     workOrder: [],
     expenses: [],
+    singlePropExpenses: [],
     isLoading: false,
     didErr: false,
     errMessage: null,
@@ -124,6 +126,15 @@ export function getWorkOrders(id){
     }
 }
 
+export function getExpensesById(id){
+    return {
+        type: GET_EXPENSES_BY_ID,
+        payload: axios.post('/getexpenses', {prop_id: id}).then( (res) => {
+            return res.data;
+        })
+    }
+}
+
 
 // REDUCER //
 export default function reducer(state = initialState, action) {
@@ -189,6 +200,16 @@ export default function reducer(state = initialState, action) {
             return Object.assign({}, state, {isLoading: false, workOrders: action.payload});
 
         case `${GET_WORK_ORDERS}_REJECTED`:
+            return Object.assign({}, state, {isLoading: false, didErr: true, errMessage: action.payload});
+        
+        //GET SINGLE PROPERTY EXPENSES BY ID
+        case `${GET_EXPENSES_BY_ID}_PENDING`:
+            return Object.assign({}, state, {isLoading: true});
+
+        case `${GET_EXPENSES_BY_ID}_FULFILLED`:
+            return Object.assign({}, state, {isLoading: false, singlePropExpenses: action.payload});
+
+        case `${GET_EXPENSES_BY_ID}_REJECTED`:
             return Object.assign({}, state, {isLoading: false, didErr: true, errMessage: action.payload});
 
     default:

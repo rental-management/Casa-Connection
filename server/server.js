@@ -93,6 +93,7 @@ app.post('/addcontractor', mainCtrl.addContractor);
 app.post('/expenses', mainCtrl.addExpenses);
 app.delete('/deleteproperty', mainCtrl.deleteProperty);
 app.post('/workorders', mainCtrl.getWorkOrders);
+app.post("/getexpenses", mainCtrl.getExpensesById);
 
 //server setup 
 app.listen(port, () => {
