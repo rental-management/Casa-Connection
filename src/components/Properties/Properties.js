@@ -1,11 +1,10 @@
 import React, {Component} from 'react';
-import PdfUploader from './../ImageUploader/PdfUploader';
 
 import AddPropForm from './../AddPropForm/AddPropForm';
 import NavBar from './../NavBar/NavBar';
 
 import {connect} from 'react-redux';
-import {getProperties, deleteProperty} from './../../ducks/propertiesReducer';
+import {getProperties, deleteProperty, deleteWorkOrders} from './../../ducks/propertiesReducer';
 import { Link } from "react-router-dom";
 
 
@@ -22,10 +21,13 @@ class Properties extends Component {
     }
 
     handleDelete(propId){
-        this.props.deleteProperty(propId).then(() => {
-            this.props.getProperties();
-        });
-
+        this.props.deleteWorkOrders(propId)
+        .then( () => {
+            this.props.deleteProperty(propId)
+            .then( () => {
+                this.props.getProperties();
+            })
+        })
     }
 
     render() {
@@ -46,8 +48,7 @@ class Properties extends Component {
         return(
 
             <div>
-                <NavBar />
-            <div> Properties Page </div>
+            <NavBar />
             <AddPropForm />
             {propertiesList}        
             
@@ -61,4 +62,4 @@ const mapStateToProps = state => {
         properties: state.propertiesReducer
     }
 };
-export default connect(mapStateToProps, {getProperties, deleteProperty})(Properties);
+export default connect(mapStateToProps, {getProperties, deleteProperty, deleteWorkOrders})(Properties);

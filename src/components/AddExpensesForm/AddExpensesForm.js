@@ -109,6 +109,7 @@ class AddExpensesForm extends Component {
                     <TextField
                     floatingLabelText="Monthly Utilities" onChange = {e => {this.setState({ monthlyUtilities: e.target.value})}} />
                     < br/>
+                    <br />
                     <RaisedButton onClick={this.handleClose} label="Cancel" secondary="true" />
                     <RaisedButton label="Submit" onClick = {() => {this.handleSubmit(assessedValue, downPayment, monthlyMortgage, monthlyDues, monthlyTaxes, monthlyInsurance, monthlyUtilities, propId)}} />
 

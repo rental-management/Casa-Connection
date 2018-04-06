@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 //Material UI Imports
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import Paper from "material-ui/Paper";
+// import Paper from "material-ui/Paper";
 import TextField from "material-ui/TextField";
 import RaisedButton from "material-ui/RaisedButton";
 import Dialog from 'material-ui/Dialog';
@@ -28,6 +28,8 @@ class AddWorkOrderForm extends Component {
         this.handleClickOpen = this.handleClickOpen.bind(this);
     }
 
+
+
     handleSubmit(propId,type, memo){
         this.props.addWorkOrder(propId,type, memo);
     }
@@ -42,13 +44,13 @@ class AddWorkOrderForm extends Component {
 
         render(){
             const {type, memo} = this.state;
-            console.log("params id ", this.props);
-             console.log("here is props - need propId" ,this.props.state.propertiesReducer.properties);
+            // console.log("params id ", this.props);
+            //  console.log("here is props - need propId" ,this.props.state.propertiesReducer.properties);
              let propertyArr = this.props.state.propertiesReducer.property;
              let propId;
              if(propertyArr.length !== 0 && propertyArr !== undefined ){
                 propId = this.props.state.propertiesReducer.property[0].id;
-                console.log('propId', propId);
+                // console.log('propId', propId);
 
              }
 
@@ -94,6 +96,7 @@ class AddWorkOrderForm extends Component {
                     <TextField floatingLabelText="Memo" onChange={e => {
                         this.setState({ memo: e.target.value });
                       }} />
+                    <br />
                     <br />
                     
                     <RaisedButton onClick={this.handleClose} label="Cancel" secondary="true" />

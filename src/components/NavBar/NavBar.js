@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 
-import { Link, withRouter } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Drawer from 'material-ui/Drawer';
 import FlatButton from 'material-ui/FlatButton';
 import RaisedButton from 'material-ui/RaisedButton';
 import Menu from 'material-ui/Menu';
 import MenuItem from 'material-ui/MenuItem';
-import IconMenu from 'material-ui';
+import IconMenu from 'material-ui/IconMenu';
 import {Toolbar, ToolbarGroup, ToolbarSeparator, ToolbarTitle} from 'material-ui/Toolbar';
 import IconButton from 'material-ui/IconButton';
 import FontIcon from 'material-ui/FontIcon';
@@ -19,7 +19,8 @@ class NavBar extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            open: false
+            open: false,
+            value: 1
         
         };
 
@@ -41,17 +42,27 @@ class NavBar extends Component {
       return (
       <div>
         <Toolbar>
+          <IconMenu
+            iconButtonElement={
+              <IconButton touch={true}>
+                <NavigationExpandMoreIcon />
+              </IconButton>
+            }
+          >
+          </IconMenu>
         <ToolbarGroup firstChild={true}>
 
         {/* <Paper style={style}>
       <Menu> */}
       {/* <Drawer onClick={this.handleToggle} open={this.state.open}> */}
+      {/* <DropDownMenu value={this.state.value} onChange={this.handleChange}> */}
           <Link to="/properties">
           <MenuItem onClick={this.handleClose}>Properties</MenuItem>
           </Link>
           <Link to="/workorders">
           <MenuItem onClick={this.handleClose}>Work Orders</MenuItem>
           </Link>
+        {/* </DropDownMenu> */}
           <Link to="/about">
           <MenuItem onClick={this.handleClose}>About</MenuItem>
           </Link>

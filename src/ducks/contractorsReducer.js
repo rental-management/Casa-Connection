@@ -29,11 +29,12 @@ export function getContractors() {
     }
 }
 
-export function addContractor(compName, type, firstName, lastName, phone, email, street, city, state, zip) {
+export function addContractor(propName, compName, type, firstName, lastName, phone, email, street, city, state, zip) {
     return{
         type: ADD_CONTRACTOR,
         payload: axios  
             .post('/addcontractor', {
+                prop_name: propName,
                 company_name: compName,
                 type: type,
                 f_name: firstName,

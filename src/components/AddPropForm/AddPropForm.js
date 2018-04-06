@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 //material ui imports
-import Paper from 'material-ui/Paper';
+// import Paper from 'material-ui/Paper';
 import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
 import Dialog from 'material-ui/Dialog';
@@ -13,7 +13,7 @@ import PdfUploader from './../ImageUploader/PdfUploader';
 
 
 //local imports
-import {addProperty, getProperties} from './../../ducks/propertiesReducer';
+import {addProperty, getProperties } from './../../ducks/propertiesReducer';
 
 
 class AddPropForm extends Component {
@@ -26,7 +26,13 @@ constructor(){
         state: [],
         zip: [],
         img: [],
-        open: false
+        open: false,
+        firstName: [],
+        lastName: [],
+        phone: [],
+        email: [],
+        emergContact: [],
+        emergNum: [],
     }
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -45,11 +51,13 @@ handleClose = () => {
 };
 
 
-handleSubmit(propertyName, street, city, state, zip, img){
+handleSubmit(propertyName, street, city, state, zip, img, firstName, lastName, phone, email, emergContact, emergNum){
     console.log(this.state);
-    this.props.addProperty(propertyName, street, city, state, zip, img).then( (res) => {
+    this.props.addProperty(propertyName, street, city, state, zip, img, firstName, lastName, phone, email, emergContact, emergNum)
+        .then( (res) => {
         this.props.getProperties();
     });
+   
 }
 
 handleImg(img){
@@ -60,10 +68,15 @@ handleImg(img){
 
 
 render(){
-    console.log('form info: ', this.props.properties);
+    // console.log('form info: ', this.props.properties);
     //userId, propertyName, street, city, state, zip
-const {propertyName, street, city, state, zip, img, open} = this.state;
+const {propertyName, street, city, state, zip, img, open, firstName, lastName, phone, email, emergContact, emergNum} = this.state;
 
+// console.log(this.props);
+// if(tenantArr.length !== 0 && tenantArr !== undefined) {
+//     propId = this.props.properties;
+//     console.log(this.props);
+// }
 
 //Material Ui Inline Styles
 // const style = {
@@ -90,14 +103,11 @@ const style = {
             </FloatingActionButton>
                 <Dialog
                 contentStyle={customContentStyle}
-                
+                autoScrollBodyContent={true}
                 open={this.state.open}
                 onClose={this.handleClose}
                 >
-                <h1>New Property</h1>
-              
-               
-                    
+                <h1>Add Property</h1>   
             
             <PdfUploader handleImg={ this.handleImg }/>
                 
@@ -117,18 +127,32 @@ const style = {
                    floatingLabelText="Zipcode" onChange = {e => {this.setState({zip: e.target.value})}}/>
                 <br />
                
-                
-            
-       
-              
-                    
-                        <RaisedButton onClick={this.handleClose} label="Cancel" secondary="true" />
-                        <RaisedButton label="Submit" onClick = {() => {this.handleSubmit(propertyName, street, city, state, zip, img)}}/>
+                <h1> Tenant </h1> 
+
+                 <TextField
+                   floatingLabelText="First Name" onChange = {e => {this.setState({firstName: e.target.value})}}/>
+                <br />
+                <TextField
+                   floatingLabelText="Last Name" onChange = {e => {this.setState({lastName: e.target.value})}}/>
+                <br />
+                <TextField
+                   floatingLabelText="Phone" onChange = {e => {this.setState({phone: e.target.value})}}/>
+                <br />
+                <TextField
+                   floatingLabelText="Email" onChange = {e => {this.setState({email: e.target.value})}}/>
+                <br />
+                <TextField
+                   floatingLabelText="Emergency Contact" onChange = {e => {this.setState({emergContact: e.target.value})}}/>
+                <br />
+                <TextField
+                   floatingLabelText="Emergency Contact Number" onChange = {e => {this.setState({emergNum: e.target.value})}}/>
+                <br />
+                <br />
+        
+                <RaisedButton onClick={this.handleClose} label="Cancel" secondary="true" />
+                <RaisedButton label="Submit" onClick = {() => {this.handleSubmit(propertyName, street, city, state, zip, img, firstName, lastName, phone, email, emergContact, emergNum)}}/>
                  
-            </Dialog>
-        
-        
-        
+            </Dialog>    
         </div>
     );
 }
