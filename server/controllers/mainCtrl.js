@@ -93,8 +93,7 @@ module.exports = {
             res.status(200).json(response);
         }).catch( (err) => {
             res.status(500).json(err);
-                })
-            },
+        })},
 
     deleteWorkOrders: (req, res) => {
         const db = req.app.get("db");
@@ -102,5 +101,12 @@ module.exports = {
         .deleteWorkOrders([req.body.prop_id])
         .then(response => res.status(200).json(response))
         .catch( () => res.status(500).json())
+    },
+
+    getTenant: (req, res) => {
+        const db = req.app.get("db");
+        db.getProperty(req.body.prop_id).then( (response) => {
+            res.status(200).json(response);
+        }).catch( () => {res.status(500).json()})
     }
 }

@@ -36,22 +36,27 @@ class Properties extends Component {
         if(this.props.properties.properties !== undefined && this.props.properties.properties.length !== 0) {
             propertiesList = this.props.properties.properties.map((curr, index) => {
                 return(
-                    <div key={index}>
+                    <div className="individual-property" key={index}>
                     <Link to = {`/property/${curr.id}`} key = {index}>
-                     <h1> {curr.prop_name} </h1></Link>
+                     <h1> {curr.prop_name} </h1>
+                     <img className="properties-img" src={curr.img} />
+                     </Link>
                      <button className = 'delete-prop-btn' onClick = {() => {this.handleDelete(curr.id)}}>Delete</button>
-                     <img src={curr.img} />
                     </div>
                 )
             })
         }
         return(
 
-            <div>
+            <div >
             <NavBar />
-            <AddPropForm />
-            {propertiesList}        
-            
+            <div className="properties-header"> 
+                <h1> My Properties </h1>
+                <AddPropForm />
+            </div>
+            <div className="propertiesList">
+                {propertiesList} 
+            </div>         
             </div>
 
         )

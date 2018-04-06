@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import AddContractorForm from '../AddContractorForm/AddContractorForm'
 import {connect} from 'react-redux';
+import NavBar from '../NavBar/NavBar';
 
 import { getContractors } from '../../ducks/contractorsReducer';
 
@@ -33,6 +34,7 @@ class Contractors extends Component {
         
         return(
             <div>
+                <NavBar />
             <AddContractorForm />
             {contractorsList}
             </div>
