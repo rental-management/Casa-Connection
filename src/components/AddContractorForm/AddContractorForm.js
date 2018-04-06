@@ -36,14 +36,16 @@ componentDidMount() {
 }
 
 handleChange = (event, index, value) => {
-    console.log(this.props.properties.properties[value])
-    let propName = [this.props.properties.properties[value]]
-    this.setState({propName});
+    this.setState({value});
+    console.log(this.props.properties.properties[value].prop_name)
+    let propName = this.props.properties.properties[value].prop_name
+    this.setState({propName: propName});
 }
 
 
 handleSubmit(propName, compName, type, firstName, lastName, phone, email, street, city, state, zip){
     console.log(this.state);
+    console.log(propName);
     this.props.addContractor(propName, compName, type, firstName, lastName, phone, email, street, city, state, zip).then( (res) => {
         this.props.getContractors();
     });
@@ -53,15 +55,14 @@ handleSubmit(propName, compName, type, firstName, lastName, phone, email, street
 render(){
 
     let propertiesList;
-        console.log(this.props.properties.properties);
         if(this.props.properties.properties !== undefined && this.props.properties.properties.length !== 0) {
             propertiesList = this.props.properties.properties.map((curr, index) => {
                 return(
                      <MenuItem value={index} key={index} primaryText={curr.prop_name}/>
                 )
             })
-            console.log(propertiesList);
         }
+
     const { propName, compName, type, firstName, lastName, phone, email, street, city, state, zip} = this.state;
 
     const style = {
@@ -109,7 +110,7 @@ render(){
                 <TextField
                 floatingLabelText="Zip code" onChange = {e => {this.setState({zip: e.target.value})}}/>
                 <br />
-                <RaisedButton label = "Submit" onClick = {() => {this.handleSubmit(compName, type, firstName, lastName, phone, email, street, city, state, zip)}}/>
+                <RaisedButton label = "Submit" onClick = {() => {this.handleSubmit(propName, compName, type, firstName, lastName, phone, email, street, city, state, zip)}}/>
                 
             </form>
             </Paper>              
