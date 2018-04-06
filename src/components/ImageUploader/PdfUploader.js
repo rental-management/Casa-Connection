@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import firebase from './../../fire';
-import axios from 'axios';
 import { addProperty } from '../../ducks/propertiesReducer';
 import { connect } from 'react-redux';
 
