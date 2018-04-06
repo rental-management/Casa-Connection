@@ -5,6 +5,35 @@
   border-radius: 40px;
   background-color: #149ddc;
   color: white;
-  cursor: pointer; }
+  cursor: pointer;
+  width: 20%; }
+
+.propertiesList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; }
+
+.individual-property {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px; }
+
+.properties-img {
+  width: 400px;
+  padding-bottom: 20px; }
+
+.properties-header {
+  padding-top: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  justify-content: space-between;
+  width: 93%;
+  align-content: center;
+  align-items: center; }
+
+.properties-header h1 {
+  padding-left: 60px; }
 
 /*# sourceMappingURL=Properties.css.map */
