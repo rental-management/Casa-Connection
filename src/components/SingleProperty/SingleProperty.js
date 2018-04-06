@@ -35,7 +35,7 @@ lol
             })
         }
         return(
-            <div> Single Property Page
+            <div> 
             <NavBar />
             {property}
             <AddWorkOrderForm />
