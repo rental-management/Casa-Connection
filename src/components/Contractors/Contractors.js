@@ -14,18 +14,26 @@ class Contractors extends Component {
         this.props.getContractors();
     }
 
+    handleDelete(){
+        
+    }
+
     render() {
+        const contractorsData = this.props.contractors.contractors;
         let contractorsList;
-        console.log(this.props);
-        if(this.props.contractors.contractors !== undefined && this.props.contractors.contractors.length !== 0) {
-            contractorsList = this.props.contractors.contractors.map((curr, index) => {
+        if(contractorsData !== undefined && contractorsData.length !== 0) {
+            contractorsList = [].concat(contractorsData)
+            .sort((a, b) => a.company_name > b.company_name)
+            .map((curr, index) => {
                 return(
                     <div key={index}>
                      <h1> {curr.company_name} </h1>
+                     <h2> {curr.f_name} {curr.l_name} </h2>
                     </div>
                 )
             })
         }
+        
         return(
             <div>
                 <NavBar />
