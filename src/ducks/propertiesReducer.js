@@ -10,6 +10,7 @@ const DELETE_PROPERTY = "DELETE_PROPERTY";
 const GET_WORK_ORDERS = "GET_WORK_ORDERS";
 
 
+
 // STATE //
 const initialState = {
     properties: [],
@@ -35,7 +36,7 @@ export function getProperties() {
     }
 }
 
-export function addProperty(propertyName, street, city, state, zip, img){
+export function addProperty(propertyName, street, city, state, zip, img, firstName, lastName, phone, email, emergContact, emergNum){
     return {
         type: ADD_PROPERTY,
         payload: axios.post('/addproperty', {
@@ -44,7 +45,13 @@ export function addProperty(propertyName, street, city, state, zip, img){
             city: city,
             state: state,
             zip: zip,
-            img: img
+            img: img,
+            t_f_name: firstName,
+            t_l_name: lastName,
+            t_phone: phone,
+            t_email: email,
+            emerg_contact_name: emergContact,
+            emerg_contact_phone: emergNum
         }).then(response => {
             console.log("add property action creator", response);
             return response.data;
@@ -108,10 +115,10 @@ export function deleteProperty(propId){
     }
 }
 
-export function getWorkOrders(){
+export function getWorkOrders(id){
     return {
         type: GET_WORK_ORDERS,
-        payload: axios.get('/workorders').then( (res) => {
+        payload: axios.post('/workorders',{prop_id: id}).then( (res) => {
             return res.data;
         })
     }
