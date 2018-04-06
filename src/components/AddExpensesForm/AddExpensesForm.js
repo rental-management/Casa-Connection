@@ -82,6 +82,7 @@ class AddExpensesForm extends Component {
                   </FloatingActionButton>
                   <Dialog
                    contentStyle={customContentStyle}
+                   autoScrollBodyContent={true}
                    open={this.state.open}
                    onClose={this.handleClose}>
                 <h1> Add Expenses </h1> 
