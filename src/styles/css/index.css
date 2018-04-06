@@ -55,7 +55,7 @@ body {
     text-align: left;
     font-size: 24px;
     padding-bottom: 20px;
-    width: 550px; }
+    width: 550px }
 
 .started-btn {
   background-color: white;
@@ -101,11 +101,6 @@ body {
   color: white;
   cursor: pointer;
   border-radius: 12%; }
-
-.material-icons.md-48 {
-  font-size: 48px;
-  padding: 20px;
-  justify-content: flex-start; }
 
 .full-screen-menu {
   display: flex;
