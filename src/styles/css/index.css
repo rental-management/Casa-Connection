@@ -1,60 +1,125 @@
-/*
-Error: File to import not found or unreadable: bulma/sass/utilities/initial-variables.sass.
-       Load path: /Users/gaba/devMtn/casaConnect/Rental-Management-/src/styles/scss
-        on line 9 of src/styles/scss/index.scss
+.App {
+  text-align: center; }
 
-4: @import 'NavBar';
-5: @import 'Properties';
-6: @import 'Service';
-7: @import 'SingleProperty';
-8: @import 'PropForm';
-9: @import 'bulma/sass/utilities/initial-variables.sass';
-10: @import 'bulma/bulma.sass';
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px; }
 
-Backtrace:
-src/styles/scss/index.scss:9
-/Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/tree/import_node.rb:67:in `rescue in import'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/tree/import_node.rb:45:in `import'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/tree/import_node.rb:28:in `imported_file'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/tree/import_node.rb:37:in `css_import?'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/tree/visitors/perform.rb:314:in `visit_import'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/tree/visitors/base.rb:36:in `visit'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/tree/visitors/perform.rb:162:in `block in visit'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/stack.rb:79:in `block in with_base'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/stack.rb:135:in `with_frame'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/stack.rb:79:in `with_base'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/tree/visitors/perform.rb:162:in `visit'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/tree/visitors/base.rb:52:in `map'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/tree/visitors/base.rb:52:in `visit_children'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/tree/visitors/perform.rb:171:in `block in visit_children'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/tree/visitors/perform.rb:183:in `with_environment'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/tree/visitors/perform.rb:170:in `visit_children'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/tree/visitors/base.rb:36:in `block in visit'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/tree/visitors/perform.rb:190:in `visit_root'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/tree/visitors/base.rb:36:in `visit'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/tree/visitors/perform.rb:161:in `visit'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/tree/visitors/perform.rb:10:in `visit'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/tree/root_node.rb:36:in `css_tree'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/tree/root_node.rb:29:in `render_with_sourcemap'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/engine.rb:389:in `_render_with_sourcemap'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/engine.rb:307:in `render_with_sourcemap'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/plugin/compiler.rb:462:in `update_stylesheet'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/plugin/compiler.rb:209:in `each'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/plugin/compiler.rb:443:in `on_file_changed'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/plugin/compiler.rb:320:in `block in watch'
-/Library/Ruby/Gems/2.3.0/gems/sass-listen-4.0.0/lib/sass-listen/event/config.rb:23:in `call'
-/Library/Ruby/Gems/2.3.0/gems/sass-listen-4.0.0/lib/sass-listen/event/processor.rb:115:in `_process_changes'
-/Library/Ruby/Gems/2.3.0/gems/sass-listen-4.0.0/lib/sass-listen/event/processor.rb:19:in `block in loop_for'
-/Library/Ruby/Gems/2.3.0/gems/sass-listen-4.0.0/lib/sass-listen/event/processor.rb:15:in `loop'
-/Library/Ruby/Gems/2.3.0/gems/sass-listen-4.0.0/lib/sass-listen/event/processor.rb:15:in `loop_for'
-/Library/Ruby/Gems/2.3.0/gems/sass-listen-4.0.0/lib/sass-listen/event/loop.rb:84:in `_wait_for_changes'
-/Library/Ruby/Gems/2.3.0/gems/sass-listen-4.0.0/lib/sass-listen/event/loop.rb:42:in `block in setup'
-/Library/Ruby/Gems/2.3.0/gems/sass-listen-4.0.0/lib/sass-listen/internals/thread_pool.rb:6:in `block in add'
-*/
-body:before {
-  white-space: pre;
-  font-family: monospace;
-  content: "Error: File to import not found or unreadable: bulma/sass/utilities/initial-variables.sass.\A        Load path: /Users/gaba/devMtn/casaConnect/Rental-Management-/src/styles/scss\A         on line 9 of src/styles/scss/index.scss\A \A 4: @import 'NavBar';\A 5: @import 'Properties';\A 6: @import 'Service';\A 7: @import 'SingleProperty';\A 8: @import 'PropForm';\A 9: @import 'bulma/sass/utilities/initial-variables.sass';\A 10: @import 'bulma/bulma.sass';"; }
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white; }
+
+.App-title {
+  font-size: 1.5em; }
+
+.App-intro {
+  font-size: large; }
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serifsf; }
+
+.splash {
+  background: #149ddc;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  height: 78vh;
+  clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%); }
+
+.logo {
+  height: 5vh; }
+
+.first-container > div:first-of-type {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-content: space-between;
+  padding: 25px 60px 0 60px; }
+
+.first-container > div:nth-child(2) {
+  margin-top: 60px;
+  font-size: 26px;
+  margin-left: 90px;
+  width: 600px; }
+  .first-container > div:nth-child(2) h2 {
+    text-align: left; }
+  .first-container > div:nth-child(2) p {
+    text-align: left;
+    font-size: 24px;
+    padding-bottom: 20px;
+    width: 550px; }
+
+.started-btn {
+  background-color: white;
+  border: 1px solid white;
+  padding: 12px 60px 12px 60px;
+  color: black;
+  cursor: pointer;
+  border-radius: 10px;
+  font-size: 18px; }
+
+.second-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  justify-content: space-around; }
+  .second-container div {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #d6d6d6;
+    padding: 10px;
+    height: 300px;
+    width: 300px;
+    margin-top: 90px;
+    box-shadow: 0 0 5px rgba(33, 33, 33, 0.2); }
+    .second-container div p {
+      text-align: center; }
+
+.third-container {
+  width: 100%;
+  height: 70vh;
+  background: #f4f4f4;
+  margin: 130px 0 100px 0; }
+
+.footer {
+  background: #149ddc;
+  height: 30vh;
+  clip-path: polygon(0 55%, 100% 0, 100% 100%, 0% 100%); }
+
+.login-btn {
+  background-color: transparent;
+  border: 1px solid white;
+  padding: 10px 15px 10px 15px;
+  color: white;
+  cursor: pointer;
+  border-radius: 12%; }
+
+.navbar {
+  width: 500px; }
+
+.toggle-btn {
+  width: 500px;
+  color: red; }
+
+@media screen and (max-width: 700px) {
+  .toggle-btn {
+    width: 500px; } }
+.delete-prop-btn {
+  text-decoration: none;
+  border-style: none;
+  padding: 10px;
+  border-radius: 40px;
+  background-color: #149ddc;
+  color: white;
+  cursor: pointer; }
+
+.dialog-container {
+  display: flex;
+  height: 1000px;
+  width: auto; }
+
+/*# sourceMappingURL=index.css.map */
