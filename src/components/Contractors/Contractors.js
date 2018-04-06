@@ -13,6 +13,8 @@ class Contractors extends Component {
         this.props.getContractors();
     }
 
+    handleDelete
+
     render() {
         let contractorsList;
         console.log(this.props);
