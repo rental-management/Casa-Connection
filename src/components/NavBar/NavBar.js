@@ -55,7 +55,8 @@ class NavBar extends Component {
 <div style={style}>
 <Toolbar style={style}>
   <div>
-      <FontIcon onClick={this.state.value} className="material-icons md-48">&#xE3C7;</FontIcon>
+  <IconButton
+      className="material-icons md-48"><FontIcon className="material-icons md-48">&#xE3C7;</FontIcon></IconButton> 
  </div>
 
  <div className="full-screen-menu">
