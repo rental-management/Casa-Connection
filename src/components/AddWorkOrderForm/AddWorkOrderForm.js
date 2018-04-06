@@ -28,6 +28,8 @@ class AddWorkOrderForm extends Component {
         this.handleClickOpen = this.handleClickOpen.bind(this);
     }
 
+
+
     handleSubmit(propId,type, memo){
         this.props.addWorkOrder(propId,type, memo);
     }

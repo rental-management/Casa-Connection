@@ -94,6 +94,7 @@ app.post('/expenses', mainCtrl.addExpenses);
 app.delete('/deleteproperty', mainCtrl.deleteProperty);
 app.delete('/deleteworkorders', mainCtrl.deleteWorkOrders);
 app.get('/workorders', mainCtrl.getWorkOrders);
+app.post('/workorders', mainCtrl.getWorkOrders);
 
 //server setup 
 app.listen(port, () => {
