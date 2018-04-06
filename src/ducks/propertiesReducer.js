@@ -10,6 +10,7 @@ const DELETE_PROPERTY = "DELETE_PROPERTY";
 const GET_WORK_ORDERS = "GET_WORK_ORDERS";
 const GET_EXPENSES_BY_ID = "GET_EXPENSES_BY_ID";
 const DELETE_WORK_ORDERS = "DELETE_WORK_ORDERS";
+const GET_TENANT = "GET_TENANT";
 
 
 
@@ -21,6 +22,7 @@ const initialState = {
     workOrder: [],
     expenses: [],
     singlePropExpenses: [],
+    tenant: [],
     isLoading: false,
     didErr: false,
     errMessage: null,
@@ -137,12 +139,24 @@ export function getWorkOrders(id){
     }
 }
 
+//gets expenses by property id
 export function getExpensesById(id){
     return {
         type: GET_EXPENSES_BY_ID,
         payload: axios.post('/getexpenses', {prop_id: id}).then( (res) => {
             return res.data;
         })
+    }
+}
+
+//gets tenant by property id
+export function getTenant(id){
+    return {
+        type: GET_TENANT,
+        payload: axios.post('/gettenant', {prop_id: id}).then( (res) => {
+            return res.data;
+        })
+
     }
 }
 
@@ -231,7 +245,16 @@ export default function reducer(state = initialState, action) {
             return Object.assign({}, state, {isLoading: false, workOrders: action.payload});
 
         case `${DELETE_WORK_ORDERS}_REJECTED`:
-            return Object.assign({}, state, {isLoading: false, didErr: true, errMessage: action.payload});    
+            return Object.assign({}, state, {isLoading: false, didErr: true, errMessage: action.payload});   
+        
+        //GET TENANT BY PROPERTY ID
+        case `${GET_TENANT}_PENDING`:
+            return Object.assign({}, state, {isLoading: true});
+        case `${GET_TENANT}_FULFILLED`:
+            return Object.assign({}, state, {isLoading: false, tenant: action.payload});
+        case `${GET_TENANT}_REJECTED`:
+            return Object.assign({}, state, {isLoading: false, didErr: true, errMessage: action.payload});
+        
     default:
         return state;
     }
