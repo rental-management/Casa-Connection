@@ -92,7 +92,7 @@ app.get('/contractors', mainCtrl.getContractors);
 app.post('/addcontractor', mainCtrl.addContractor);
 app.post('/expenses', mainCtrl.addExpenses);
 app.delete('/deleteproperty', mainCtrl.deleteProperty);
-app.get('/workorders', mainCtrl.getWorkOrders);
+app.post('/workorders', mainCtrl.getWorkOrders);
 
 //server setup 
 app.listen(port, () => {
