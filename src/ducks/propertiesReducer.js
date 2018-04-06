@@ -8,7 +8,7 @@ const ADD_WORK_ORDER = "ADD_WORK_ORDER";
 const ADD_EXPENSES = 'ADD_EXPENSES';
 const DELETE_PROPERTY = "DELETE_PROPERTY";
 const GET_WORK_ORDERS = "GET_WORK_ORDERS";
-const ADD_TENANT = 'ADD_TENANT';
+
 
 
 // STATE //
@@ -18,7 +18,6 @@ const initialState = {
     workOrders: [],
     workOrder: [],
     expenses: [],
-    tenant: [],
     isLoading: false,
     didErr: false,
     errMessage: null,
@@ -37,7 +36,7 @@ export function getProperties() {
     }
 }
 
-export function addProperty(propertyName, street, city, state, zip, img){
+export function addProperty(propertyName, street, city, state, zip, img, firstName, lastName, phone, email, emergContact, emergNum){
     return {
         type: ADD_PROPERTY,
         payload: axios.post('/addproperty', {
@@ -46,7 +45,13 @@ export function addProperty(propertyName, street, city, state, zip, img){
             city: city,
             state: state,
             zip: zip,
-            img: img
+            img: img,
+            t_f_name: firstName,
+            t_l_name: lastName,
+            t_phone: phone,
+            t_email: email,
+            emerg_contact_name: emergContact,
+            emerg_contact_phone: emergNum
         }).then(response => {
             console.log("add property action creator", response);
             return response.data;
@@ -110,24 +115,6 @@ export function deleteProperty(propId){
     }
 }
 
-export function addTenant(firstName, lastName, phone, email, emergContact, emergNum, propId) {
-    return {
-        type: ADD_TENANT,
-        payload: axios
-        .post('/addtenants', {
-            f_name: firstName,
-            l_name: lastName,
-            phone: phone,
-            email: email,
-            emerg_contact_name: emergContact,
-            emerg_contact_phone: emergNum,
-            id: propId
-        })
-        .then(response => {
-            return response.data
-        }).catch(console.log)
-    }
-}
 
 export function getWorkOrders(){
     return {
@@ -194,16 +181,6 @@ export default function reducer(state = initialState, action) {
 
         case `${DELETE_PROPERTY}_REJECTED`:
             return Object.assign({}, state, {isLoading: false, didErr: true, errMessage: action.payload});    
-        
-        // ADD TENANT //
-        case `${ADD_TENANT}_PENDING`:
-            return Object.assign({}, state, {isLoading: true});
-
-        case `${ADD_TENANT}_FULFILLED`:
-            return Object.assign({}, state, {isLoading: false, tenant: action.payload});
-
-        case `${ADD_TENANT}_REJECTED`:
-            return Object.assign({}, state, {isLoading: false, didErr: true, errMessage: action.payload});
          
         //GET WORK ORDERS
         case `${GET_WORK_ORDERS}_PENDING`:

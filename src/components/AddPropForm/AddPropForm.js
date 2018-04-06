@@ -13,7 +13,7 @@ import PdfUploader from './../ImageUploader/PdfUploader';
 
 
 //local imports
-import {addProperty, getProperties, addTenant } from './../../ducks/propertiesReducer';
+import {addProperty, getProperties } from './../../ducks/propertiesReducer';
 
 
 class AddPropForm extends Component {
@@ -26,7 +26,13 @@ constructor(){
         state: [],
         zip: [],
         img: [],
-        open: false
+        open: false,
+        firstName: [],
+        lastName: [],
+        phone: [],
+        email: [],
+        emergContact: [],
+        emergNum: [],
     }
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -45,12 +51,13 @@ handleClose = () => {
 };
 
 
-handleSubmit(propertyName, street, city, state, zip, img, firstName, lastName, phone, email, emergContact, emergNum, propId){
+handleSubmit(propertyName, street, city, state, zip, img, firstName, lastName, phone, email, emergContact, emergNum){
     console.log(this.state);
-    this.props.addProperty(propertyName, street, city, state, zip, img).then( (res) => {
+    this.props.addProperty(propertyName, street, city, state, zip, img, firstName, lastName, phone, email, emergContact, emergNum)
+        .then( (res) => {
         this.props.getProperties();
     });
-    this.props.addTenant(firstName, lastName, phone, email, emergContact, emergNum, propId);
+   
 }
 
 handleImg(img){
@@ -63,11 +70,9 @@ handleImg(img){
 render(){
     // console.log('form info: ', this.props.properties);
     //userId, propertyName, street, city, state, zip
-const {propertyName, street, city, state, zip, img, open} = this.state;
-const {firstName, lastName, phone, email, emergContact, emergNum} = this.state;
+const {propertyName, street, city, state, zip, img, open, firstName, lastName, phone, email, emergContact, emergNum} = this.state;
 
-let propId = this.props;
-console.log(this.props);
+// console.log(this.props);
 // if(tenantArr.length !== 0 && tenantArr !== undefined) {
 //     propId = this.props.properties;
 //     console.log(this.props);
@@ -145,7 +150,7 @@ const style = {
             
         
                 <RaisedButton onClick={this.handleClose} label="Cancel" secondary="true" />
-                <RaisedButton label="Submit" onClick = {() => {this.handleSubmit(propertyName, street, city, state, zip, img, firstName, lastName, phone, email, emergContact, emergNum, propId)}}/>
+                <RaisedButton label="Submit" onClick = {() => {this.handleSubmit(propertyName, street, city, state, zip, img, firstName, lastName, phone, email, emergContact, emergNum)}}/>
                  
             </Dialog>    
         </div>
@@ -162,4 +167,4 @@ return {
 }
 };
 
-export default connect(mapStateToProps, {addProperty, getProperties, addTenant })(AddPropForm); 
+export default connect(mapStateToProps, {addProperty, getProperties})(AddPropForm); 

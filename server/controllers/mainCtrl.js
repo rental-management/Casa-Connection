@@ -12,10 +12,10 @@ module.exports = {
 
     addProperty: (req, res) => {
         const db = req.app.get("db");
-        const { prop_name, street, city, state, zip , img } = req.body;
+        const { prop_name, street, city, state, zip , img, t_f_name, t_l_name, t_phone, t_email, emerg_contact_name, emerg_contact_phone } = req.body;
         console.log(req.body);
         db
-        .addProperty([req.user.id, prop_name, street, city, state, zip, img ])
+        .addProperty([req.user.id, prop_name, street, city, state, zip, img, t_f_name, t_l_name, t_phone, t_email, emerg_contact_name, emerg_contact_phone ])
         .then(response => res.status(200).json(response))
         .catch( () => res.status(500).json())
     },
@@ -77,15 +77,6 @@ module.exports = {
         }).catch( (err) => {
             res.status(500).json(err);
         });
-    },
-
-    addTenants: (req, res) => {
-        const db = req.app.get("db");
-        const { f_name, l_name, phone, email, emerg_contact_name, emerg_contact_phone} = req.body;
-        db
-        .addTenant([f_name, l_name, phone, email, emerg_contact_name, emerg_contact_phone, req.body.prop_id, req.user.id])
-        .then(response => res.status(200).json(response))
-        .catch( () => res.status(500).json())
     },
 
     getWorkOrders: (req, res) => {
