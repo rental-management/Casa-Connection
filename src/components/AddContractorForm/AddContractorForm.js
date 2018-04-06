@@ -23,10 +23,11 @@ class AddContractorForm extends Component {
             street: [],
             city: [],
             state: [],
-            zip: []
+            zip: [],
+            value: 1
         }
 
-        this.handleProperty = this.handleProperty.bind(this);
+        this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
 }
 
@@ -34,32 +35,34 @@ componentDidMount() {
     this.props.getProperties();
 }
 
-handleProperty(event, index, value){
-    this.setState({propName: value})
+handleChange = (event, index, value) => {
+    console.log(this.props.properties.properties[value])
+    let propName = [this.props.properties.properties[value]]
+    this.setState({propName});
 }
 
-handleSubmit(compName, type, firstName, lastName, phone, email, street, city, state, zip){
+
+handleSubmit(propName, compName, type, firstName, lastName, phone, email, street, city, state, zip){
     console.log(this.state);
-    this.props.addContractor(compName, type, firstName, lastName, phone, email, street, city, state, zip).then( (res) => {
+    this.props.addContractor(propName, compName, type, firstName, lastName, phone, email, street, city, state, zip).then( (res) => {
         this.props.getContractors();
     });
 }
 
 
 render(){
+
     let propertiesList;
         console.log(this.props.properties.properties);
         if(this.props.properties.properties !== undefined && this.props.properties.properties.length !== 0) {
             propertiesList = this.props.properties.properties.map((curr, index) => {
                 return(
-                    <div key={index}>
-                     <p key={index}>{curr.prop_name} </p>
-                    </div>
+                     <MenuItem value={index} key={index} primaryText={curr.prop_name}/>
                 )
             })
             console.log(propertiesList);
         }
-    const { compName, type, firstName, lastName, phone, email, street, city, state, zip} = this.state;
+    const { propName, compName, type, firstName, lastName, phone, email, street, city, state, zip} = this.state;
 
     const style = {
         height: 'auto',
@@ -72,7 +75,7 @@ render(){
             <h1>Add A Contractor</h1>
             <Paper zDepth = {3} style = {style}>
             <form>
-                <DropDownMenu value={this.state.value} onChange={this.handleProperty}>
+                <DropDownMenu value={this.state.value} onChange={this.handleChange}>
                     {propertiesList}
                 </DropDownMenu>
                 <br />
@@ -106,7 +109,7 @@ render(){
                 <TextField
                 floatingLabelText="Zip code" onChange = {e => {this.setState({zip: e.target.value})}}/>
                 <br />
-                <RaisedButton label = "Submit" onClick = {() => {this.handleSubmit(compName, type,firstName, lastName, phone, email, street, city, state, zip)}}/>
+                <RaisedButton label = "Submit" onClick = {() => {this.handleSubmit(compName, type, firstName, lastName, phone, email, street, city, state, zip)}}/>
                 
             </form>
             </Paper>              
