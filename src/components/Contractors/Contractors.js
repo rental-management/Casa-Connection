@@ -3,7 +3,7 @@ import AddContractorForm from '../AddContractorForm/AddContractorForm'
 import {connect} from 'react-redux';
 import NavBar from '../NavBar/NavBar';
 
-import { getContractors } from '../../ducks/contractorsReducer';
+import { getContractors, deleteContractor } from '../../ducks/contractorsReducer';
 
 class Contractors extends Component {
     constructor(props) {
@@ -14,8 +14,11 @@ class Contractors extends Component {
         this.props.getContractors();
     }
 
-    handleDelete(){
-        
+    handleDelete(conId){
+        this.props.deleteContractor(conId)
+        .then(() => {
+            this.props.getContractors();
+        })
     }
 
     render() {
@@ -29,6 +32,8 @@ class Contractors extends Component {
                     <div key={index}>
                      <h1> {curr.company_name} </h1>
                      <h2> {curr.f_name} {curr.l_name} </h2>
+                     <button className="delete-con-btn" onClick ={() =>
+                    {this.handleDelete(curr.id)}}>Delete</button>
                     </div>
                 )
             })
@@ -49,4 +54,4 @@ const mapStateToProps = state => {
         contractors: state.contractorsReducer
     }
 };
-export default connect(mapStateToProps, {getContractors})(Contractors);
+export default connect(mapStateToProps, {getContractors, deleteContractor})(Contractors);
