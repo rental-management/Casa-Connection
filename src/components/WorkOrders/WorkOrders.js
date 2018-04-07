@@ -39,7 +39,7 @@ if(workOrderArr.length !== 0 && workOrderArr !== undefined){
                {/* <AddWorkOrderForm />              
                {workOrdersList} */}
 
-               <ExpenseChart />
+               {/* <ExpenseChart /> */}
             </div>
             
         )
