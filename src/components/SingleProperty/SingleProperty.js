@@ -4,11 +4,14 @@ import {getProperty, getWorkOrders, getExpensesById, getTenant} from '../../duck
 import AddWorkOrderForm from '../AddWorkOrderForm/AddWorkOrderForm';
 import AddExpensesForm from '../AddExpensesForm/AddExpensesForm';
 import NavBar from '../NavBar/NavBar';
+import EditableLabel from 'react-inline-editing';
 
 
 class SingleProperty extends Component {
     constructor(props) {
         super(props);
+
+        this.handleEdit = this.handleEdit.bind(this);
     }
 
     componentDidMount() {
@@ -18,6 +21,13 @@ class SingleProperty extends Component {
             this.props.getExpensesById(id);
             this.props.getTenant(id);
         });
+    }
+
+    handleEdit(text) {
+      //take in text, this fn fires when you click away from the text input
+      console.log("Updating text with :", text);
+      
+
     }
 
     render() {   
@@ -43,19 +53,16 @@ class SingleProperty extends Component {
           });
           tenant = this.props.properties.tenant.map((curr, index) => {
             return <div key={index}>
-                <span>{`Name: ${curr.t_f_name} ${curr.t_l_name}`}</span>
+                <span>Name: </span><EditableLabel text={`${curr.t_f_name} ${curr.t_l_name}`}onFocusOut = {this.handleEdit}/>
                 <br />
-                <span>Phone: {curr.t_phone}</span>
+                <span>Phone: </span><EditableLabel text = {curr.t_phone} />
                 <br />
-                <span>Email: {curr.t_email}</span>
+                <span>Email: </span><EditableLabel text = {curr.t_email} />
                 <br />
-                <span>
-                  Emergency Contact: {curr.emerg_contact_name}
-                </span>
+                <span>Emergency Contact: </span><EditableLabel text = {curr.emerg_contact_name} />
                 <br />
                 <span>
-                  Emergency Contact #: {curr.emerg_contact_phone}
-                </span>
+                  Emergency Contact #: </span><EditableLabel text =  {curr.emerg_contact_phone} />
                 <br />
               </div>;
           });
