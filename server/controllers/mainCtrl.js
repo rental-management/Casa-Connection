@@ -58,6 +58,14 @@ module.exports = {
         .catch( (err) => res.status(500).json(err))
     },
 
+    deleteContractor: (req, res) => {
+        const db = req.app.get("db");
+        db
+        .deleteContractor([req.body.id])
+        .then(response => res.status(200).json(response))
+        .catch((err) => res.status(500).json(err))
+    },
+
     addExpenses: (req, res) => {
         const db = req.app.get("db");
         const { assessed_value, down_payment, monthly_mortgage, monthly_dues, monthly_taxes, monthly_insurance, monthly_utilities } = req.body;

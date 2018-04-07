@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import { Link } from 'react-router-dom';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import Drawer from 'material-ui/Drawer';
 import FlatButton from 'material-ui/FlatButton';
 import RaisedButton from 'material-ui/RaisedButton';
@@ -11,11 +12,11 @@ import {Toolbar, ToolbarGroup, ToolbarSeparator, ToolbarTitle} from 'material-ui
 import IconButton from 'material-ui/IconButton';
 import FontIcon from 'material-ui/FontIcon';
 import NavigationExpandMoreIcon from 'material-ui/svg-icons/navigation/expand-more';
-import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
 import DropDownMenu from 'material-ui/DropDownMenu';
 import Paper from 'material-ui/Paper';
 import SelectField from 'material-ui/SelectField';
-
+import getMuiTheme from 'material-ui/styles/getMuiTheme';
+import {blue900} from 'material-ui/styles/colors';
 
 
 class NavBar extends Component {
@@ -46,6 +47,12 @@ class NavBar extends Component {
       margin: '0',
     };
 
+    const muiTheme = getMuiTheme({
+      palette: {
+          primary2Color: blue900,
+      }
+  })
+
 
 
     return (
@@ -53,32 +60,42 @@ class NavBar extends Component {
 
 
 <div style={style}>
-<Toolbar style={style}>
+{/* <Toolbar className="toolBar" style={style}> */}
   
-  <div>
+  <div className="responsive-menu">
+  <MuiThemeProvider muiTheme={muiTheme}>
   <IconMenu iconButtonElement={<IconButton className="hamburger"> <i class="material-icons">&#xE5D2;</i> </IconButton>}>
       <MenuItem primaryText = { <Link to="/properties" > Properties </Link> } />
       <MenuItem primaryText = { <Link to="/workorders" > Work Orders </Link> } />
       <MenuItem primaryText = { <Link to="/contractors" > Contractors </Link> } />
       <MenuItem primaryText = { <Link to="/contact" > Contact </Link> } />
  </IconMenu>
+</MuiThemeProvider>
  </div>
 
  <div className="full-screen-menu">
-      
-           <MenuItem primaryText = { <Link to="/properties" > Properties </Link> } label="properties" label={"Dashboard"}  value={1} onClick={this.handleClose} />
+ <MuiThemeProvider muiTheme={muiTheme}> 
+           
+        <Link to="/properties">
+            <MenuItem className="item" muiTheme={muiTheme} value={1} onClick={this.handleClose}>Properties</MenuItem>
+        </Link>
         <Link to="/workorders">
-          <MenuItem value={2} onClick={this.handleClose}>Work Orders</MenuItem>
+          <MenuItem className="item" value={2} onClick={this.handleClose}>Work Orders</MenuItem>
         </Link>
       
-      <Link to="/contractors">
-          <MenuItem onClick={this.handleClose}>Contractors</MenuItem>
+        <Link to="/contractors">
+          <MenuItem className="item" onClick={this.handleClose}>Contractors</MenuItem>
         </Link>
-        
+  </MuiThemeProvider>      
   </div>
 
-</Toolbar>
+{/* </Toolbar> */}
 </div>
+
+<footer>
+  <Paper>
+    </Paper>
+  </footer>
        </div> 
     );
   }
