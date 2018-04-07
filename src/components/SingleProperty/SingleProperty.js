@@ -23,74 +23,85 @@ class SingleProperty extends Component {
     render() {   
       
         //declaring list variables
-        let property;    
+        let property;
+        let propertyData = this.props.properties.property;    
         let workOrdersList;
         let expensesList;   
         let tenant;
-        if(this.props.properties.property !== undefined && this.props.properties.property.length !==0) {
-            property = this.props.properties.property.map((curr, index) => {              
-                return <div key={index}>
-                    <h1>{curr.prop_name}</h1>
-                    <span>Street: {curr.street}</span>
-                    <br />
-                    <span>City: {curr.city}</span>
-                    <br />
-                    <span>State: {curr.state}</span>
-                    <br />
-                    <span>Zipcode: {curr.zip}</span>                  
-                  </div>;
-            })
-            tenant = this.props.properties.tenant.map( (curr, index) => {
-                return <div key={index}>
-                    <span>{`Name: ${curr.t_f_name} ${curr.t_l_name}`}</span>
-                    <br />
-                    <span>Phone: {curr.t_phone}</span>
-                    <br />
-                    <span>Email: {curr.t_email}</span>
-                    <br />
-                    <span>
-                      Emergency Contact:{" "}
-                      {curr.emerg_contact_name}
-                    </span>
-                    <br />
-                    <span>
-                      Emergency Contact #:{" "}
-                      {curr.emerg_contact_phone}
-                    </span>
-                    <br />
-                  </div>;
-            })
-            //maps over work orders which are then rendered in the return
-             workOrdersList = this.props.properties.workOrders.map( (curr, index) => {
-                return <div key = {index}>
-                <span>Repair type: {curr.type}</span><br />
-                <span>Memo: {curr.memo}</span><br />
+        if (propertyData !== undefined && propertyData.length !== 0) {
+          property = propertyData.map((curr, index) => {
+            return <div key={index}>
+                <h1>{curr.prop_name}</h1>
+                <span>Street: {curr.street}</span>
+                <br />
+                <span>City: {curr.city}</span>
+                <br />
+                <span>State: {curr.state}</span>
+                <br />
+                <span>Zipcode: {curr.zip}</span>
+              </div>;
+          });
+          tenant = this.props.properties.tenant.map((curr, index) => {
+            return <div key={index}>
+                <span>{`Name: ${curr.t_f_name} ${curr.t_l_name}`}</span>
+                <br />
+                <span>Phone: {curr.t_phone}</span>
+                <br />
+                <span>Email: {curr.t_email}</span>
+                <br />
+                <span>
+                  Emergency Contact: {curr.emerg_contact_name}
+                </span>
+                <br />
+                <span>
+                  Emergency Contact #: {curr.emerg_contact_phone}
+                </span>
+                <br />
+              </div>;
+          });
+          //maps over work orders which are then rendered in the return
+          workOrdersList = this.props.properties.workOrders.map(
+            (curr, index) => {
+              return (
+                <div key={index}>
+                  <span>Repair type: {curr.type}</span>
+                  <br />
+                  <span>Memo: {curr.memo}</span>
+                  <br />
                 </div>
-            })
+              );
+            }
+          );
 
-            //maps over expenses which are then rendered in the return
-            expensesList = this.props.properties.singlePropExpenses.map( (curr, index) => {
-                
-                return <div key={index}>
-                    <span>
-                      Assessed Property Value: {curr.assessed_value}
-                    </span>
-                    <br />
-                    <span>Down Payment: {curr.down_payment}</span>
-                    <br />
-                    <span>Monthly Mortgage: {curr.monthly_mortgage}</span>
-                    <br />
-                    <span>Monthly Dues: {curr.monthly_dues}</span>
-                    <br />
-                    <span>Monthly Taxes: {curr.monthly_taxes}</span>
-                    <br />
-                    <span>Monthly Insurance:{curr.monthly_insurance}</span>
-                    <br />
-                    <span>Monthly Utilities: {curr.monthly_utilities}</span>
-                    <br />
-                  </div>;
-            }) 
-            
+          //maps over expenses which are then rendered in the return
+          expensesList = this.props.properties.singlePropExpenses.map(
+            (curr, index) => {
+              return (
+                <div key={index}>
+                  <span>
+                    Assessed Property Value: {curr.assessed_value}
+                  </span>
+                  <br />
+                  <span>Down Payment: {curr.down_payment}</span>
+                  <br />
+                  <span>Monthly Mortgage: {curr.monthly_mortgage}</span>
+                  <br />
+                  <span>Monthly Dues: {curr.monthly_dues}</span>
+                  <br />
+                  <span>Monthly Taxes: {curr.monthly_taxes}</span>
+                  <br />
+                  <span>
+                    Monthly Insurance:{curr.monthly_insurance}
+                  </span>
+                  <br />
+                  <span>
+                    Monthly Utilities: {curr.monthly_utilities}
+                  </span>
+                  <br />
+                </div>
+              );
+            }
+          );
         }
         
         return(

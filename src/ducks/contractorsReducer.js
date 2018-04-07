@@ -4,6 +4,7 @@ import axios from 'axios';
 
 const GET_CONTRACTORS = 'GET_CONTRACTORS';
 const ADD_CONTRACTOR = 'ADD_CONTRACTOR';
+const DELETE_CONTRACTOR = 'DELETE_CONTRACTOR';
 
 
 //STATE
@@ -52,6 +53,17 @@ export function addContractor(propName, compName, type, firstName, lastName, pho
     }
 }
 
+export function deleteContractor(conId) {
+    return {
+        type: DELETE_CONTRACTOR,
+        payload: axios
+        .delete('/deletecontractor', {data: {id: conId}})
+        .then((res) => {
+            return res.data;
+        })
+    }
+}
+
 
 //REDUCER
 
@@ -77,6 +89,17 @@ export default function reducer(state = initialState, action) {
             return Object.assign({}, state, { isLoading: false, contractors: action.payload });
 
         case `${ADD_CONTRACTOR}_REJECTED`:
+            return Object.assign({}, state, { isLoading: false, didErr: true, errMessage: action.payload });
+
+        //delete contractor
+        case `${DELETE_CONTRACTOR}_PENDING`:
+            return Object.assign({}, state, { isLoading: true});
+        
+        case `${DELETE_CONTRACTOR}_FULFILLED`:
+        console.log(action.payload);
+            return Object.assign({}, state, { isLoading: false, contractors: action.payload });
+
+        case `${DELETE_CONTRACTOR}_REJECTED`:
             return Object.assign({}, state, { isLoading: false, didErr: true, errMessage: action.payload });
 
     default : return state;
