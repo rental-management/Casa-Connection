@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import AddWorkOrderForm from '../AddWorkOrderForm/AddWorkOrderForm';
 import NavBar from '../NavBar/NavBar';
 import {getWorkOrders} from './../../ducks/propertiesReducer';
-
+import ExpenseChart from './../Charts/ExpenseChart';
 
 class WorkOrders extends Component {
     constructor(){
@@ -38,6 +38,8 @@ if(workOrderArr.length !== 0 && workOrderArr !== undefined){
                <NavBar />             
                {/* <AddWorkOrderForm />              
                {workOrdersList} */}
+
+               <ExpenseChart />
             </div>
             
         )
