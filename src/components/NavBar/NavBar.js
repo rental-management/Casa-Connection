@@ -60,9 +60,9 @@ class NavBar extends Component {
 
 
 <div style={style}>
-<Toolbar style={style}>
+{/* <Toolbar className="toolBar" style={style}> */}
   
-  <div>
+  <div className="responsive-menu">
   <MuiThemeProvider muiTheme={muiTheme}>
   <IconMenu iconButtonElement={<IconButton className="hamburger"> <i class="material-icons">&#xE5D2;</i> </IconButton>}>
       <MenuItem primaryText = { <Link to="/properties" > Properties </Link> } />
@@ -77,20 +77,25 @@ class NavBar extends Component {
  <MuiThemeProvider muiTheme={muiTheme}> 
            
         <Link to="/properties">
-            <MenuItem muiTheme={muiTheme} value={1} onClick={this.handleClose}>Properties</MenuItem>
+            <MenuItem className="item" muiTheme={muiTheme} value={1} onClick={this.handleClose}>Properties</MenuItem>
         </Link>
         <Link to="/workorders">
-          <MenuItem value={2} onClick={this.handleClose}>Work Orders</MenuItem>
+          <MenuItem className="item" value={2} onClick={this.handleClose}>Work Orders</MenuItem>
         </Link>
       
         <Link to="/contractors">
-          <MenuItem onClick={this.handleClose}>Contractors</MenuItem>
+          <MenuItem className="item" onClick={this.handleClose}>Contractors</MenuItem>
         </Link>
   </MuiThemeProvider>      
   </div>
 
-</Toolbar>
+{/* </Toolbar> */}
 </div>
+
+<footer>
+  <Paper>
+    </Paper>
+  </footer>
        </div> 
     );
   }

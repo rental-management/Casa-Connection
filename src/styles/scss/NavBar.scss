@@ -1,9 +1,31 @@
 // 
-
-
-
 .full-screen-menu{
     display: flex;
     justify-content: space-between;
     font-size: 2em;
+    margin-left: 65%;
+    padding: 20px;
+    color: blue;
+}
+
+
+
+
+@media only screen and (min-width: 500px){
+    .responsive-menu, .hamburger {
+        display: none;
+    }
+}
+
+
+
+@media only screen and (max-width: 500px){
+    .responsive-menu { 
+        display: block;
+        padding: 20px;
+        margin-left: 2%;
+    }
+    .full-screen-menu {
+        display: none;
+    }
 }
