@@ -1,10 +1,10 @@
 .splash {
-    // background: linear-gradient(
-    //     rgba(lightgray, 0.5)  
-    //     rgba(lightgray, 0.4),
-    //     rgba(lightgray, 0.3)),
-    //   url("../../assets/sf.jpg");
-    background: #149ddc;
+    background: linear-gradient(
+        rgba(gray, 0.5)  
+        rgba(gray, 0.4),
+        rgba(gray, 0.3)),
+      url("../../assets/doors.jpg");
+    // background: #149ddc;
     background-size: 100%;
     background-repeat: no-repeat;
     height: 78vh;
@@ -59,8 +59,8 @@
     flex-direction: column;
     border: 1px solid #d6d6d6;
     padding: 10px;
-    height: 300px;
-    width: 300px;
+    height: 350px;
+    width: 350px;
     margin-top: 90px;
     box-shadow: 0 0 5px rgba(33,33,33,.2);
     p {
