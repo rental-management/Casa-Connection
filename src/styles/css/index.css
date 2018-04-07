@@ -55,7 +55,7 @@ body {
     text-align: left;
     font-size: 24px;
     padding-bottom: 20px;
-    width: 550px }
+    width: 550px; }
 
 .started-btn {
   background-color: white;
@@ -105,8 +105,22 @@ body {
 .full-screen-menu {
   display: flex;
   justify-content: space-between;
-  font-size: 2em; }
+  font-size: 2em;
+  margin-left: 70%;
+  padding: 20px;
+  color: blue; }
 
+@media only screen and (min-width: 500px) {
+  .responsive-menu, .hamburger {
+    display: none; } }
+@media only screen and (max-width: 700px) {
+  .responsive-menu {
+    display: block;
+    padding: 20px;
+    margin-left: 2%; }
+
+  .full-screen-menu {
+    display: none; } }
 .delete-prop-btn {
   text-decoration: none;
   border-style: none;

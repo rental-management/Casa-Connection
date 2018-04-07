@@ -98,6 +98,7 @@ const style = {
 }
     return(
         <div>
+         
             <FloatingActionButton style={style} secondary={true} onClick={this.handleClickOpen}>
              <ContentAdd />
             </FloatingActionButton>
@@ -152,8 +153,9 @@ const style = {
                 <RaisedButton onClick={this.handleClose} label="Cancel" secondary="true" />
                 <RaisedButton label="Submit" onClick = {() => {this.handleSubmit(propertyName, street, city, state, zip, img, firstName, lastName, phone, email, emergContact, emergNum)}}/>
                  
-            </Dialog>    
-        </div>
+            </Dialog>  
+            </div>  
+
     );
 }
 
