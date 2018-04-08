@@ -98,12 +98,8 @@ app.get('/workorders', mainCtrl.getWorkOrders);
 app.post('/workorders', mainCtrl.getWorkOrders);
 app.post("/getexpenses", mainCtrl.getExpensesById);
 app.post("/gettenant", mainCtrl.getTenant);
-<<<<<<< HEAD
-
-=======
 // app.put('/editcontractor', mainCtrl.editContractor);
 app.put('/edittenant', mainCtrl.editTenant);
->>>>>>> master
 
 
 //server setup 

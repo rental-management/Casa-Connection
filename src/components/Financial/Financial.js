@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import axios from 'axios';
+import ExpenseChart from './../Charts/ExpenseChart';
 
 class Financial extends Component {
     constructor(props){
@@ -10,7 +12,10 @@ class Financial extends Component {
       return(
           <div>
               FINANCIAL
+              <ExpenseChart />
               </div>
       )
   }
 }
+
+export default Financial;
