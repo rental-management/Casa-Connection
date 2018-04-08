@@ -3,6 +3,9 @@ import {connect} from 'react-redux';
 import Paper from 'material-ui/Paper';
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
+import Dialog from 'material-ui/Dialog';
+import FloatingActionButton from 'material-ui/FloatingActionButton';
+import ContentAdd from 'material-ui/svg-icons/content/add';
 
 import {addContractor, getContractors} from '../../ducks/contractorsReducer';
 import { getProperties } from '../../ducks/propertiesReducer';
@@ -73,6 +76,8 @@ render(){
 
     return(
         <div>
+
+            
             <h1>Add A Contractor</h1>
             <Paper zDepth = {3} style = {style}>
             <form>

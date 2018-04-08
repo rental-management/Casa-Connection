@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import FontAwesome from 'react-fontawesome';
 
 import Login from '../Login/Login';
 
@@ -22,16 +23,34 @@ class SplashLanding extends Component {
                 </div>
                 <div className="second-container">
                         <div> 
-                            <h1> Organize property info </h1>
-                            <p> aslkdjfas </p> 
+                            <FontAwesome 
+                                className="chart"
+                                name="fas fa-home"
+                                size='7x'
+                                style={{ color: '#00afd7' }}
+                                />
+                            <h1> Organize Property Information </h1>
+                            {/* <p> aslkdjfas </p>  */}
                         </div>
                         <div> 
-                            <h1> Visualize finances </h1> 
-                            <p> lasdf </p>
+                        <FontAwesome 
+                                className="chart"
+                                name="fas fa-chart-bar"
+                                size='7x'
+                                style={{ color: '#00afd7'}}
+                                />
+                            <h1> Visualize Financial Data </h1> 
+                            {/* <p> lasdf </p> */}
                         </div>
                         <div> 
-                            <h1> Streamline service requests </h1> 
-                            <p> lahsdf </p>
+                        <FontAwesome 
+                                className="chart"
+                                name="fas fa-wrench"
+                                size='7x'
+                                style={{ color: '#00afd7' }}
+                                />
+                            <h1> Streamline Service Requests </h1> 
+                            {/* <p> lahsdf </p> */}
                         </div>
                 </div>
                 <div className="third-container">

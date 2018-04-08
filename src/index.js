@@ -6,6 +6,7 @@ import './styles/css/index.css';
 import App from './App';
 import store from './store'; 
 import MuiThemeProvider from '../node_modules/material-ui/styles/MuiThemeProvider';
+import '../node_modules/font-awesome/css/font-awesome.min.css'; 
 
 
 ReactDOM.render(
