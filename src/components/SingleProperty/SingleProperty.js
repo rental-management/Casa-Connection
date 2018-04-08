@@ -23,6 +23,7 @@ class SingleProperty extends Component {
         });
     }
 
+
     //take in text, this fn fires when you click away from the text input     
     handleEdit(text) {
       const { id } = this.props.match.params;     
@@ -53,8 +54,8 @@ class SingleProperty extends Component {
               </div>;
           });
           tenant = this.props.properties.tenant.map((curr, index) => {
-            return <div key={index}>
-                <span>First: </span><EditableLabel text={`${curr.t_f_name}`}onFocusOut = {this.handleEdit}/>
+            return <div key={index} onClick = {this.displayBtn}>
+                <span>First: </span><EditableLabel text={`${curr.t_f_name}`}/>
                 <br />
                 <span>Last: </span><EditableLabel text = {`${curr.t_l_name}`} /><br/>
                 <span>Phone: </span><EditableLabel text = {curr.t_phone} />
