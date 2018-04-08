@@ -1,23 +1,34 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
-import {getProperty, getWorkOrders, getExpensesById, getTenant} from '../../ducks/propertiesReducer';
+import {getProperty, getWorkOrders, getExpensesById, getTenant, editTenant} from '../../ducks/propertiesReducer';
 import AddWorkOrderForm from '../AddWorkOrderForm/AddWorkOrderForm';
 import AddExpensesForm from '../AddExpensesForm/AddExpensesForm';
 import NavBar from '../NavBar/NavBar';
+import EditableLabel from 'react-inline-editing';
 
 
 class SingleProperty extends Component {
     constructor(props) {
         super(props);
+
+        this.handleEdit = this.handleEdit.bind(this);
     }
 
-    componentDidMount() {
-        const {id} = this.props.match.params;       
+    componentDidMount() {    
+      const { id } = this.props.match.params;          
         this.props.getProperty(id).then(res => {
             this.props.getWorkOrders(id);
             this.props.getExpensesById(id);
             this.props.getTenant(id);
         });
+    }
+
+    //take in text, this fn fires when you click away from the text input     
+    handleEdit(text) {
+      const { id } = this.props.match.params;     
+      this.props.editTenant(text, id).then(() => {
+        this.props.getTenant(id);
+      });
     }
 
     render() {   
@@ -43,22 +54,21 @@ class SingleProperty extends Component {
           });
           tenant = this.props.properties.tenant.map((curr, index) => {
             return <div key={index}>
-                <span>{`Name: ${curr.t_f_name} ${curr.t_l_name}`}</span>
+                <span>First: </span><EditableLabel text={`${curr.t_f_name}`}onFocusOut = {this.handleEdit}/>
                 <br />
-                <span>Phone: {curr.t_phone}</span>
+                <span>Last: </span><EditableLabel text = {`${curr.t_l_name}`} /><br/>
+                <span>Phone: </span><EditableLabel text = {curr.t_phone} />
                 <br />
-                <span>Email: {curr.t_email}</span>
+                <span>Email: </span><EditableLabel text = {curr.t_email} />
+                <br />
+                <span>Emergency Contact: </span><EditableLabel text = {curr.emerg_contact_name} />
                 <br />
                 <span>
-                  Emergency Contact: {curr.emerg_contact_name}
-                </span>
-                <br />
-                <span>
-                  Emergency Contact #: {curr.emerg_contact_phone}
-                </span>
+                  Emergency Contact #: </span><EditableLabel text =  {curr.emerg_contact_phone} />
                 <br />
               </div>;
           });
+
           //maps over work orders which are then rendered in the return
           workOrdersList = this.props.properties.workOrders.map(
             (curr, index) => {
@@ -129,4 +139,4 @@ const mapStateToProps = state => {
     }
 };
 
-export default connect(mapStateToProps, {getProperty, getWorkOrders, getExpensesById, getTenant})(SingleProperty);
+export default connect(mapStateToProps, {getProperty, getWorkOrders, getExpensesById, getTenant, editTenant})(SingleProperty);
