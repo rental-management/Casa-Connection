@@ -3,6 +3,9 @@ import {connect} from 'react-redux';
 import Paper from 'material-ui/Paper';
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
+import Dialog from 'material-ui/Dialog';
+import FloatingActionButton from 'material-ui/FloatingActionButton';
+import ContentAdd from 'material-ui/svg-icons/content/add'
 
 import {addContractor, getContractors} from '../../ducks/contractorsReducer';
 import { getProperties } from '../../ducks/propertiesReducer';
@@ -24,7 +27,8 @@ class AddContractorForm extends Component {
             city: [],
             state: [],
             zip: [],
-            value: 1
+            value: 1,
+            open: false
         }
 
         this.handleChange = this.handleChange.bind(this);
@@ -33,6 +37,14 @@ class AddContractorForm extends Component {
 
 componentDidMount() {
     this.props.getProperties();
+}
+
+handleClickOpen = () => {
+    this.setState({open: true});
+}
+
+handleClose = () => {
+    this.setState({open: false});
 }
 
 handleChange = (event, index, value) => {
@@ -66,16 +78,31 @@ render(){
     const { propName, compName, type, firstName, lastName, phone, email, street, city, state, zip} = this.state;
 
     const style = {
+        marginRight: -50
+    }
+
+    const customContentStyle = {
+        width: '100%',
         height: 'auto',
-        width: '80%',
-        margin: 'auto'
+        margin: 'auto',
+        padding: 30
     }
 
     return(
         <div>
-            <h1>Add A Contractor</h1>
-            <Paper zDepth = {3} style = {style}>
-            <form>
+
+            <FloatingActionButton style={style} secondary={true} onClick={this.handleClickOpen}>
+            <ContentAdd />
+            </FloatingActionButton>
+                <Dialog
+                contentStyle={customContentStyle}
+                autoScrollBodyContent={true}
+                open={this.state.open}
+                onClose={this.handleClose}
+                >
+
+                <h1>Add A Contractor</h1>
+            
                 <DropDownMenu value={this.state.value} onChange={this.handleChange}>
                     {propertiesList}
                 </DropDownMenu>
@@ -110,10 +137,9 @@ render(){
                 <TextField
                 floatingLabelText="Zip code" onChange = {e => {this.setState({zip: e.target.value})}}/>
                 <br />
-                <RaisedButton label = "Submit" onClick = {() => {this.handleSubmit(propName, compName, type, firstName, lastName, phone, email, street, city, state, zip)}}/>
-                
-            </form>
-            </Paper>              
+                <RaisedButton onClick={this.handleClose} label="Cancel" secondary="true" />
+                <RaisedButton label = "Submit" onClick = {() => {this.handleSubmit(propName, compName, type, firstName, lastName, phone, email, street, city, state, zip)}}/>  
+                </Dialog>           
         </div>);
     }
 }
