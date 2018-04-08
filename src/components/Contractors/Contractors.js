@@ -29,7 +29,7 @@ class Contractors extends Component {
             .sort((a, b) => a.company_name > b.company_name)
             .map((curr, index) => {
                 return(
-                    <div key={index}>
+                    <div className="individual-contractor" key={index}>
                      <h1> {curr.company_name} </h1>
                      <h2> {curr.f_name} {curr.l_name} </h2>
                      <button className="delete-con-btn" onClick ={() =>
@@ -41,9 +41,14 @@ class Contractors extends Component {
         
         return(
             <div>
-                <NavBar />
-            <AddContractorForm />
+            <NavBar />
+            <div className="contractors-header">
+                <h1> My Contractors </h1>
+                <AddContractorForm />
+            </div>
+            <span className="contractors-list">
             {contractorsList}
+            </span>
             </div>
         )
     }

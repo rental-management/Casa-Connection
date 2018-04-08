@@ -11,6 +11,8 @@ const GET_WORK_ORDERS = "GET_WORK_ORDERS";
 const GET_EXPENSES_BY_ID = "GET_EXPENSES_BY_ID";
 const DELETE_WORK_ORDERS = "DELETE_WORK_ORDERS";
 const GET_TENANT = "GET_TENANT";
+const EDIT_TENANT = "EDIT_TENANT";
+const GET_ALL_WORK_ORDERS = "GET_ALL_WORK_ORDERS";
 
 
 
@@ -26,6 +28,7 @@ const initialState = {
     isLoading: false,
     didErr: false,
     errMessage: null,
+
 };
 
 // ACTION CREATORS //
@@ -129,7 +132,7 @@ export function deleteWorkOrders(propId) {
         })
     }
 }
-
+//gets work orders for individual properties
 export function getWorkOrders(id){
     return {
         type: GET_WORK_ORDERS,
@@ -157,6 +160,27 @@ export function getTenant(id){
             return res.data;
         })
 
+    }
+}
+
+//edit tenant information
+export function editTenant(text, id){
+    return {
+        type: EDIT_TENANT,
+        payload: axios.put('/edittenant', {text: text, prop_id: id}).then((res) => {
+            return res.data;
+
+        })
+    }
+}
+
+//gets all work orders for the logged in user
+export function getAllWorkOrders(){
+    return {
+        type: GET_ALL_WORK_ORDERS,
+        payload: axios.get('/allworkorders').then( (res) => {
+            return res.data;
+        })
     }
 }
 
@@ -254,7 +278,34 @@ export default function reducer(state = initialState, action) {
             return Object.assign({}, state, {isLoading: false, tenant: action.payload});
         case `${GET_TENANT}_REJECTED`:
             return Object.assign({}, state, {isLoading: false, didErr: true, errMessage: action.payload});
+
+        //EDIT TENANT
+        case `${EDIT_TENANT}_PENDING`:
+            return Object.assign({}, state, {isLoading: true});
+
+        case `${EDIT_TENANT}_FULFILLED`:
+            return Object.assign({}, state, {isLoading: false, tenant: action.payload});
+
+        case `${EDIT_TENANT}_REJECTED`:
+            return Object.assign({}, state, {isLoading: false, didErr: true, errMessage: action.payload});
         
+        //GET ALL WORK ORDERS BY USER ID
+        case `${GET_ALL_WORK_ORDERS}_PENDING`:
+        return Object.assign({}, state, { isLoading: true });        
+            
+        case `${GET_ALL_WORK_ORDERS}_FULFILLED`:
+        return Object.assign({}, state, {
+          isLoading: false,
+          workOrders: action.payload
+        });
+
+        case `${GET_ALL_WORK_ORDERS}_REJECTED`:
+        return Object.assign({}, state, {
+          isLoading: false,
+          didErr: true,
+          errMessage: action.payload
+        });
+
     default:
         return state;
     }

@@ -8,7 +8,7 @@ import SplashLanding from './components/SplashLanding/SplashLanding';
 import Contractors from './components/Contractors/Contractors';
 import About from './components/About/About';
 import Contact from './components/Contact/Contact';
-
+import Financial from './components/Financial/Financial';
 
 export default (
     <Switch>
@@ -19,6 +19,7 @@ export default (
         <Route path="/contractors" component={Contractors} />
         <Route path="/contact" component={Contact} />
         <Route path="/about" component={About} />
+        <Route path="/financial" component={Financial} />
     </Switch>
 );
 

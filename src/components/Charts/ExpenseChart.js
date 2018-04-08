@@ -46,7 +46,14 @@ class ExpenseChart extends Component {
                 <Pie
             	    data={this.state.chartData}
             	    options={{
-		            
+                        title: {
+                            display: true,
+                            text: 'Property Expenses'
+                        },
+                        legend: {
+                            display: true,
+                            position: 'right'
+                        }
 	                }}/>
                 </div>
         )
