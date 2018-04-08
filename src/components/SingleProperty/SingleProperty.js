@@ -1,10 +1,14 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
-import {getProperty, getWorkOrders, getExpensesById, getTenant, editTenant} from '../../ducks/propertiesReducer';
+import {getProperty, getWorkOrders, getExpensesById, getTenant, editTenant, addProperty } from '../../ducks/propertiesReducer';
 import AddWorkOrderForm from '../AddWorkOrderForm/AddWorkOrderForm';
 import AddExpensesForm from '../AddExpensesForm/AddExpensesForm';
 import NavBar from '../NavBar/NavBar';
 import EditableLabel from 'react-inline-editing';
+//MUI Imports
+import Divider from 'material-ui/Divider';
+import Paper from 'material-ui/Paper';
+import TextField from 'material-ui/TextField';
 
 
 class SingleProperty extends Component {
@@ -42,7 +46,9 @@ class SingleProperty extends Component {
         if (propertyData !== undefined && propertyData.length !== 0) {
           property = propertyData.map((curr, index) => {
             return <div key={index}>
+         
                 <h1>{curr.prop_name}</h1>
+
                 <span>Street: {curr.street}</span>
                 <br />
                 <span>City: {curr.city}</span>
@@ -50,6 +56,7 @@ class SingleProperty extends Component {
                 <span>State: {curr.state}</span>
                 <br />
                 <span>Zipcode: {curr.zip}</span>
+         
               </div>;
           });
           tenant = this.props.properties.tenant.map((curr, index) => {
