@@ -98,7 +98,7 @@ app.get('/workorders', mainCtrl.getWorkOrders);
 app.post('/workorders', mainCtrl.getWorkOrders);
 app.post("/getexpenses", mainCtrl.getExpensesById);
 app.post("/gettenant", mainCtrl.getTenant);
-// app.put('/editcontractor', mainCtrl.editContractor);
+
 
 
 //server setup 
