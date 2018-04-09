@@ -146,5 +146,18 @@ module.exports = {
         }).catch( (err) => {
             res.status(500).json();
         })
+    },
+
+    editContractor: (req, res) => {
+        const db = req.app.get("db");
+        console.log(req.body);
+        const {f_name, l_name, phone, email, street, city, state, zip, id} = req.body;
+        db
+        .editContractor(f_name, l_name, phone, email, street, city, state, zip, id)
+        .then((response) => {
+            res.status(200).json(response);
+        }).catch((err) => {
+            res.status(500).json(err);
+        })
     }
 }

@@ -98,7 +98,7 @@ app.get('/workorders', mainCtrl.getWorkOrders);
 app.post('/workorders', mainCtrl.getWorkOrders);
 app.post("/getexpenses", mainCtrl.getExpensesById);
 app.post("/gettenant", mainCtrl.getTenant);
-// app.put('/editcontractor', mainCtrl.editContractor);
+app.put('/editcontractor', mainCtrl.editContractor);
 app.put('/edittenant', mainCtrl.editTenant);
 app.get('/allworkorders', mainCtrl.getAllWorkOrders);
 app.put('/editexpenses', mainCtrl.editExpenses);
