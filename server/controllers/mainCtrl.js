@@ -119,9 +119,10 @@ module.exports = {
     },
 
     editTenant: (req, res) => {
-        const db = req.app.get("db");
-        console.log('req.body for edit: ', req.body.text, req.body.prop_id);
-        db.editTenant(req.body.text, req.body.prop_id).then( (response) => {
+        const db = req.app.get("db"); 
+        const {t_f_name, t_l_name, phone, email, emerg_contact_name, emerg_contact_phone, id} = req.body;
+        console.log("tenant: ", req.body);     
+        db.editTenant(t_f_name, t_l_name, phone, email, emerg_contact_name, emerg_contact_phone, id).then( (response) => {
             res.status(200).json(response);
         }).catch( () => {
             res.status(500).json()})
@@ -132,6 +133,17 @@ module.exports = {
         db.getAllWorkOrders(req.user.id).then( (response) => {
             res.status(200).json(response);
         }).catch( () => {
+            res.status(500).json();
+        })
+    },
+
+    editExpenses: (req, res) => {
+        const db = req.app.get("db");      
+        const {assessed_value, down_payment, monthly_mortgage, monthly_dues, monthly_taxes, monthly_insurance, monthly_utilities, id} = req.body;
+        console.log(assessed_value, down_payment, monthly_mortgage, monthly_dues, monthly_taxes, monthly_insurance, monthly_utilities, id);
+        db.editExpenses(assessed_value, down_payment, monthly_mortgage, monthly_dues, monthly_taxes, monthly_insurance, monthly_utilities, id).then( (response) => {
+            res.status(200).json(response);
+        }).catch( (err) => {
             res.status(500).json();
         })
     }

@@ -6,7 +6,7 @@ import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
 import Dialog from 'material-ui/Dialog';
 import FloatingActionButton from 'material-ui/FloatingActionButton';
-import ContentAdd from 'material-ui/svg-icons/content/add'
+import ContentAdd from 'material-ui/svg-icons/content/add';
 
 import PdfUploader from './../ImageUploader/PdfUploader';
 
@@ -52,7 +52,7 @@ handleClose = () => {
 
 
 handleSubmit(propertyName, street, city, state, zip, img, firstName, lastName, phone, email, emergContact, emergNum){
-    console.log(this.state);
+    
     this.props.addProperty(propertyName, street, city, state, zip, img, firstName, lastName, phone, email, emergContact, emergNum)
         .then( (res) => {
         this.props.getProperties();
@@ -61,22 +61,18 @@ handleSubmit(propertyName, street, city, state, zip, img, firstName, lastName, p
 }
 
 handleImg(img){
-    console.log('This is img passed up from child: ', img);
+    
     this.setState({ img: img })
-    console.log(this.state, "img state")
+  
 }
 
 
 render(){
-    // console.log('form info: ', this.props.properties);
+    
     //userId, propertyName, street, city, state, zip
 const {propertyName, street, city, state, zip, img, open, firstName, lastName, phone, email, emergContact, emergNum} = this.state;
 
-// console.log(this.props);
-// if(tenantArr.length !== 0 && tenantArr !== undefined) {
-//     propId = this.props.properties;
-//     console.log(this.props);
-// }
+
 
 //Material Ui Inline Styles
 // const style = {

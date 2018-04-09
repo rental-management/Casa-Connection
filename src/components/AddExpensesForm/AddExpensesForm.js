@@ -34,7 +34,7 @@ class AddExpensesForm extends Component {
     }
 
     handleSubmit(assessedValue, downPayment, monthlyMortgage, monthlyDues, monthlyTaxes, monthlyInsurance, monthlyUtilities, propId) {
-        console.log(this.state);
+       
         this.props.addExpenses(assessedValue, downPayment, monthlyMortgage, monthlyDues, monthlyTaxes, monthlyInsurance, monthlyUtilities, propId);
     }
 
@@ -50,14 +50,14 @@ class AddExpensesForm extends Component {
 
  
     render(){
-    console.log(this.props);
+   
     const { assessedValue, downPayment, monthlyMortgage, monthlyDues, monthlyTaxes, monthlyInsurance, monthlyUtilities } = this.state;
     let propArr = this.props.properties.property;
     let propId;
-    console.log(propArr);
+  
     if(propArr.length !== 0 && propArr !== undefined) {
         propId = this.props.properties.property[0].id;
-        console.log('expenses propId', propId)
+        
     }
     // CUSTOM
     const customContentStyle = {

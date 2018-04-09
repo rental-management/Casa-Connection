@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
-import {getProperty, getWorkOrders, getExpensesById, getTenant, editTenant, addProperty } from '../../ducks/propertiesReducer';
+import {getProperty, getWorkOrders, getExpensesById, getTenant, editTenant, addProperty, editExpenses } from '../../ducks/propertiesReducer';
 import AddWorkOrderForm from '../AddWorkOrderForm/AddWorkOrderForm';
 import AddExpensesForm from '../AddExpensesForm/AddExpensesForm';
 import NavBar from '../NavBar/NavBar';
@@ -10,6 +10,8 @@ import ExpenseChart from './../Charts/ExpenseChart';
 import Divider from 'material-ui/Divider';
 import Paper from 'material-ui/Paper';
 import TextField from 'material-ui/TextField';
+import RaisedButton from 'material-ui/RaisedButton';
+import { util } from 'node-forge';
 
  
 
@@ -18,8 +20,28 @@ class SingleProperty extends Component {
     constructor(props) {
         super(props);
 
-        this.handleEdit = this.handleEdit.bind(this);
+        this.state = {
+          fName: '',
+          lName: '',
+          phone: '',
+          email: '',
+          emergContact: '',
+          emergNum: 0,
+          propValue: 0,
+          downPayment: 0,
+          mortgage: 0,
+          dues: 0,
+          taxes: 0,
+          insurance: 0,
+          utilities: 0,
+          isEditable: false
+        }
+        
+        this.handleTenantEdit = this.handleTenantEdit.bind(this);
+        this.handleExpensesEdit = this.handleExpensesEdit.bind(this);
     }
+
+    
 
     componentDidMount() {    
       const { id } = this.props.match.params;          
@@ -27,19 +49,41 @@ class SingleProperty extends Component {
             this.props.getWorkOrders(id);
             this.props.getExpensesById(id);
             this.props.getTenant(id);
-        });
+        }).then(res => {
+          let data = this.props.properties.property[0];          
+          this.setState({
+            fName: data.t_f_name,
+            lName: data.t_l_name,
+            phone: data.t_phone,
+            email: data.t_email,
+            emergContact: data.emerg_contact_name,
+            emergNum: data.emerg_contact_phone
+          })
+
+        })
+
+
     }
 
-
-    //take in text, this fn fires when you click away from the text input     
-    handleEdit(text) {
-      const { id } = this.props.match.params;     
-      this.props.editTenant(text, id).then(() => {
-        this.props.getTenant(id);
+    handleTenantEdit(fName, lName, phone, email, emergContact, emergNum, propId) {
+      this.props.editTenant(fName, lName, phone, email, emergContact, emergNum, propId).then( (res) => {
+        this.props.getTenant(propId);
+        this.setState({isEditable: false})
       });
     }
 
-    render() {   
+    handleExpensesEdit(propValue, downPayment, mortgage, dues, taxes, insurance, utilities, propId) {
+      this.props.editExpenses(propValue, downPayment, mortgage, dues, taxes, insurance, utilities, propId).then( (res) => {
+        this.props.getExpensesById(propId);
+        this.setState({isEditable: false})
+      });
+    }
+
+
+    render() { 
+      
+        // destructuring state 
+        const {fName, lName, phone, email, emergContact, emergNum, propValue, downPayment, mortgage, dues, taxes, insurance, utilities} = this.state;
       
         //declaring list variables
         let property;
@@ -48,6 +92,7 @@ class SingleProperty extends Component {
         let expensesList;   
         let tenant;
         if (propertyData !== undefined && propertyData.length !== 0) {
+          const propId = this.props.match.params.id;
           property = propertyData.map((curr, index) => {
             return <div key={index}>
          
@@ -63,19 +108,69 @@ class SingleProperty extends Component {
          
               </div>;
           });
-          tenant = this.props.properties.tenant.map((curr, index) => {
-            return <div key={index} onClick = {this.displayBtn}>
-                <span>First: </span><EditableLabel text={`${curr.t_f_name}`}/>
-                <br />
-                <span>Last: </span><EditableLabel text = {`${curr.t_l_name}`} /><br/>
-                <span>Phone: </span><EditableLabel text = {curr.t_phone} />
-                <br />
-                <span>Email: </span><EditableLabel text = {curr.t_email} />
-                <br />
-                <span>Emergency Contact: </span><EditableLabel text = {curr.emerg_contact_name} />
-                <br />
-                <span>
-                  Emergency Contact #: </span><EditableLabel text =  {curr.emerg_contact_phone} />
+          tenant = this.props.properties.tenant.map((curr, index) => {            
+                    
+            return <div key={index}>                
+                  <span>First: </span>
+                  <TextField defaultValue={curr.t_f_name} className="text-field-controlled" onChange={event => {
+                      this.setState({ fName: event.target.value, isEditable: true });
+                    }} />
+
+                  <br />
+
+                  <span>Last: </span>
+                  <TextField defaultValue={curr.t_l_name} className="text-field-controlled" onChange={event => {
+                      this.setState({
+                        lName: event.target.value,
+                        isEditable: true
+                      });
+                    }} />
+
+                  <br />
+
+                  <span>Phone: </span>
+                  <TextField defaultValue={curr.t_phone} className="text-field-controlled" onChange={event => {
+                      this.setState({
+                        phone: event.target.value,
+                        isEditable: true
+                      });
+                    }} />
+
+                  <br />
+
+                  <span>Email: </span>
+                  <TextField defaultValue={curr.t_email} className="text-field-controlled" onChange={event => {
+                      this.setState({
+                        email: event.target.value,
+                        isEditable: true
+                      });
+                    }} />
+
+                  <br />
+
+                  <span>Emergency Contact: </span>
+                  <TextField defaultValue={curr.emerg_contact_name} className="text-field-controlled" onChange={event => {
+                      this.setState({
+                        emergContact: event.target.value,
+                        isEditable: true
+                      });
+                    }} />
+
+                  <br />
+
+                  <span>Emergency Contact #: </span>
+                  <TextField defaultValue={curr.emerg_contact_phone} className="text-field-controlled" onChange={event => {
+                      this.setState({
+                        emergNum: event.target.value,
+                        isEditable: true
+                      });
+                    }} />
+
+                  <br />             
+                {this.state.isEditable ? 
+                <RaisedButton label="Save" onClick={() => {
+                    this.handleTenantEdit(fName, lName, phone, email, emergContact, emergNum, propId);
+                  }} id = "tenant-btn"/>: null}
                 <br />
                 
               </div>;
@@ -100,25 +195,94 @@ class SingleProperty extends Component {
             (curr, index) => {
               return (
                 <div key={index}>
-                  <span>
-                    Assessed Property Value: {curr.assessed_value}
-                  </span>
+                  <span> Assessed Property Value: </span> 
+                  <TextField 
+                    defaultValue={curr.assessed_value} 
+                    className="text-field-controlled" 
+                    onChange={ (event) =>{
+                     
+                      this.setState({ propValue: event.target.value, isEditable: true })
+                    }} />
+
                   <br />
-                  <span>Down Payment: {curr.down_payment}</span>
+
+                  <span>Down Payment: </span> 
+                  <TextField  
+                    defaultValue={curr.down_payment} 
+                    className="text-field-controlled"
+                    onChange={ (event) => {
+                    
+                      this.setState({
+                        downPayment: event.target.value,
+                        isEditable: true
+                      });
+                    }} />
+
                   <br />
-                  <span>Monthly Mortgage: {curr.monthly_mortgage}</span>
+
+                  <span>Monthly Mortgage: </span> 
+                  <TextField 
+                    defaultValue={curr.monthly_mortgage} 
+                    className="text-field-controlled"
+                    onChange={(event) => {
+                     
+                      this.setState({
+                        mortgage: event.target.value,
+                        isEditable: true
+                      });
+                    }} />
                   <br />
-                  <span>Monthly Dues: {curr.monthly_dues}</span>
+                  <span>Monthly Dues: </span> 
+                  <TextField 
+                    defaultValue={curr.monthly_dues} 
+                    className="text-field-controlled"
+                    onChange={(event) => {
+                    
+                      this.setState({
+                        dues: event.target.value,
+                        isEditable: true
+                      });
+                    }} />
+
                   <br />
-                  <span>Monthly Taxes: {curr.monthly_taxes}</span>
+
+                  <span>Monthly Taxes: </span> 
+                  <TextField 
+                    defaultValue={curr.monthly_taxes} 
+                    className="text-field-controlled"
+                    onChange={(event) => {
+                      
+                      this.setState({
+                        taxes: event.target.value,
+                        isEditable: true
+                      });
+                    }} />
                   <br />
-                  <span>
-                    Monthly Insurance:{curr.monthly_insurance}
-                  </span>
+                  <span> Monthly Insurance: </span> 
+                  <TextField 
+                    defaultValue={curr.monthly_insurance}
+                    className="text-field-controlled"
+                    onChange={(event) => {
+                     
+                      this.setState({
+                        insurance: event.target.value,
+                        isEditable: true
+                      });
+                    }} />
                   <br />
-                  <span>
-                    Monthly Utilities: {curr.monthly_utilities}
-                  </span>
+                  <span> Monthly Utilities:  </span> 
+                  <TextField 
+                    defaultValue={curr.monthly_utilities} 
+                    className="text-field-controlled"
+                    onChange={(event) => {
+                      
+                      this.setState({
+                        utilities: event.target.value,
+                        isEditable: true
+                      });
+                    }} />
+                  <br />
+                  {this.state.isEditable ? <RaisedButton label="save" onClick={() => {this.handleExpensesEdit(propValue, downPayment, mortgage, dues, taxes, insurance, utilities, propId)}} />: null}
                   <br />
 
                   
@@ -154,4 +318,4 @@ const mapStateToProps = state => {
     }
 };
 
-export default connect(mapStateToProps, {getProperty, getWorkOrders, getExpensesById, getTenant, editTenant})(SingleProperty);
+export default connect(mapStateToProps, {getProperty, getWorkOrders, getExpensesById, getTenant, editTenant, editExpenses})(SingleProperty);
