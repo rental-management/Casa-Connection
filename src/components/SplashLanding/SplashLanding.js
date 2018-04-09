@@ -10,8 +10,10 @@ class SplashLanding extends Component {
                 <div className="splash">
                     <div className="first-container">
                         <div>
-                            <h1> Casa Connection </h1>
-                            {/* <img className="logo" src={require('../../assets/CC Logo.png')} /> */}
+                            <div className="splash-header">
+                                <img className="logo" src={require('../../assets/favicon.png')} />
+                                <h1> CASA CONNECTION </h1>
+                            </div>
                             <Login />
                         </div>
                         <div>
@@ -27,7 +29,7 @@ class SplashLanding extends Component {
                                 className="chart"
                                 name="fas fa-home"
                                 size='7x'
-                                style={{ color: '#00afd7' }}
+                                style={{ color: '#5baecc' }}
                                 />
                             <h1> Organize Property Information </h1>
                             {/* <p> aslkdjfas </p>  */}
@@ -37,7 +39,7 @@ class SplashLanding extends Component {
                                 className="chart"
                                 name="fas fa-chart-bar"
                                 size='7x'
-                                style={{ color: '#00afd7'}}
+                                style={{ color: '#5baecc'}}
                                 />
                             <h1> Visualize Financial Data </h1> 
                             {/* <p> lasdf </p> */}
@@ -47,7 +49,7 @@ class SplashLanding extends Component {
                                 className="chart"
                                 name="fas fa-wrench"
                                 size='7x'
-                                style={{ color: '#00afd7' }}
+                                style={{ color: '#5baecc' }}
                                 />
                             <h1> Streamline Service Requests </h1> 
                             {/* <p> lahsdf </p> */}

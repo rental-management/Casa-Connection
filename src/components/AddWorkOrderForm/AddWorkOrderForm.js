@@ -33,7 +33,10 @@ class AddWorkOrderForm extends Component {
 
     handleSubmit(propId,type, memo){
         this.props.addWorkOrder(propId,type, memo)
-        .then(this.setState({type: '', memo: ''}))
+        .then( (res) => {
+            this.setState({ open: false });
+            this.setState({type: '', memo: ''});
+        })
     }
 
     handleClose = () => {
@@ -44,9 +47,6 @@ class AddWorkOrderForm extends Component {
         this.setState({ open: true });
     };
 
-    // clearInput(event) {
-    //     this.setState({type: '', memo: ''})
-    // }
 
         render(){
             const {type, memo} = this.state;

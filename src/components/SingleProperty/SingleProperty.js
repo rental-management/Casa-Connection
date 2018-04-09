@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import {getProperty, getWorkOrders, getExpensesById, getTenant, editTenant, addProperty, editExpenses } from '../../ducks/propertiesReducer';
 import AddWorkOrderForm from '../AddWorkOrderForm/AddWorkOrderForm';
-import AddExpensesForm from '../AddExpensesForm/AddExpensesForm';
 import NavBar from '../NavBar/NavBar';
 import EditableLabel from 'react-inline-editing';
 //MUI Imports
@@ -10,7 +9,7 @@ import Divider from 'material-ui/Divider';
 import Paper from 'material-ui/Paper';
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
-import { util } from 'node-forge';
+
 
 
 class SingleProperty extends Component {
@@ -198,6 +197,7 @@ class SingleProperty extends Component {
                   <TextField 
                     defaultValue={curr.assessed_value} 
                     className="text-field-controlled" 
+                    hintText="0"
                     onChange={ (event) =>{
                      
                       this.setState({ propValue: event.target.value })
@@ -209,6 +209,7 @@ class SingleProperty extends Component {
                   <TextField  
                     defaultValue={curr.down_payment} 
                     className="text-field-controlled"
+                    hintText="0"
                     onChange={ (event) => {
                     
                       this.setState({ downPayment: event.target.value })
@@ -220,6 +221,7 @@ class SingleProperty extends Component {
                   <TextField 
                     defaultValue={curr.monthly_mortgage} 
                     className="text-field-controlled"
+                    hintText="0"
                     onChange={(event) => {
                      
                       this.setState({ mortgage: event.target.value})
@@ -229,6 +231,7 @@ class SingleProperty extends Component {
                   <TextField 
                     defaultValue={curr.monthly_dues} 
                     className="text-field-controlled"
+                    hintText="0"
                     onChange={(event) => {
                     
                       this.setState({ dues: event.target.value })
@@ -240,6 +243,7 @@ class SingleProperty extends Component {
                   <TextField 
                     defaultValue={curr.monthly_taxes} 
                     className="text-field-controlled"
+                    hintText="0"
                     onChange={(event) => {
                       
                       this.setState({ taxes: event.target.value })
@@ -249,6 +253,7 @@ class SingleProperty extends Component {
                   <TextField 
                     defaultValue={curr.monthly_insurance}
                     className="text-field-controlled"
+                    hintText="0"
                     onChange={(event) => {
                      
                       this.setState({ insurance: event.target.value })
@@ -258,6 +263,7 @@ class SingleProperty extends Component {
                   <TextField 
                     defaultValue={curr.monthly_utilities} 
                     className="text-field-controlled"
+                    hintText="0"
                     onChange={(event) => {
                       
                       this.setState({ utilities: event.target.value })
@@ -278,7 +284,6 @@ class SingleProperty extends Component {
             <h2>Current Tenant</h2>
             {tenant}
             <AddWorkOrderForm />
-            <AddExpensesForm />
             <h2>Open Work Orders</h2>
             {workOrdersList}
             <h2>Expenses for this Property:</h2>

@@ -6,7 +6,15 @@
   clip-path: polygon(0 0, 100% 0, 100% 82%, 0 100%); }
 
 .logo {
-  height: 5vh; }
+  height: 9vh;
+  padding: 10px 20px 40px 10px; }
+
+.splash-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: white;
+  letter-spacing: 2px; }
 
 .first-container > div:first-of-type {
   display: flex;
@@ -16,17 +24,23 @@
   padding: 25px 60px 0 60px; }
 
 .first-container > div:nth-child(2) {
-  margin-top: 60px;
+  margin-top: 40px;
   font-size: 26px;
   margin-left: 90px;
-  width: 600px; }
+  width: 700px;
+  display: flex;
+  flex-direction: column; }
   .first-container > div:nth-child(2) h2 {
-    text-align: left; }
+    text-align: left;
+    color: white;
+    margin-bottom: 5px; }
   .first-container > div:nth-child(2) p {
     text-align: left;
     font-size: 24px;
-    padding-bottom: 20px;
-    width: 550px; }
+    width: 550px;
+    color: white;
+    line-height: 40px;
+    font-size: 22px; }
 
 .started-btn {
   background-color: white;
@@ -35,15 +49,15 @@
   color: black;
   cursor: pointer;
   border-radius: 10px;
-  font-size: 18px; }
+  font-size: 18px;
+  width: 300px;
+  margin-top: 10px; }
 
 .second-container {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  flex-wrap: wrap;
-  margin-left: 40px;
-  margin-right: 40px; }
+  flex-wrap: wrap; }
   .second-container div {
     display: flex;
     align-items: center;
@@ -54,11 +68,14 @@
     padding: 10px 10px 0 10px;
     width: 45vh;
     margin-top: 20px;
-    margin-left: 40px;
+    margin-left: 60px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
     .second-container div h1 {
       padding-top: 15px;
-      width: 90%; }
+      width: 90%;
+      color: #545454;
+      font-size: 1.75em;
+      line-height: 40px; }
 
 .third-container {
   width: 100%;
