@@ -9,8 +9,8 @@ import EditableLabel from 'react-inline-editing';
 import Divider from 'material-ui/Divider';
 import Paper from 'material-ui/Paper';
 import TextField from 'material-ui/TextField';
-import RaisedButton from "material-ui/RaisedButton";
-import { util } from "node-forge";
+import RaisedButton from 'material-ui/RaisedButton';
+import { util } from 'node-forge';
 
 
 class SingleProperty extends Component {
@@ -33,7 +33,11 @@ class SingleProperty extends Component {
           utilities: ''
         }
         
+        this.handleTenantEdit = this.handleTenantEdit.bind(this);
+        this.handleExpensesEdit = this.handleExpensesEdit.bind(this);
     }
+
+    
 
     componentDidMount() {    
       const { id } = this.props.match.params;          
@@ -58,7 +62,6 @@ class SingleProperty extends Component {
 
 
     render() { 
-      
       
         // destructuring state 
         const {fName, lName, phone, email, emergContact, emergNum, propValue, downPayment, mortgage, dues, taxes, insurance, utilities} = this.state;
@@ -92,7 +95,7 @@ class SingleProperty extends Component {
                 <span>First: </span>
                 <TextField 
                   defaultValue={curr.t_f_name} 
-                  id="text-field-controlled" 
+                  className="text-field-controlled" 
                   onChange={ (event) => {
                   console.log(event.target.value)
                   this.setState({ fName: event.target.value }) 
@@ -103,7 +106,7 @@ class SingleProperty extends Component {
                 <span>Last: </span>
                 <TextField 
                   defaultValue={curr.t_l_name}  
-                  id="text-field-controlled"
+                  className="text-field-controlled"
                   onChange={ (event) => {
                     console.log(event.target.value)
                     this.setState({ lName: event.target.value })
@@ -114,7 +117,7 @@ class SingleProperty extends Component {
                 <span>Phone: </span>
                 <TextField 
                   defaultValue={curr.t_phone}  
-                  id="text-field-controlled" 
+                  className="text-field-controlled" 
                   onChange={ (event) => {
                     console.log(event.target.value)
                     this.setState({ phone: event.target.value })
@@ -125,7 +128,7 @@ class SingleProperty extends Component {
                 <span>Email: </span>
                 <TextField 
                   defaultValue={curr.t_email}  
-                  id="text-field-controlled" 
+                  className="text-field-controlled" 
                   onChange={ (event) => {
                     console.log(event.target.value)
                     this.setState({ email: event.target.value })
@@ -136,7 +139,7 @@ class SingleProperty extends Component {
                 <span>Emergency Contact: </span>
                 <TextField 
                   defaultValue={curr.emerg_contact_name}  
-                  id="text-field-controlled" 
+                  className="text-field-controlled" 
                   onChange={ (event) => {
                     console.log(event.target.value)
                     this.setState({ emergContact: event.target.value })
@@ -147,7 +150,7 @@ class SingleProperty extends Component {
                 <span>Emergency Contact #: </span>
                 <TextField 
                   defaultValue={curr.emerg_contact_phone}  
-                  id="text-field-controlled" 
+                  className="text-field-controlled" 
                   onChange={ (event) => {
                     console.log(event.target.value)
                     this.setState({emergNum: event.target.value })
@@ -181,7 +184,7 @@ class SingleProperty extends Component {
                   <span> Assessed Property Value: </span> 
                   <TextField 
                     defaultValue={curr.assessed_value} 
-                    id="text-field-controlled" 
+                    className="text-field-controlled" 
                     onChange={ (event) =>{
                       console.log(event.target.value)
                       this.setState({ propValue: event.target.value })
@@ -192,7 +195,7 @@ class SingleProperty extends Component {
                   <span>Down Payment: </span> 
                   <TextField  
                     defaultValue={curr.down_payment} 
-                    id="text-field-controlled"
+                    className="text-field-controlled"
                     onChange={ (event) => {
                       console.log(event.target.value)
                       this.setState({ downPayment: event.target.value })
@@ -203,7 +206,7 @@ class SingleProperty extends Component {
                   <span>Monthly Mortgage: </span> 
                   <TextField 
                     defaultValue={curr.monthly_mortgage} 
-                    id="text-field-controlled"
+                    className="text-field-controlled"
                     onChange={(event) => {
                       console.log(event.target.value)
                       this.setState({ mortgage: event.target.value})
@@ -212,7 +215,7 @@ class SingleProperty extends Component {
                   <span>Monthly Dues: </span> 
                   <TextField 
                     defaultValue={curr.monthly_dues} 
-                    id="text-field-controlled"
+                    className="text-field-controlled"
                     onChange={(event) => {
                       console.log(event.target.value)
                       this.setState({ dues: event.target.value })
@@ -223,16 +226,16 @@ class SingleProperty extends Component {
                   <span>Monthly Taxes: </span> 
                   <TextField 
                     defaultValue={curr.monthly_taxes} 
-                    id="text-field-controlled"
+                    className="text-field-controlled"
                     onChange={(event) => {
                       console.log(event.target.value)
-                      this.setState({ dues: event.target.value })
+                      this.setState({ taxes: event.target.value })
                     }} />
                   <br />
                   <span> Monthly Insurance: </span> 
                   <TextField 
                     value={curr.monthly_insurance}
-                    id="text-field-controlled"
+                    className="text-field-controlled"
                     onChange={(event) => {
                       console.log(event.target.value)
                       this.setState({ insurance: event.target.value })
@@ -241,7 +244,7 @@ class SingleProperty extends Component {
                   <span> Monthly Utilities:  </span> 
                   <TextField 
                     value={curr.monthly_utilities} 
-                    id="text-field-controlled"
+                    className="text-field-controlled"
                     onChange={(event) => {
                       console.log(event.target.value)
                       this.setState({ utilities: event.target.value })
