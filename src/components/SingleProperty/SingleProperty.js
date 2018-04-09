@@ -5,10 +5,13 @@ import AddWorkOrderForm from '../AddWorkOrderForm/AddWorkOrderForm';
 import AddExpensesForm from '../AddExpensesForm/AddExpensesForm';
 import NavBar from '../NavBar/NavBar';
 import EditableLabel from 'react-inline-editing';
+import ExpenseChart from './../Charts/ExpenseChart';
 //MUI Imports
 import Divider from 'material-ui/Divider';
 import Paper from 'material-ui/Paper';
 import TextField from 'material-ui/TextField';
+
+ 
 
 
 class SingleProperty extends Component {
@@ -74,6 +77,7 @@ class SingleProperty extends Component {
                 <span>
                   Emergency Contact #: </span><EditableLabel text =  {curr.emerg_contact_phone} />
                 <br />
+                
               </div>;
           });
 
@@ -116,6 +120,8 @@ class SingleProperty extends Component {
                     Monthly Utilities: {curr.monthly_utilities}
                   </span>
                   <br />
+
+                  
                 </div>
               );
             }
@@ -133,7 +139,8 @@ class SingleProperty extends Component {
             <h2>Open Work Orders</h2>
             {workOrdersList}
             <h2>Expenses for this Property:</h2>
-            {expensesList}            
+            {expensesList}  
+                 <ExpenseChart />  
             </div>
             
         )

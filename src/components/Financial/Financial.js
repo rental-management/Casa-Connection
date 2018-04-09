@@ -13,7 +13,7 @@ class Financial extends Component {
           <div>
               FINANCIAL
             <div>
-              <ExpenseChart />
+              {/* <ExpenseChart /> */}
          </div>
               </div>
       )
