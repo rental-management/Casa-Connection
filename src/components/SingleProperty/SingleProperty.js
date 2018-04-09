@@ -5,12 +5,15 @@ import AddWorkOrderForm from '../AddWorkOrderForm/AddWorkOrderForm';
 import AddExpensesForm from '../AddExpensesForm/AddExpensesForm';
 import NavBar from '../NavBar/NavBar';
 import EditableLabel from 'react-inline-editing';
+import ExpenseChart from './../Charts/ExpenseChart';
 //MUI Imports
 import Divider from 'material-ui/Divider';
 import Paper from 'material-ui/Paper';
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 import { util } from 'node-forge';
+
+ 
 
 
 class SingleProperty extends Component {
@@ -169,6 +172,7 @@ class SingleProperty extends Component {
                     this.handleTenantEdit(fName, lName, phone, email, emergContact, emergNum, propId);
                   }} id = "tenant-btn"/>: null}
                 <br />
+                
               </div>;
           });
 
@@ -280,6 +284,8 @@ class SingleProperty extends Component {
                   <br />
                   {this.state.isEditable ? <RaisedButton label="save" onClick={() => {this.handleExpensesEdit(propValue, downPayment, mortgage, dues, taxes, insurance, utilities, propId)}} />: null}
                   <br />
+
+                  
                 </div>
               );
             }
@@ -297,7 +303,8 @@ class SingleProperty extends Component {
             <h2>Open Work Orders</h2>
             {workOrdersList}
             <h2>Expenses for this Property:</h2>
-            {expensesList}            
+            {expensesList}  
+                 <ExpenseChart />  
             </div>
             
         )
