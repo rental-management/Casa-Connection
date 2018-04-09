@@ -30,7 +30,8 @@ class SingleProperty extends Component {
           dues: 0,
           taxes: 0,
           insurance: 0,
-          utilities: 0
+          utilities: 0,
+          isEditable: false
         }
         
         this.handleTenantEdit = this.handleTenantEdit.bind(this);
@@ -64,12 +65,14 @@ class SingleProperty extends Component {
     handleTenantEdit(fName, lName, phone, email, emergContact, emergNum, propId) {
       this.props.editTenant(fName, lName, phone, email, emergContact, emergNum, propId).then( (res) => {
         this.props.getTenant(propId);
+        this.setState({isEditable: false})
       });
     }
 
     handleExpensesEdit(propValue, downPayment, mortgage, dues, taxes, insurance, utilities, propId) {
       this.props.editExpenses(propValue, downPayment, mortgage, dues, taxes, insurance, utilities, propId).then( (res) => {
         this.props.getExpensesById(propId);
+        this.setState({isEditable: false})
       });
     }
 
@@ -102,75 +105,69 @@ class SingleProperty extends Component {
          
               </div>;
           });
-          tenant = this.props.properties.tenant.map((curr, index) => {
+          tenant = this.props.properties.tenant.map((curr, index) => {            
                     
-            return <div key={index}>
-                <span>First: </span>
-                <TextField 
-                  defaultValue={curr.t_f_name} 
-                  className="text-field-controlled" 
-                  onChange={ (event) => {
-                  
-                  this.setState({ fName: event.target.value }) 
-                  }} />
+            return <div key={index}>                
+                  <span>First: </span>
+                  <TextField defaultValue={curr.t_f_name} className="text-field-controlled" onChange={event => {
+                      this.setState({ fName: event.target.value, isEditable: true });
+                    }} />
 
-                <br />
+                  <br />
 
-                <span>Last: </span>
-                <TextField 
-                  defaultValue={curr.t_l_name}  
-                  className="text-field-controlled"
-                  onChange={ (event) => {
-                 
-                    this.setState({ lName: event.target.value })
-                  }} />
+                  <span>Last: </span>
+                  <TextField defaultValue={curr.t_l_name} className="text-field-controlled" onChange={event => {
+                      this.setState({
+                        lName: event.target.value,
+                        isEditable: true
+                      });
+                    }} />
 
-                <br/>
+                  <br />
 
-                <span>Phone: </span>
-                <TextField 
-                  defaultValue={curr.t_phone}  
-                  className="text-field-controlled" 
-                  onChange={ (event) => {
-                  
-                    this.setState({ phone: event.target.value })
-                  }} />
+                  <span>Phone: </span>
+                  <TextField defaultValue={curr.t_phone} className="text-field-controlled" onChange={event => {
+                      this.setState({
+                        phone: event.target.value,
+                        isEditable: true
+                      });
+                    }} />
 
-                <br />
+                  <br />
 
-                <span>Email: </span>
-                <TextField 
-                  defaultValue={curr.t_email}  
-                  className="text-field-controlled" 
-                  onChange={ (event) => {
-                    
-                    this.setState({ email: event.target.value })
-                  }} />
+                  <span>Email: </span>
+                  <TextField defaultValue={curr.t_email} className="text-field-controlled" onChange={event => {
+                      this.setState({
+                        email: event.target.value,
+                        isEditable: true
+                      });
+                    }} />
 
-                <br />
+                  <br />
 
-                <span>Emergency Contact: </span>
-                <TextField 
-                  defaultValue={curr.emerg_contact_name}  
-                  className="text-field-controlled" 
-                  onChange={ (event) => {
-                  
-                    this.setState({ emergContact: event.target.value })
-                  }} />
+                  <span>Emergency Contact: </span>
+                  <TextField defaultValue={curr.emerg_contact_name} className="text-field-controlled" onChange={event => {
+                      this.setState({
+                        emergContact: event.target.value,
+                        isEditable: true
+                      });
+                    }} />
 
-                <br />
+                  <br />
 
-                <span>Emergency Contact #: </span>
-                <TextField 
-                  defaultValue={curr.emerg_contact_phone}  
-                  className="text-field-controlled" 
-                  onChange={ (event) => {
-                  
-                    this.setState({emergNum: event.target.value })
-                  }} />
+                  <span>Emergency Contact #: </span>
+                  <TextField defaultValue={curr.emerg_contact_phone} className="text-field-controlled" onChange={event => {
+                      this.setState({
+                        emergNum: event.target.value,
+                        isEditable: true
+                      });
+                    }} />
 
-                <br />
-                <RaisedButton label="Save" onClick={() => {this.handleTenantEdit(fName, lName, phone, email, emergContact, emergNum, propId)}}  /> 
+                  <br />             
+                {this.state.isEditable ? 
+                <RaisedButton label="Save" onClick={() => {
+                    this.handleTenantEdit(fName, lName, phone, email, emergContact, emergNum, propId);
+                  }} id = "tenant-btn"/>: null}
                 <br />
               </div>;
           });
@@ -200,7 +197,7 @@ class SingleProperty extends Component {
                     className="text-field-controlled" 
                     onChange={ (event) =>{
                      
-                      this.setState({ propValue: event.target.value })
+                      this.setState({ propValue: event.target.value, isEditable: true })
                     }} />
 
                   <br />
@@ -211,7 +208,10 @@ class SingleProperty extends Component {
                     className="text-field-controlled"
                     onChange={ (event) => {
                     
-                      this.setState({ downPayment: event.target.value })
+                      this.setState({
+                        downPayment: event.target.value,
+                        isEditable: true
+                      });
                     }} />
 
                   <br />
@@ -222,7 +222,10 @@ class SingleProperty extends Component {
                     className="text-field-controlled"
                     onChange={(event) => {
                      
-                      this.setState({ mortgage: event.target.value})
+                      this.setState({
+                        mortgage: event.target.value,
+                        isEditable: true
+                      });
                     }} />
                   <br />
                   <span>Monthly Dues: </span> 
@@ -231,7 +234,10 @@ class SingleProperty extends Component {
                     className="text-field-controlled"
                     onChange={(event) => {
                     
-                      this.setState({ dues: event.target.value })
+                      this.setState({
+                        dues: event.target.value,
+                        isEditable: true
+                      });
                     }} />
 
                   <br />
@@ -242,7 +248,10 @@ class SingleProperty extends Component {
                     className="text-field-controlled"
                     onChange={(event) => {
                       
-                      this.setState({ taxes: event.target.value })
+                      this.setState({
+                        taxes: event.target.value,
+                        isEditable: true
+                      });
                     }} />
                   <br />
                   <span> Monthly Insurance: </span> 
@@ -251,7 +260,10 @@ class SingleProperty extends Component {
                     className="text-field-controlled"
                     onChange={(event) => {
                      
-                      this.setState({ insurance: event.target.value })
+                      this.setState({
+                        insurance: event.target.value,
+                        isEditable: true
+                      });
                     }} />
                   <br />
                   <span> Monthly Utilities:  </span> 
@@ -260,10 +272,13 @@ class SingleProperty extends Component {
                     className="text-field-controlled"
                     onChange={(event) => {
                       
-                      this.setState({ utilities: event.target.value })
+                      this.setState({
+                        utilities: event.target.value,
+                        isEditable: true
+                      });
                     }} />
                   <br />
-                  <RaisedButton label="save" onClick={() => {this.handleExpensesEdit(propValue, downPayment, mortgage, dues, taxes, insurance, utilities, propId)}} />
+                  {this.state.isEditable ? <RaisedButton label="save" onClick={() => {this.handleExpensesEdit(propValue, downPayment, mortgage, dues, taxes, insurance, utilities, propId)}} />: null}
                   <br />
                 </div>
               );
