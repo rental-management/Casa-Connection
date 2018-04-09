@@ -1,3 +1,10 @@
+#prop-container {
+  float: left; }
 
+#tenant-container {
+  float: right; }
+
+#wo-container {
+  float: right; }
 
 /*# sourceMappingURL=SingleProperty.css.map */

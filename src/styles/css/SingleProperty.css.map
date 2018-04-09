@@ -1,7 +1,7 @@
 {
 "version": 3,
-"mappings": "",
-"sources": [],
+"mappings": "AAAA,eAAgB;EACZ,KAAK,EAAE,IAAI;;AAGf,iBAAkB;EACd,KAAK,EAAE,KAAK;;AAGhB,aAAc;EACV,KAAK,EAAE,KAAK",
+"sources": ["../scss/SingleProperty.scss"],
 "names": [],
 "file": "SingleProperty.css"
 }
