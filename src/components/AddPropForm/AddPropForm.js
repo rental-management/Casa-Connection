@@ -47,7 +47,7 @@ handleClickOpen = () => {
 };
 
 handleClose = () => {
-    this.setState({ open: false });
+    
 };
 
 
@@ -55,6 +55,7 @@ handleSubmit(propertyName, street, city, state, zip, img, firstName, lastName, p
     
     this.props.addProperty(propertyName, street, city, state, zip, img, firstName, lastName, phone, email, emergContact, emergNum)
         .then( (res) => {
+        this.setState({ open: false });            
         this.props.getProperties();
     });
    

@@ -210,7 +210,6 @@ export function editTenant(fName, lName, phone, email, emergContact, emergNum, p
     }
 }
 
-
 export function editExpenses(
   propValue,
   downPayment,
