@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
-import {getProperty, getWorkOrders, getExpensesById, getTenant, editTenant, addProperty } from '../../ducks/propertiesReducer';
+import {getProperty, getWorkOrders, getExpensesById, getTenant, editTenant, addProperty, editExpenses } from '../../ducks/propertiesReducer';
 import AddWorkOrderForm from '../AddWorkOrderForm/AddWorkOrderForm';
 import AddExpensesForm from '../AddExpensesForm/AddExpensesForm';
 import NavBar from '../NavBar/NavBar';
@@ -9,6 +9,8 @@ import EditableLabel from 'react-inline-editing';
 import Divider from 'material-ui/Divider';
 import Paper from 'material-ui/Paper';
 import TextField from 'material-ui/TextField';
+import RaisedButton from 'material-ui/RaisedButton';
+import { util } from 'node-forge';
 
 
 class SingleProperty extends Component {
@@ -21,17 +23,21 @@ class SingleProperty extends Component {
           phone: '',
           email: '',
           emergContact: '',
-          emergNum: '',
-          propValue: '',
-          downPayment: '',
-          mortgage: '',
-          dues: '',
-          taxes: '',
-          insurance: '',
-          utilities: ''
+          emergNum: 0,
+          propValue: 0,
+          downPayment: 0,
+          mortgage: 0,
+          dues: 0,
+          taxes: 0,
+          insurance: 0,
+          utilities: 0
         }
         
+        this.handleTenantEdit = this.handleTenantEdit.bind(this);
+        this.handleExpensesEdit = this.handleExpensesEdit.bind(this);
     }
+
+    
 
     componentDidMount() {    
       const { id } = this.props.match.params;          
@@ -39,10 +45,39 @@ class SingleProperty extends Component {
             this.props.getWorkOrders(id);
             this.props.getExpensesById(id);
             this.props.getTenant(id);
-        });
+        }).then(res => {
+          let data = this.props.properties.property[0];          
+          this.setState({
+            fName: data.t_f_name,
+            lName: data.t_l_name,
+            phone: data.t_phone,
+            email: data.t_email,
+            emergContact: data.emerg_contact_name,
+            emergNum: data.emerg_contact_phone
+          })
+
+        })
+
+
     }
 
-    render() {   
+    handleTenantEdit(fName, lName, phone, email, emergContact, emergNum, propId) {
+      this.props.editTenant(fName, lName, phone, email, emergContact, emergNum, propId).then( (res) => {
+        this.props.getTenant(propId);
+      });
+    }
+
+    handleExpensesEdit(propValue, downPayment, mortgage, dues, taxes, insurance, utilities, propId) {
+      this.props.editExpenses(propValue, downPayment, mortgage, dues, taxes, insurance, utilities, propId).then( (res) => {
+        this.props.getExpensesById(propId);
+      });
+    }
+
+
+    render() { 
+      
+        // destructuring state 
+        const {fName, lName, phone, email, emergContact, emergNum, propValue, downPayment, mortgage, dues, taxes, insurance, utilities} = this.state;
       
         //declaring list variables
         let property;
@@ -51,6 +86,7 @@ class SingleProperty extends Component {
         let expensesList;   
         let tenant;
         if (propertyData !== undefined && propertyData.length !== 0) {
+          const propId = this.props.match.params.id;
           property = propertyData.map((curr, index) => {
             return <div key={index}>
          
@@ -67,14 +103,14 @@ class SingleProperty extends Component {
               </div>;
           });
           tenant = this.props.properties.tenant.map((curr, index) => {
+                    
             return <div key={index}>
-
                 <span>First: </span>
                 <TextField 
                   defaultValue={curr.t_f_name} 
-                  id="text-field-controlled" 
+                  className="text-field-controlled" 
                   onChange={ (event) => {
-                  console.log(event.target.value)
+                  
                   this.setState({ fName: event.target.value }) 
                   }} />
 
@@ -83,9 +119,9 @@ class SingleProperty extends Component {
                 <span>Last: </span>
                 <TextField 
                   defaultValue={curr.t_l_name}  
-                  id="text-field-controlled"
+                  className="text-field-controlled"
                   onChange={ (event) => {
-                    console.log(event.target.value)
+                 
                     this.setState({ lName: event.target.value })
                   }} />
 
@@ -94,9 +130,9 @@ class SingleProperty extends Component {
                 <span>Phone: </span>
                 <TextField 
                   defaultValue={curr.t_phone}  
-                  id="text-field-controlled" 
+                  className="text-field-controlled" 
                   onChange={ (event) => {
-                    console.log(event.target.value)
+                  
                     this.setState({ phone: event.target.value })
                   }} />
 
@@ -105,9 +141,9 @@ class SingleProperty extends Component {
                 <span>Email: </span>
                 <TextField 
                   defaultValue={curr.t_email}  
-                  id="text-field-controlled" 
+                  className="text-field-controlled" 
                   onChange={ (event) => {
-                    console.log(event.target.value)
+                    
                     this.setState({ email: event.target.value })
                   }} />
 
@@ -116,9 +152,9 @@ class SingleProperty extends Component {
                 <span>Emergency Contact: </span>
                 <TextField 
                   defaultValue={curr.emerg_contact_name}  
-                  id="text-field-controlled" 
+                  className="text-field-controlled" 
                   onChange={ (event) => {
-                    console.log(event.target.value)
+                  
                     this.setState({ emergContact: event.target.value })
                   }} />
 
@@ -127,12 +163,14 @@ class SingleProperty extends Component {
                 <span>Emergency Contact #: </span>
                 <TextField 
                   defaultValue={curr.emerg_contact_phone}  
-                  id="text-field-controlled" 
+                  className="text-field-controlled" 
                   onChange={ (event) => {
-                    console.log(event.target.value)
+                  
                     this.setState({emergNum: event.target.value })
                   }} />
 
+                <br />
+                <RaisedButton label="Save" onClick={() => {this.handleTenantEdit(fName, lName, phone, email, emergContact, emergNum, propId)}}  /> 
                 <br />
               </div>;
           });
@@ -159,9 +197,9 @@ class SingleProperty extends Component {
                   <span> Assessed Property Value: </span> 
                   <TextField 
                     defaultValue={curr.assessed_value} 
-                    id="text-field-controlled" 
+                    className="text-field-controlled" 
                     onChange={ (event) =>{
-                      console.log(event.target.value)
+                     
                       this.setState({ propValue: event.target.value })
                     }} />
 
@@ -170,9 +208,9 @@ class SingleProperty extends Component {
                   <span>Down Payment: </span> 
                   <TextField  
                     defaultValue={curr.down_payment} 
-                    id="text-field-controlled"
+                    className="text-field-controlled"
                     onChange={ (event) => {
-                      console.log(event.target.value)
+                    
                       this.setState({ downPayment: event.target.value })
                     }} />
 
@@ -181,18 +219,18 @@ class SingleProperty extends Component {
                   <span>Monthly Mortgage: </span> 
                   <TextField 
                     defaultValue={curr.monthly_mortgage} 
-                    id="text-field-controlled"
+                    className="text-field-controlled"
                     onChange={(event) => {
-                      console.log(event.target.value)
+                     
                       this.setState({ mortgage: event.target.value})
                     }} />
                   <br />
                   <span>Monthly Dues: </span> 
                   <TextField 
                     defaultValue={curr.monthly_dues} 
-                    id="text-field-controlled"
+                    className="text-field-controlled"
                     onChange={(event) => {
-                      console.log(event.target.value)
+                    
                       this.setState({ dues: event.target.value })
                     }} />
 
@@ -201,29 +239,31 @@ class SingleProperty extends Component {
                   <span>Monthly Taxes: </span> 
                   <TextField 
                     defaultValue={curr.monthly_taxes} 
-                    id="text-field-controlled"
+                    className="text-field-controlled"
                     onChange={(event) => {
-                      console.log(event.target.value)
-                      this.setState({ dues: event.target.value })
+                      
+                      this.setState({ taxes: event.target.value })
                     }} />
                   <br />
                   <span> Monthly Insurance: </span> 
                   <TextField 
-                    value={curr.monthly_insurance}
-                    id="text-field-controlled"
+                    defaultValue={curr.monthly_insurance}
+                    className="text-field-controlled"
                     onChange={(event) => {
-                      console.log(event.target.value)
+                     
                       this.setState({ insurance: event.target.value })
                     }} />
                   <br />
                   <span> Monthly Utilities:  </span> 
                   <TextField 
-                    value={curr.monthly_utilities} 
-                    id="text-field-controlled"
+                    defaultValue={curr.monthly_utilities} 
+                    className="text-field-controlled"
                     onChange={(event) => {
-                      console.log(event.target.value)
+                      
                       this.setState({ utilities: event.target.value })
                     }} />
+                  <br />
+                  <RaisedButton label="save" onClick={() => {this.handleExpensesEdit(propValue, downPayment, mortgage, dues, taxes, insurance, utilities, propId)}} />
                   <br />
                 </div>
               );
@@ -256,4 +296,4 @@ const mapStateToProps = state => {
     }
 };
 
-export default connect(mapStateToProps, {getProperty, getWorkOrders, getExpensesById, getTenant, editTenant})(SingleProperty);
+export default connect(mapStateToProps, {getProperty, getWorkOrders, getExpensesById, getTenant, editTenant, editExpenses})(SingleProperty);
