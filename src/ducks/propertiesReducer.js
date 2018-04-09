@@ -12,6 +12,7 @@ const GET_EXPENSES_BY_ID = "GET_EXPENSES_BY_ID";
 const DELETE_WORK_ORDERS = "DELETE_WORK_ORDERS";
 const GET_TENANT = "GET_TENANT";
 const EDIT_TENANT = "EDIT_TENANT";
+const EDIT_EXPENSES = 'EDIT_EXPENSES';
 const GET_ALL_WORK_ORDERS = "GET_ALL_WORK_ORDERS";
 
 
@@ -164,12 +165,37 @@ export function getTenant(id){
 }
 
 //edit tenant information
-export function editTenant(text, id){
+export function editTenant(fName, lName, phone, email, emergContact, emergNum, id){
     return {
         type: EDIT_TENANT,
-        payload: axios.put('/edittenant', {text: text, prop_id: id}).then((res) => {
+        payload: axios.put('/edittenant', {
+            t_f_name: fName,
+            t_l_name: lName,
+            phone: phone,
+            email: email,
+            emerg_contact_name: emergContact,
+            emerg_contact_phone: emergNum,
+            prop_id: id
+        }).then((res) => {
             return res.data;
+        })
+    }
+}
 
+export function editExpenses(propValue, downPayment, mortgage, dues, taxes, insurance, utilities, id) {
+    return {
+        type: EDIT_EXPENSES,
+        payload: axios.put('/editexpenses', {
+            assessed_value: propValue,
+            down_payment: downPayment,
+            monthly_mortgage: mortgage,
+            monthly_dues: dues,
+            monthly_taxes: taxes,
+            monthly_insurance: insurance,
+            monthly_utilities: utilities,
+            prop_id: id
+        }).then((res) => {
+            return res.data
         })
     }
 }
