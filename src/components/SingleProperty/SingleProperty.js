@@ -24,13 +24,13 @@ class SingleProperty extends Component {
           email: '',
           emergContact: '',
           emergNum: '',
-          propValue: '',
-          downPayment: '',
-          mortgage: '',
-          dues: '',
-          taxes: '',
-          insurance: '',
-          utilities: ''
+          propValue: 0,
+          downPayment: 0,
+          mortgage: 0,
+          dues: 0,
+          taxes: 0,
+          insurance: 0,
+          utilities: 0
         }
         
         this.handleTenantEdit = this.handleTenantEdit.bind(this);
@@ -234,7 +234,7 @@ class SingleProperty extends Component {
                   <br />
                   <span> Monthly Insurance: </span> 
                   <TextField 
-                    value={curr.monthly_insurance}
+                    defaultValue={curr.monthly_insurance}
                     className="text-field-controlled"
                     onChange={(event) => {
                       console.log(event.target.value)
@@ -243,7 +243,7 @@ class SingleProperty extends Component {
                   <br />
                   <span> Monthly Utilities:  </span> 
                   <TextField 
-                    value={curr.monthly_utilities} 
+                    defaultValue={curr.monthly_utilities} 
                     className="text-field-controlled"
                     onChange={(event) => {
                       console.log(event.target.value)
