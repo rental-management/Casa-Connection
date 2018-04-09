@@ -6,7 +6,7 @@ import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
 import Dialog from 'material-ui/Dialog';
 import FloatingActionButton from 'material-ui/FloatingActionButton';
-import ContentAdd from 'material-ui/svg-icons/content/add'
+import ContentAdd from 'material-ui/svg-icons/content/add';
 
 import PdfUploader from './../ImageUploader/PdfUploader';
 
