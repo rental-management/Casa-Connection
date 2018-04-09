@@ -61,7 +61,7 @@ class SingleProperty extends Component {
               </div>;
           });
           tenant = this.props.properties.tenant.map((curr, index) => {
-            return <div key={index} onClick = {this.displayBtn}>
+            return <div key={index} id = 'tenant-container'>
                 <span>First: </span><EditableLabel text={`${curr.t_f_name}`}/>
                 <br />
                 <span>Last: </span><EditableLabel text = {`${curr.t_l_name}`} /><br/>

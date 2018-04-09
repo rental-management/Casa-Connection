@@ -1,0 +1,203 @@
+a {
+  cursor: pointer;
+  text-decoration: none; }
+
+.App {
+  text-align: center; }
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px; }
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white; }
+
+.App-title {
+  font-size: 1.5em; }
+
+.App-intro {
+  font-size: large; }
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serifsf; }
+
+.splash {
+  background: #149ddc;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  height: 78vh;
+  clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%); }
+
+.logo {
+  height: 5vh; }
+
+.first-container > div:first-of-type {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-content: space-between;
+  padding: 25px 60px 0 60px; }
+
+.first-container > div:nth-child(2) {
+  margin-top: 60px;
+  font-size: 26px;
+  margin-left: 90px;
+  width: 600px; }
+  .first-container > div:nth-child(2) h2 {
+    text-align: left; }
+  .first-container > div:nth-child(2) p {
+    text-align: left;
+    font-size: 24px;
+    padding-bottom: 20px;
+    width: 550px; }
+
+.started-btn {
+  background-color: white;
+  border: 1px solid white;
+  padding: 12px 60px 12px 60px;
+  color: black;
+  cursor: pointer;
+  border-radius: 10px;
+  font-size: 18px; }
+
+.second-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  justify-content: space-around; }
+  .second-container div {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #d6d6d6;
+    padding: 10px;
+    height: 300px;
+    width: 300px;
+    margin-top: 90px;
+    box-shadow: 0 0 5px rgba(33, 33, 33, 0.2); }
+    .second-container div p {
+      text-align: center; }
+
+.third-container {
+  width: 100%;
+  height: 70vh;
+  background: #f4f4f4;
+  margin: 130px 0 100px 0; }
+
+.footer {
+  background: #149ddc;
+  height: 30vh;
+  clip-path: polygon(0 55%, 100% 0, 100% 100%, 0% 100%); }
+
+.login-btn {
+  background-color: transparent;
+  border: 1px solid white;
+  padding: 10px 15px 10px 15px;
+  color: white;
+  cursor: pointer;
+  border-radius: 12%; }
+
+.full-screen-menu {
+  display: flex;
+  justify-content: space-between;
+  font-size: 2em;
+  margin-left: 57%;
+  padding: 20px;
+  color: blue; }
+
+@media only screen and (min-width: 500px) {
+  .responsive-menu, .hamburger {
+    display: none; } }
+@media only screen and (max-width: 700px) {
+  .responsive-menu {
+    display: block;
+    padding: 20px;
+    margin-left: 2%; }
+
+  .full-screen-menu {
+    display: none; } }
+.delete-prop-btn {
+  text-decoration: none;
+  border-style: none;
+  padding: 10px;
+  border-radius: 40px;
+  background-color: #149ddc;
+  color: white;
+  cursor: pointer;
+  width: 20%; }
+
+.propertiesList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; }
+
+.individual-property {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px; }
+
+.properties-img {
+  width: 400px;
+  padding-bottom: 20px; }
+
+.properties-header {
+  padding-top: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  justify-content: space-between;
+  width: 93%;
+  align-content: center;
+  align-items: center; }
+
+.properties-header h1 {
+  padding-left: 60px; }
+
+.dialog-container {
+  display: flex;
+  height: 1000px;
+  width: auto; }
+
+.delete-con-btn {
+  text-decoration: none;
+  border-style: none;
+  padding: 10px;
+  border-radius: 40px;
+  background-color: #149ddc;
+  color: white;
+  cursor: pointer;
+  width: 40%; }
+
+.contractors-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; }
+
+.individual-contractor {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px; }
+  .individual-contractor h1 {
+    margin-top: 0;
+    margin-bottom: 0; }
+
+.contractors-header {
+  padding-top: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  justify-content: space-between;
+  width: 93%;
+  align-content: center;
+  align-items: center; }
+  .contractors-header h1 {
+    padding-left: 60px; }
+
+/*# sourceMappingURL=index.css.map */
