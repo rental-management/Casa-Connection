@@ -9,6 +9,7 @@ const Login = props => {
                 <a href={REACT_APP_LOGIN}>
                 <button className = 'login-btn'>LOGIN</button>
                 </a>
+                
             ) : (
                 <a href={REACT_APP_LOGOUT}>
                 <button className = 'login-btn'>LOGOUT</button>
