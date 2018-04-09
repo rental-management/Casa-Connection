@@ -50,13 +50,13 @@ class AddWorkOrderForm extends Component {
 
         render(){
             const {type, memo} = this.state;
-            // console.log("params id ", this.props);
+           
             //  console.log("here is props - need propId" ,this.props.state.propertiesReducer.properties);
              let propertyArr = this.props.state.propertiesReducer.property;
              let propId;
              if(propertyArr.length !== 0 && propertyArr !== undefined ){
                 propId = this.props.state.propertiesReducer.property[0].id;
-                // console.log('propId', propId);
+               
 
              }
 
