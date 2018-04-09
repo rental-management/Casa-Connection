@@ -26,12 +26,14 @@ class AddWorkOrderForm extends Component {
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleClose = this.handleClose.bind(this);
         this.handleClickOpen = this.handleClickOpen.bind(this);
+       // this.clearInput = this.clearInput.bind(this);
     }
 
 
 
     handleSubmit(propId,type, memo){
-        this.props.addWorkOrder(propId,type, memo);
+        this.props.addWorkOrder(propId,type, memo)
+        .then(this.setState({type: '', memo: ''}))
     }
 
     handleClose = () => {
@@ -41,6 +43,10 @@ class AddWorkOrderForm extends Component {
     handleClickOpen = () => {
         this.setState({ open: true });
     };
+
+    // clearInput(event) {
+    //     this.setState({type: '', memo: ''})
+    // }
 
         render(){
             const {type, memo} = this.state;
@@ -100,7 +106,7 @@ class AddWorkOrderForm extends Component {
                     <br />
                     
                     <RaisedButton onClick={this.handleClose} label="Cancel" secondary="true" />
-                    <RaisedButton onClick={this.handleClose} label="Submit" onClick = {() => {this.handleSubmit(propId, type, memo)}}/>
+                    <RaisedButton  label="Submit" onClick = {() => {this.handleSubmit(propId, type, memo)}} />
                
                 </Dialog>
                 </MuiThemeProvider>
