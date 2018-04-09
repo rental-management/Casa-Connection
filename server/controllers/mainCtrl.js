@@ -120,9 +120,9 @@ module.exports = {
 
     editTenant: (req, res) => {
         const db = req.app.get("db"); 
-        const {t_f_name, t_l_name, t_phone, t_email, emerg_contact_name, emerg_contact_phone, id} = req.body;
+        const {t_f_name, t_l_name, phone, email, emerg_contact_name, emerg_contact_phone, id} = req.body;
         console.log("tenant: ", req.body);     
-        db.editTenant(t_f_name, t_l_name, t_phone, t_email, emerg_contact_name, emerg_contact_phone, id).then( (response) => {
+        db.editTenant(t_f_name, t_l_name, phone, email, emerg_contact_name, emerg_contact_phone, id).then( (response) => {
             res.status(200).json(response);
         }).catch( () => {
             res.status(500).json()})
@@ -138,9 +138,9 @@ module.exports = {
     },
 
     editExpenses: (req, res) => {
-        const db = req.app.get("db");
-        console.log("expenses ",req.body);
+        const db = req.app.get("db");      
         const {assessed_value, down_payment, monthly_mortgage, monthly_dues, monthly_taxes, monthly_insurance, monthly_utilities, id} = req.body;
+        console.log(assessed_value, down_payment, monthly_mortgage, monthly_dues, monthly_taxes, monthly_insurance, monthly_utilities, id);
         db.editExpenses(assessed_value, down_payment, monthly_mortgage, monthly_dues, monthly_taxes, monthly_insurance, monthly_utilities, id).then( (response) => {
             res.status(200).json(response);
         }).catch( (err) => {
