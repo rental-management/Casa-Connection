@@ -3,8 +3,8 @@ import axios from 'axios';
 import ExpenseChart from './../Charts/ExpenseChart';
 
 class Financial extends Component {
-    constructor(props){
-        super(props);
+    constructor(){
+        super();
 
     }
 
@@ -12,7 +12,9 @@ class Financial extends Component {
       return(
           <div>
               FINANCIAL
+            <div>
               <ExpenseChart />
+         </div>
               </div>
       )
   }

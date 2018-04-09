@@ -1,30 +1,39 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { Bar, Line, Pie } from 'react-chartjs-2';
+import { addExpenses } from './../../ducks/propertiesReducer';
 
 class ExpenseChart extends Component {
     constructor(props){
         super(props);
-
         this.state = {
-            chartData: {
-                labels: ['Assessed Value', 
-                            'Down Payment', 
-                            'Monthly Mortgage', 
-                            'Monthly Dues', 
-                            'Monthly Taxes', 
-                            'Monthly Insurance', 
-                            'Monthly Utilities'],
+            chartData: props.addExpenses()
+    }
+    
+} 
+    componentDidMount() {
+        this.props.addExpenses();
+
+    }
+
+    getChartData(){
+        
+        this.setState({
+            chartData:{
+                labels: [
+                    'Assessed Value',
+                    'Down Payment',
+                    'Monthly Mortgage',
+                    'Monthly Dues',
+                    'Monthly Taxes',
+                    'Monthly Insurance',
+                    'Monthly Utilities'
+                ],
                 datasets: [
                     {
-                        label: 'Propety Expenses',
+                        label: 'Property Expenses',
                         data: [
-                            5000, 
-                            2000, 
-                            456, 
-                            4500, 
-                            2000, 
-                            1000, 
-                            8750
+                           
                         ],
                         backgroundColor: [
                             'rgba(255, 99, 132, 0.6)',
@@ -38,26 +47,41 @@ class ExpenseChart extends Component {
                     }
                 ]
             }
-        }
+        })
+       
     }
+
+
+
     render(){
+        let chartData = this.props.properties.singlePropExpenses;
+        let newChartData;
+        if(chartData.length !== 0 && chartData !== undefined){
+            newChartData = chartData.map((curr, i) => {
+               return(
+                   <div className="chart" key={i}>
+                   <Pie
+                      data={this.state.chartData} />
+                    {/* <h5>{curr.prop_name}</h5>
+                    <span>Dues: {curr.monthly_dues}</span> */}
+                   </div>
+               ) 
+            })
+        }
         return(
-            <div className="chart">
-                <Pie
-            	    data={this.state.chartData}
-            	    options={{
-                        title: {
-                            display: true,
-                            text: 'Property Expenses'
-                        },
-                        legend: {
-                            display: true,
-                            position: 'right'
-                        }
-	                }}/>
+            <div>
+
+            {newChartData}
                 </div>
         )
     }
+
 }
 
-export default ExpenseChart;
+const mapStateToProps = state => {
+    return {
+        properties: state.propertiesReducer
+    };
+}
+
+export default connect(mapStateToProps, {addExpenses})(ExpenseChart);
