@@ -23,14 +23,14 @@ class SingleProperty extends Component {
           phone: '',
           email: '',
           emergContact: '',
-          emergNum: '',
-          propValue: '',
-          downPayment: '',
-          mortgage: '',
-          dues: '',
-          taxes: '',
-          insurance: '',
-          utilities: ''
+          emergNum: 0,
+          propValue: 0,
+          downPayment: 0,
+          mortgage: 0,
+          dues: 0,
+          taxes: 0,
+          insurance: 0,
+          utilities: 0
         }
         
         this.handleTenantEdit = this.handleTenantEdit.bind(this);
@@ -45,7 +45,20 @@ class SingleProperty extends Component {
             this.props.getWorkOrders(id);
             this.props.getExpensesById(id);
             this.props.getTenant(id);
-        });
+        }).then(res => {
+          let data = this.props.properties.property[0];          
+          this.setState({
+            fName: data.t_f_name,
+            lName: data.t_l_name,
+            phone: data.t_phone,
+            email: data.t_email,
+            emergContact: data.emerg_contact_name,
+            emergNum: data.emerg_contact_phone
+          })
+
+        })
+
+
     }
 
     handleTenantEdit(fName, lName, phone, email, emergContact, emergNum, propId) {
@@ -97,7 +110,7 @@ class SingleProperty extends Component {
                   defaultValue={curr.t_f_name} 
                   className="text-field-controlled" 
                   onChange={ (event) => {
-                  console.log(event.target.value)
+                  
                   this.setState({ fName: event.target.value }) 
                   }} />
 
@@ -108,7 +121,7 @@ class SingleProperty extends Component {
                   defaultValue={curr.t_l_name}  
                   className="text-field-controlled"
                   onChange={ (event) => {
-                    console.log(event.target.value)
+                 
                     this.setState({ lName: event.target.value })
                   }} />
 
@@ -119,7 +132,7 @@ class SingleProperty extends Component {
                   defaultValue={curr.t_phone}  
                   className="text-field-controlled" 
                   onChange={ (event) => {
-                    console.log(event.target.value)
+                  
                     this.setState({ phone: event.target.value })
                   }} />
 
@@ -130,7 +143,7 @@ class SingleProperty extends Component {
                   defaultValue={curr.t_email}  
                   className="text-field-controlled" 
                   onChange={ (event) => {
-                    console.log(event.target.value)
+                    
                     this.setState({ email: event.target.value })
                   }} />
 
@@ -141,7 +154,7 @@ class SingleProperty extends Component {
                   defaultValue={curr.emerg_contact_name}  
                   className="text-field-controlled" 
                   onChange={ (event) => {
-                    console.log(event.target.value)
+                  
                     this.setState({ emergContact: event.target.value })
                   }} />
 
@@ -152,7 +165,7 @@ class SingleProperty extends Component {
                   defaultValue={curr.emerg_contact_phone}  
                   className="text-field-controlled" 
                   onChange={ (event) => {
-                    console.log(event.target.value)
+                  
                     this.setState({emergNum: event.target.value })
                   }} />
 
@@ -186,7 +199,7 @@ class SingleProperty extends Component {
                     defaultValue={curr.assessed_value} 
                     className="text-field-controlled" 
                     onChange={ (event) =>{
-                      console.log(event.target.value)
+                     
                       this.setState({ propValue: event.target.value })
                     }} />
 
@@ -197,7 +210,7 @@ class SingleProperty extends Component {
                     defaultValue={curr.down_payment} 
                     className="text-field-controlled"
                     onChange={ (event) => {
-                      console.log(event.target.value)
+                    
                       this.setState({ downPayment: event.target.value })
                     }} />
 
@@ -208,7 +221,7 @@ class SingleProperty extends Component {
                     defaultValue={curr.monthly_mortgage} 
                     className="text-field-controlled"
                     onChange={(event) => {
-                      console.log(event.target.value)
+                     
                       this.setState({ mortgage: event.target.value})
                     }} />
                   <br />
@@ -217,7 +230,7 @@ class SingleProperty extends Component {
                     defaultValue={curr.monthly_dues} 
                     className="text-field-controlled"
                     onChange={(event) => {
-                      console.log(event.target.value)
+                    
                       this.setState({ dues: event.target.value })
                     }} />
 
@@ -228,25 +241,25 @@ class SingleProperty extends Component {
                     defaultValue={curr.monthly_taxes} 
                     className="text-field-controlled"
                     onChange={(event) => {
-                      console.log(event.target.value)
+                      
                       this.setState({ taxes: event.target.value })
                     }} />
                   <br />
                   <span> Monthly Insurance: </span> 
                   <TextField 
-                    value={curr.monthly_insurance}
+                    defaultValue={curr.monthly_insurance}
                     className="text-field-controlled"
                     onChange={(event) => {
-                      console.log(event.target.value)
+                     
                       this.setState({ insurance: event.target.value })
                     }} />
                   <br />
                   <span> Monthly Utilities:  </span> 
                   <TextField 
-                    value={curr.monthly_utilities} 
+                    defaultValue={curr.monthly_utilities} 
                     className="text-field-controlled"
                     onChange={(event) => {
-                      console.log(event.target.value)
+                      
                       this.setState({ utilities: event.target.value })
                     }} />
                   <br />
