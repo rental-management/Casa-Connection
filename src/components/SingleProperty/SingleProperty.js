@@ -68,7 +68,6 @@ class SingleProperty extends Component {
           });
           tenant = this.props.properties.tenant.map((curr, index) => {
             return <div key={index}>
-
                 <span>First: </span>
                 <TextField 
                   defaultValue={curr.t_f_name} 
