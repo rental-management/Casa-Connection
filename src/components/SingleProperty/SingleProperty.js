@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
-import {getProperty, getWorkOrders, getExpensesById, getTenant, editTenant, addProperty } from '../../ducks/propertiesReducer';
+import {getProperty, getWorkOrders, getExpensesById, getTenant, editTenant, addProperty, editExpenses } from '../../ducks/propertiesReducer';
 import AddWorkOrderForm from '../AddWorkOrderForm/AddWorkOrderForm';
 import AddExpensesForm from '../AddExpensesForm/AddExpensesForm';
 import NavBar from '../NavBar/NavBar';
@@ -9,6 +9,8 @@ import EditableLabel from 'react-inline-editing';
 import Divider from 'material-ui/Divider';
 import Paper from 'material-ui/Paper';
 import TextField from 'material-ui/TextField';
+import RaisedButton from "material-ui/RaisedButton";
+import { util } from "node-forge";
 
 
 class SingleProperty extends Component {
@@ -42,7 +44,24 @@ class SingleProperty extends Component {
         });
     }
 
-    render() {   
+    handleTenantEdit(fName, lName, phone, email, emergContact, emergNum, propId) {
+      this.props.editTenant(fName, lName, phone, email, emergContact, emergNum, propId).then( (res) => {
+        this.props.getTenant(propId);
+      });
+    }
+
+    handleExpensesEdit(propValue, downPayment, mortgage, dues, taxes, insurance, utilities, propId) {
+      this.props.editExpenses(propValue, downPayment, mortgage, dues, taxes, insurance, utilities, propId).then( (res) => {
+        this.props.getExpensesById(propId);
+      });
+    }
+
+
+    render() { 
+      
+      
+        // destructuring state 
+        const {fName, lName, phone, email, emergContact, emergNum, propValue, downPayment, mortgage, dues, taxes, insurance, utilities} = this.state;
       
         //declaring list variables
         let property;
@@ -51,6 +70,7 @@ class SingleProperty extends Component {
         let expensesList;   
         let tenant;
         if (propertyData !== undefined && propertyData.length !== 0) {
+          const propId = this.props.match.params.id;
           property = propertyData.map((curr, index) => {
             return <div key={index}>
          
@@ -67,6 +87,7 @@ class SingleProperty extends Component {
               </div>;
           });
           tenant = this.props.properties.tenant.map((curr, index) => {
+                    
             return <div key={index}>
                 <span>First: </span>
                 <TextField 
@@ -132,6 +153,8 @@ class SingleProperty extends Component {
                     this.setState({emergNum: event.target.value })
                   }} />
 
+                <br />
+                <RaisedButton label="Save" onClick={() => {this.handleTenantEdit(fName, lName, phone, email, emergContact, emergNum, propId)}}  /> 
                 <br />
               </div>;
           });
@@ -224,6 +247,8 @@ class SingleProperty extends Component {
                       this.setState({ utilities: event.target.value })
                     }} />
                   <br />
+                  <RaisedButton label="save" onClick={() => {this.handleExpensesEdit(propValue, downPayment, mortgage, dues, taxes, insurance, utilities, propId)}} />
+                  <br />
                 </div>
               );
             }
@@ -255,4 +280,4 @@ const mapStateToProps = state => {
     }
 };
 
-export default connect(mapStateToProps, {getProperty, getWorkOrders, getExpensesById, getTenant, editTenant})(SingleProperty);
+export default connect(mapStateToProps, {getProperty, getWorkOrders, getExpensesById, getTenant, editTenant, editExpenses})(SingleProperty);
