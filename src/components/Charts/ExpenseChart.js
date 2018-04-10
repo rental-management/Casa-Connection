@@ -12,7 +12,6 @@ class ExpenseChart extends Component {
     } 
 
     render(){
-        console.log("chart!!!!!!", this.props)
       
         let chartData = this.props.properties.property;
         let newChartData;

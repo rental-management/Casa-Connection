@@ -15,6 +15,7 @@ const EDIT_TENANT = "EDIT_TENANT";
 const EDIT_EXPENSES = "EDIT_EXPENSES";
 const GET_ALL_WORK_ORDERS = "GET_ALL_WORK_ORDERS";
 
+
 // STATE //
 const initialState = {
   properties: [],
