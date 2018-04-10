@@ -1,3 +1,70 @@
+.property-tenant-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; }
 
+.property {
+  width: 48%; }
+
+.breadcrumb {
+  text-align: left;
+  font-size: 24px;
+  width: 100%; }
+
+.breadcrumb a {
+  color: black; }
+
+.single-prop-photo {
+  width: 80%; }
+
+.address {
+  padding-top: 10px; }
+
+.curr-tenant {
+  margin-top: 80px;
+  padding-right: 100px; }
+
+.tenant-header {
+  text-align: left;
+  padding-bottom: 10px; }
+
+.tenant-info {
+  text-align: left; }
+
+.property-line {
+  margin: 30px 0px 40px 0px; }
+
+.work-orders-sp {
+  display: flex;
+  flex-direction: column;
+  width: 30%; }
+
+.add-work-order {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px; }
+
+.wo-expenses {
+  display: flex;
+  flex-direction: row;
+  justify-content: center; }
+
+.expenses-sp {
+  margin-left: 180px;
+  text-align: left; }
+  .expenses-sp h2 {
+    text-align: left; }
+
+.requests {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  margin-bottom: 15px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
 
 /*# sourceMappingURL=SingleProperty.css.map */
