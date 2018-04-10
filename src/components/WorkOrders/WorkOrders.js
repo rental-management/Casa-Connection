@@ -42,7 +42,7 @@ if(workOrderArr.length !== 0 && workOrderArr !== undefined){
             <div>
                <NavBar />     
                <h1 className="work-orders"> Work Orders </h1>   
-               <hr />     
+               <hr className="wo-line" align="left" />     
                <div className="work-orders-list"> {workOrdersList} </div>                    
             </div>
             

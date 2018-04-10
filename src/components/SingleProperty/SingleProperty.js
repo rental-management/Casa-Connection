@@ -93,21 +93,24 @@ class SingleProperty extends Component {
         if (propertyData !== undefined && propertyData.length !== 0) {
           const propId = this.props.match.params.id;
           property = propertyData.map((curr, index) => {
-            return <div key={index} id = "prop-container">
-                <h1><Link to = '/properties' >Properties</Link> <i class="fas fa-long-arrow-alt-right"></i> {curr.prop_name}</h1><br/>
-                <h2>Address</h2> 
-                <span>Street: {curr.street}</span>
-                <br />
-                <span>City: {curr.city}</span>
-                <br />
-                <span>State: {curr.state}</span>
-                <br />
-                <span>Zipcode: {curr.zip}</span>    
-              </div>;
+            return (
+            <div key={index} className= "prop-container">
+            
+                <h1 className="breadcrumb"><Link to = '/properties' >Properties</Link> <i class="fas fa-angle-right"></i> {curr.prop_name}</h1><br/>
+                
+                  <img className="single-prop-photo" src={curr.img} />
+                  <br />
+                  <div className="address">{curr.street} {curr.city}, {curr.state} {curr.zip} </div>
+                  <br />
+
+            </div>
+            );
           });
           tenant = this.props.properties.tenant.map((curr, index) => {            
                     
             return <div key={index} id = 'tenant-container'>  
+                  
+                  <div className="tenant-info">
                   <span>First: </span>
                   <TextField defaultValue={curr.t_f_name} id="text-field-controlled" onChange={event => {
                       this.setState({ fName: event.target.value, isEditable: true });
@@ -169,7 +172,7 @@ class SingleProperty extends Component {
                     this.handleTenantEdit(fName, lName, phone, email, emergContact, emergNum, propId);
                   }} id = "tenant-btn"/>: null}
                 <br />
-                
+              </div>
               </div>;
           });
 
@@ -178,10 +181,15 @@ class SingleProperty extends Component {
             (curr, index) => {
               return (
                 <div key={index} id = 'wo-container'>
-                  <span>Repair type: {curr.type}</span>
-                  <br />
-                  <span>Memo: {curr.memo}</span>
-                  <br />
+                <div className="requests">
+                  <div>
+                    <span>{curr.type}</span>
+                    <br />
+                    <span>{curr.memo}</span>
+                  </div>
+                  <div> <i class="far fa-trash-alt"></i> </div>
+                    <br />
+                </div>
                 </div>
               );
             }
@@ -299,14 +307,27 @@ class SingleProperty extends Component {
         return(
             <div> 
             <NavBar />
-            {property}
-            <h2>Current Tenant</h2>
-            {tenant}
-            <AddWorkOrderForm />
-            <h2>Open Work Orders</h2>
-            {workOrdersList}
-            <h2>Expenses for this Property:</h2>
-            {expensesList}  
+            <div className="property-tenant-container">
+              <div className="property"> {property} </div>
+              <div className="curr-tenant">
+                <h2 className="tenant-header">Tenant</h2>
+                {tenant}
+              </div>
+              <hr className="property-line" align="center" />
+            </div>
+          <div className="wo-expenses">
+            <div className="work-orders-sp">
+              <div className="add-work-order">
+                 <h2>Work Orders</h2>
+                 <AddWorkOrderForm />
+              </div>
+                {workOrdersList}
+            </div>
+            <div className="expenses-sp">
+              <h2>Expenses</h2>
+              {expensesList}  
+            </div>
+          </div>
                  <ExpenseChart />  
             </div>
             
