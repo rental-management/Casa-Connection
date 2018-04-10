@@ -19,13 +19,14 @@
   padding: 0px; }
 
 .delete-work-order {
-  padding: 0px 40px 0px 80px;
+  padding: 0px 40px 0px 75px;
   border-left: 1px solid gray;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 70px;
-  font-size: 16px; }
+  font-size: 24px;
+  color: gray; }
 
 .work-orders {
   display: flex;

@@ -31,7 +31,7 @@ if(workOrderArr.length !== 0 && workOrderArr !== undefined){
                         <span className="type"> {curr.type}</span><br/>
                         <span className="memo"> {curr.memo}</span>
                     </div>
-                <span className="delete-work-order"> DELETE </span>
+                <span className="delete-work-order"> X </span>
             </div>
         </div>);
     })

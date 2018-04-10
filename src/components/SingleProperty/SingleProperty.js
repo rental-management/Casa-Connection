@@ -94,8 +94,8 @@ class SingleProperty extends Component {
           property = propertyData.map((curr, index) => {
             return <div key={index} id = "prop-container">
          
-                <h1>{curr.prop_name}</h1>
-
+                <h1>{curr.prop_name}</h1> 
+                <img className="single-prop-photo" src={curr.img} />
                 <span>Street: {curr.street}</span>
                 <br />
                 <span>City: {curr.city}</span>

@@ -183,6 +183,9 @@ body {
 .properties-header h1 {
   padding-left: 60px; }
 
+.single-prop-photo {
+  width: 30%; }
+
 .dialog-container {
   display: flex;
   height: 1000px;
@@ -224,6 +227,12 @@ body {
   .contractors-header h1 {
     padding-left: 60px; }
 
+.buttons {
+  display: inline-flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  flex-wrap: wrap; }
+
 .work-order-container {
   display: flex;
   flex-direction: row;
@@ -245,13 +254,14 @@ body {
   padding: 0px; }
 
 .delete-work-order {
-  padding: 0px 40px 0px 80px;
+  padding: 0px 40px 0px 75px;
   border-left: 1px solid gray;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 70px;
-  font-size: 16px; }
+  font-size: 24px;
+  color: gray; }
 
 .work-orders {
   display: flex;
@@ -264,13 +274,6 @@ hr {
 
 .work-orders-list {
   display: flex;
-  flex-direction: column; 
-}
-
-.buttons {
-  display: inline-flex;
-  flex-direction: row-reverse;
-  align-items: center;
-  flex-wrap: wrap; }
+  flex-direction: column; }
 
 /*# sourceMappingURL=index.css.map */
