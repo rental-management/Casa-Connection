@@ -224,6 +224,12 @@ body {
   .contractors-header h1 {
     padding-left: 60px; }
 
+.buttons {
+  display: inline-flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  flex-wrap: wrap; }
+
 .work-order-container {
   display: flex;
   flex-direction: row;
@@ -264,13 +270,6 @@ hr {
 
 .work-orders-list {
   display: flex;
-  flex-direction: column; 
-}
-
-.buttons {
-  display: inline-flex;
-  flex-direction: row-reverse;
-  align-items: center;
-  flex-wrap: wrap; }
+  flex-direction: column; }
 
 /*# sourceMappingURL=index.css.map */
