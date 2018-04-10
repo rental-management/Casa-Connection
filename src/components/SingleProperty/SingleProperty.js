@@ -92,7 +92,7 @@ class SingleProperty extends Component {
         if (propertyData !== undefined && propertyData.length !== 0) {
           const propId = this.props.match.params.id;
           property = propertyData.map((curr, index) => {
-            return <div key={index}>
+            return <div key={index} id = "prop-container">
          
                 <h1>{curr.prop_name}</h1>
 
@@ -108,7 +108,7 @@ class SingleProperty extends Component {
           });
           tenant = this.props.properties.tenant.map((curr, index) => {            
                     
-            return <div key={index}>                
+            return <div key={index} id = 'tenant-container'>  
                   <span>First: </span>
                   <TextField defaultValue={curr.t_f_name} className="text-field-controlled" onChange={event => {
                       this.setState({ fName: event.target.value, isEditable: true });
@@ -178,7 +178,7 @@ class SingleProperty extends Component {
           workOrdersList = this.props.properties.workOrders.map(
             (curr, index) => {
               return (
-                <div key={index}>
+                <div key={index} id = 'wo-container'>
                   <span>Repair type: {curr.type}</span>
                   <br />
                   <span>Memo: {curr.memo}</span>

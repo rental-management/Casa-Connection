@@ -28,11 +28,11 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serifsf; }
 
 .splash {
-  background: #149ddc;
+  background: #00afd7;
   background-size: 100%;
   background-repeat: no-repeat;
-  height: 78vh;
-  clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%); }
+  height: 75vh;
+  clip-path: polygon(0 0, 100% 0, 100% 82%, 0 100%); }
 
 .logo {
   height: 5vh; }
@@ -70,28 +70,34 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  justify-content: space-around; }
+  flex-wrap: wrap;
+  margin-left: 40px;
+  margin-right: 40px; }
   .second-container div {
     display: flex;
+    align-items: center;
+    justify-content: center;
     flex-direction: column;
     border: 1px solid #d6d6d6;
-    padding: 10px;
-    height: 300px;
-    width: 300px;
-    margin-top: 90px;
-    box-shadow: 0 0 5px rgba(33, 33, 33, 0.2); }
-    .second-container div p {
-      text-align: center; }
+    height: 45vh;
+    padding: 10px 10px 0 10px;
+    width: 45vh;
+    margin-top: 20px;
+    margin-left: 40px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
+    .second-container div h1 {
+      padding-top: 15px;
+      width: 90%; }
 
 .third-container {
   width: 100%;
   height: 70vh;
   background: #f4f4f4;
-  margin: 130px 0 100px 0; }
+  margin: 100px 0 100px 0; }
 
 .footer {
-  background: #149ddc;
-  height: 30vh;
+  background: #00afd7;
+  height: 40vh;
   clip-path: polygon(0 55%, 100% 0, 100% 100%, 0% 100%); }
 
 .login-btn {
@@ -158,6 +164,9 @@ body {
 
 .properties-header h1 {
   padding-left: 60px; }
+
+body {
+  background-color: blue; }
 
 .dialog-container {
   display: flex;
