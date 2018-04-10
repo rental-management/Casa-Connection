@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import AddWorkOrderForm from '../AddWorkOrderForm/AddWorkOrderForm';
 import NavBar from '../NavBar/NavBar';
 import {getAllWorkOrders, deleteWorkOrders} from './../../ducks/propertiesReducer';
 import ExpenseChart from './../Charts/ExpenseChart';
