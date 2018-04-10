@@ -103,7 +103,7 @@ class SingleProperty extends Component {
             return (
             <div key={index} className= "prop-container">
             
-                <h1 className="breadcrumb"><Link to = '/properties' >Properties</Link> <i class="fas fa-angle-right"></i> {curr.prop_name}</h1><br/>
+                <h1 className="breadcrumb"><Link to = '/properties' >Properties</Link> <i className="fas fa-angle-right"></i> {curr.prop_name}</h1><br/>
                 
                   <img className="single-prop-photo" src={curr.img} />
                   <br />
@@ -326,7 +326,7 @@ class SingleProperty extends Component {
             <div className="work-orders-sp">
               <div className="add-work-order">
                  <h2>Work Orders</h2>
-                 <AddWorkOrderForm />
+                 <AddWorkOrderForm/>
               </div>
                 {workOrdersList}
             </div>

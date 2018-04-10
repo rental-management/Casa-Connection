@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,kBAAmB;EACf,MAAM,EAAE,KAAK;EACb,KAAK,EAAE,KAAK;EACZ,KAAK,EAAE,KAAK;EACZ,OAAO,EAAE,KAAK",
+"sources": ["../scss/ExpenseChart.scss"],
+"names": [],
+"file": "ExpenseChart.css"
+}
