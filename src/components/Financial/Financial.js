@@ -25,13 +25,8 @@ class Financial extends Component {
       return(
           <div>
               <NavBar/>
-<<<<<<< HEAD
             
               <TotalExpensesChart/>
-=======
-              <h1>Total Expenses for All Properties</h1>
-              {/* <TotalExpensesChart/> */}
->>>>>>> master
               </div>
       )
   }
