@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import {getProperty, getWorkOrders, getExpensesById, getTenant, editTenant, addProperty, editExpenses } from '../../ducks/propertiesReducer';
 import AddWorkOrderForm from '../AddWorkOrderForm/AddWorkOrderForm';
 import NavBar from '../NavBar/NavBar';
+import { Link } from "react-router-dom";
 import EditableLabel from 'react-inline-editing';
 import ExpenseChart from './../Charts/ExpenseChart';
 //MUI Imports
@@ -93,17 +94,15 @@ class SingleProperty extends Component {
           const propId = this.props.match.params.id;
           property = propertyData.map((curr, index) => {
             return <div key={index} id = "prop-container">
-         
-                <h1>{curr.prop_name}</h1>
-
+                <h1><Link to = '/properties' >Properties</Link> <i class="fas fa-long-arrow-alt-right"></i> {curr.prop_name}</h1><br/>
+                <h2>Address</h2> 
                 <span>Street: {curr.street}</span>
                 <br />
                 <span>City: {curr.city}</span>
                 <br />
                 <span>State: {curr.state}</span>
                 <br />
-                <span>Zipcode: {curr.zip}</span>
-         
+                <span>Zipcode: {curr.zip}</span>    
               </div>;
           });
           tenant = this.props.properties.tenant.map((curr, index) => {            
