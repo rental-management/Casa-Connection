@@ -64,7 +64,7 @@ class NavBar extends Component {
   
   <div className="responsive-menu">
   <MuiThemeProvider muiTheme={muiTheme}>
-  <IconMenu iconButtonElement={<IconButton className="hamburger"> <i class="material-icons">&#xE5D2;</i> </IconButton>}>
+  <IconMenu iconButtonElement={<IconButton className="hamburger"> <i className="material-icons">&#xE5D2;</i> </IconButton>}>
       <MenuItem primaryText = { <Link to="/properties" > Properties </Link> } />
       <MenuItem primaryText = { <Link to="/workorders" > Work Orders </Link> } />
       <MenuItem primaryText = { <Link to="/contractors" > Contractors </Link> } />

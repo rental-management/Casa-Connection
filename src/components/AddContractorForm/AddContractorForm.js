@@ -5,7 +5,7 @@ import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 import Dialog from 'material-ui/Dialog';
 import FloatingActionButton from 'material-ui/FloatingActionButton';
-import ContentAdd from 'material-ui/svg-icons/content/add'
+import ContentAdd from 'material-ui/svg-icons/content/add';
 
 import {addContractor, getContractors} from '../../ducks/contractorsReducer';
 import { getProperties } from '../../ducks/propertiesReducer';
@@ -60,6 +60,7 @@ handleSubmit(propName, compName, type, firstName, lastName, phone, email, street
     console.log(propName);
     this.props.addContractor(propName, compName, type, firstName, lastName, phone, email, street, city, state, zip).then( (res) => {
         this.props.getContractors();
+        this.setState({open: false});
     });
 }
 
