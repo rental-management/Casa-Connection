@@ -46,7 +46,7 @@ handleClickOpen = () => {
 };
 
 handleClose = () => {
-    
+    this.setState({ open: false }); 
 };
 
 

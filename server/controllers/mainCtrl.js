@@ -106,7 +106,7 @@ module.exports = {
     deleteWorkOrders: (req, res) => {
         const db = req.app.get("db");
         db
-        .deleteWorkOrders([req.body.prop_id])
+        .deleteWorkOrders([req.body.workorders_id])
         .then(response => res.status(200).json(response))
         .catch( () => res.status(500).json())
     },
@@ -131,6 +131,7 @@ module.exports = {
     getAllWorkOrders: (req, res) => {
         const db = req.app.get("db");
         db.getAllWorkOrders(req.user.id).then( (response) => {
+            console.log(response);
             res.status(200).json(response);
         }).catch( () => {
             res.status(500).json();

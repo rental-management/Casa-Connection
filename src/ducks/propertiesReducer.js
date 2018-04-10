@@ -153,11 +153,11 @@ export function deleteProperty(propId) {
   };
 }
 
-export function deleteWorkOrders(propId) {
+export function deleteWorkOrders(id) {
   return {
     type: DELETE_WORK_ORDERS,
     payload: axios
-      .delete("/deleteworkorders", { data: { prop_id: propId } })
+      .delete("/deleteworkorders", { data: { workorders_id: id } })
       .then(res => {
         return res.data;
       })
@@ -245,6 +245,7 @@ export function getAllWorkOrders() {
   return {
     type: GET_ALL_WORK_ORDERS,
     payload: axios.get("/allworkorders").then(res => {
+      console.log(res.data, "all reducer")
       return res.data;
     })
   };
@@ -456,6 +457,22 @@ export default function reducer(state = initialState, action) {
           isLoading: false,
           didErr: true,
           errMessage: action.payload
+      });
+    //Add work order
+    case `${ADD_WORK_ORDER}_PENDING`:
+      return Object.assign({}, state, { isLoading: true });
+
+    case `${ADD_WORK_ORDER}_FULFILLED`:
+      return Object.assign({}, state, {
+        isLoading: false,
+        workOrder: action.payload
+      });
+
+    case `${ADD_WORK_ORDER}_REJECTED`:
+      return Object.assign({}, state, {
+        isLoading: false,
+        didErr: true,
+        errMessage: action.payload
       });
 
     default:
