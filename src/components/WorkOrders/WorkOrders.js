@@ -15,7 +15,6 @@ class WorkOrders extends Component {
 
 
     }
-
     
     
     render() {        
@@ -23,10 +22,16 @@ let workOrderArr = this.props.properties.workOrders;
 let workOrdersList;
 if(workOrderArr.length !== 0 && workOrderArr !== undefined){
     workOrdersList = workOrderArr.map((curr, index) => {
-        return(<div key = {index}>
-            <h5>{curr.prop_name}</h5>
-            <span>Type: {curr.type}</span><br/>
-            <span>Memo: {curr.memo}</span>
+        return(
+            <div key = {index}>
+            <div className="work-order-container">
+                <h2 className="work-order-prop-name">{curr.prop_name}</h2>
+                    <div className="type-memo">
+                        <span className="type"> {curr.type}</span><br/>
+                        <span className="memo"> {curr.memo}</span>
+                    </div>
+                <span className="delete-work-order"> DELETE </span>
+            </div>
         </div>);
     })
 
@@ -35,10 +40,10 @@ if(workOrderArr.length !== 0 && workOrderArr !== undefined){
 
         return(
             <div>
-               <NavBar />             
-               {workOrdersList}                      
-
-               
+               <NavBar />     
+               <h1 className="work-orders"> Work Orders </h1>   
+               <hr />     
+               <div className="work-orders-list"> {workOrdersList} </div>                    
             </div>
             
         )
