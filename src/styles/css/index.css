@@ -183,6 +183,15 @@ body {
 .properties-header h1 {
   padding-left: 60px; }
 
+#prop-container {
+  float: left; }
+
+#tenant-container {
+  float: right; }
+
+#wo-container {
+  float: right; }
+
 .dialog-container {
   display: flex;
   height: 1000px;
