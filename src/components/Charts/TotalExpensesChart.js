@@ -4,12 +4,12 @@ import { Bar, Line, Pie, Doughnut } from "react-chartjs-2";
 import { getProperties } from "./../../ducks/propertiesReducer";
 
 class TotalExpensesChart extends Component {
-  constructor() {
-    super();
-    this.state = {
-      chartData: {}
-    };
-  }
+ constructor() {
+   super();
+   this.state = {
+     chartData: {}
+   };
+ }
 
   render() {
     let chartData = this.props.properties.properties;
@@ -119,9 +119,9 @@ class TotalExpensesChart extends Component {
   }
 
 const mapStateToProps = state => {
-  return {
-    properties: state.propertiesReducer
-  };
+ return {
+   properties: state.propertiesReducer
+ };
 };
 
 export default connect(mapStateToProps, { getProperties })(TotalExpensesChart);

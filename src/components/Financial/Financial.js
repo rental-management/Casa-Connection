@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import axios from 'axios';
 import {connect} from 'react-redux';
 import { getProperties } from '../../ducks/propertiesReducer';
 import NavBar from '../NavBar/NavBar';
-import TotalExpensesChart from '../Charts/TotalExpensesChart';
+//import TotalExpensesChart from '../Charts/TotalExpensesChart';
 
 class Financial extends Component {
 
@@ -26,8 +25,13 @@ class Financial extends Component {
       return(
           <div>
               <NavBar/>
+<<<<<<< HEAD
             
               <TotalExpensesChart/>
+=======
+              <h1>Total Expenses for All Properties</h1>
+              {/* <TotalExpensesChart/> */}
+>>>>>>> master
               </div>
       )
   }

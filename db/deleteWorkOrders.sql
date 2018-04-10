@@ -1,1 +1,1 @@
-DELETE FROM work_orders WHERE prop_id = $1;
+DELETE FROM work_orders WHERE workorders_id = $1;

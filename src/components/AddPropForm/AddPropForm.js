@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 //material ui imports
-// import Paper from 'material-ui/Paper';
 import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
 import Dialog from 'material-ui/Dialog';
@@ -47,7 +46,7 @@ handleClickOpen = () => {
 };
 
 handleClose = () => {
-    
+    this.setState({ open: false }); 
 };
 
 
@@ -75,13 +74,6 @@ const {propertyName, street, city, state, zip, img, open, firstName, lastName, p
 
 
 
-//Material Ui Inline Styles
-// const style = {
-//     height: 'auto',
-//     width: '80%',
-//     margin: 'auto',
-//     padding: 30
-// }
 
 const customContentStyle = {
     width: '100%',

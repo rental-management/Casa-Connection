@@ -10,11 +10,11 @@ import FloatingActionButton from 'material-ui/FloatingActionButton';
 import ContentAdd from 'material-ui/svg-icons/content/add';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import {lightBlue900} from 'material-ui/styles/colors';
-import {addWorkOrder} from './../../ducks/propertiesReducer';
+import {addWorkOrder, getWorkOrders} from './../../ducks/propertiesReducer';
 
 class AddWorkOrderForm extends Component {
-    constructor(){
-        super();
+    constructor(props){
+        super(props);
 
         this.state = {
             type: [],
@@ -26,16 +26,15 @@ class AddWorkOrderForm extends Component {
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleClose = this.handleClose.bind(this);
         this.handleClickOpen = this.handleClickOpen.bind(this);
-       // this.clearInput = this.clearInput.bind(this);
+       
     }
 
 
 
     handleSubmit(propId,type, memo){
         this.props.addWorkOrder(propId,type, memo)
-        .then( (res) => {
-            this.setState({ open: false });
-            this.setState({type: '', memo: ''});
+        .then( (res) => {          
+            this.setState({ open: false });         
         })
     }
 
@@ -59,13 +58,6 @@ class AddWorkOrderForm extends Component {
                
 
              }
-
-            //  for(let i = 0; i <propertiesArr.length; i ++){
-            //      let id = propertiesArr[i].id;
-            //      if (id === id){
-            //          //Do something
-            //      }
-            //  }
            
            
             // MUI COLORS
