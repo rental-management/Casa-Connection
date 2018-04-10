@@ -1,0 +1,43 @@
+.work-order-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 10px 100px 10px 100px;
+  justify-content: space-between;
+  padding: 10px 30px 10px 40px;
+  font-size: 18px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
+
+.work-order-prop-name {
+  font-size: 18px; }
+
+.type-memo {
+  margin: 0;
+  font-size: 18px;
+  padding: 0px; }
+
+.delete-work-order {
+  padding: 0px 40px 0px 80px;
+  border-left: 1px solid gray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70px;
+  font-size: 16px; }
+
+.work-orders {
+  display: flex;
+  justify-content: flex-start;
+  margin-left: 70px;
+  font-size: 25px; }
+
+hr {
+  width: 90%; }
+
+.work-orders-list {
+  display: flex;
+  flex-direction: column; }
+
+/*# sourceMappingURL=WorkOrders.css.map */
