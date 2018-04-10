@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
-import {getProperty, getWorkOrders, getExpensesById, getTenant, editTenant, addProperty, editExpenses } from '../../ducks/propertiesReducer';
+import {getProperty, getWorkOrders, getExpensesById, getTenant, editTenant, addProperty, editExpenses, deleteWorkOrders } from '../../ducks/propertiesReducer';
 import AddWorkOrderForm from '../AddWorkOrderForm/AddWorkOrderForm';
 import NavBar from '../NavBar/NavBar';
 import { Link } from "react-router-dom";
@@ -39,6 +39,7 @@ class SingleProperty extends Component {
         
         this.handleTenantEdit = this.handleTenantEdit.bind(this);
         this.handleExpensesEdit = this.handleExpensesEdit.bind(this);
+        this.handleOrderDelete = this.handleOrderDelete.bind(this);
     }
 
     
@@ -77,6 +78,12 @@ class SingleProperty extends Component {
         this.props.getExpensesById(propId);
         this.setState({isEditable: false})
       });
+    }
+
+    handleOrderDelete(id, propId) {
+       this.props.deleteWorkOrders(id).then((res) => {
+         this.props.getWorkOrders(propId);
+       })
     }
 
 
@@ -187,7 +194,7 @@ class SingleProperty extends Component {
                     <br />
                     <span>{curr.memo}</span>
                   </div>
-                  <div className = 'delete-btn'> <i className="far fa-trash-alt"></i> </div>
+                  <div onClick={() => this.handleOrderDelete(curr.workorders_id, curr.prop_id)}> <i class="far fa-trash-alt"></i> </div>
                     <br />
                 </div>
                 </div>
@@ -342,4 +349,4 @@ const mapStateToProps = state => {
     }
 };
 
-export default connect(mapStateToProps, {getProperty, getWorkOrders, getExpensesById, getTenant, editTenant, editExpenses})(SingleProperty);
+export default connect(mapStateToProps, {getProperty, getWorkOrders, getExpensesById, getTenant, editTenant, editExpenses, deleteWorkOrders})(SingleProperty);
