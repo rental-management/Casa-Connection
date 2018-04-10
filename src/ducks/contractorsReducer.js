@@ -5,6 +5,7 @@ import axios from 'axios';
 const GET_CONTRACTORS = 'GET_CONTRACTORS';
 const ADD_CONTRACTOR = 'ADD_CONTRACTOR';
 const DELETE_CONTRACTOR = 'DELETE_CONTRACTOR';
+const EDIT_CONTRACTOR = 'EDIT_CONTRACTOR';
 
 
 //STATE
@@ -64,6 +65,25 @@ export function deleteContractor(conId) {
     }
 }
 
+export function editContractor(fName, lName, phone, email, street, city, state, zip, conId) {
+    return {
+        type: EDIT_CONTRACTOR,
+        payload: axios.put('/editcontractor', {
+            f_name: fName,
+            l_name: lName,
+            phone: phone,
+            email: email,
+            street: street,
+            city: city,
+            state: state,
+            zip: zip,
+            id: conId
+        }).then((res) => {
+            return res.data;
+        })
+    }
+}
+
 
 //REDUCER
 
@@ -100,6 +120,17 @@ export default function reducer(state = initialState, action) {
             return Object.assign({}, state, { isLoading: false, contractors: action.payload });
 
         case `${DELETE_CONTRACTOR}_REJECTED`:
+            return Object.assign({}, state, { isLoading: false, didErr: true, errMessage: action.payload });
+
+        //edit contractor
+        case `${EDIT_CONTRACTOR}_PENDING`:
+            return Object.assign({}, state, { isLoading: true});
+        
+        case `${EDIT_CONTRACTOR}_FULFILLED`:
+        console.log(action.payload);
+            return Object.assign({}, state, { isLoading: false, contractors: action.payload });
+
+        case `${EDIT_CONTRACTOR}_REJECTED`:
             return Object.assign({}, state, { isLoading: false, didErr: true, errMessage: action.payload });
 
     default : return state;
