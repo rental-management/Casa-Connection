@@ -60,6 +60,7 @@ handleSubmit(propName, compName, type, firstName, lastName, phone, email, street
     console.log(propName);
     this.props.addContractor(propName, compName, type, firstName, lastName, phone, email, street, city, state, zip).then( (res) => {
         this.props.getContractors();
+        this.setState({open: false});
     });
 }
 
