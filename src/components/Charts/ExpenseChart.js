@@ -57,7 +57,16 @@ class ExpenseChart extends Component {
                         }
                     ]}} 
                       options={{
-                          maintainAspectRatio: true}}/>
+                          legend: {
+                              display: true,
+                              position: 'left'
+                          },
+                          title:{
+                              display: true,
+                              text: this.props.properties.property[0].prop_name,
+                              fontSize: 25
+                          }
+                          }}/>
 </div>
 
                     {/* <h5>{curr.prop_name}</h5> */}

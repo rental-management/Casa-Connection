@@ -264,6 +264,13 @@ hr {
 
 .work-orders-list {
   display: flex;
-  flex-direction: column; }
+  flex-direction: column; 
+}
+
+.buttons {
+  display: inline-flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  flex-wrap: wrap; }
 
 /*# sourceMappingURL=index.css.map */
