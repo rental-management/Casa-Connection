@@ -28,7 +28,16 @@ let workOrderArr = this.props.properties.workOrders;
 console.log(this.props);
 let workOrdersList;
 if(workOrderArr.length !== 0 && workOrderArr !== undefined){
-    workOrdersList = workOrderArr.map((curr, index) => {
+    workOrderArr = workOrderArr.sort(function(a,b) {
+        if(a !== undefined && b !== undefined){
+let textA = a.prop_name.toUpperCase();
+let textB = b.prop_name.toUpperCase();
+return textA < textB ? -1 : textA > textB ? 1 : 0; 
+        }            
+    });
+    
+    workOrdersList = workOrderArr.map((curr, index) => {        
+
         return(
             <div key = {index}>
             <div className="work-order-container">
