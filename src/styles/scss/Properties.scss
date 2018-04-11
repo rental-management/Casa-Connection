@@ -17,20 +17,22 @@
 }
 
 .properties-name {
-    color: #4c4c4b;
-    font-size: 24px;
+    color: #686868;
+    font-size: 22px;
     font-family: $header;
+    padding-bottom: 5px;
+    font-weight: bold;
 }
 
 .delete-prop-btn {
-    text-decoration: none;
-    border-style: none;
-    padding: 10px;
-    border-radius: 40px;
-    background-color: #149ddc;
-    color: white;
+    // text-decoration: none;
+    // border-style: none;
+    // padding: 10px;
+    // border-radius: 40px;
+    // background-color: #149ddc;
+    color: #149ddc;
     cursor: pointer;
-    width: 20%;
+    // width: 20%;
 }
 
 .propertiesList {
@@ -44,6 +46,10 @@
     flex-direction: column;
     align-items: center;
     padding: 20px;
+    background: white;
+    border-radius: 6px;
+    box-shadow: 0 12px 22px 0 rgba(0,0,0,.15);
+    margin: 10px;
 }
 
 .properties-img {
