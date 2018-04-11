@@ -1541,6 +1541,13 @@ chartjs-color@^2.1.0:
     chartjs-color-string "^0.5.0"
     color-convert "^0.5.3"
 
+chartjs-plugin-waterfall@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/chartjs-plugin-waterfall/-/chartjs-plugin-waterfall-1.0.3.tgz#c1c9edc32c97f75dd4e2a630750a0a959337074a"
+  dependencies:
+    lodash.groupby "^4.6.0"
+    lodash.merge "^4.6.0"
+
 chokidar@^1.6.0:
   version "1.7.0"
   resolved "https://registry.yarnpkg.com/chokidar/-/chokidar-1.7.0.tgz#798e689778151c8076b4b360e5edd28cda2bb468"
@@ -4571,6 +4578,10 @@ lodash.cond@^4.3.0:
 lodash.defaults@^4.2.0:
   version "4.2.0"
   resolved "https://registry.yarnpkg.com/lodash.defaults/-/lodash.defaults-4.2.0.tgz#d09178716ffea4dde9e5fb7b37f6f0802274580c"
+
+lodash.groupby@^4.6.0:
+  version "4.6.0"
+  resolved "https://registry.yarnpkg.com/lodash.groupby/-/lodash.groupby-4.6.0.tgz#0b08a1dcf68397c397855c3239783832df7403d1"
 
 lodash.memoize@^4.1.2:
   version "4.1.2"
