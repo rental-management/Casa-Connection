@@ -1,5 +1,12 @@
+.properties-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 85vh;
+}
+
 .properties-header {
     padding-top: 20px;
+    margin-bottom: 20px;
     display: flex;
     flex-direction: row;
     justify-content: center; 
@@ -36,6 +43,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    flex: 1 0 auto;
 }
 
 .individual-property {

@@ -28,14 +28,14 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serifsf; }
 
 .splash {
-  background: #009be0;
+  background: linear-gradient(rgba(64, 64, 64, 0.6) rgba(64, 64, 64, 0.6), rgba(64, 64, 64, 0.6)), url("../../assets/windows.jpg");
   background-size: 100%;
   background-repeat: no-repeat;
-  height: 75vh;
+  height: 73vh;
   clip-path: polygon(0 0, 100% 0, 100% 82%, 0 100%); }
 
 .logo {
-  height: 9vh;
+  height: 8vh;
   padding: 10px 20px 40px 10px; }
 
 .splash-header {
@@ -44,7 +44,8 @@ body {
   align-items: center;
   color: white;
   letter-spacing: 2px;
-  font-family: "Roboto", sans-serif; }
+  font-family: "Roboto", sans-serif;
+  font-size: 13px; }
 
 .first-container > div:first-of-type {
   display: flex;
@@ -59,7 +60,7 @@ body {
   width: 700px;
   display: flex;
   flex-direction: column;
-  font-size: 20px; }
+  font-size: 26px; }
   .first-container > div:nth-child(2) h2 {
     text-align: left;
     color: white;
@@ -70,21 +71,25 @@ body {
     text-align: left;
     width: 550px;
     color: white;
-    line-height: 40px;
+    line-height: 35px;
     font-size: 20px;
     font-family: "Lato", sans-serif;
     letter-spacing: 1px; }
 
 .started-btn {
   background-color: white;
-  border: 1px solid white;
   padding: 12px 60px 12px 60px;
-  color: black;
+  color: #4c4c4b;
   cursor: pointer;
   border-radius: 10px;
   font-size: 18px;
   width: 300px;
   margin-top: 10px; }
+
+.started-btn:hover {
+  transition: background-color .2s ease;
+  background: #ff3776;
+  color: white; }
 
 .second-container {
   display: flex;
@@ -139,6 +144,11 @@ body {
   border-radius: 12%;
   font-size: 15px; }
 
+.login-btn:hover {
+  background: white;
+  transition: background-color 0.3s ease;
+  color: #4d4d4d; }
+
 .full-screen-menu {
   display: flex;
   justify-content: space-between;
@@ -158,8 +168,14 @@ body {
 
   .full-screen-menu {
     display: none; } }
+.properties-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 85vh; }
+
 .properties-header {
   padding-top: 20px;
+  margin-bottom: 20px;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -191,7 +207,8 @@ body {
 .propertiesList {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center; }
+  justify-content: center;
+  flex: 1 0 auto; }
 
 .individual-property {
   display: flex;
@@ -202,6 +219,11 @@ body {
 .properties-img {
   width: 400px;
   padding-bottom: 20px; }
+
+.single_property-container {
+  display: flex;
+  flex-direction: column;
+  height: auto; }
 
 .property-tenant-container {
   display: flex;
@@ -277,6 +299,11 @@ body {
   height: 1000px;
   width: auto; }
 
+.contractors-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 85vh; }
+
 .delete-con-btn {
   text-decoration: none;
   border-style: none;
@@ -290,7 +317,8 @@ body {
 .contractors-list {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center; }
+  justify-content: center;
+  flex: 1 0 auto; }
 
 .individual-contractor {
   display: flex;
@@ -318,6 +346,10 @@ body {
   flex-direction: row-reverse;
   align-items: center;
   flex-wrap: wrap; }
+
+.work_orders-container {
+  display: flex;
+  flex-direction: column; }
 
 .work-order-container {
   display: flex;
@@ -356,7 +388,8 @@ body {
 
 .delete-work-order:hover {
   font-size: 30px;
-  color: gray; }
+  color: gray;
+  cursor: pointer; }
 
 .work-orders {
   display: flex;
@@ -369,7 +402,8 @@ body {
 
 .work-orders-list {
   display: flex;
-  flex-direction: column; }
+  flex-direction: column;
+  flex: 1 0 auto; }
 
 .chart-contain {
   display: flex;
@@ -398,20 +432,26 @@ body {
   align-items: center;
   align-content: stretch; }
 
-.chart-container {
-  position: relative;
-  margin: auto;
-  height: 60vh;
-  width: 70vw;
-  margin: auto; }
+.real_footer {
+  width: 100%;
+  flex-shrink: 0; }
+  .real_footer-container {
+    position: relative;
+    top: 7em;
+    height: 4em;
+    background-color: #1DAFD5;
+    display: block;
+    padding: 10px; }
+  .real_footer-text {
+    position: relative;
+    display: inline-block;
+    font-size: 25px;
+    margin: 0 auto;
+    color: rgba(255, 255, 255, 0.23); }
 
-.single-prop-contain {
-  position: relative;
-  height: 200px;
-  width: 90%;
-  margin: 30px;
-  background-color: lightgrey;
-  border-radius: 20px;
-  margin-left: 5%; }
+#total-expenses-chart {
+  height: 700px;
+  width: 800px;
+  margin: 0 auto; }
 
 /*# sourceMappingURL=index.css.map */

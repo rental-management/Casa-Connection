@@ -1,3 +1,8 @@
+.contractors-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 85vh;
+}
 .delete-con-btn {
     text-decoration: none;
     border-style: none;
@@ -13,6 +18,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    flex: 1 0 auto;
 }
 
 .individual-contractor {
@@ -26,7 +32,6 @@
         margin-bottom: 0;
     }
 }
-
 
 .contractors-header {
     padding-top: 20px;

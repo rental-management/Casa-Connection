@@ -6,6 +6,7 @@ import { getContractors, deleteContractor, editContractor } from '../../ducks/co
 import {Card, CardActions, CardHeader, CardText} from 'material-ui/Card';
 import FlatButton from 'material-ui/FlatButton';
 import TextField from 'material-ui/TextField';
+import Footer from '../Footer/Footer';
 
 
 class Contractors extends Component {
@@ -182,15 +183,16 @@ class Contractors extends Component {
         }
         
         return(
-            <div>
-            <NavBar />
-            <div className="contractors-header">
+            <div className="contractors-container">
+              <NavBar />
+              <div className="contractors-header">
                 <h1> My Contractors </h1>
                 <AddContractorForm />
-            </div>
-            <span className="contractors-list">
-            {contractorsList}
-            </span>
+              </div>
+              <span className="contractors-list">
+                {contractorsList}
+              </span>
+              <Footer />
             </div>
         )
     }
