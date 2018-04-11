@@ -17,7 +17,8 @@ class ExpenseChart extends Component {
         let newChartData;
         if(chartData.length !== 0 && chartData !== undefined){         
              newChartData  = (
-                   <div>
+                 
+                <div className="single-prop-chart">
                    
                    <Bar
                       data={{labels: [
@@ -67,14 +68,13 @@ class ExpenseChart extends Component {
                        
                           }}/>
 </div>
-
-             
+   
               
                ) 
         
         }
         return(
-            <div>
+            <div className="chart-contain">
             
            {chartData.length > 0 && newChartData}
             
