@@ -1,9 +1,28 @@
-#single-prop-chart {
-  height: 500px;
-  width: 500px;
-  float: right;
+.chart-contain {
   display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
   justify-content: center;
-  align-items: center; }
+  align-items: center;
+  align-content: stretch;
+  height: 100%;
+  width: 80vw;
+  background-color: white;
+  margin-bottom: 5%;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 9px 9px 5px lightgray;
+  margin: 0 auto;
+  padding: 10px; }
+
+.single-prop-chart {
+  display: flex;
+  height: auto;
+  width: 75vw;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  align-content: stretch; }
 
 /*# sourceMappingURL=ExpenseChart.css.map */
