@@ -53,6 +53,7 @@
     text-align: center;
     font-family: $header;
     color: $header-color;
+    font-size: 20px;
 }
 
 .tenant-info {
@@ -118,22 +119,28 @@
 .expenses-sp {
     background: white;
     border-radius: 6px;
-    width: 35%;
+    width: 40%;
     box-shadow: 0 12px 22px 0 rgba(0,0,0,.15);
     h2 {
         font-family: $header;
         color: $header-color;
+        font-size: 20px;
     }
     div {
-    text-align: left;
-    display: flex;
-    flex-direction: column;
-    color: $gray;
-    font-family: $body;
-    span {
-        padding-right: 5px;
-        
-    }
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        color: $gray;
+        font-family: $body;
+        div {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            span {
+                padding-right: 5px;
+                
+            }
+        }
     }
 }
 

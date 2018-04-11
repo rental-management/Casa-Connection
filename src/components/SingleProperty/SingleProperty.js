@@ -217,7 +217,8 @@ class SingleProperty extends Component {
             (curr, index) => {
               return (
                 <div key={index}>
-                  <span> Assessed Property Value: </span> 
+                <div> 
+                  <span> ASSESSED VALUE: </span> 
                   <TextField 
                     defaultValue={curr.assessed_value} 
                     id="text-field-controlled" 
@@ -226,7 +227,7 @@ class SingleProperty extends Component {
                      
                       this.setState({ propValue: event.target.value, isEditable: true })
                     }} />
-
+                    </div>
                   <br />
                   <div>
                   <span>DOWN PAYMENT: </span> 

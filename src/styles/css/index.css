@@ -261,7 +261,8 @@ body {
 .tenant-header {
   text-align: center;
   font-family: "Roboto", sans-serif;
-  color: #3799d6; }
+  color: #3799d6;
+  font-size: 20px; }
 
 .tenant-info {
   text-align: left;
@@ -313,19 +314,24 @@ body {
 .expenses-sp {
   background: white;
   border-radius: 6px;
-  width: 35%;
+  width: 40%;
   box-shadow: 0 12px 22px 0 rgba(0, 0, 0, 0.15); }
   .expenses-sp h2 {
     font-family: "Roboto", sans-serif;
-    color: #3799d6; }
+    color: #3799d6;
+    font-size: 20px; }
   .expenses-sp div {
     text-align: left;
     display: flex;
     flex-direction: column;
     color: #686868;
     font-family: "Lato", sans-serif; }
-    .expenses-sp div span {
-      padding-right: 5px; }
+    .expenses-sp div div {
+      display: flex;
+      flex-direction: row;
+      align-items: center; }
+      .expenses-sp div div span {
+        padding-right: 5px; }
 
 .dialog-container {
   display: flex;
