@@ -1,0 +1,18 @@
+.real_footer {
+  width: 100%;
+  flex-shrink: 0; }
+  .real_footer-container {
+    position: relative;
+    top: 7em;
+    height: 4em;
+    background-color: #1DAFD5;
+    display: block;
+    padding: 10px; }
+  .real_footer-text {
+    position: relative;
+    display: inline-block;
+    font-size: 25px;
+    margin: 0 auto;
+    color: rgba(255, 255, 255, 0.23); }
+
+/*# sourceMappingURL=Footer.css.map */
