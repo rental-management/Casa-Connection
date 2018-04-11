@@ -38,10 +38,10 @@ class Properties extends Component {
                 return(
                     <div className="individual-property" key={index}>
                     <Link to = {`/property/${curr.id}`} key = {index}>
-                     <h1> {curr.prop_name} </h1>
-                     <img className="properties-img" src={curr.img} alt = "property" />
+                     <h1 className="properties-name"> {curr.prop_name} </h1>
+                     <img className="properties-img" src={curr.img} />
                      </Link>
-                     <button className = 'delete-prop-btn' onClick = {() => {this.handleDelete(curr.id)}}>Delete</button>
+                     <button className = 'delete-prop-btn' onClick = {() => {this.handleDelete(curr.id)}}> DELETE </button>
                     </div>
                 )
             })
@@ -51,7 +51,7 @@ class Properties extends Component {
             <div >
             <NavBar />
             <div className="properties-header"> 
-                <h1> My Properties </h1>
+                <h1> MY PROPERTIES </h1>
                 <AddPropForm />
             </div>
             <div className="propertiesList">

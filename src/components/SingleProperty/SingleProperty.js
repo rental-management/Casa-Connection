@@ -1,14 +1,11 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
-import {getProperty, getWorkOrders, getExpensesById, getTenant, editTenant, addProperty, editExpenses, deleteWorkOrders } from '../../ducks/propertiesReducer';
+import {getProperty, getWorkOrders, getExpensesById, getTenant, editTenant, editExpenses, deleteWorkOrders } from '../../ducks/propertiesReducer';
 import AddWorkOrderForm from '../AddWorkOrderForm/AddWorkOrderForm';
 import NavBar from '../NavBar/NavBar';
 import { Link } from "react-router-dom";
-import EditableLabel from 'react-inline-editing';
 import ExpenseChart from './../Charts/ExpenseChart';
 //MUI Imports
-import Divider from 'material-ui/Divider';
-import Paper from 'material-ui/Paper';
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 
@@ -20,7 +17,7 @@ class SingleProperty extends Component {
     constructor(props) {
         super(props);
 
-        this.state = {
+        this.state = {      
           fName: '',
           lName: '',
           phone: '',
@@ -40,6 +37,7 @@ class SingleProperty extends Component {
         this.handleTenantEdit = this.handleTenantEdit.bind(this);
         this.handleExpensesEdit = this.handleExpensesEdit.bind(this);
         this.handleOrderDelete = this.handleOrderDelete.bind(this);
+        this.handleWorkOrderRefresh = this.handleWorkOrderRefresh.bind(this);
     }
 
     
@@ -86,6 +84,10 @@ class SingleProperty extends Component {
        })
     }
 
+    handleWorkOrderRefresh(propId){
+      this.props.getWorkOrders(propId);
+    }
+
 
     render() { 
         // destructuring state 
@@ -98,12 +100,14 @@ class SingleProperty extends Component {
         let expensesList;   
         let tenant;
         if (propertyData !== undefined && propertyData.length !== 0) {
-          const propId = this.props.match.params.id;
+          const propId = this.props.match.params.id;      
+
+          //returning all property info
           property = propertyData.map((curr, index) => {
             return (
             <div key={index} className= "prop-container">
             
-                <h1 className="breadcrumb"><Link to = '/properties' >Properties</Link> <i className="fas fa-angle-right"></i> {curr.prop_name}</h1><br/>
+                <h1 className="breadcrumb"><Link to = '/properties'>Properties</Link> <i className="fas fa-angle-right"></i> {curr.prop_name}</h1><br/>
                 
                   <img className="single-prop-photo" src={curr.img} />
                   <br />
@@ -162,7 +166,6 @@ class SingleProperty extends Component {
                         isEditable: true
                       });
                     }} />
-
                   <br />
 
                   <span>Emergency Contact #: </span>
@@ -302,9 +305,7 @@ class SingleProperty extends Component {
                     }} />
                   <br />
                   {this.state.isEditable ? <RaisedButton label="save" onClick={() => {this.handleExpensesEdit(propValue, downPayment, mortgage, dues, taxes, insurance, utilities, propId)}} />: null}
-                  <br />
-
-                  
+                  <br />                  
                 </div>
               );
             }
@@ -317,21 +318,21 @@ class SingleProperty extends Component {
             <div className="property-tenant-container">
               <div className="property"> {property} </div>
               <div className="curr-tenant">
-                <h2 className="tenant-header">Tenant</h2>
+                <h2 className="tenant-header">TENANT</h2>
                 {tenant}
               </div>
-              <hr className="property-line" align="center" />
             </div>
           <div className="wo-expenses">
             <div className="work-orders-sp">
               <div className="add-work-order">
-                 <h2>Work Orders</h2>
-                 <AddWorkOrderForm/>
+                <AddWorkOrderForm/>
+                 <h2 className="wo-h2">WORK ORDERS</h2> 
+                 <AddWorkOrderForm handleWorkOrderRefresh = {this.handleWorkOrderRefresh}/>
               </div>
                 {workOrdersList}
             </div>
             <div className="expenses-sp">
-              <h2>Expenses</h2>
+              <h2>EXPENSES</h2>
               {expensesList}  
             </div>
           </div>

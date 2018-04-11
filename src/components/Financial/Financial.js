@@ -14,7 +14,7 @@ class Financial extends Component {
 
     }
 
-    compmonentDidMount(){
+    componentDidMount(){
         //pull expenses from here
         this.props.getProperties();
     }
