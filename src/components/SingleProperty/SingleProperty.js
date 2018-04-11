@@ -325,9 +325,8 @@ class SingleProperty extends Component {
         <div className="wo-expenses">
           <div className="work-orders-sp">
             <div className="add-work-order">
-              <AddWorkOrderForm/>
+            <AddWorkOrderForm handleWorkOrderRefresh = {this.handleWorkOrderRefresh}/>
                <h2 className="wo-h2">WORK ORDERS</h2>
-               <AddWorkOrderForm handleWorkOrderRefresh = {this.handleWorkOrderRefresh}/>
             </div>
               {workOrdersList}
           </div>
