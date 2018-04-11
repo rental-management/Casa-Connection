@@ -1,3 +1,6 @@
-
+.analytics-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 85vh; }
 
 /*# sourceMappingURL=Financial.css.map */

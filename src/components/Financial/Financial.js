@@ -26,7 +26,7 @@ class Financial extends Component {
       return(
         <div>
             <NavBar/>
-            <div>
+            <div className="analytics-container">
               <TotalExpensesChart/>
             </div>
             <Footer />

@@ -1,7 +1,7 @@
 {
 "version": 3,
-"mappings": "",
-"sources": [],
+"mappings": "AAAA,oBAAqB;EACjB,OAAO,EAAE,IAAI;EACb,cAAc,EAAE,MAAM;EACtB,UAAU,EAAE,IAAI",
+"sources": ["../scss/Financial.scss"],
 "names": [],
 "file": "Financial.css"
 }
