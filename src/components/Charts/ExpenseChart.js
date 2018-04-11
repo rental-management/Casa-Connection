@@ -74,7 +74,7 @@ class ExpenseChart extends Component {
         
         }
         return(
-            <div style={{height: '500px', width: 'auto'}}>
+            <div>
             
            {chartData.length > 0 && newChartData}
             
