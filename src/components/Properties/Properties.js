@@ -42,7 +42,7 @@ class Properties extends Component {
                      <h1> {curr.prop_name} </h1>
                      <img className="properties-img" src={curr.img} />
                      </Link>
-                     <button className = 'delete-prop-btn' onClick = {() => {this.handleDelete(curr.id)}}>Delete</button>
+                     <button className = 'delete-prop-btn' onClick = {() => {this.handleDelete(curr.id)}}> DELETE </button>
                     </div>
                 )
             })

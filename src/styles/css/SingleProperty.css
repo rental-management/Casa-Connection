@@ -6,7 +6,8 @@
 .property-tenant-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center; }
+  justify-content: center;
+  margin-bottom: 30px; }
 
 .property {
   width: 48%; }
@@ -36,9 +37,6 @@
 .tenant-info {
   text-align: left; }
 
-.property-line {
-  margin: 30px 0px 40px 0px; }
-
 .work-orders-sp {
   display: flex;
   flex-direction: column;
@@ -48,7 +46,6 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
-  justify-content: space-between;
   align-items: center;
   margin-bottom: 25px; }
 
@@ -56,6 +53,9 @@
   display: flex;
   flex-direction: row;
   justify-content: center; }
+
+.wo-h2 {
+  padding-left: 30px; }
 
 .expenses-sp {
   margin-left: 180px;

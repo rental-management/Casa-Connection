@@ -17,8 +17,8 @@ class ExpenseChart extends Component {
         let newChartData;
         if(chartData.length !== 0 && chartData !== undefined){         
              newChartData  = (
-                   <div className="chart" >
                    <div>
+                   
                    <Bar
                       data={{labels: [
                         'Assessed Value',
@@ -55,24 +55,26 @@ class ExpenseChart extends Component {
                     ]}} 
                       options={{
                           legend: {
-                              display: true,
+                              display: false,
                               position: 'left'
                           },
                           title:{
                               display: true,
                               text: this.props.properties.property[0].prop_name,
                               fontSize: 25
-                          }
+                          },
+                          maintainAspectRatio: true,
+                       
                           }}/>
 </div>
 
-                   
-                   </div>
+             
+              
                ) 
         
         }
         return(
-            <div id = 'single-prop-chart'>
+            <div>
             
            {chartData.length > 0 && newChartData}
             

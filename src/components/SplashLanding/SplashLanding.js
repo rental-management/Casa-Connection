@@ -12,7 +12,7 @@ class SplashLanding extends Component {
                         <div>
                             <div className="splash-header">
                                 <img className="logo" src={require('../../assets/favicon.png')} />
-                                <h1> CASA CONNECTION </h1>
+                                <h1> Casa Connection </h1>
                             </div>
                             <Login />
                         </div>
@@ -28,8 +28,8 @@ class SplashLanding extends Component {
                             <FontAwesome 
                                 className="chart"
                                 name="fas fa-home"
-                                size='7x'
-                                style={{ color: '#5baecc' }}
+                                size='6x'
+                                style={{ color: '#009be0' }}
                                 />
                             <h1> Organize Property Information </h1>
                             {/* <p> aslkdjfas </p>  */}
@@ -38,8 +38,8 @@ class SplashLanding extends Component {
                         <FontAwesome 
                                 className="chart"
                                 name="fas fa-chart-bar"
-                                size='7x'
-                                style={{ color: '#5baecc'}}
+                                size='6x'
+                                style={{ color: '#009be0'}}
                                 />
                             <h1> Visualize Financial Data </h1> 
                             {/* <p> lasdf </p> */}
@@ -48,8 +48,8 @@ class SplashLanding extends Component {
                         <FontAwesome 
                                 className="chart"
                                 name="fas fa-wrench"
-                                size='7x'
-                                style={{ color: '#5baecc' }}
+                                size='6x'
+                                style={{ color: '#009be0' }}
                                 />
                             <h1> Streamline Service Requests </h1> 
                             {/* <p> lahsdf </p> */}
@@ -58,6 +58,7 @@ class SplashLanding extends Component {
                 <div className="third-container">
                 </div>
                 <div className="footer">
+                    <div> Copyright @ 2018 Casa Connection, LLC </div>
                 </div>
             </div>
         )

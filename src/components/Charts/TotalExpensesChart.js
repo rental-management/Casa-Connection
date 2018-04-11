@@ -53,8 +53,8 @@ class TotalExpensesChart extends Component {
 
 
       newChartData = (
-        <div className="chart">
-            <Bar
+        <div className="chart-container">
+            <Doughnut
               data={{
                 labels: [
                   "Assessed Value",
@@ -80,29 +80,32 @@ class TotalExpensesChart extends Component {
                     ],
                   
                     backgroundColor: [
-                      "rgba(105, 99, 132, 0.2)",
-                      "rgba(54, 162, 235, 0.2)",
-                      "rgba(255, 206, 86, 0.2)",
-                      "rgba(75, 192, 192, 0.2)",
-                      "rgba(153, 102, 255, 0.2)",
-                      "rgba(215, 159, 64, 0.2)",
-                      "rgba(195, 99, 132, 0.2)"
-                    ]
+                      "rgba(255, 99, 132, 0.5)",
+                      "rgba(54, 162, 235, 0.5)",
+                      "rgba(255, 206, 86, 0.5)",
+                      "rgba(75, 192, 192, 0.5)",
+                      "rgba(153, 102, 255, 0.5)",
+                      "rgba(255, 159, 64, 0.5)",
+                      "rgba(155, 99, 132, 0.5)"
+                    ],
+                    borderWidth: 1,
+                    borderColor: '#777',
+                    hoverBorderWidth: 3,
+                    hoverBorderColor: '#000'
                   }
-                ]
+                ],
               }}
               options={{
                 legend: {
                   display: true,
-                  position: 'bottom'
+                  position: 'right'
               },
               title:{
                 display: true,
-                text: "",
+                text: "Expense Overview",
                 fontSize: 35
               },
-               
-                maintainAspectRatio: true
+              maintainAspectRatio: true
               }}
             />
         </div>
