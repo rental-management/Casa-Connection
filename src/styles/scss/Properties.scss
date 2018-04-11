@@ -1,3 +1,26 @@
+.properties-header {
+    padding-top: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center; 
+    justify-content: space-between;
+    width: 90%;
+    align-content: center;
+    align-items: center;
+    color: #3799d6;
+    h1 {
+        font-family: $header;
+        font-size: 26px;
+        margin-left: 100px;
+    }
+}
+
+.properties-name {
+    color: #4c4c4b;
+    font-size: 24px;
+    font-family: $header;
+}
+
 .delete-prop-btn {
     text-decoration: none;
     border-style: none;
@@ -25,21 +48,6 @@
 .properties-img {
     width: 400px;
     padding-bottom: 20px;
-}
-
-.properties-header {
-    padding-top: 20px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center; 
-    justify-content: space-between;
-    width: 93%;
-    align-content: center;
-    align-items: center;
-}
-
-.properties-header h1 {
-    padding-left: 60px;
 }
 
 
