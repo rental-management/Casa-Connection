@@ -22,6 +22,7 @@
     align-items: center;
     color: white;
     letter-spacing: 2px;
+    font-family: $header;
 }
 
 .first-container > div:first-of-type {
@@ -33,24 +34,27 @@
 }
 
 .first-container > div:nth-child(2) {
-    margin-top: 40px;
-    font-size: 26px;
+    margin-top: 22px;
     margin-left: 90px;
     width: 700px;
     display: flex;
     flex-direction: column;
+    font-size: 20px;
     h2 {
         text-align: left;
         color: white;
-        margin-bottom: 5px;;
+        margin-bottom: 5px;
+        font-family: $header;
+        letter-spacing: 2px;
     }
     p {
         text-align: left;
-        font-size: 24px;
         width: 550px;
         color: white;
         line-height: 40px;
-        font-size: 22px;
+        font-size: 20px;
+        font-family: $body;
+        letter-spacing: 1px;
     }
 }
 
@@ -82,15 +86,16 @@
     height: 45vh;
     padding: 10px 10px 0 10px;
     width: 45vh;
-    margin-top: 20px;
-    margin-left: 60px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin: 20px 30px 0px 30px;
+    box-shadow: 0 10px 22px 0 rgba(0,0,0,.15);
     h1 {
         padding-top: 15px;
         width: 90%;
         color: #545454;
         font-size: 1.75em;
         line-height: 40px;
+        font-family: $header;
+        letter-spacing: 1.5px;
     }
   }
 }

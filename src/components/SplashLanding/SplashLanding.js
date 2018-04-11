@@ -12,7 +12,7 @@ class SplashLanding extends Component {
                         <div>
                             <div className="splash-header">
                                 <img className="logo" src={require('../../assets/favicon.png')} />
-                                <h1> CASA CONNECTION </h1>
+                                <h1> Casa Connection </h1>
                             </div>
                             <Login />
                         </div>
@@ -28,7 +28,7 @@ class SplashLanding extends Component {
                             <FontAwesome 
                                 className="chart"
                                 name="fas fa-home"
-                                size='7x'
+                                size='6x'
                                 style={{ color: '#009be0' }}
                                 />
                             <h1> Organize Property Information </h1>
@@ -38,7 +38,7 @@ class SplashLanding extends Component {
                         <FontAwesome 
                                 className="chart"
                                 name="fas fa-chart-bar"
-                                size='7x'
+                                size='6x'
                                 style={{ color: '#009be0'}}
                                 />
                             <h1> Visualize Financial Data </h1> 
@@ -48,7 +48,7 @@ class SplashLanding extends Component {
                         <FontAwesome 
                                 className="chart"
                                 name="fas fa-wrench"
-                                size='7x'
+                                size='6x'
                                 style={{ color: '#009be0' }}
                                 />
                             <h1> Streamline Service Requests </h1> 

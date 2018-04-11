@@ -43,7 +43,8 @@ body {
   flex-direction: row;
   align-items: center;
   color: white;
-  letter-spacing: 2px; }
+  letter-spacing: 2px;
+  font-family: "Roboto", sans-serif; }
 
 .first-container > div:first-of-type {
   display: flex;
@@ -53,23 +54,26 @@ body {
   padding: 25px 60px 0 60px; }
 
 .first-container > div:nth-child(2) {
-  margin-top: 40px;
-  font-size: 26px;
+  margin-top: 22px;
   margin-left: 90px;
   width: 700px;
   display: flex;
-  flex-direction: column; }
+  flex-direction: column;
+  font-size: 20px; }
   .first-container > div:nth-child(2) h2 {
     text-align: left;
     color: white;
-    margin-bottom: 5px; }
+    margin-bottom: 5px;
+    font-family: "Roboto", sans-serif;
+    letter-spacing: 2px; }
   .first-container > div:nth-child(2) p {
     text-align: left;
-    font-size: 24px;
     width: 550px;
     color: white;
     line-height: 40px;
-    font-size: 22px; }
+    font-size: 20px;
+    font-family: "Lato", sans-serif;
+    letter-spacing: 1px; }
 
 .started-btn {
   background-color: white;
@@ -96,15 +100,16 @@ body {
     height: 45vh;
     padding: 10px 10px 0 10px;
     width: 45vh;
-    margin-top: 20px;
-    margin-left: 60px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
+    margin: 20px 30px 0px 30px;
+    box-shadow: 0 10px 22px 0 rgba(0, 0, 0, 0.15); }
     .second-container div h1 {
       padding-top: 15px;
       width: 90%;
       color: #545454;
       font-size: 1.75em;
-      line-height: 40px; }
+      line-height: 40px;
+      font-family: "Roboto", sans-serif;
+      letter-spacing: 1.5px; }
 
 .third-container {
   width: 100%;
@@ -153,6 +158,26 @@ body {
 
   .full-screen-menu {
     display: none; } }
+.properties-header {
+  padding-top: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  justify-content: space-between;
+  width: 90%;
+  align-content: center;
+  align-items: center;
+  color: #3799d6; }
+  .properties-header h1 {
+    font-family: "Roboto", sans-serif;
+    font-size: 26px;
+    margin-left: 100px; }
+
+.properties-name {
+  color: #4c4c4b;
+  font-size: 24px;
+  font-family: "Roboto", sans-serif; }
+
 .delete-prop-btn {
   text-decoration: none;
   border-style: none;
@@ -178,23 +203,11 @@ body {
   width: 400px;
   padding-bottom: 20px; }
 
-.properties-header {
-  padding-top: 20px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  justify-content: space-between;
-  width: 93%;
-  align-content: center;
-  align-items: center; }
-
-.properties-header h1 {
-  padding-left: 60px; }
-
 .property-tenant-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center; }
+  justify-content: center;
+  margin-bottom: 30px; }
 
 .property {
   width: 48%; }
@@ -224,9 +237,6 @@ body {
 .tenant-info {
   text-align: left; }
 
-.property-line {
-  margin: 30px 0px 40px 0px; }
-
 .work-orders-sp {
   display: flex;
   flex-direction: column;
@@ -236,7 +246,6 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  justify-content: space-between;
   align-items: center;
   margin-bottom: 25px; }
 
@@ -244,6 +253,9 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: center; }
+
+.wo-h2 {
+  padding-left: 30px; }
 
 .expenses-sp {
   margin-left: 180px;
@@ -312,40 +324,48 @@ body {
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
-  margin: 10px 100px 10px 100px;
+  margin: 15px 160px 15px 160px;
   justify-content: space-between;
-  padding: 10px 30px 10px 40px;
-  font-size: 18px;
-  border-radius: 10px;
+  padding: 8px 30px 8px 40px;
+  border-radius: 8px;
   background: white;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
+  color: #4c4c4b;
+  box-shadow: 0 12px 22px 0 rgba(0, 0, 0, 0.15); }
+
+.type {
+  font-family: "Lato", sans-serif;
+  font-weight: bold; }
+
+.memo {
+  font-family: "Lato", sans-serif; }
 
 .work-order-prop-name {
-  font-size: 18px; }
-
-.type-memo {
-  margin: 0;
   font-size: 18px;
-  padding: 0px; }
+  font-family: "Roboto", sans-serif; }
 
 .delete-work-order {
   padding: 0px 40px 0px 75px;
-  border-left: 1px solid gray;
+  border-left: 1px solid #dddedd;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 70px;
-  cursor: pointer; }
+  cursor: pointer;
+  font-size: 25px;
+  color: #3799d6; }
+
+.delete-work-order:hover {
+  font-size: 30px;
+  color: gray; }
 
 .work-orders {
   display: flex;
   justify-content: flex-start;
-  margin-left: 70px;
-  font-size: 25px; }
-
-hr {
-  width: 90%;
-  margin-left: 70px; }
+  margin-left: 165px;
+  margin-top: 35px;
+  font-size: 26px;
+  color: #3799d6;
+  font-family: "Roboto", sans-serif; }
 
 .work-orders-list {
   display: flex;
