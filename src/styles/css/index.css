@@ -351,4 +351,10 @@ hr {
   display: flex;
   flex-direction: column; }
 
+#single-prop-chart {
+  height: 500px;
+  width: 500px;
+  float: right;
+  padding: 300px; }
+
 /*# sourceMappingURL=index.css.map */

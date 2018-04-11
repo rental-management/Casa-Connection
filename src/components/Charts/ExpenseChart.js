@@ -15,14 +15,11 @@ class ExpenseChart extends Component {
       
         let chartData = this.props.properties.property;
         let newChartData;
-        if(chartData.length !== 0 && chartData !== undefined){
-            // this.getChartData()
-            // newChartData = chartData.map((curr, i) => {
-                // console.log(curr, "CURR")
+        if(chartData.length !== 0 && chartData !== undefined){         
              newChartData  = (
                    <div className="chart" >
                    <div>
-                   <Doughnut
+                   <Bar
                       data={{labels: [
                         'Assessed Value',
                         'Down Payment',
@@ -69,14 +66,13 @@ class ExpenseChart extends Component {
                           }}/>
 </div>
 
-                    {/* <h5>{curr.prop_name}</h5> */}
-                    {/* <span>Dues: {curr.monthly_dues}</span> */}
+                   
                    </div>
                ) 
-            // })
+        
         }
         return(
-            <div>
+            <div id = 'single-prop-chart'>
             
            {chartData.length > 0 && newChartData}
             

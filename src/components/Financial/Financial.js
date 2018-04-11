@@ -20,12 +20,13 @@ class Financial extends Component {
     }
 
   render() {
-      console.log("expenses", this.props.properties);
+      console.log("expenses", this.props.properties.properties);
+
       return(
           <div>
               <NavBar/>
-              <h1>Total Expenses for All Properties</h1>
-              {/* <TotalExpensesChart/> */}
+            
+              <TotalExpensesChart/>
               </div>
       )
   }
