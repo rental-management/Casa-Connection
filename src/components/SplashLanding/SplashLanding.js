@@ -29,7 +29,7 @@ class SplashLanding extends Component {
                                 className="chart"
                                 name="fas fa-home"
                                 size='6x'
-                                style={{ color: '#009be0' }}
+                                style={{ color: '#ff3776', opacity: '0.8' }}
                                 />
                             <h1> Organize Property Information </h1>
                             {/* <p> aslkdjfas </p>  */}
@@ -39,7 +39,7 @@ class SplashLanding extends Component {
                                 className="chart"
                                 name="fas fa-chart-bar"
                                 size='6x'
-                                style={{ color: '#009be0'}}
+                                style={{ color: '#ff3776', opacity: '0.8'}}
                                 />
                             <h1> Visualize Financial Data </h1> 
                             {/* <p> lasdf </p> */}
@@ -49,7 +49,7 @@ class SplashLanding extends Component {
                                 className="chart"
                                 name="fas fa-wrench"
                                 size='6x'
-                                style={{ color: '#009be0' }}
+                                style={{ color: '#ff3776', opacity: '0.8' }}
                                 />
                             <h1> Streamline Service Requests </h1> 
                             {/* <p> lahsdf </p> */}

@@ -8,11 +8,11 @@ Error: Undefined variable: "$header".
 23:     color: white;
 24:     letter-spacing: 2px;
 25:     font-family: $header;
-26: }
-27: 
-28: .first-container > div:first-of-type {
-29:     display: flex;
-30:     align-items: center;
+26:     font-size: 13px;
+27: }
+28: 
+29: .first-container > div:first-of-type {
+30:     display: flex;
 
 Backtrace:
 src/styles/scss/SplashLanding.scss:25
@@ -69,4 +69,4 @@ src/styles/scss/SplashLanding.scss:25
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$header\".\A         on line 25 of src/styles/scss/SplashLanding.scss\A \A 20:     display: flex;\A 21:     flex-direction: row;\A 22:     align-items: center;\A 23:     color: white;\A 24:     letter-spacing: 2px;\A 25:     font-family: $header;\A 26: }\A 27: \A 28: .first-container > div:first-of-type {\A 29:     display: flex;\A 30:     align-items: center;"; }
+  content: "Error: Undefined variable: \"$header\".\A         on line 25 of src/styles/scss/SplashLanding.scss\A \A 20:     display: flex;\A 21:     flex-direction: row;\A 22:     align-items: center;\A 23:     color: white;\A 24:     letter-spacing: 2px;\A 25:     font-family: $header;\A 26:     font-size: 13px;\A 27: }\A 28: \A 29: .first-container > div:first-of-type {\A 30:     display: flex;"; }
