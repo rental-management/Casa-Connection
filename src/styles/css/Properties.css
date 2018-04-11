@@ -1,3 +1,8 @@
+.properties-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 85vh; }
+
 .delete-prop-btn {
   text-decoration: none;
   border-style: none;
@@ -11,7 +16,8 @@
 .propertiesList {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center; }
+  justify-content: center;
+  flex: 1 0 auto; }
 
 .individual-property {
   display: flex;

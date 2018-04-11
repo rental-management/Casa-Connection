@@ -22,7 +22,6 @@ module.exports = {
 
     getProperty: (req, res) => {
         const db = req.app.get("db");
-       
         db
         .getProperty([req.params.id])
         .then(response => res.status(200).json(response))
@@ -69,7 +68,6 @@ module.exports = {
     addExpenses: (req, res) => {
         const db = req.app.get("db");
         const { assessed_value, down_payment, monthly_mortgage, monthly_dues, monthly_taxes, monthly_insurance, monthly_utilities } = req.body;
-     
         db
         .addExpenses([ assessed_value, down_payment, monthly_mortgage, monthly_dues, monthly_taxes, monthly_insurance, monthly_utilities, req.body.id])
         .then(response => res.status(200).json(response))
@@ -80,7 +78,6 @@ module.exports = {
         const db = req.app.get("db");
         db.deleteProperty([req.body.id]).then(response => {
             res.status(200).json(response);
-
         }).catch( (err) => {
             res.status(500).json(err);
         });
@@ -121,7 +118,6 @@ module.exports = {
     editTenant: (req, res) => {
         const db = req.app.get("db"); 
         const {t_f_name, t_l_name, phone, email, emerg_contact_name, emerg_contact_phone, id} = req.body;
-           
         db.editTenant(t_f_name, t_l_name, phone, email, emerg_contact_name, emerg_contact_phone, id).then( (response) => {
             res.status(200).json(response);
         }).catch( () => {

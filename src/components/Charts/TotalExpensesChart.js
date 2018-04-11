@@ -110,7 +110,7 @@ class TotalExpensesChart extends Component {
     }
       
       return(
-        <div>
+        <div id="total-expenses-chart">
         {newChartData}
         </div>
       )

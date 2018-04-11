@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import { getProperties } from '../../ducks/propertiesReducer';
 import NavBar from '../NavBar/NavBar';
-//import TotalExpensesChart from '../Charts/TotalExpensesChart';
+import TotalExpensesChart from '../Charts/TotalExpensesChart';
+import Footer from '../Footer/Footer';
 
 class Financial extends Component {
 
@@ -14,7 +15,7 @@ class Financial extends Component {
 
     }
 
-    compmonentDidMount(){
+    componentDidMount(){
         //pull expenses from here
         this.props.getProperties();
     }
@@ -23,11 +24,13 @@ class Financial extends Component {
       console.log("expenses", this.props.properties.properties);
 
       return(
-          <div>
-              <NavBar/>
-            
+        <div>
+            <NavBar/>
+            <div>
               <TotalExpensesChart/>
-              </div>
+            </div>
+            <Footer />
+        </div>
       )
   }
 }

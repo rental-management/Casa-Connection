@@ -145,6 +145,11 @@ body {
 
   .full-screen-menu {
     display: none; } }
+.properties-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 85vh; }
+
 .delete-prop-btn {
   text-decoration: none;
   border-style: none;
@@ -158,7 +163,8 @@ body {
 .propertiesList {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center; }
+  justify-content: center;
+  flex: 1 0 auto; }
 
 .individual-property {
   display: flex;
@@ -182,6 +188,11 @@ body {
 
 .properties-header h1 {
   padding-left: 60px; }
+
+.single_property-container {
+  display: flex;
+  flex-direction: column;
+  height: auto; }
 
 .property-tenant-container {
   display: flex;
@@ -257,6 +268,11 @@ body {
   height: 1000px;
   width: auto; }
 
+.contractors-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 85vh; }
+
 .delete-con-btn {
   text-decoration: none;
   border-style: none;
@@ -270,7 +286,8 @@ body {
 .contractors-list {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center; }
+  justify-content: center;
+  flex: 1 0 auto; }
 
 .individual-contractor {
   display: flex;
@@ -298,6 +315,10 @@ body {
   flex-direction: row-reverse;
   align-items: center;
   flex-wrap: wrap; }
+
+.work_orders-container {
+  display: flex;
+  flex-direction: column; }
 
 .work-order-container {
   display: flex;
@@ -327,13 +348,15 @@ body {
   align-items: center;
   height: 70px;
   font-size: 24px;
-  color: gray; }
+  color: gray;
+  cursor: pointer; }
 
 .work-orders {
   display: flex;
   justify-content: flex-start;
   margin-left: 70px;
-  font-size: 25px; }
+  font-size: 25px;
+  flex: 1 0 auto; }
 
 hr {
   width: 90%;
@@ -341,12 +364,37 @@ hr {
 
 .work-orders-list {
   display: flex;
-  flex-direction: column; }
+  flex-direction: column;
+  flex: 1 0 auto; }
 
 #single-prop-chart {
   height: 500px;
   width: 500px;
   float: right;
-  padding: 300px; }
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+.real_footer {
+  width: 100%;
+  flex-shrink: 0; }
+  .real_footer-container {
+    position: relative;
+    top: 7em;
+    height: 4em;
+    background-color: #1DAFD5;
+    display: block;
+    padding: 10px; }
+  .real_footer-text {
+    position: relative;
+    display: inline-block;
+    font-size: 25px;
+    margin: 0 auto;
+    color: rgba(255, 255, 255, 0.23); }
+
+#total-expenses-chart {
+  height: 700px;
+  width: 800px;
+  margin: 0 auto; }
 
 /*# sourceMappingURL=index.css.map */

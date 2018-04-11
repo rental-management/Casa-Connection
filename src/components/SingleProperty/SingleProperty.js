@@ -11,9 +11,9 @@ import Divider from 'material-ui/Divider';
 import Paper from 'material-ui/Paper';
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
+import Footer from '../Footer/Footer';
 
 
- 
 
 
 class SingleProperty extends Component {
@@ -312,30 +312,33 @@ class SingleProperty extends Component {
         }
         
         return(
-            <div> 
-            <NavBar />
-            <div className="property-tenant-container">
-              <div className="property"> {property} </div>
-              <div className="curr-tenant">
+            <div className="single_property-container"> 
+              <NavBar />
+              <div className="property-tenant-container">
+                <div className="property"> 
+                  {property} 
+                </div>
+                <div className="curr-tenant">
                 <h2 className="tenant-header">Tenant</h2>
                 {tenant}
+                </div>
+                <hr className="property-line" align="center" />
               </div>
-              <hr className="property-line" align="center" />
-            </div>
-          <div className="wo-expenses">
-            <div className="work-orders-sp">
-              <div className="add-work-order">
+              <div className="wo-expenses">
+                <div className="work-orders-sp">
+                <div className="add-work-order">
                  <h2>Work Orders</h2>
                  <AddWorkOrderForm/>
+                </div>
+                  {workOrdersList}
+                </div>
+                <div className="expenses-sp">
+                  <h2>Expenses</h2>
+                  {expensesList}  
+                </div>
               </div>
-                {workOrdersList}
-            </div>
-            <div className="expenses-sp">
-              <h2>Expenses</h2>
-              {expensesList}  
-            </div>
-          </div>
-                 <ExpenseChart />  
+              <ExpenseChart />
+              <Footer /> 
             </div>
             
         )
