@@ -29,7 +29,7 @@ class SplashLanding extends Component {
                                 className="chart"
                                 name="fas fa-home"
                                 size='7x'
-                                style={{ color: '#5baecc' }}
+                                style={{ color: '#009be0' }}
                                 />
                             <h1> Organize Property Information </h1>
                             {/* <p> aslkdjfas </p>  */}
@@ -39,7 +39,7 @@ class SplashLanding extends Component {
                                 className="chart"
                                 name="fas fa-chart-bar"
                                 size='7x'
-                                style={{ color: '#5baecc'}}
+                                style={{ color: '#009be0'}}
                                 />
                             <h1> Visualize Financial Data </h1> 
                             {/* <p> lasdf </p> */}
@@ -49,7 +49,7 @@ class SplashLanding extends Component {
                                 className="chart"
                                 name="fas fa-wrench"
                                 size='7x'
-                                style={{ color: '#5baecc' }}
+                                style={{ color: '#009be0' }}
                                 />
                             <h1> Streamline Service Requests </h1> 
                             {/* <p> lahsdf </p> */}
@@ -58,6 +58,7 @@ class SplashLanding extends Component {
                 <div className="third-container">
                 </div>
                 <div className="footer">
+                    <div> Copyright @ 2018 Casa Connection, LLC </div>
                 </div>
             </div>
         )

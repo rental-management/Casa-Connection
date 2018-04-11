@@ -1,5 +1,5 @@
 .splash {
-  background: #00afd7;
+  background: #009be0;
   background-size: 100%;
   background-repeat: no-repeat;
   height: 75vh;
@@ -84,8 +84,16 @@
   margin: 100px 0 100px 0; }
 
 .footer {
-  background: #00afd7;
-  height: 40vh;
-  clip-path: polygon(0 55%, 100% 0, 100% 100%, 0% 100%); }
+  background: #009be0;
+  height: 15vh;
+  position: relative;
+  display: flex;
+  justify-content: center; }
+
+.footer div {
+  position: absolute;
+  bottom: 7px;
+  padding-bottom: 35px;
+  color: white; }
 
 /*# sourceMappingURL=SplashLanding.css.map */

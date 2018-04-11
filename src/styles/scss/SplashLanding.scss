@@ -4,7 +4,7 @@
     //     rgba(white, 0.2),
     //     rgba(white, 0.2)),
     //   url("../../assets/brickplant.jpg");
-    background: #00afd7;
+    background: #009be0;
     background-size: 100%;
     background-repeat: no-repeat;
     height: 75vh;
@@ -103,12 +103,17 @@
 }
 
 .footer {
-    background: #00afd7;
-    height: 40vh;
-    clip-path: polygon(0 55%, 100% 0, 100% 100%, 0% 100%);
+    background: #009be0;
+    height: 15vh;
+    position: relative;
+    // clip-path: polygon(0 55%, 100% 0, 100% 100%, 0% 100%);
+    display: flex;
+    justify-content: center;
 }
 
-
-
-
-
+.footer div {
+   position: absolute;
+   bottom: 7px;
+   padding-bottom: 35px;
+   color: white;
+}
