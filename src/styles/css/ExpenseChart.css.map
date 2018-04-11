@@ -1,6 +1,6 @@
 {
 "version": 3,
-"mappings": "AAAA,kBAAmB;EACf,MAAM,EAAE,KAAK;EACb,KAAK,EAAE,KAAK;EACZ,KAAK,EAAE,KAAK;EACZ,OAAO,EAAE,KAAK",
+"mappings": "AAAA,kBAAmB;EACf,MAAM,EAAE,KAAK;EACb,KAAK,EAAE,KAAK;EACZ,KAAK,EAAE,KAAK;EAEZ,OAAO,EAAE,IAAI;EACb,eAAe,EAAE,MAAM;EACvB,WAAW,EAAE,MAAM",
 "sources": ["../scss/ExpenseChart.scss"],
 "names": [],
 "file": "ExpenseChart.css"

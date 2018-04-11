@@ -168,6 +168,11 @@ body {
 
   .full-screen-menu {
     display: none; } }
+.properties-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 85vh; }
+
 .properties-header {
   padding-top: 20px;
   margin-bottom: 20px;
@@ -202,7 +207,8 @@ body {
 .propertiesList {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center; }
+  justify-content: center;
+  flex: 1 0 auto; }
 
 .individual-property {
   display: flex;
@@ -213,6 +219,11 @@ body {
 .properties-img {
   width: 400px;
   padding-bottom: 20px; }
+
+.single_property-container {
+  display: flex;
+  flex-direction: column;
+  height: auto; }
 
 .property-tenant-container {
   display: flex;
@@ -291,6 +302,11 @@ body {
   height: 1000px;
   width: auto; }
 
+.contractors-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 85vh; }
+
 .delete-con-btn {
   text-decoration: none;
   border-style: none;
@@ -304,7 +320,8 @@ body {
 .contractors-list {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center; }
+  justify-content: center;
+  flex: 1 0 auto; }
 
 .individual-contractor {
   display: flex;
@@ -332,6 +349,10 @@ body {
   flex-direction: row-reverse;
   align-items: center;
   flex-wrap: wrap; }
+
+.work_orders-container {
+  display: flex;
+  flex-direction: column; }
 
 .work-order-container {
   display: flex;
@@ -370,7 +391,8 @@ body {
 
 .delete-work-order:hover {
   font-size: 30px;
-  color: gray; }
+  color: gray;
+  cursor: pointer; }
 
 .work-orders {
   display: flex;
@@ -383,28 +405,37 @@ body {
 
 .work-orders-list {
   display: flex;
-  flex-direction: column; }
+  flex-direction: column;
+  flex: 1 0 auto; }
 
 #single-prop-chart {
   height: 500px;
   width: 500px;
   float: right;
-  padding: 300px; }
+  display: flex;
+  justify-content: center;
+  align-items: center; }
 
-.chart-container {
-  position: relative;
-  margin: auto;
-  height: 60vh;
-  width: 70vw;
-  margin: auto; }
+.real_footer {
+  width: 100%;
+  flex-shrink: 0; }
+  .real_footer-container {
+    position: relative;
+    top: 7em;
+    height: 4em;
+    background-color: #1DAFD5;
+    display: block;
+    padding: 10px; }
+  .real_footer-text {
+    position: relative;
+    display: inline-block;
+    font-size: 25px;
+    margin: 0 auto;
+    color: rgba(255, 255, 255, 0.23); }
 
-.single-prop-contain {
-  position: relative;
-  height: 200px;
-  width: 90%;
-  margin: 30px;
-  background-color: lightgrey;
-  border-radius: 20px;
-  margin-left: 5%; }
+#total-expenses-chart {
+  height: 700px;
+  width: 800px;
+  margin: 0 auto; }
 
 /*# sourceMappingURL=index.css.map */
