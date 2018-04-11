@@ -66,6 +66,10 @@ class Contractors extends Component {
 
     render() {
 
+        const style = {
+            width: 400,
+        }
+
         const {fName, lName, phone, email, street, city, state, zip} = this.state;
         console.log(this.state)
         
@@ -83,6 +87,7 @@ class Contractors extends Component {
                                 subtitle={curr.type + " - " + curr.prop_name}
                                 actAsExpander={true}
                                 showExpandableButton={true}
+                                style = {style}
                             />
                             <CardText expandable={true}>
 

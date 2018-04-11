@@ -302,7 +302,8 @@ body {
 .contractors-container {
   display: flex;
   flex-direction: column;
-  min-height: 85vh; }
+  min-height: 85vh;
+  flex-wrap: wrap; }
 
 .delete-con-btn {
   text-decoration: none;
