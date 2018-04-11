@@ -1,15 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 //Material UI Imports
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import TextField from "material-ui/TextField";
 import RaisedButton from "material-ui/RaisedButton";
 import Dialog from 'material-ui/Dialog';
 import FloatingActionButton from 'material-ui/FloatingActionButton';
 import ContentAdd from 'material-ui/svg-icons/content/add';
-import getMuiTheme from 'material-ui/styles/getMuiTheme';
-import {lightBlue900} from 'material-ui/styles/colors';
-import {addWorkOrder, getWorkOrders} from './../../ducks/propertiesReducer';
+
+import {addWorkOrder} from './../../ducks/propertiesReducer';
 
 class AddWorkOrderForm extends Component {
     constructor(props){
@@ -60,11 +58,7 @@ class AddWorkOrderForm extends Component {
            
            
             // MUI COLORS
-            const muiTheme = getMuiTheme({
-                palette: {
-                    primary1Color: lightBlue900,
-                }
-            })
+        
 
             // CUSTOM
             const customContentStyle = {
@@ -76,8 +70,8 @@ class AddWorkOrderForm extends Component {
             }
 
             return <div>
-                <MuiThemeProvider muiTheme={muiTheme}>
-                <FloatingActionButton onClick={this.handleClickOpen}>
+               
+                <FloatingActionButton secondary={true} onClick={this.handleClickOpen}>
                    <ContentAdd />
                   </FloatingActionButton>
                   <Dialog
@@ -100,7 +94,7 @@ class AddWorkOrderForm extends Component {
                     <RaisedButton  label="Submit" onClick = {() => {this.handleSubmit(propId, type, memo)}} />
                
                 </Dialog>
-                </MuiThemeProvider>
+             
               </div>;
         }
     }
