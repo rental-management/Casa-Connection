@@ -20,7 +20,7 @@ class SingleProperty extends Component {
     constructor(props) {
         super(props);
 
-        this.state = {
+        this.state = {      
           fName: '',
           lName: '',
           phone: '',
@@ -40,6 +40,7 @@ class SingleProperty extends Component {
         this.handleTenantEdit = this.handleTenantEdit.bind(this);
         this.handleExpensesEdit = this.handleExpensesEdit.bind(this);
         this.handleOrderDelete = this.handleOrderDelete.bind(this);
+        this.handleWorkOrderRefresh = this.handleWorkOrderRefresh.bind(this);
     }
 
     
@@ -86,6 +87,10 @@ class SingleProperty extends Component {
        })
     }
 
+    handleWorkOrderRefresh(propId){
+      this.props.getWorkOrders(propId);
+    }
+
 
     render() { 
         // destructuring state 
@@ -98,7 +103,9 @@ class SingleProperty extends Component {
         let expensesList;   
         let tenant;
         if (propertyData !== undefined && propertyData.length !== 0) {
-          const propId = this.props.match.params.id;
+          const propId = this.props.match.params.id;      
+
+          //returning all property info
           property = propertyData.map((curr, index) => {
             return (
             <div key={index} className= "prop-container">
@@ -162,7 +169,6 @@ class SingleProperty extends Component {
                         isEditable: true
                       });
                     }} />
-
                   <br />
 
                   <span>Emergency Contact #: </span>
@@ -302,9 +308,7 @@ class SingleProperty extends Component {
                     }} />
                   <br />
                   {this.state.isEditable ? <RaisedButton label="save" onClick={() => {this.handleExpensesEdit(propValue, downPayment, mortgage, dues, taxes, insurance, utilities, propId)}} />: null}
-                  <br />
-
-                  
+                  <br />                  
                 </div>
               );
             }
@@ -326,7 +330,7 @@ class SingleProperty extends Component {
             <div className="work-orders-sp">
               <div className="add-work-order">
                  <h2>Work Orders</h2>
-                 <AddWorkOrderForm/>
+                 <AddWorkOrderForm handleWorkOrderRefresh = {this.handleWorkOrderRefresh}/>
               </div>
                 {workOrdersList}
             </div>
