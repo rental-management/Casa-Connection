@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 //Material UI Imports
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-// import Paper from "material-ui/Paper";
 import TextField from "material-ui/TextField";
 import RaisedButton from "material-ui/RaisedButton";
 import Dialog from 'material-ui/Dialog';
@@ -34,11 +33,12 @@ class AddWorkOrderForm extends Component {
     handleSubmit(propId,type, memo){
         this.props.addWorkOrder(propId,type, memo)
         .then( (res) => {          
-            this.setState({ open: false });         
+            this.setState({ open: false }); 
+            this.props.handleWorkOrderRefresh(propId);                               
         })
     }
 
-    handleClose = () => {
+    handleClose = (propId) => {
         this.setState({ open: false });
     };
 
@@ -49,8 +49,7 @@ class AddWorkOrderForm extends Component {
 
         render(){
             const {type, memo} = this.state;
-           
-            //  console.log("here is props - need propId" ,this.props.state.propertiesReducer.properties);
+            console.log("handleWorkOrderRefresh: ", this.props);                      
              let propertyArr = this.props.state.propertiesReducer.property;
              let propId;
              if(propertyArr.length !== 0 && propertyArr !== undefined ){
@@ -84,7 +83,7 @@ class AddWorkOrderForm extends Component {
                   <Dialog
                    contentStyle={customContentStyle}
                    open={this.state.open}
-                   onClose={this.handleClose}>
+                   onClose={ this.handleClose}>
                 <h1>Work Orders</h1>
                             
                     <TextField floatingLabelText="Type" onChange={e => {
