@@ -162,7 +162,6 @@ class SingleProperty extends Component {
                         isEditable: true
                       });
                     }} />
-
                   <br />
 
                   <span>Emergency Contact #: </span>
@@ -326,7 +325,7 @@ class SingleProperty extends Component {
             <div className="work-orders-sp">
               <div className="add-work-order">
                  <h2>Work Orders</h2>
-                 <AddWorkOrderForm/>
+                 <AddWorkOrderForm getOnClick = {(flag) => {return flag}}/>
               </div>
                 {workOrdersList}
             </div>
