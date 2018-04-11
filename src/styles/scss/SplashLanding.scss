@@ -1,18 +1,18 @@
 .splash {
-    // background: linear-gradient(
-    //     rgba(white, 0.4)  
-    //     rgba(white, 0.2),
-    //     rgba(white, 0.2)),
-    //   url("../../assets/brickplant.jpg");
-    background: #009be0;
+    background: linear-gradient(
+        rgba(#404040, 0.6)  
+        rgba(#404040, 0.6),
+        rgba(#404040, 0.6)),
+      url("../../assets/windows.jpg");
+    // background: #009be0;
     background-size: 100%;
     background-repeat: no-repeat;
-    height: 75vh;
+    height: 73vh;
     clip-path: polygon(0 0, 100% 0, 100% 82%, 0 100%);  
 }
 
 .logo {
-    height: 9vh;
+    height: 8vh;
     padding: 10px 20px 40px 10px;
 }
 
@@ -23,6 +23,7 @@
     color: white;
     letter-spacing: 2px;
     font-family: $header;
+    font-size: 13px;
 }
 
 .first-container > div:first-of-type {
@@ -39,7 +40,7 @@
     width: 700px;
     display: flex;
     flex-direction: column;
-    font-size: 20px;
+    font-size: 26px;
     h2 {
         text-align: left;
         color: white;
@@ -51,7 +52,7 @@
         text-align: left;
         width: 550px;
         color: white;
-        line-height: 40px;
+        line-height: 35px;
         font-size: 20px;
         font-family: $body;
         letter-spacing: 1px;
@@ -60,14 +61,20 @@
 
 .started-btn {
     background-color: white;
-    border: 1px solid white;
     padding: 12px 60px 12px 60px;
-    color: black;
+    color: #4c4c4b;
     cursor: pointer;
     border-radius: 10px;;
     font-size: 18px;
     width: 300px;
     margin-top: 10px;
+}
+
+.started-btn:hover {
+    transition: background-color .2s ease;
+    background: #ff3776;
+    color: white;
+    
 }
 
 .second-container {
