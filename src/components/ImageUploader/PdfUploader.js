@@ -41,18 +41,13 @@ class PdfUploader extends Component {
             (error) => {
                 console.log("handleUpload error msg: ",error);
             },
-            (success) => { 
-                
-                console.log(uploadTask.snapshot.downloadURL, "NAME");
-                console.log(this.props);
+            (success) => {               
                 this.props.handleImg(uploadTask.snapshot.downloadURL);
             },
         );
     }
 
-    render(){
-        console.log(this.props, "img func")
-        console.log(this.state, "STATE")
+    render(){      
         return (
             <div>
                 
