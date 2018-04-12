@@ -154,13 +154,12 @@ body {
   justify-content: space-between;
   font-size: 2em;
   margin-left: 57%;
-  padding: 20px;
-  color: blue; }
+  padding: 20px; }
 
 @media only screen and (min-width: 500px) {
   .responsive-menu, .hamburger {
     display: none; } }
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 750px) {
   .responsive-menu {
     display: block;
     padding: 20px;
@@ -168,6 +167,21 @@ body {
 
   .full-screen-menu {
     display: none; } }
+@media only screen and (max-width: 1230px) {
+  .full-screen-menu {
+    margin-left: 50%; } }
+@media only screen and (max-width: 1115px) {
+  .full-screen-menu {
+    margin-left: 45%; } }
+@media only screen and (max-width: 990px) {
+  .full-screen-menu {
+    margin-left: 38%; } }
+@media only screen and (max-width: 880px) {
+  .full-screen-menu {
+    margin-left: 32%; } }
+@media only screen and (max-width: 799px) {
+  .full-screen-menu {
+    margin-left: 25%; } }
 .properties-container {
   display: flex;
   flex-direction: column;
@@ -175,7 +189,7 @@ body {
 
 .properties-header {
   padding-top: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -187,7 +201,7 @@ body {
   .properties-header h1 {
     font-family: "Roboto", sans-serif;
     font-size: 26px;
-    margin-left: 100px; }
+    margin-left: 80px; }
 
 .properties-name {
   color: #686868;
@@ -210,16 +224,35 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 20px;
+  padding: 18px;
   background: white;
   border-radius: 6px;
   box-shadow: 0 12px 22px 0 rgba(0, 0, 0, 0.15);
   margin: 10px; }
 
 .properties-img {
-  width: 400px;
+  width: 360px;
   padding-bottom: 20px; }
 
+@media only screen and (max-width: 500px) {
+  .properties-img {
+    width: 290px; }
+
+  .properties-header {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    padding: 0; }
+    .properties-header h1 {
+      font-size: 30px;
+      margin-left: 0px;
+      padding-bottom: 10px; }
+    .properties-header div {
+      margin-right: 40px;
+      margin-bottom: 20px; }
+      .properties-header div svg {
+        margin-left: 15px; } }
 .property-tenant-container {
   display: flex;
   flex-wrap: wrap;
@@ -240,7 +273,7 @@ body {
   justify-content: center;
   flex-direction: column;
   background: white;
-  border-radius: 6px;
+  border-radius: 4px;
   box-shadow: 0 10px 22px 0 rgba(0, 0, 0, 0.15); }
 
 .expenses-container {
@@ -250,7 +283,7 @@ body {
   justify-content: center;
   flex-direction: column;
   background: white;
-  border-radius: 6px;
+  border-radius: 4px;
   box-shadow: 0 10px 22px 0 rgba(0, 0, 0, 0.15); }
 
 .work-orders-container {
@@ -258,18 +291,19 @@ body {
   display: flex;
   margin-top: 50px;
   background: white;
-  border-radius: 6px;
-  display: flex;
+  border-radius: 4px;
   box-shadow: 0 10px 22px 0 rgba(0, 0, 0, 0.15);
   flex-direction: column; }
 
 .breadcrumb {
   font-family: "Roboto", sans-serif;
   font-size: 26px;
-  text-align: left; }
+  text-align: left;
+  color: #3799d6; }
 
 .single-property-photo {
-  width: 620px;
+  max-width: 620px;
+  max-height: auto;
   box-shadow: 0 10px 22px 0 rgba(0, 0, 0, 0.15); }
 
 .address {
@@ -314,19 +348,31 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
-  padding: 15px; }
+  padding: 14px;
+  margin-bottom: 15px; }
   .work-order-header h2 {
-    margin-right: 150px;
+    margin-right: 155px;
     font-family: "Roboto", sans-serif;
     color: #3799d6; }
 
 .requests {
   background: white;
-  border-radius: 6px;
+  border-radius: 4px;
   box-shadow: 0 10px 22px 0 rgba(0, 0, 0, 0.15);
   width: 80%;
-  padding: 10px;
-  margin: 0 auto; }
+  margin-bottom: 10px;
+  margin-left: 40px;
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  font-family: "Lato", sans-serif;
+  color: #686868; }
+
+.save-btn {
+  text-align: center;
+  margin-left: 200px;
+  margin-bottom: 40px; }
 
 .dialog-container {
   display: flex;
@@ -373,7 +419,11 @@ body {
   align-content: center;
   align-items: center; }
   .contractors-header h1 {
-    padding-left: 60px; }
+    margin-left: 80px;
+    font-family: "Roboto", sans-serif;
+    color: #3799d6;
+    font-size: 26px;
+    margin-bottom: 30px; }
 
 .buttons {
   display: inline-flex;
@@ -381,21 +431,18 @@ body {
   align-items: center;
   flex-wrap: wrap; }
 
-.work_orders-container {
-  display: flex;
-  flex-direction: column; }
-
 .work-order-container {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
-  margin: 15px 160px 15px 160px;
+  margin: 15px 200px 15px 200px;
   justify-content: space-between;
   padding: 8px 30px 8px 40px;
-  border-radius: 8px;
+  border-radius: 4px;
   background: white;
   color: #4c4c4b;
+  font-family: "Lato", sans-serif;
   box-shadow: 0 12px 22px 0 rgba(0, 0, 0, 0.15); }
 
 .type {
@@ -423,8 +470,9 @@ body {
 .work-orders {
   display: flex;
   justify-content: flex-start;
-  margin-left: 165px;
+  margin-left: 80px;
   margin-top: 35px;
+  margin-bottom: 35px;
   font-size: 26px;
   color: #3799d6;
   font-family: "Roboto", sans-serif; }
@@ -442,7 +490,7 @@ body {
   align-items: center;
   align-content: stretch;
   height: 100%;
-  width: 80vw;
+  width: 40vw;
   background-color: white;
   margin-bottom: 5%;
   border-radius: 20px;
@@ -490,7 +538,8 @@ body {
 
 .real_footer {
   width: 100%;
-  flex-shrink: 0; }
+  flex-shrink: 0;
+  font-family: "Lato", sans-serif; }
   .real_footer-container {
     position: relative;
     top: 7em;
@@ -501,9 +550,10 @@ body {
   .real_footer-text {
     position: relative;
     display: inline-block;
-    font-size: 25px;
+    font-size: 18px;
     margin: 0 auto;
-    color: rgba(255, 255, 255, 0.23); }
+    color: white;
+    padding-top: 18px; }
 
 #total-expenses-chart {
   height: 700px;
