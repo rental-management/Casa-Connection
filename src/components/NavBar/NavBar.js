@@ -59,7 +59,7 @@ class NavBar extends Component {
       <MenuItem primaryText = { <Link to="/properties" > Properties </Link> } />
       <MenuItem primaryText = { <Link to="/workorders" > Work Orders </Link> } />
       <MenuItem primaryText = { <Link to="/contractors" > Contractors </Link> } />
-      <MenuItem primaryText = { <Link to="/financial" > Financial </Link> } />
+      <MenuItem primaryText = { <Link to="/financial" > Analytics </Link> } />
       <MenuItem primaryText = { <Link to="/contact" > Contact </Link> } />
  </IconMenu>
 </MuiThemeProvider>
@@ -80,7 +80,7 @@ class NavBar extends Component {
         </Link>
 
         <Link to="/financial">
-          <MenuItem className="item" onClick={this.handleClose}>Financial</MenuItem>
+          <MenuItem className="item" onClick={this.handleClose}>Analytics</MenuItem>
         </Link>
   </MuiThemeProvider>      
   </div>
