@@ -46,8 +46,7 @@ class AddWorkOrderForm extends Component {
 
 
         render(){
-            const {type, memo} = this.state;
-            console.log("handleWorkOrderRefresh: ", this.props);                      
+            const {type, memo} = this.state;                    
              let propertyArr = this.props.state.propertiesReducer.property;
              let propId;
              if(propertyArr.length !== 0 && propertyArr !== undefined ){
@@ -58,8 +57,7 @@ class AddWorkOrderForm extends Component {
            
            
             // MUI COLORS
-        
-
+            
             // CUSTOM
             const customContentStyle = {
                 width: '100%',

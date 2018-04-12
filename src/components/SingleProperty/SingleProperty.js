@@ -5,10 +5,12 @@ import AddWorkOrderForm from '../AddWorkOrderForm/AddWorkOrderForm';
 import NavBar from '../NavBar/NavBar';
 import { Link } from "react-router-dom";
 import ExpenseChart from './../Charts/ExpenseChart';
+import RentChart from '../RentChart/RentChart';
 //MUI Imports
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 import Footer from '../Footer/Footer';
+import FontAwesome from 'react-fontawesome';
 
 
 
@@ -31,6 +33,7 @@ class SingleProperty extends Component {
           taxes: 0,
           insurance: 0,
           utilities: 0,
+          rent: 0,
           isEditable: false
         }
         
@@ -71,8 +74,8 @@ class SingleProperty extends Component {
       });
     }
 
-    handleExpensesEdit(propValue, downPayment, mortgage, dues, taxes, insurance, utilities, propId) {
-      this.props.editExpenses(propValue, downPayment, mortgage, dues, taxes, insurance, utilities, propId).then( (res) => {
+    handleExpensesEdit(propValue, downPayment, mortgage, dues, taxes, insurance, utilities, rent, propId) {
+      this.props.editExpenses(propValue, downPayment, mortgage, dues, taxes, insurance, utilities, rent, propId).then( (res) => {
         this.props.getExpensesById(propId);
         this.setState({isEditable: false})
       });
@@ -91,7 +94,7 @@ class SingleProperty extends Component {
 
     render() { 
         // destructuring state 
-        const {fName, lName, phone, email, emergContact, emergNum, propValue, downPayment, mortgage, dues, taxes, insurance, utilities} = this.state;
+        const {fName, lName, phone, email, emergContact, emergNum, propValue, downPayment, mortgage, dues, taxes, insurance, rent, utilities} = this.state;
       
         //declaring list variables
         let property;
@@ -183,13 +186,13 @@ class SingleProperty extends Component {
                     }} />
                     </div>
                   <br />   
-                            
+              <div className="save-btn">           
                 {this.state.isEditable ? 
                 <RaisedButton label="Save" onClick={() => {
                     this.handleTenantEdit(fName, lName, phone, email, emergContact, emergNum, propId);
                   }} id = "tenant-btn"/>: null}
                 <br />
-           
+              </div>
               </div>;
           });
 
@@ -200,11 +203,11 @@ class SingleProperty extends Component {
                 <div key={index} id = 'wo-container'>
                 <div className="requests">
                   <div>
-                    <span>{curr.type}</span>
+                    <span>{curr.type.toUpperCase()}</span>
                     <br />
                     <span>{curr.memo}</span>
                   </div>
-                  <div onClick={() => this.handleOrderDelete(curr.workorders_id, curr.prop_id)}> <i class="far fa-trash-alt"></i> </div>
+                  <div onClick={() => this.handleOrderDelete(curr.workorders_id, curr.prop_id)}> <FontAwesome size='2x' style={{ color: '#686868'}} className="far fa-times-circle" /> </div>
                     <br />
                 </div>
                 </div>
@@ -219,7 +222,7 @@ class SingleProperty extends Component {
               <div key={index} className="expenses-info">
                 
                   <div> 
-                  <span> ASSESSED VALUE: </span> 
+                  <span> ASSESSED VALUE:&nbsp; &nbsp;$  </span> 
                   <TextField 
                     defaultValue={curr.assessed_value} 
                     id="text-field-controlled" 
@@ -231,7 +234,7 @@ class SingleProperty extends Component {
                   </div>
                   <br />
                   <div>
-                  <span>DOWN PAYMENT: </span> 
+                  <span>DOWN PAYMENT:&nbsp; &nbsp;$  </span> 
                   <TextField  
                     defaultValue={curr.down_payment} 
                     id="text-field-controlled"
@@ -245,9 +248,24 @@ class SingleProperty extends Component {
                     }} />
                   </div>
                   <br />
+                  <div>
+                  <span>MONTHLY RENT:&nbsp; &nbsp;$  </span> 
+                  <TextField  
+                    defaultValue={curr.rent} 
+                    id="text-field-controlled"
+                    hintText="0"
+                    onChange={ (event) => {
+                    
+                      this.setState({
+                        rent: event.target.value,
+                        isEditable: true
+                      });
+                    }} />
+                  </div>
+                  <br />
 
                     <div>
-                  <span>MONTHLY MORTGAGE: </span> 
+                  <span>MONTHLY MORTGAGE:&nbsp; &nbsp;$  </span> 
                   <TextField 
                     defaultValue={curr.monthly_mortgage} 
                     id="text-field-controlled"
@@ -264,7 +282,7 @@ class SingleProperty extends Component {
                   <br />
 
                   <div>
-                  <span>MONTHLY DUES: </span> 
+                  <span>MONTHLY DUES:&nbsp; &nbsp;$  </span> 
                   <TextField 
                     defaultValue={curr.monthly_dues} 
                     id="text-field-controlled"
@@ -281,7 +299,7 @@ class SingleProperty extends Component {
                   <br />
 
                     <div>
-                  <span>MONTHLY TAXES: </span> 
+                  <span>MONTHLY TAXES:&nbsp; &nbsp;$ </span> 
                   <TextField 
                     defaultValue={curr.monthly_taxes} 
                     id="text-field-controlled"
@@ -298,7 +316,7 @@ class SingleProperty extends Component {
                   <br />
 
                   <div>
-                  <span> MONTHLY INSURANCE: </span> 
+                  <span> MONTHLY INSURANCE:&nbsp; &nbsp;$ </span> 
                   <TextField 
                     defaultValue={curr.monthly_insurance}
                     id="text-field-controlled"
@@ -315,7 +333,7 @@ class SingleProperty extends Component {
                   <br />
 
                   <div>
-                  <span> MONTHLY UTILITIES:  </span> 
+                  <span> MONTHLY UTILITIES:&nbsp; &nbsp;$   </span> 
                   <TextField 
                     defaultValue={curr.monthly_utilities} 
                     id="text-field-controlled"
@@ -330,9 +348,11 @@ class SingleProperty extends Component {
                     </div>
                  
                   <br />
+                <div className="save-btn">
                   {this.state.isEditable ? <RaisedButton label="save" onClick={() => {this.handleExpensesEdit(propValue, downPayment, mortgage, dues, taxes, insurance, utilities, propId)}} />: null}
-                  <br />                  
-                </div>
+                  <br /> 
+                </div>                 
+              </div>
               );
             }
           );
@@ -352,7 +372,7 @@ class SingleProperty extends Component {
             </div>
             
             <div className="expenses-container">
-               <h2 className="expenses-header">EXPENSES</h2>
+               <h2 className="expenses-header">PROPERTY DATA</h2>               
                {expensesList}  
             </div>
             <div className="work-orders-container">
@@ -365,6 +385,7 @@ class SingleProperty extends Component {
           </div>
         
                <ExpenseChart />
+               <RentChart />
                <Footer />  
           </div>
           

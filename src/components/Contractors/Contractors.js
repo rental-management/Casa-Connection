@@ -191,7 +191,7 @@ class Contractors extends Component {
             <div className="contractors-container">
               <NavBar />
               <div className="contractors-header">
-                <h1> My Contractors </h1>
+                <h1> Contractors </h1>
                 <AddContractorForm />
               </div>
               <span className="contractors-list">
