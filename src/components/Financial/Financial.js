@@ -4,6 +4,8 @@ import { getProperties } from '../../ducks/propertiesReducer';
 import NavBar from '../NavBar/NavBar';
 import TotalExpensesChart from '../Charts/TotalExpensesChart';
 import Footer from '../Footer/Footer';
+import SinglePropValue from './../Charts/SinglePropValue';
+
 
 class Financial extends Component {
 
@@ -26,9 +28,12 @@ class Financial extends Component {
       return(
         <div>
             <NavBar/>
-            <div>
+            
+                <h1>PROPERTIES OVERVIEW</h1>
               <TotalExpensesChart/>
-            </div>
+                <div>
+                    <SinglePropValue/>
+                    </div>
             <Footer />
         </div>
       )

@@ -6,7 +6,7 @@
 	align-items: center;
 	align-content: stretch;
     height: 100%;
-    width: 80vw;
+    width: 40vw;
     background-color: white;
     margin-bottom: 5%;
     border-radius: 20px;
@@ -20,7 +20,6 @@
 
 
 .single-prop-chart {
-
     display: flex;
     height: auto; 
     width: 75vw;
@@ -30,4 +29,35 @@
 	align-items: center;
 	align-content: stretch;
 }
+
+.total-prop-contain {
+    display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: flex-start;
+	align-items: center;
+	align-content: stretch;
+    height: 600px;
+    width: 50vw;
+    background-color: white;
+    margin-bottom: 5%;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 9px 9px 5px lightgray;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+.total-prop-chart {
+    display: flex;
+    height: auto; 
+    width: 100%;
+    justify-content: center;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	align-items: center;
+	align-content: stretch;
+}
+
+
 

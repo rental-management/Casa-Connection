@@ -136,8 +136,8 @@ module.exports = {
 
     editExpenses: (req, res) => {
         const db = req.app.get("db");      
-        const {assessed_value, down_payment, monthly_mortgage, monthly_dues, monthly_taxes, monthly_insurance, monthly_utilities, id} = req.body;       
-        db.editExpenses(assessed_value, down_payment, monthly_mortgage, monthly_dues, monthly_taxes, monthly_insurance, monthly_utilities, id).then( (response) => {
+        const {assessed_value, down_payment, monthly_mortgage, monthly_dues, monthly_taxes, monthly_insurance, monthly_utilities, rent, id} = req.body;       
+        db.editExpenses(assessed_value, down_payment, monthly_mortgage, monthly_dues, monthly_taxes, monthly_insurance, monthly_utilities, rent, id).then( (response) => {
             res.status(200).json(response);
         }).catch( (err) => {
             res.status(500).json();

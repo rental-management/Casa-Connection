@@ -81,7 +81,7 @@ class NavBar extends Component {
         </Link>
 
         <Link to="/financial">
-          <MenuItem style={{ color: '#686868' }} className="item" onClick={this.handleClose}>Financial</MenuItem>
+          <MenuItem style={{ color: '#686868' }}className="item" onClick={this.handleClose}>Analytics</MenuItem>
         </Link>
   </MuiThemeProvider>      
   </div>
