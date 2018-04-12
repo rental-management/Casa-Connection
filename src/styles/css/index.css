@@ -171,7 +171,7 @@ body {
 .properties-container {
   display: flex;
   flex-direction: column;
-  min-height: 85vh; }
+  min-height: 86vh; }
 
 .properties-header {
   padding-top: 20px;
@@ -336,7 +336,7 @@ body {
 .contractors-container {
   display: flex;
   flex-direction: column;
-  min-height: 85vh;
+  min-height: 86vh;
   flex-wrap: wrap; }
 
 .delete-con-btn {
