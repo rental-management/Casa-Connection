@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Bar, Line, Pie, Doughnut, HorizontalBar } from 'react-chartjs-2';
+import { Bar, Line, Pie, Doughnut } from 'react-chartjs-2';
 import { getExpensesById } from './../../ducks/propertiesReducer';
 
 class ExpenseChart extends Component {

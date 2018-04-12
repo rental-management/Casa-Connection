@@ -5,6 +5,7 @@ import AddWorkOrderForm from '../AddWorkOrderForm/AddWorkOrderForm';
 import NavBar from '../NavBar/NavBar';
 import { Link } from "react-router-dom";
 import ExpenseChart from './../Charts/ExpenseChart';
+import RentChart from '../RentChart/RentChart';
 //MUI Imports
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
@@ -220,7 +221,7 @@ class SingleProperty extends Component {
               <div key={index} className="expenses-info">
                 
                   <div> 
-                  <span> ASSESSED VALUE: </span> 
+                  <span> ASSESSED VALUE:&nbsp; &nbsp;$  </span> 
                   <TextField 
                     defaultValue={curr.assessed_value} 
                     id="text-field-controlled" 
@@ -232,7 +233,7 @@ class SingleProperty extends Component {
                   </div>
                   <br />
                   <div>
-                  <span>DOWN PAYMENT: </span> 
+                  <span>DOWN PAYMENT:&nbsp; &nbsp;$  </span> 
                   <TextField  
                     defaultValue={curr.down_payment} 
                     id="text-field-controlled"
@@ -247,7 +248,7 @@ class SingleProperty extends Component {
                   </div>
                   <br />
                   <div>
-                  <span>MONTHLY RENT: </span> 
+                  <span>MONTHLY RENT:&nbsp; &nbsp;$  </span> 
                   <TextField  
                     defaultValue={curr.rent} 
                     id="text-field-controlled"
@@ -263,7 +264,7 @@ class SingleProperty extends Component {
                   <br />
 
                     <div>
-                  <span>MONTHLY MORTGAGE: </span> 
+                  <span>MONTHLY MORTGAGE:&nbsp; &nbsp;$  </span> 
                   <TextField 
                     defaultValue={curr.monthly_mortgage} 
                     id="text-field-controlled"
@@ -280,7 +281,7 @@ class SingleProperty extends Component {
                   <br />
 
                   <div>
-                  <span>MONTHLY DUES: </span> 
+                  <span>MONTHLY DUES:&nbsp; &nbsp;$  </span> 
                   <TextField 
                     defaultValue={curr.monthly_dues} 
                     id="text-field-controlled"
@@ -297,7 +298,7 @@ class SingleProperty extends Component {
                   <br />
 
                     <div>
-                  <span>MONTHLY TAXES: </span> 
+                  <span>MONTHLY TAXES:&nbsp; &nbsp;$ </span> 
                   <TextField 
                     defaultValue={curr.monthly_taxes} 
                     id="text-field-controlled"
@@ -314,7 +315,7 @@ class SingleProperty extends Component {
                   <br />
 
                   <div>
-                  <span> MONTHLY INSURANCE: </span> 
+                  <span> MONTHLY INSURANCE:&nbsp; &nbsp;$ </span> 
                   <TextField 
                     defaultValue={curr.monthly_insurance}
                     id="text-field-controlled"
@@ -331,7 +332,7 @@ class SingleProperty extends Component {
                   <br />
 
                   <div>
-                  <span> MONTHLY UTILITIES:  </span> 
+                  <span> MONTHLY UTILITIES:&nbsp; &nbsp;$   </span> 
                   <TextField 
                     defaultValue={curr.monthly_utilities} 
                     id="text-field-controlled"
@@ -368,7 +369,7 @@ class SingleProperty extends Component {
             </div>
             
             <div className="expenses-container">
-               <h2 className="expenses-header">PROPERTY DATA</h2>
+               <h2 className="expenses-header">PROPERTY DATA</h2>               
                {expensesList}  
             </div>
             <div className="work-orders-container">
@@ -381,6 +382,7 @@ class SingleProperty extends Component {
           </div>
         
                <ExpenseChart />
+               <RentChart />
                <Footer />  
           </div>
           
