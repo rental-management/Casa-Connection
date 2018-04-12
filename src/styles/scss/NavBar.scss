@@ -5,7 +5,6 @@
     font-size: 2em;
     margin-left: 57%;
     padding: 20px;
-    color: blue;
 }
 
 
@@ -18,8 +17,7 @@
 }
 
 
-
-@media only screen and (max-width: 700px){
+@media only screen and (max-width: 750px){
     .responsive-menu { 
         display: block;
         padding: 20px;
@@ -27,5 +25,37 @@
     }
     .full-screen-menu {
         display: none;
+    }
+}
+
+
+
+@media only screen and(max-width: 1230px) {
+    .full-screen-menu {
+        margin-left: 50%;
+    }
+}
+
+@media only screen and(max-width: 1115px) {
+    .full-screen-menu {
+        margin-left: 45%;
+    }
+}
+
+@media only screen and(max-width: 990px) {
+    .full-screen-menu {
+        margin-left: 38%;
+    }
+}
+
+@media only screen and(max-width: 880px) {
+    .full-screen-menu {
+        margin-left: 32%;
+    }
+}
+
+@media only screen and(max-width: 799px) {
+    .full-screen-menu {
+        margin-left: 25%;
     }
 }

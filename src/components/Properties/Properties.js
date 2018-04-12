@@ -52,7 +52,7 @@ class Properties extends Component {
             <div className="properties-container">
               <NavBar />
                 <div className="properties-header"> 
-                  <h1> My Properties </h1>
+                  <h1> Properties </h1>
                   <AddPropForm />
                 </div>
                 <div className="propertiesList">

@@ -49,7 +49,7 @@ return textA < textB ? -1 : textA > textB ? 1 : 0;
                         <div className="type"> {curr.type.toUpperCase()}</div><br/>
                         <div className="memo"> {curr.memo}</div>
                     </div>
-                <span className="delete-work-order" onClick = {() => {this.handleDelete(curr.workorders_id)}}> <FontAwesome size='1.5x' className="far fa-times-circle" /> </span>
+                <span className="delete-work-order" onClick = {() => {this.handleDelete(curr.workorders_id)}}> <FontAwesome size='1.7x' className="far fa-times-circle" /> </span>
             </div>
         </div>);
     })
@@ -61,8 +61,7 @@ return textA < textB ? -1 : textA > textB ? 1 : 0;
             <div>
                <NavBar />  
                <div className="work_orders-container">
-                 <h1 className="work-orders"> Work Orders </h1>   
-                 <hr className="wo-line" align="left" />     
+                 <h1 className="work-orders"> Work Orders </h1>       
                  <div className="work-orders-list"> 
                    {workOrdersList} 
                  </div> 
