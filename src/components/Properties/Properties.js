@@ -6,8 +6,8 @@ import NavBar from './../NavBar/NavBar';
 import {connect} from 'react-redux';
 import {getProperties, deleteProperty, deleteWorkOrders} from './../../ducks/propertiesReducer';
 import { Link } from "react-router-dom";
+import FontAwesome from 'react-fontawesome';
 import Footer from '../Footer/Footer';
-
 
 
 class Properties extends Component {
@@ -37,13 +37,13 @@ class Properties extends Component {
         if(this.props.properties.properties !== undefined && this.props.properties.properties.length !== 0) {
             propertiesList = this.props.properties.properties.map((curr, index) => {
                 return(
-                    <div className="individual-property" key={index}>
+                  <div className="individual-property" key={index}>
                     <Link to = {`/property/${curr.id}`} key = {index}>
-                     <h1> {curr.prop_name} </h1>
-                     <img className="properties-img" src={curr.img} />
-                     </Link>
-                     <button className = 'delete-prop-btn' onClick = {() => {this.handleDelete(curr.id)}}> DELETE </button>
-                    </div>
+                      <h1 className="properties-name"> {curr.prop_name.toUpperCase()} </h1>
+                       <img className="properties-img" src={curr.img} />
+                    </Link>
+                       <div className = 'delete-prop-btn' onClick = {() => {this.handleDelete(curr.id)}}><FontAwesome size='2x' className="far fa-times-circle" /> </div>
+                  </div>
                 )
             })
         }
