@@ -9,6 +9,7 @@ import ExpenseChart from './../Charts/ExpenseChart';
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 import Footer from '../Footer/Footer';
+import FontAwesome from 'react-fontawesome';
 
 
 
@@ -183,13 +184,13 @@ class SingleProperty extends Component {
                     }} />
                     </div>
                   <br />   
-                            
+              <div className="save-btn">           
                 {this.state.isEditable ? 
                 <RaisedButton label="Save" onClick={() => {
                     this.handleTenantEdit(fName, lName, phone, email, emergContact, emergNum, propId);
                   }} id = "tenant-btn"/>: null}
                 <br />
-           
+              </div>
               </div>;
           });
 
@@ -200,11 +201,11 @@ class SingleProperty extends Component {
                 <div key={index} id = 'wo-container'>
                 <div className="requests">
                   <div>
-                    <span>{curr.type}</span>
+                    <span>{curr.type.toUpperCase()}</span>
                     <br />
                     <span>{curr.memo}</span>
                   </div>
-                  <div onClick={() => this.handleOrderDelete(curr.workorders_id, curr.prop_id)}> <i class="far fa-trash-alt"></i> </div>
+                  <div onClick={() => this.handleOrderDelete(curr.workorders_id, curr.prop_id)}> <FontAwesome size='2x' style={{ color: '#686868'}} className="far fa-times-circle" /> </div>
                     <br />
                 </div>
                 </div>
@@ -330,9 +331,11 @@ class SingleProperty extends Component {
                     </div>
                  
                   <br />
+                <div className="save-btn">
                   {this.state.isEditable ? <RaisedButton label="save" onClick={() => {this.handleExpensesEdit(propValue, downPayment, mortgage, dues, taxes, insurance, utilities, propId)}} />: null}
-                  <br />                  
-                </div>
+                  <br /> 
+                </div>                 
+              </div>
               );
             }
           );
@@ -363,19 +366,7 @@ class SingleProperty extends Component {
                  {workOrdersList}
             </div>
           </div>
-        <div className="wo-expenses">
-          <div className="work-orders-sp">
-            <div className="add-work-order">
-            <AddWorkOrderForm handleWorkOrderRefresh = {this.handleWorkOrderRefresh}/>
-               <h2 className="wo-h2">WORK ORDERS</h2>
-            </div>
-              {workOrdersList}
-          </div>
-          <div className="expenses-sp">
-            <h2>EXPENSES</h2>
-            {expensesList}  
-          </div>
-        </div>
+        
                <ExpenseChart />
                <Footer />  
           </div>

@@ -1,21 +1,21 @@
 /*
 Error: Undefined variable: "$header".
-        on line 51 of src/styles/scss/SingleProperty.scss
+        on line 50 of src/styles/scss/SingleProperty.scss
 
-46:     flex-direction: column;
-47: }
-48: 
-49: // breadcrumb, property photo, address styling
-50: .breadcrumb {
-51:     font-family: $header;
-52:     font-size: 26px;
-53:     text-align: left;
-54: }
-55: .single-property-photo {
-56:     width: 620px;
+45:     flex-direction: column;
+46: }
+47: 
+48: // breadcrumb, property photo, address styling
+49: .breadcrumb {
+50:     font-family: $header;
+51:     font-size: 26px;
+52:     text-align: left;
+53:     color: #3799d6;
+54:     
+55: }
 
 Backtrace:
-src/styles/scss/SingleProperty.scss:51
+src/styles/scss/SingleProperty.scss:50
 /Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/script/tree/variable.rb:49:in `_perform'
 /Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/script/tree/node.rb:50:in `perform'
 /Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/tree/visitors/perform.rb:402:in `visit_prop'
@@ -71,4 +71,4 @@ src/styles/scss/SingleProperty.scss:51
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$header\".\A         on line 51 of src/styles/scss/SingleProperty.scss\A \A 46:     flex-direction: column;\A 47: }\A 48: \A 49: // breadcrumb, property photo, address styling\A 50: .breadcrumb {\A 51:     font-family: $header;\A 52:     font-size: 26px;\A 53:     text-align: left;\A 54: }\A 55: .single-property-photo {\A 56:     width: 620px;"; }
+  content: "Error: Undefined variable: \"$header\".\A         on line 50 of src/styles/scss/SingleProperty.scss\A \A 45:     flex-direction: column;\A 46: }\A 47: \A 48: // breadcrumb, property photo, address styling\A 49: .breadcrumb {\A 50:     font-family: $header;\A 51:     font-size: 26px;\A 52:     text-align: left;\A 53:     color: #3799d6;\A 54:     \A 55: }"; }

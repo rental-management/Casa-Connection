@@ -44,7 +44,11 @@
     align-items: center;
 
     h1 {
-        padding-left: 60px;   
+        margin-left: 80px; 
+        font-family: $header;
+        color: $header-color;  
+        font-size: 26px;
+        margin-bottom: 30px;
     }
 }
 
