@@ -1,3 +1,7 @@
+.work_orders-container {
+    display: flex;
+    flex-direction: column;
+}
 
 .work-order-container {
     display: flex;
@@ -74,5 +78,5 @@
 .work-orders-list {
     display: flex;
     flex-direction: column;
+    flex: 1 0 auto;
 }
-

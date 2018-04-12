@@ -1,77 +1,486 @@
-/*
-Error: Undefined variable: "$gray".
-        on line 62 of src/styles/scss/SingleProperty.scss
-        from line 7 of src/styles/scss/index.scss
+a {
+  cursor: pointer;
+  text-decoration: none; }
 
-Backtrace:
-src/styles/scss/SingleProperty.scss:62
-src/styles/scss/index.scss:7
-/Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/script/tree/variable.rb:49:in `_perform'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/script/tree/node.rb:50:in `perform'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/tree/visitors/perform.rb:402:in `visit_prop'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/tree/visitors/base.rb:36:in `visit'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/tree/visitors/perform.rb:162:in `block in visit'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/stack.rb:79:in `block in with_base'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/stack.rb:135:in `with_frame'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/stack.rb:79:in `with_base'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/tree/visitors/perform.rb:162:in `visit'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/tree/visitors/perform.rb:444:in `block (2 levels) in visit_rule'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/tree/visitors/perform.rb:444:in `map'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/tree/visitors/perform.rb:444:in `block in visit_rule'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/tree/visitors/perform.rb:183:in `with_environment'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/tree/visitors/perform.rb:442:in `visit_rule'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/tree/visitors/base.rb:36:in `visit'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/tree/visitors/perform.rb:162:in `block in visit'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/stack.rb:79:in `block in with_base'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/stack.rb:135:in `with_frame'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/stack.rb:79:in `with_base'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/tree/visitors/perform.rb:162:in `visit'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/tree/visitors/perform.rb:329:in `block (2 levels) in visit_import'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/tree/visitors/perform.rb:329:in `map'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/tree/visitors/perform.rb:329:in `block in visit_import'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/stack.rb:88:in `block in with_import'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/stack.rb:135:in `with_frame'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/stack.rb:88:in `with_import'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/tree/visitors/perform.rb:326:in `visit_import'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/tree/visitors/base.rb:36:in `visit'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/tree/visitors/perform.rb:162:in `block in visit'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/stack.rb:79:in `block in with_base'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/stack.rb:135:in `with_frame'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/stack.rb:79:in `with_base'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/tree/visitors/perform.rb:162:in `visit'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/tree/visitors/base.rb:52:in `map'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/tree/visitors/base.rb:52:in `visit_children'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/tree/visitors/perform.rb:171:in `block in visit_children'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/tree/visitors/perform.rb:183:in `with_environment'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/tree/visitors/perform.rb:170:in `visit_children'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/tree/visitors/base.rb:36:in `block in visit'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/tree/visitors/perform.rb:190:in `visit_root'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/tree/visitors/base.rb:36:in `visit'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/tree/visitors/perform.rb:161:in `visit'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/tree/visitors/perform.rb:10:in `visit'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/tree/root_node.rb:36:in `css_tree'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/tree/root_node.rb:29:in `render_with_sourcemap'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/engine.rb:389:in `_render_with_sourcemap'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/engine.rb:307:in `render_with_sourcemap'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/plugin/compiler.rb:462:in `update_stylesheet'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/plugin/compiler.rb:209:in `each'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/plugin/compiler.rb:443:in `on_file_changed'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/plugin/compiler.rb:320:in `block in watch'
-/Library/Ruby/Gems/2.0.0/gems/sass-listen-4.0.0/lib/sass-listen/event/config.rb:23:in `call'
-/Library/Ruby/Gems/2.0.0/gems/sass-listen-4.0.0/lib/sass-listen/event/config.rb:23:in `call'
-/Library/Ruby/Gems/2.0.0/gems/sass-listen-4.0.0/lib/sass-listen/event/processor.rb:115:in `_process_changes'
-/Library/Ruby/Gems/2.0.0/gems/sass-listen-4.0.0/lib/sass-listen/event/processor.rb:19:in `block in loop_for'
-/Library/Ruby/Gems/2.0.0/gems/sass-listen-4.0.0/lib/sass-listen/event/processor.rb:15:in `loop'
-/Library/Ruby/Gems/2.0.0/gems/sass-listen-4.0.0/lib/sass-listen/event/processor.rb:15:in `loop_for'
-/Library/Ruby/Gems/2.0.0/gems/sass-listen-4.0.0/lib/sass-listen/event/loop.rb:84:in `_wait_for_changes'
-/Library/Ruby/Gems/2.0.0/gems/sass-listen-4.0.0/lib/sass-listen/event/loop.rb:42:in `block in setup'
-/Library/Ruby/Gems/2.0.0/gems/sass-listen-4.0.0/lib/sass-listen/internals/thread_pool.rb:6:in `call'
-/Library/Ruby/Gems/2.0.0/gems/sass-listen-4.0.0/lib/sass-listen/internals/thread_pool.rb:6:in `block in add'
-*/
-body:before {
-  white-space: pre;
-  font-family: monospace;
-  content: "Error: Undefined variable: \"$gray\".\A         on line 62 of src/styles/scss/SingleProperty.scss\A         from line 7 of src/styles/scss/index.scss"; }
+.App {
+  text-align: center; }
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px; }
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white; }
+
+.App-title {
+  font-size: 1.5em; }
+
+.App-intro {
+  font-size: large; }
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serifsf; }
+
+.splash {
+  background: linear-gradient(rgba(64, 64, 64, 0.6) rgba(64, 64, 64, 0.6), rgba(64, 64, 64, 0.6)), url("../../assets/windows.jpg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  height: 73vh;
+  clip-path: polygon(0 0, 100% 0, 100% 82%, 0 100%); }
+
+.logo {
+  height: 8vh;
+  padding: 10px 20px 40px 10px; }
+
+.splash-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: white;
+  letter-spacing: 2px;
+  font-family: "Roboto", sans-serif;
+  font-size: 13px; }
+
+.first-container > div:first-of-type {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-content: space-between;
+  padding: 25px 60px 0 60px; }
+
+.first-container > div:nth-child(2) {
+  margin-top: 22px;
+  margin-left: 90px;
+  width: 700px;
+  display: flex;
+  flex-direction: column;
+  font-size: 26px; }
+  .first-container > div:nth-child(2) h2 {
+    text-align: left;
+    color: white;
+    margin-bottom: 5px;
+    font-family: "Roboto", sans-serif;
+    letter-spacing: 2px; }
+  .first-container > div:nth-child(2) p {
+    text-align: left;
+    width: 550px;
+    color: white;
+    line-height: 35px;
+    font-size: 20px;
+    font-family: "Lato", sans-serif;
+    letter-spacing: 1px; }
+
+.started-btn {
+  background-color: white;
+  padding: 12px 60px 12px 60px;
+  color: #4c4c4b;
+  cursor: pointer;
+  border-radius: 10px;
+  font-size: 18px;
+  width: 300px;
+  margin-top: 10px; }
+
+.started-btn:hover {
+  transition: background-color .2s ease;
+  background: #ff3776;
+  color: white; }
+
+.second-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap; }
+  .second-container div {
+    display: flex;
+    background: white;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 45vh;
+    padding: 10px 10px 0 10px;
+    width: 45vh;
+    margin: 50px 30px 0px 30px;
+    box-shadow: 0 10px 22px 0 rgba(0, 0, 0, 0.15); }
+    .second-container div h1 {
+      padding-top: 15px;
+      width: 90%;
+      color: #545454;
+      font-size: 1.75em;
+      line-height: 40px;
+      font-family: "Roboto", sans-serif;
+      letter-spacing: 1.5px; }
+
+.third-container {
+  width: 100%;
+  height: 70vh;
+  background: white;
+  margin: 100px 0 100px 0; }
+
+.footer {
+  background: #009be0;
+  height: 15vh;
+  position: relative;
+  display: flex;
+  justify-content: center; }
+
+.footer div {
+  position: absolute;
+  bottom: 7px;
+  padding-bottom: 35px;
+  color: white; }
+
+.login-btn {
+  background-color: transparent;
+  border: 2px solid white;
+  padding: 12px 20px 12px 20px;
+  color: white;
+  cursor: pointer;
+  border-radius: 12%;
+  font-size: 15px; }
+
+.login-btn:hover {
+  background: white;
+  transition: background-color 0.3s ease;
+  color: #4d4d4d; }
+
+.full-screen-menu {
+  display: flex;
+  justify-content: space-between;
+  font-size: 2em;
+  margin-left: 57%;
+  padding: 20px;
+  color: blue; }
+
+@media only screen and (min-width: 500px) {
+  .responsive-menu, .hamburger {
+    display: none; } }
+@media only screen and (max-width: 700px) {
+  .responsive-menu {
+    display: block;
+    padding: 20px;
+    margin-left: 2%; }
+
+  .full-screen-menu {
+    display: none; } }
+.properties-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 85vh; }
+
+.properties-header {
+  padding-top: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  justify-content: space-between;
+  width: 90%;
+  align-content: center;
+  align-items: center;
+  color: #3799d6; }
+  .properties-header h1 {
+    font-family: "Roboto", sans-serif;
+    font-size: 26px;
+    margin-left: 100px; }
+
+.properties-name {
+  color: #686868;
+  font-size: 22px;
+  font-family: "Roboto", sans-serif;
+  padding-bottom: 5px;
+  font-weight: bold; }
+
+.delete-prop-btn {
+  color: #149ddc;
+  cursor: pointer; }
+
+.propertiesList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex: 1 0 auto; }
+
+.individual-property {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background: white;
+  border-radius: 6px;
+  box-shadow: 0 12px 22px 0 rgba(0, 0, 0, 0.15);
+  margin: 10px; }
+
+.properties-img {
+  width: 400px;
+  padding-bottom: 20px; }
+
+.property-tenant-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  justify-content: space-evenly;
+  margin-bottom: 80px; }
+
+.property-container {
+  width: 620px;
+  display: flex;
+  justify-content: center; }
+
+.tenant-container {
+  width: 620px;
+  height: 415px;
+  display: flex;
+  margin-top: 82px;
+  justify-content: center;
+  flex-direction: column;
+  background: white;
+  border-radius: 6px;
+  box-shadow: 0 10px 22px 0 rgba(0, 0, 0, 0.15); }
+
+.expenses-container {
+  width: 620px;
+  display: flex;
+  margin-top: 50px;
+  justify-content: center;
+  flex-direction: column;
+  background: white;
+  border-radius: 6px;
+  box-shadow: 0 10px 22px 0 rgba(0, 0, 0, 0.15); }
+
+.work-orders-container {
+  width: 620px;
+  display: flex;
+  margin-top: 50px;
+  background: white;
+  border-radius: 6px;
+  display: flex;
+  box-shadow: 0 10px 22px 0 rgba(0, 0, 0, 0.15);
+  flex-direction: column; }
+
+.breadcrumb {
+  font-family: "Roboto", sans-serif;
+  font-size: 26px;
+  text-align: left; }
+
+.single-property-photo {
+  width: 620px;
+  box-shadow: 0 10px 22px 0 rgba(0, 0, 0, 0.15); }
+
+.address {
+  font-family: "Lato", sans-serif;
+  color: #686868;
+  font-weight: bold;
+  font-size: 20px;
+  margin-top: 15px; }
+
+.tenant-header {
+  font-family: "Roboto", sans-serif;
+  color: #3799d6; }
+
+.tenant-info {
+  display: flex;
+  flex-direction: column;
+  margin-left: 70px;
+  font-family: "Lato", sans-serif;
+  color: #686868; }
+  .tenant-info div {
+    text-align: left; }
+    .tenant-info div span {
+      padding-right: 5px; }
+
+.expenses-header {
+  font-family: "Roboto", sans-serif;
+  color: #3799d6;
+  margin-top: 30px; }
+
+.expenses-info {
+  display: flex;
+  flex-direction: column;
+  margin-left: 70px;
+  font-family: "Lato", sans-serif;
+  color: #686868; }
+  .expenses-info div {
+    text-align: left; }
+    .expenses-info div span {
+      padding-right: 5px; }
+
+.work-order-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  padding: 15px; }
+  .work-order-header h2 {
+    margin-right: 150px;
+    font-family: "Roboto", sans-serif;
+    color: #3799d6; }
+
+.requests {
+  background: white;
+  border-radius: 6px;
+  box-shadow: 0 10px 22px 0 rgba(0, 0, 0, 0.15);
+  width: 80%;
+  padding: 10px;
+  margin: 0 auto; }
+
+.dialog-container {
+  display: flex;
+  height: 1000px;
+  width: auto; }
+
+.contractors-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 85vh; }
+
+.delete-con-btn {
+  text-decoration: none;
+  border-style: none;
+  padding: 10px;
+  border-radius: 40px;
+  background-color: #149ddc;
+  color: white;
+  cursor: pointer;
+  width: 40%; }
+
+.contractors-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex: 1 0 auto; }
+
+.individual-contractor {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px; }
+  .individual-contractor h1 {
+    margin-top: 0;
+    margin-bottom: 0; }
+
+.contractors-header {
+  padding-top: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  justify-content: space-between;
+  width: 93%;
+  align-content: center;
+  align-items: center; }
+  .contractors-header h1 {
+    padding-left: 60px; }
+
+.buttons {
+  display: inline-flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  flex-wrap: wrap; }
+
+.work_orders-container {
+  display: flex;
+  flex-direction: column; }
+
+.work-order-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 15px 160px 15px 160px;
+  justify-content: space-between;
+  padding: 8px 30px 8px 40px;
+  border-radius: 8px;
+  background: white;
+  color: #4c4c4b;
+  box-shadow: 0 12px 22px 0 rgba(0, 0, 0, 0.15); }
+
+.type {
+  font-family: "Lato", sans-serif;
+  font-weight: bold; }
+
+.memo {
+  font-family: "Lato", sans-serif; }
+
+.work-order-prop-name {
+  font-size: 18px;
+  font-family: "Roboto", sans-serif; }
+
+.delete-work-order {
+  padding: 0px 40px 0px 75px;
+  border-left: 1px solid #dddedd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70px;
+  cursor: pointer;
+  font-size: 25px;
+  color: #3799d6; }
+
+.work-orders {
+  display: flex;
+  justify-content: flex-start;
+  margin-left: 165px;
+  margin-top: 35px;
+  font-size: 26px;
+  color: #3799d6;
+  font-family: "Roboto", sans-serif; }
+
+.work-orders-list {
+  display: flex;
+  flex-direction: column;
+  flex: 1 0 auto; }
+
+.chart-contain {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  align-content: stretch;
+  height: 100%;
+  width: 80vw;
+  background-color: white;
+  margin-bottom: 5%;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 9px 9px 5px lightgray;
+  margin: 0 auto;
+  padding: 10px; }
+
+.single-prop-chart {
+  display: flex;
+  height: auto;
+  width: 75vw;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  align-content: stretch; }
+
+.real_footer {
+  width: 100%;
+  flex-shrink: 0; }
+  .real_footer-container {
+    position: relative;
+    top: 7em;
+    height: 4em;
+    background-color: #1DAFD5;
+    display: block;
+    padding: 10px; }
+  .real_footer-text {
+    position: relative;
+    display: inline-block;
+    font-size: 25px;
+    margin: 0 auto;
+    color: rgba(255, 255, 255, 0.23); }
+
+#total-expenses-chart {
+  height: 700px;
+  width: 800px;
+  margin: 0 auto; }
+
+/*# sourceMappingURL=index.css.map */

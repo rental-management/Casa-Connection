@@ -8,9 +8,9 @@ import ExpenseChart from './../Charts/ExpenseChart';
 //MUI Imports
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
+import Footer from '../Footer/Footer';
 
 
- 
 
 
 class SingleProperty extends Component {
@@ -363,18 +363,32 @@ class SingleProperty extends Component {
                  {workOrdersList}
             </div>
           </div>
-                 <ExpenseChart />  
+        <div className="wo-expenses">
+          <div className="work-orders-sp">
+            <div className="add-work-order">
+            <AddWorkOrderForm handleWorkOrderRefresh = {this.handleWorkOrderRefresh}/>
+               <h2 className="wo-h2">WORK ORDERS</h2>
             </div>
-            
-        )
-    }
+              {workOrdersList}
+          </div>
+          <div className="expenses-sp">
+            <h2>EXPENSES</h2>
+            {expensesList}  
+          </div>
+        </div>
+               <ExpenseChart />
+               <Footer />  
+          </div>
+          
+      )
+  }
 }
 
 
 const mapStateToProps = state => {
-    return {
-        properties: state.propertiesReducer
-    }
+  return {
+      properties: state.propertiesReducer
+  }
 };
 
 export default connect(mapStateToProps, {getProperty, getWorkOrders, getExpensesById, getTenant, editTenant, editExpenses, deleteWorkOrders})(SingleProperty);

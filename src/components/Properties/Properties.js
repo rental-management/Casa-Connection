@@ -7,7 +7,7 @@ import {connect} from 'react-redux';
 import {getProperties, deleteProperty, deleteWorkOrders} from './../../ducks/propertiesReducer';
 import { Link } from "react-router-dom";
 import FontAwesome from 'react-fontawesome';
-
+import Footer from '../Footer/Footer';
 
 
 class Properties extends Component {
@@ -49,17 +49,17 @@ class Properties extends Component {
         }
         return(
 
-            <div >
-            <NavBar />
-            <div className="properties-header"> 
-                <h1> MY PROPERTIES </h1>
-                <AddPropForm />
+            <div className="properties-container">
+              <NavBar />
+                <div className="properties-header"> 
+                  <h1> My Properties </h1>
+                  <AddPropForm />
+                </div>
+                <div className="propertiesList">
+                  {propertiesList} 
+                </div> 
+              <Footer />        
             </div>
-            <div className="propertiesList">
-                {propertiesList} 
-            </div>         
-            </div>
-
         )
     }
 }

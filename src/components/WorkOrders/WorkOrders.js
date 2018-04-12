@@ -5,6 +5,8 @@ import {getAllWorkOrders, deleteWorkOrders} from './../../ducks/propertiesReduce
 import ExpenseChart from './../Charts/ExpenseChart';
 import { height } from 'window-size';
 import FontAwesome from 'react-fontawesome';
+import Footer from '../Footer/Footer';
+
 
 class WorkOrders extends Component {
     constructor(){
@@ -58,10 +60,15 @@ return textA < textB ? -1 : textA > textB ? 1 : 0;
 
         return(
             <div>
-               <NavBar />     
-               <h1 className="work-orders"> WORK ORDERS </h1>   
-               {/* <hr className="wo-line" align="left" />      */}
-               <div className="work-orders-list"> {workOrdersList} </div>                    
+               <NavBar />  
+               <div className="work_orders-container">
+                 <h1 className="work-orders"> Work Orders </h1>   
+                 <hr className="wo-line" align="left" />     
+                 <div className="work-orders-list"> 
+                   {workOrdersList} 
+                 </div> 
+               </div>   
+               <Footer />
             </div>
             
         )
