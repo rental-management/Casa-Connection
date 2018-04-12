@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { Bar, Line, Pie, Doughnut } from "react-chartjs-2";
+import { Bar, Line, Pie, Doughnut, Polar } from "react-chartjs-2";
 import { getProperties } from "./../../ducks/propertiesReducer";
 
 class TotalExpensesChart extends Component {
@@ -21,8 +21,10 @@ class TotalExpensesChart extends Component {
     let monthlyMort = [];
     let monthlyTax = [];
     let monthlyUtility = [];
+
+    
     console.log("all properties data: ",chartData);
-    if(chartData.length !== 0 && chartData !== undefined) {
+    if(chartData.length > 0 && chartData !== undefined) {
       // console.log(chartData, "CHART DATA!!!!")
       newChartData = chartData.map((curr, i) => {
         // console.log(curr, "curr here")
@@ -53,27 +55,27 @@ class TotalExpensesChart extends Component {
 
 
       newChartData = (
-        <div className="chart-container">
+        <div className="total-prop-chart">
             <Doughnut
               data={{
                 labels: [
-                  "Assessed Value",
                   "Down Payment",
                   "Monthly Dues",
                   "Monthly Insurance",
+                  "Assessed Value",
                   "Monthly Mortgage",
                   "Monthly Taxes",
                   "Monthly Utilities"
                 ],
                 datasets: [
                   {
-                    label: "Property Expenses",
+                  
 
                     data: [
-                      assessedVal,
                       downPayment,
                       monthlyDues,
                       monthlyInsurance,
+                      assessedVal,
                       monthlyMort,
                       monthlyTax,
                       monthlyUtility
@@ -90,7 +92,7 @@ class TotalExpensesChart extends Component {
                     ],
                     borderWidth: 1,
                     borderColor: '#777',
-                    hoverBorderWidth: 3,
+                    hoverBorderWidth: 2,
                     hoverBorderColor: '#000'
                   }
                 ],
@@ -98,7 +100,7 @@ class TotalExpensesChart extends Component {
               options={{
                 legend: {
                   display: true,
-                  position: 'right'
+                  position: 'left'
               },
               title:{
                 display: true,
@@ -108,12 +110,12 @@ class TotalExpensesChart extends Component {
               maintainAspectRatio: true
               }}
             />
-        </div>
+            </div>
       );
     }
       
       return(
-        <div id="total-expenses-chart">
+        <div className="total-prop-contain">
         {newChartData}
         </div>
       )
