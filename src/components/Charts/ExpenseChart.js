@@ -32,7 +32,7 @@ class ExpenseChart extends Component {
                     ],
                     datasets: [
                         {
-                            label: 'Property Expenses',
+                    
                            
                             data: [
                                this.props.properties.property[0].assessed_value,

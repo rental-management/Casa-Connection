@@ -3,6 +3,8 @@ import {connect} from 'react-redux';
 import NavBar from '../NavBar/NavBar';
 import {getAllWorkOrders, deleteWorkOrders} from './../../ducks/propertiesReducer';
 import ExpenseChart from './../Charts/ExpenseChart';
+import { height } from 'window-size';
+import FontAwesome from 'react-fontawesome';
 import Footer from '../Footer/Footer';
 
 
@@ -43,12 +45,12 @@ return textA < textB ? -1 : textA > textB ? 1 : 0;
         return(
             <div  key = {index}>
             <div className="work-order-container">
-                <h2 className="work-order-prop-name">{curr.prop_name}</h2>
+                <h2 className="work-order-prop-name">{curr.prop_name.toUpperCase()}</h2>
                     <div className="type-memo">
-                        <div className="type"> {curr.type}</div><br/>
+                        <div className="type"> {curr.type.toUpperCase()}</div><br/>
                         <div className="memo"> {curr.memo}</div>
                     </div>
-                <span className="delete-work-order" onClick = {() => {this.handleDelete(curr.workorders_id)}}> X </span>
+                <span className="delete-work-order" onClick = {() => {this.handleDelete(curr.workorders_id)}}> <FontAwesome size='1.5x' className="far fa-times-circle" /> </span>
             </div>
         </div>);
     })
