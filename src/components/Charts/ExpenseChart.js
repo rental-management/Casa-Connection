@@ -12,7 +12,7 @@ class ExpenseChart extends Component {
     } 
 
     render(){
-      
+      console.log("Data: ", this.props)
         let chartData = this.props.properties.property;
         let newChartData;
         if(chartData.length !== 0 && chartData !== undefined){         
@@ -67,6 +67,8 @@ class ExpenseChart extends Component {
                           maintainAspectRatio: true,
                        
                           }}/>
+            
+        
 </div>
    
               
@@ -75,7 +77,7 @@ class ExpenseChart extends Component {
         }
         return(
             <div className="chart-contain">
-            
+             
            {chartData.length > 0 && newChartData}
             
                 </div>
