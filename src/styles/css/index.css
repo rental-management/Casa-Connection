@@ -218,120 +218,109 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin-bottom: 30px;
-  align-items: center; }
+  justify-content: space-evenly;
+  margin-bottom: 80px; }
 
-.property {
-  width: 48%; }
+.property-container {
+  width: 620px;
+  display: flex;
+  justify-content: center; }
 
-.breadcrumb {
-  text-align: left;
-  font-size: 24px;
-  width: 100%;
-  font-family: "Roboto", sans-serif;
-  color: #3799d6;
-  font-size: 18px; }
-
-.breadcrumb a {
-  color: black; }
-
-.single-prop-photo {
-  width: 78%;
-  box-shadow: 0 12px 22px 0 rgba(0, 0, 0, 0.15); }
-
-.address {
-  margin-top: 20px;
-  color: #686868;
-  font-size: 18px;
-  font-family: "Lato", sans-serif;
-  font-weight: bold; }
-
-.curr-tenant {
-  margin-top: 15px;
+.tenant-container {
+  width: 620px;
+  height: 415px;
+  display: flex;
+  margin-top: 82px;
+  justify-content: center;
+  flex-direction: column;
   background: white;
-  box-shadow: 0 12px 22px 0 rgba(0, 0, 0, 0.15);
+  border-radius: 6px;
+  box-shadow: 0 10px 22px 0 rgba(0, 0, 0, 0.15); }
+
+.expenses-container {
+  width: 620px;
+  display: flex;
+  margin-top: 50px;
+  justify-content: center;
+  flex-direction: column;
+  background: white;
+  border-radius: 6px;
+  box-shadow: 0 10px 22px 0 rgba(0, 0, 0, 0.15); }
+
+.work-orders-container {
+  width: 620px;
+  display: flex;
+  margin-top: 50px;
+  background: white;
   border-radius: 6px;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-content: center;
-  align-items: center;
-  width: 35%; }
+  box-shadow: 0 10px 22px 0 rgba(0, 0, 0, 0.15);
+  flex-direction: column; }
+
+.breadcrumb {
+  font-family: "Roboto", sans-serif;
+  font-size: 26px;
+  text-align: left; }
+
+.single-property-photo {
+  width: 620px;
+  box-shadow: 0 10px 22px 0 rgba(0, 0, 0, 0.15); }
+
+.address {
+  font-family: "Lato", sans-serif;
+  color: #686868;
+  font-weight: bold;
+  font-size: 20px;
+  margin-top: 15px; }
 
 .tenant-header {
-  text-align: center;
-  font-family: "Roboto", sans-serif;
-  color: #3799d6;
-  font-size: 20px; }
-
-.tenant-info {
-  text-align: left;
-  display: flex;
-  flex-direction: column;
-  color: #686868;
-  font-family: "Lato", sans-serif; }
-  .tenant-info span {
-    padding-right: 5px; }
-
-.wo-expenses {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  justify-content: space-around;
-  margin: 60px 80px 0px 80px;
-  flex-wrap: wrap; }
-
-.work-orders-sp {
-  display: flex;
-  flex-direction: column;
-  width: 30%; }
-
-.add-work-order {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 25px; }
-
-.wo-h2 {
-  padding-left: 30px;
   font-family: "Roboto", sans-serif;
   color: #3799d6; }
 
-.requests {
+.tenant-info {
+  display: flex;
+  flex-direction: column;
+  margin-left: 70px;
+  font-family: "Lato", sans-serif;
+  color: #686868; }
+  .tenant-info div {
+    text-align: left; }
+    .tenant-info div span {
+      padding-right: 5px; }
+
+.expenses-header {
+  font-family: "Roboto", sans-serif;
+  color: #3799d6;
+  margin-top: 30px; }
+
+.expenses-info {
+  display: flex;
+  flex-direction: column;
+  margin-left: 70px;
+  font-family: "Lato", sans-serif;
+  color: #686868; }
+  .expenses-info div {
+    text-align: left; }
+    .expenses-info div span {
+      padding-right: 5px; }
+
+.work-order-header {
   display: flex;
   flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px;
-  margin-bottom: 15px;
-  background: white;
-  border-radius: 6px;
-  font-family: "Lato", sans-serif;
-  color: #686868;
-  box-shadow: 0 12px 22px 0 rgba(0, 0, 0, 0.15); }
-
-.expenses-sp {
-  background: white;
-  border-radius: 6px;
-  width: 40%;
-  box-shadow: 0 12px 22px 0 rgba(0, 0, 0, 0.15); }
-  .expenses-sp h2 {
+  justify-content: flex-end;
+  padding: 15px; }
+  .work-order-header h2 {
+    margin-right: 150px;
     font-family: "Roboto", sans-serif;
-    color: #3799d6;
-    font-size: 20px; }
-  .expenses-sp div {
-    text-align: left;
-    display: flex;
-    flex-direction: column;
-    color: #686868;
-    font-family: "Lato", sans-serif; }
-    .expenses-sp div div {
-      display: flex;
-      flex-direction: row;
-      align-items: center; }
-      .expenses-sp div div span {
-        padding-right: 5px; }
+    color: #3799d6; }
+
+.requests {
+  background: white;
+  border-radius: 6px;
+  box-shadow: 0 10px 22px 0 rgba(0, 0, 0, 0.15);
+  width: 80%;
+  padding: 10px;
+  margin: 0 auto; }
 
 .dialog-container {
   display: flex;

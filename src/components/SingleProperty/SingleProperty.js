@@ -105,11 +105,11 @@ class SingleProperty extends Component {
           //returning all property info
           property = propertyData.map((curr, index) => {
             return (
-            <div key={index} className= "prop-container">
+            <div key={index} className= "property-info">
             
                 <h1 className="breadcrumb"><Link style={{ color: '#686868' }} to='/properties'>PROPERTIES</Link> <i className="fas fa-angle-right"></i> {curr.prop_name.toUpperCase()}</h1><br/>
                 
-                  <img className="single-prop-photo" src={curr.img} />
+                  <img className="single-property-photo" src={curr.img} />
                   <br />
                   <div className="address">{curr.street.toUpperCase()} {curr.city.toUpperCase()}, {curr.state.toUpperCase()} {curr.zip} </div>
                   <br />
@@ -119,9 +119,9 @@ class SingleProperty extends Component {
           });
           tenant = this.props.properties.tenant.map((curr, index) => {            
                     
-            return <div key={index} id = 'tenant-container'>  
+            return <div key={index} className="tenant-info">  
                   
-                  <div className="tenant-info">
+               
                   <div>
                   <span>FIRST: </span>
                   <TextField defaultValue={curr.t_f_name} id="text-field-controlled" onChange={event => {
@@ -189,7 +189,7 @@ class SingleProperty extends Component {
                     this.handleTenantEdit(fName, lName, phone, email, emergContact, emergNum, propId);
                   }} id = "tenant-btn"/>: null}
                 <br />
-              </div>
+           
               </div>;
           });
 
@@ -215,9 +215,10 @@ class SingleProperty extends Component {
           //maps over expenses which are then rendered in the return
           expensesList = this.props.properties.singlePropExpenses.map(
             (curr, index) => {
-              return (
-                <div key={index}>
-                <div> 
+              return ( 
+              <div key={index} className="expenses-info">
+                
+                  <div> 
                   <span> ASSESSED VALUE: </span> 
                   <TextField 
                     defaultValue={curr.assessed_value} 
@@ -227,7 +228,7 @@ class SingleProperty extends Component {
                      
                       this.setState({ propValue: event.target.value, isEditable: true })
                     }} />
-                    </div>
+                  </div>
                   <br />
                   <div>
                   <span>DOWN PAYMENT: </span> 
@@ -327,7 +328,7 @@ class SingleProperty extends Component {
                       });
                     }} />
                     </div>
-
+                 
                   <br />
                   {this.state.isEditable ? <RaisedButton label="save" onClick={() => {this.handleExpensesEdit(propValue, downPayment, mortgage, dues, taxes, insurance, utilities, propId)}} />: null}
                   <br />                  
@@ -340,24 +341,26 @@ class SingleProperty extends Component {
         return(
             <div> 
             <NavBar />
-            <div className="property-tenant-container">
-              <div className="property"> {property} </div>
-              <div className="curr-tenant">
+          <div className="property-tenant-container">
+            <div className="property-container"> 
+               {property} 
+            </div>
+
+            <div className="tenant-container">
                 <h2 className="tenant-header">TENANT</h2>
                 {tenant}
-              </div>
             </div>
-          <div className="wo-expenses">
-            <div className="expenses-sp">
-              <h2>EXPENSES</h2>
-              {expensesList}  
+            
+            <div className="expenses-container">
+               <h2 className="expenses-header">EXPENSES</h2>
+               {expensesList}  
             </div>
-            <div className="work-orders-sp">
-              <div className="add-work-order">
+            <div className="work-orders-container">
+              <div className="work-order-header">
+                 <h2>WORK ORDERS</h2> 
                  <AddWorkOrderForm handleWorkOrderRefresh = {this.handleWorkOrderRefresh}/>
-                 <h2 className="wo-h2">WORK ORDERS</h2> 
               </div>
-                {workOrdersList}
+                 {workOrdersList}
             </div>
           </div>
                  <ExpenseChart />  
