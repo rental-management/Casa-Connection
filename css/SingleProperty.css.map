@@ -1,7 +1,0 @@
-{
-"version": 3,
-"mappings": "AAAA,IAAK;EACD,gBAAgB,EAAE,IAAI",
-"sources": ["../src/styles/scss/SingleProperty.scss"],
-"names": [],
-"file": "SingleProperty.css"
-}
