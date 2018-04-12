@@ -120,6 +120,7 @@ export function addExpenses(
   monthlyTaxes,
   monthlyInsurance,
   monthlyUtilities,
+  rent,
   propId
 ) {
   return {
@@ -133,6 +134,7 @@ export function addExpenses(
         monthly_taxes: monthlyTaxes,
         monthly_insurance: monthlyInsurance,
         monthly_utilities: monthlyUtilities,
+        rent: rent,
         id: propId
       })
       .then(response => {
@@ -219,6 +221,7 @@ export function editExpenses(
   taxes,
   insurance,
   utilities,
+  rent,
   propId
 ) {
   return {
@@ -232,6 +235,7 @@ export function editExpenses(
         monthly_taxes: taxes,
         monthly_insurance: insurance,
         monthly_utilities: utilities,
+        rent: rent,
         id: propId
       })
       .then(res => {

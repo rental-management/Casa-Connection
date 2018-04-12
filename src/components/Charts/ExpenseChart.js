@@ -20,10 +20,8 @@ class ExpenseChart extends Component {
                  
                 <div className="single-prop-chart">
                    
-                   <Bar
+                   <Pie
                       data={{labels: [
-                        'Assessed Value',
-                        'Down Payment',
                         'Monthly Dues',
                         'Monthly Insurance',
                         'Monthly Mortgage',
@@ -35,8 +33,6 @@ class ExpenseChart extends Component {
                     
                            
                             data: [
-                               this.props.properties.property[0].assessed_value,
-                               this.props.properties.property[0].down_payment,
                                this.props.properties.property[0].monthly_dues,
                                this.props.properties.property[0].monthly_insurance,
                                this.props.properties.property[0].monthly_mortgage,
@@ -56,12 +52,12 @@ class ExpenseChart extends Component {
                     ]}} 
                       options={{
                           legend: {
-                              display: false,
+                              display: true,
                               position: 'left'
                           },
                           title:{
                               display: true,
-                              text: this.props.properties.property[0].prop_name,
+                              text: 'Monthly Expenses',
                               fontSize: 25
                           },
                           maintainAspectRatio: true,

@@ -36,6 +36,7 @@ class NavBar extends Component {
       justifyContent: 'space-between',
       width: '100%',
       margin: '0',
+      textTransform: 'uppercase'
     };
 
     const muiTheme = getMuiTheme({
@@ -56,11 +57,11 @@ class NavBar extends Component {
   <div className="responsive-menu">
   <MuiThemeProvider muiTheme={muiTheme}>
   <IconMenu iconButtonElement={<IconButton className="hamburger"> <i className="material-icons">&#xE5D2;</i> </IconButton>}>
-      <MenuItem primaryText = { <Link to="/properties" > Properties </Link> } />
-      <MenuItem primaryText = { <Link to="/workorders" > Work Orders </Link> } />
-      <MenuItem primaryText = { <Link to="/contractors" > Contractors </Link> } />
-      <MenuItem primaryText = { <Link to="/financial" > Analytics </Link> } />
-      <MenuItem primaryText = { <Link to="/contact" > Contact </Link> } />
+      <MenuItem primaryText = { <Link style={{ color: '#686868' }} to="/properties" > Properties </Link> } />
+      <MenuItem primaryText = { <Link style={{ color: '#686868' }} to="/workorders" > Work Orders </Link> } />
+      <MenuItem primaryText = { <Link style={{ color: '#686868' }} to="/contractors" > Contractors </Link> } />
+      <MenuItem primaryText = { <Link style={{ color: '#686868' }} to="/financial" > Financial </Link> } />
+      <MenuItem primaryText = { <Link style={{ color: '#686868' }} to="/contact" > Contact </Link> } />
  </IconMenu>
 </MuiThemeProvider>
  </div>
@@ -68,19 +69,19 @@ class NavBar extends Component {
  <div className="full-screen-menu">
  <MuiThemeProvider muiTheme={muiTheme}> 
            
-        <Link to="/properties">
-            <MenuItem className="item" muiTheme={muiTheme} value={1} onClick={this.handleClose}>Properties</MenuItem>
+        <Link   to="/properties">
+            <MenuItem  style={{ color: '#686868' }}className="item" muiTheme={muiTheme} value={1} onClick={this.handleClose}>Properties</MenuItem>
         </Link>
         <Link to="/workorders">
-          <MenuItem className="item" value={2} onClick={this.handleClose}>Work Orders</MenuItem>
+          <MenuItem style={{ color: '#686868' }} className="item" value={2} onClick={this.handleClose}>Work Orders</MenuItem>
         </Link>
       
         <Link to="/contractors">
-          <MenuItem className="item" onClick={this.handleClose}>Contractors</MenuItem>
+          <MenuItem  style={{ color: '#686868' }}className="item" onClick={this.handleClose}>Contractors</MenuItem>
         </Link>
 
         <Link to="/financial">
-          <MenuItem className="item" onClick={this.handleClose}>Analytics</MenuItem>
+          <MenuItem style={{ color: '#686868' }}className="item" onClick={this.handleClose}>Analytics</MenuItem>
         </Link>
   </MuiThemeProvider>      
   </div>
