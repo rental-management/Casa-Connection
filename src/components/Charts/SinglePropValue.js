@@ -27,7 +27,7 @@ class SinglePropValue extends Component {
             console.log("all prop names: ", propNames)
             console.log("all assessed vals: ", assessedVals)
             return (
-                <div className="single-assessed">
+                <div>
                     <Pie
                         data={{
                           labels:[
@@ -74,8 +74,10 @@ class SinglePropValue extends Component {
 
     
         return(
-            <div className="single-assessed-contain">
-                {newPropVals}
+            <div>
+          
+                 {newPropVals}
+                
                 </div>
         )
     }
