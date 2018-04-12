@@ -331,7 +331,7 @@ class SingleProperty extends Component {
               {workOrdersList}
           </div>
           <div className="expenses-sp">
-            <h2>EXPENSES</h2>
+            <h2>PROPERTY DATA</h2>
             {expensesList}  
           </div>
         </div>
