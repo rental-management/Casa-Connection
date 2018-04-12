@@ -31,6 +31,7 @@ class SingleProperty extends Component {
           taxes: 0,
           insurance: 0,
           utilities: 0,
+          rent: 0,
           isEditable: false
         }
         
@@ -71,8 +72,8 @@ class SingleProperty extends Component {
       });
     }
 
-    handleExpensesEdit(propValue, downPayment, mortgage, dues, taxes, insurance, utilities, propId) {
-      this.props.editExpenses(propValue, downPayment, mortgage, dues, taxes, insurance, utilities, propId).then( (res) => {
+    handleExpensesEdit(propValue, downPayment, mortgage, dues, taxes, insurance, utilities, rent, propId) {
+      this.props.editExpenses(propValue, downPayment, mortgage, dues, taxes, insurance, utilities, rent, propId).then( (res) => {
         this.props.getExpensesById(propId);
         this.setState({isEditable: false})
       });
@@ -91,7 +92,7 @@ class SingleProperty extends Component {
 
     render() { 
         // destructuring state 
-        const {fName, lName, phone, email, emergContact, emergNum, propValue, downPayment, mortgage, dues, taxes, insurance, utilities} = this.state;
+        const {fName, lName, phone, email, emergContact, emergNum, propValue, downPayment, mortgage, dues, taxes, insurance, rent, utilities} = this.state;
       
         //declaring list variables
         let property;
@@ -245,6 +246,21 @@ class SingleProperty extends Component {
                     }} />
                   </div>
                   <br />
+                  <div>
+                  <span>MONTHLY RENT: </span> 
+                  <TextField  
+                    defaultValue={curr.rent} 
+                    id="text-field-controlled"
+                    hintText="0"
+                    onChange={ (event) => {
+                    
+                      this.setState({
+                        rent: event.target.value,
+                        isEditable: true
+                      });
+                    }} />
+                  </div>
+                  <br />
 
                     <div>
                   <span>MONTHLY MORTGAGE: </span> 
@@ -330,7 +346,7 @@ class SingleProperty extends Component {
                     </div>
                  
                   <br />
-                  {this.state.isEditable ? <RaisedButton label="save" onClick={() => {this.handleExpensesEdit(propValue, downPayment, mortgage, dues, taxes, insurance, utilities, propId)}} />: null}
+                  {this.state.isEditable ? <RaisedButton label="save" onClick={() => {this.handleExpensesEdit(propValue, downPayment, mortgage, dues, taxes, insurance, utilities, rent, propId)}} />: null}
                   <br />                  
                 </div>
               );
@@ -352,7 +368,7 @@ class SingleProperty extends Component {
             </div>
             
             <div className="expenses-container">
-               <h2 className="expenses-header">EXPENSES</h2>
+               <h2 className="expenses-header">PROPERTY DATA</h2>
                {expensesList}  
             </div>
             <div className="work-orders-container">
@@ -363,19 +379,7 @@ class SingleProperty extends Component {
                  {workOrdersList}
             </div>
           </div>
-        <div className="wo-expenses">
-          <div className="work-orders-sp">
-            <div className="add-work-order">
-            <AddWorkOrderForm handleWorkOrderRefresh = {this.handleWorkOrderRefresh}/>
-               <h2 className="wo-h2">WORK ORDERS</h2>
-            </div>
-              {workOrdersList}
-          </div>
-          <div className="expenses-sp">
-            <h2>PROPERTY DATA</h2>
-            {expensesList}  
-          </div>
-        </div>
+        
                <ExpenseChart />
                <Footer />  
           </div>
