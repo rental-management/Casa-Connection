@@ -1,97 +1,278 @@
-.single_property-container {
-    display: flex;
-    flex-direction: column;
-    height: auto;
-}
-
+// container holding 4 sub containers 
 .property-tenant-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin-bottom: 30px;
+    justify-content: space-evenly;
+    margin-bottom: 80px;
 }
 
-.property {
-    width: 48%;
+.property-container {
+    width: 620px;
+    display: flex;
+    justify-content: center;
 }
 
-.breadcrumb {   
+.tenant-container {
+    width: 620px;
+    height: 415px;
+    display: flex;
+    margin-top: 82px;
+    justify-content: center;
+    flex-direction: column;
+    background: white;
+    border-radius: 6px;
+    box-shadow: 0 10px 22px 0 rgba(0,0,0,.15);
+}
+
+.expenses-container {
+    width: 620px;
+    display: flex;
+    margin-top: 50px;
+    justify-content: center;
+    flex-direction: column;background: white;
+    border-radius: 6px;
+    box-shadow: 0 10px 22px 0 rgba(0,0,0,.15);
+}
+
+.work-orders-container {
+    width: 620px;
+    display: flex;
+    margin-top: 50px;
+    background: white;
+    border-radius: 6px;
+    display: flex;
+    box-shadow: 0 10px 22px 0 rgba(0,0,0,.15);
+    flex-direction: column;
+}
+
+// breadcrumb, property photo, address styling
+.breadcrumb {
+    font-family: $header;
+    font-size: 26px;
     text-align: left;
-    font-size: 24px;
-    width: auto;
 }
-
-
-.breadcrumb a {
-    color: black;
-}
-
-.single-prop-photo {
-    width: 80%;
+.single-property-photo {
+    width: 620px;
+    box-shadow: 0 10px 22px 0 rgba(0,0,0,.15);
 }
 
 .address {
-    padding-top: 10px;
+    font-family: $body;
+    color: $gray;
+    font-weight: bold;
+    font-size: 20px;
+    margin-top: 15px;
 }
 
-.curr-tenant {
-    margin-top: 80px;
-    padding-right: 100px;
-}
-
+// tenant container styling 
 .tenant-header {
-    text-align: left;
-    padding-bottom: 10px;
+    font-family: $header;
+    color: $header-color;
 }
 
 .tenant-info {
-    text-align: left;
-}
-
-.work-orders-sp {
     display: flex;
     flex-direction: column;
-    width: 30%;
-}
-
-.add-work-order {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;    
-    align-items: center;
-    margin-bottom: 25px;
-}
-
-.wo-expenses {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    
-}
-
-.wo-h2 {
-    padding-left: 30px;
-}
-
-.expenses-sp {
-    margin-left: 180px;
-    text-align: left;
-    h2 {
+    margin-left: 70px;
+    font-family: $body;
+    color: $gray;
+    div {
         text-align: left;
+        span {
+            padding-right: 5px;
+        }
+    }
+}
+
+// expenses container styling 
+.expenses-header {
+    font-family: $header;
+    color: $header-color;
+    margin-top: 30px;
+}
+
+.expenses-info {
+    display: flex;
+    flex-direction: column;
+    margin-left: 70px;
+    font-family: $body;
+    color: $gray;
+    div {
+        text-align: left;
+        span {
+            padding-right: 5px;
+        }
+    }
+}
+
+// work orders container styling 
+.work-order-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    padding: 15px;
+    h2 {
+        margin-right: 150px;
+        font-family: $header;
+        color: $header-color;
     }
 }
 
 .requests {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
+    background: white;
+    border-radius: 6px;
+    box-shadow: 0 10px 22px 0 rgba(0,0,0,.15);
+    width: 80%;
     padding: 10px;
-    margin-bottom: 15px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin: 0 auto;
 }
 
-.address {
-    font-size: 1.4em;
-}
+// .property-tenant-container {
+//     display: flex;
+//     flex-wrap: wrap;
+//     justify-content: center;
+//     margin-bottom: 30px;
+//     align-items: center;
+// }
+
+// .property {
+//     width: 48%;
+// }
+
+// .breadcrumb {
+//     text-align: left;
+//     font-size: 24px;
+//     width: 100%;
+//     font-family: $header;
+//     color: $header-color;
+//     font-size: 18px;
+// }
+
+// .breadcrumb a {
+//     color: black;
+// }
+
+// .single-prop-photo {
+//     width: 78%;
+//     box-shadow: 0 12px 22px 0 rgba(0,0,0,.15);
+// }
+
+// .address {
+//     margin-top: 20px;
+//     color: $gray;
+//     font-size: 18px;
+//     font-family: $body;
+//     font-weight: bold;
+// }
+
+// .curr-tenant {
+//     margin-top: 15px;
+//     background: white;
+//     box-shadow: 0 12px 22px 0 rgba(0,0,0,.15);
+//     border-radius: 6px;
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: center;
+//     align-content: center;
+//     align-items: center;
+//     width: 35%;
+// }
+
+// .tenant-header {
+//     text-align: center;
+//     font-family: $header;
+//     color: $header-color;
+//     font-size: 20px;
+// }
+
+// .tenant-info {
+//     text-align: left;
+//     display: flex;
+//     flex-direction: column;
+//     color: $gray;
+//     font-family: $body;
+//     span {
+//         padding-right: 5px;
+        
+//     }
+//     // div {
+//     //     justify-content: space-around;
+//     //     display: flex;
+//     //     flex-direction: row;
+//     // }
+// }
+
+// .wo-expenses {
+//     display: flex;
+//     flex-direction: row;
+//     justify-content: center;
+//     justify-content: space-around;
+//     margin: 60px 80px 0px 80px;
+//     flex-wrap: wrap;
+// }
+
+// .work-orders-sp {
+//     display: flex;
+//     flex-direction: column;
+//     width: 30%;
+// }
+
+// .add-work-order {
+//     display: flex;
+//     flex-direction: row;
+//     justify-content: center;    
+//     align-items: center;
+//     margin-bottom: 25px;
+// }
+
+// .wo-h2 {
+//     padding-left: 30px;
+//     font-family: $header;
+//     color: $header-color;
+// }
+
+// .requests {
+//     display: flex;
+//     flex-direction: row;
+//     align-items: center;
+//     justify-content: space-between;
+//     padding: 10px;
+//     margin-bottom: 15px;
+//     background: white;
+//     border-radius: 6px;
+//     font-family: $body;
+//     color: $gray;
+//     box-shadow: 0 12px 22px 0 rgba(0,0,0,.15);
+// }
+
+// .expenses-sp {
+//     background: white;
+//     border-radius: 6px;
+//     width: 40%;
+//     box-shadow: 0 12px 22px 0 rgba(0,0,0,.15);
+//     h2 {
+//         font-family: $header;
+//         color: $header-color;
+//         font-size: 20px;
+//     }
+//     div {
+//         text-align: left;
+//         display: flex;
+//         flex-direction: column;
+//         color: $gray;
+//         font-family: $body;
+//         div {
+//             display: flex;
+//             flex-direction: row;
+//             align-items: center;
+//             span {
+//                 padding-right: 5px;
+                
+//             }
+//         }
+//     }
+// }
+
+
 
