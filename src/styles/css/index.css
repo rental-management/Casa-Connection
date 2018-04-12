@@ -1,563 +1,80 @@
-a {
-  cursor: pointer;
-  text-decoration: none; }
-
-.App {
-  text-align: center; }
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px; }
-
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white; }
-
-.App-title {
-  font-size: 1.5em; }
-
-.App-intro {
-  font-size: large; }
-
-body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serifsf; }
-
-.splash {
-  background: linear-gradient(rgba(64, 64, 64, 0.6) rgba(64, 64, 64, 0.6), rgba(64, 64, 64, 0.6)), url("../../assets/windows.jpg");
-  background-size: 100%;
-  background-repeat: no-repeat;
-  height: 73vh;
-  clip-path: polygon(0 0, 100% 0, 100% 82%, 0 100%); }
-
-.logo {
-  height: 8vh;
-  padding: 10px 20px 40px 10px; }
-
-.splash-header {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  color: white;
-  letter-spacing: 2px;
-  font-family: "Roboto", sans-serif;
-  font-size: 13px; }
-
-.first-container > div:first-of-type {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  justify-content: space-between;
-  padding: 25px 60px 0 60px; }
-
-.first-container > div:nth-child(2) {
-  margin-top: 22px;
-  margin-left: 90px;
-  width: 700px;
-  display: flex;
-  flex-direction: column;
-  font-size: 26px; }
-  .first-container > div:nth-child(2) h2 {
-    text-align: left;
-    color: white;
-    margin-bottom: 5px;
-    font-family: "Roboto", sans-serif;
-    letter-spacing: 2px; }
-  .first-container > div:nth-child(2) p {
-    text-align: left;
-    width: 550px;
-    color: white;
-    line-height: 35px;
-    font-size: 20px;
-    font-family: "Lato", sans-serif;
-    letter-spacing: 1px; }
-
-.started-btn {
-  background-color: white;
-  padding: 12px 60px 12px 60px;
-  color: #4c4c4b;
-  cursor: pointer;
-  border-radius: 10px;
-  font-size: 18px;
-  width: 300px;
-  margin-top: 10px; }
-
-.started-btn:hover {
-  transition: background-color .2s ease;
-  background: #ff3776;
-  color: white; }
-
-.second-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  flex-wrap: wrap; }
-  .second-container div {
-    display: flex;
-    background: white;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    height: 45vh;
-    padding: 10px 10px 0 10px;
-    width: 45vh;
-    margin: 50px 30px 0px 30px;
-    box-shadow: 0 10px 22px 0 rgba(0, 0, 0, 0.15); }
-    .second-container div h1 {
-      padding-top: 15px;
-      width: 90%;
-      color: #545454;
-      font-size: 1.75em;
-      line-height: 40px;
-      font-family: "Roboto", sans-serif;
-      letter-spacing: 1.5px; }
-
-.third-container {
-  width: 100%;
-  height: 70vh;
-  background: white;
-  margin: 100px 0 100px 0; }
-
-.footer {
-  background: #009be0;
-  height: 15vh;
-  position: relative;
-  display: flex;
-  justify-content: center; }
-
-.footer div {
-  position: absolute;
-  bottom: 7px;
-  padding-bottom: 35px;
-  color: white; }
-
-.login-btn {
-  background-color: transparent;
-  border: 2px solid white;
-  padding: 12px 20px 12px 20px;
-  color: white;
-  cursor: pointer;
-  border-radius: 12%;
-  font-size: 15px; }
-
-.login-btn:hover {
-  background: white;
-  transition: background-color 0.3s ease;
-  color: #4d4d4d; }
-
-.full-screen-menu {
-  display: flex;
-  justify-content: space-between;
-  font-size: 2em;
-  margin-left: 57%;
-  padding: 20px; }
-
-@media only screen and (min-width: 500px) {
-  .responsive-menu, .hamburger {
-    display: none; } }
-@media only screen and (max-width: 750px) {
-  .responsive-menu {
-    display: block;
-    padding: 20px;
-    margin-left: 2%; }
-
-  .full-screen-menu {
-    display: none; } }
-@media only screen and (max-width: 1230px) {
-  .full-screen-menu {
-    margin-left: 50%; } }
-@media only screen and (max-width: 1115px) {
-  .full-screen-menu {
-    margin-left: 45%; } }
-@media only screen and (max-width: 990px) {
-  .full-screen-menu {
-    margin-left: 38%; } }
-@media only screen and (max-width: 880px) {
-  .full-screen-menu {
-    margin-left: 32%; } }
-@media only screen and (max-width: 799px) {
-  .full-screen-menu {
-    margin-left: 25%; } }
-.properties-container {
-  display: flex;
-  flex-direction: column;
-  min-height: 85vh; }
-
-.properties-header {
-  padding-top: 20px;
-  margin-bottom: 30px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  justify-content: space-between;
-  width: 90%;
-  align-content: center;
-  align-items: center;
-  color: #3799d6; }
-  .properties-header h1 {
-    font-family: "Roboto", sans-serif;
-    font-size: 26px;
-    margin-left: 80px; }
-
-.properties-name {
-  color: #686868;
-  font-size: 22px;
-  font-family: "Roboto", sans-serif;
-  padding-bottom: 5px;
-  font-weight: bold; }
-
-.delete-prop-btn {
-  color: #149ddc;
-  cursor: pointer; }
-
-.propertiesList {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  flex: 1 0 auto; }
-
-.individual-property {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 18px;
-  background: white;
-  border-radius: 6px;
-  box-shadow: 0 12px 22px 0 rgba(0, 0, 0, 0.15);
-  margin: 10px; }
-
-.properties-img {
-  width: 360px;
-  padding-bottom: 20px; }
-
-@media only screen and (max-width: 500px) {
-  .properties-img {
-    width: 290px; }
-
-  .properties-header {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    margin: 0 auto;
-    padding: 0; }
-    .properties-header h1 {
-      font-size: 30px;
-      margin-left: 0px;
-      padding-bottom: 10px; }
-    .properties-header div {
-      margin-right: 40px;
-      margin-bottom: 20px; }
-      .properties-header div svg {
-        margin-left: 15px; } }
-.property-tenant-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  justify-content: space-evenly;
-  margin-bottom: 80px; }
-
-.property-container {
-  width: 620px;
-  display: flex;
-  justify-content: center; }
-
-.tenant-container {
-  width: 620px;
-  height: 415px;
-  display: flex;
-  margin-top: 82px;
-  justify-content: center;
-  flex-direction: column;
-  background: white;
-  border-radius: 4px;
-  box-shadow: 0 10px 22px 0 rgba(0, 0, 0, 0.15); }
-
-.expenses-container {
-  width: 620px;
-  display: flex;
-  margin-top: 50px;
-  justify-content: center;
-  flex-direction: column;
-  background: white;
-  border-radius: 4px;
-  box-shadow: 0 10px 22px 0 rgba(0, 0, 0, 0.15); }
-
-.work-orders-container {
-  width: 620px;
-  display: flex;
-  margin-top: 50px;
-  background: white;
-  border-radius: 4px;
-  box-shadow: 0 10px 22px 0 rgba(0, 0, 0, 0.15);
-  flex-direction: column; }
-
-.breadcrumb {
-  font-family: "Roboto", sans-serif;
-  font-size: 26px;
-  text-align: left;
-  color: #3799d6; }
-
-.single-property-photo {
-  max-width: 620px;
-  max-height: auto;
-  box-shadow: 0 10px 22px 0 rgba(0, 0, 0, 0.15); }
-
-.address {
-  font-family: "Lato", sans-serif;
-  color: #686868;
-  font-weight: bold;
-  font-size: 20px;
-  margin-top: 15px; }
-
-.tenant-header {
-  font-family: "Roboto", sans-serif;
-  color: #3799d6; }
-
-.tenant-info {
-  display: flex;
-  flex-direction: column;
-  margin-left: 70px;
-  font-family: "Lato", sans-serif;
-  color: #686868; }
-  .tenant-info div {
-    text-align: left; }
-    .tenant-info div span {
-      padding-right: 5px; }
-
-.expenses-header {
-  font-family: "Roboto", sans-serif;
-  color: #3799d6;
-  margin-top: 30px; }
-
-.expenses-info {
-  display: flex;
-  flex-direction: column;
-  margin-left: 70px;
-  font-family: "Lato", sans-serif;
-  color: #686868; }
-  .expenses-info div {
-    text-align: left; }
-    .expenses-info div span {
-      padding-right: 5px; }
-
-.work-order-header {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  padding: 14px;
-  margin-bottom: 15px; }
-  .work-order-header h2 {
-    margin-right: 155px;
-    font-family: "Roboto", sans-serif;
-    color: #3799d6; }
-
-.requests {
-  background: white;
-  border-radius: 4px;
-  box-shadow: 0 10px 22px 0 rgba(0, 0, 0, 0.15);
-  width: 80%;
-  margin-bottom: 10px;
-  margin-left: 40px;
-  padding: 20px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  font-family: "Lato", sans-serif;
-  color: #686868; }
-
-.save-btn {
-  text-align: center;
-  margin-left: 200px;
-  margin-bottom: 40px; }
-
-.dialog-container {
-  display: flex;
-  height: 1000px;
-  width: auto; }
-
-.contractors-container {
-  display: flex;
-  flex-direction: column;
-  min-height: 85vh; }
-
-.delete-con-btn {
-  text-decoration: none;
-  border-style: none;
-  padding: 10px;
-  border-radius: 40px;
-  background-color: #149ddc;
-  color: white;
-  cursor: pointer;
-  width: 40%; }
-
-.contractors-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  flex: 1 0 auto; }
-
-.individual-contractor {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 20px; }
-  .individual-contractor h1 {
-    margin-top: 0;
-    margin-bottom: 0; }
-
-.contractors-header {
-  padding-top: 20px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  justify-content: space-between;
-  width: 93%;
-  align-content: center;
-  align-items: center; }
-  .contractors-header h1 {
-    margin-left: 80px;
-    font-family: "Roboto", sans-serif;
-    color: #3799d6;
-    font-size: 26px;
-    margin-bottom: 30px; }
-
-.buttons {
-  display: inline-flex;
-  flex-direction: row-reverse;
-  align-items: center;
-  flex-wrap: wrap; }
-
-.work-order-container {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
-  margin: 15px 200px 15px 200px;
-  justify-content: space-between;
-  padding: 8px 30px 8px 40px;
-  border-radius: 4px;
-  background: white;
-  color: #4c4c4b;
-  font-family: "Lato", sans-serif;
-  box-shadow: 0 12px 22px 0 rgba(0, 0, 0, 0.15); }
-
-.type {
-  font-family: "Lato", sans-serif;
-  font-weight: bold; }
-
-.memo {
-  font-family: "Lato", sans-serif; }
-
-.work-order-prop-name {
-  font-size: 18px;
-  font-family: "Roboto", sans-serif; }
-
-.delete-work-order {
-  padding: 0px 40px 0px 75px;
-  border-left: 1px solid #dddedd;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 70px;
-  cursor: pointer;
-  font-size: 25px;
-  color: #3799d6; }
-
-.work-orders {
-  display: flex;
-  justify-content: flex-start;
-  margin-left: 80px;
-  margin-top: 35px;
-  margin-bottom: 35px;
-  font-size: 26px;
-  color: #3799d6;
-  font-family: "Roboto", sans-serif; }
-
-.work-orders-list {
-  display: flex;
-  flex-direction: column;
-  flex: 1 0 auto; }
-
-.chart-contain {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: center;
-  align-items: center;
-  align-content: stretch;
-  height: 100%;
-  width: 40vw;
-  background-color: white;
-  margin-bottom: 5%;
-  border-radius: 20px;
-  padding: 20px;
-  box-shadow: 9px 9px 5px lightgray;
-  margin: 0 auto;
-  padding: 10px; }
-
-.single-prop-chart {
-  display: flex;
-  height: auto;
-  width: 75vw;
-  justify-content: center;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  align-items: center;
-  align-content: stretch; }
-
-.total-prop-contain {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: flex-start;
-  align-items: center;
-  align-content: stretch;
-  height: 600px;
-  width: 50vw;
-  background-color: white;
-  margin-bottom: 5%;
-  border-radius: 20px;
-  padding: 40px;
-  box-shadow: 9px 9px 5px lightgray;
-  margin: 0 auto;
-  padding: 10px; }
-
-.total-prop-chart {
-  display: flex;
-  height: auto;
-  width: 100%;
-  justify-content: center;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  align-items: center;
-  align-content: stretch; }
-
-.real_footer {
-  width: 100%;
-  flex-shrink: 0;
-  font-family: "Lato", sans-serif; }
-  .real_footer-container {
-    position: relative;
-    top: 7em;
-    height: 4em;
-    background-color: #1DAFD5;
-    display: block;
-    padding: 10px; }
-  .real_footer-text {
-    position: relative;
-    display: inline-block;
-    font-size: 18px;
-    margin: 0 auto;
-    color: white;
-    padding-top: 18px; }
-
-#total-expenses-chart {
-  height: 700px;
-  width: 800px;
-  margin: 0 auto; }
-
-/*# sourceMappingURL=index.css.map */
+/*
+Error: Invalid CSS after "...ax-width: 400px": expected "{", was ";"
+        on line 58 of src/styles/scss/Properties.scss
+        from line 5 of src/styles/scss/index.scss
+
+53:     margin: 10px;
+54: }
+55: 
+56: .properties-img {
+57: <<<<<<< HEAD
+58:     max-width: 400px;
+59:     max-height: 200px;
+60: =======
+61:     width: 360px;
+62: >>>>>>> master
+63:     padding-bottom: 20px;
+
+Backtrace:
+src/styles/scss/Properties.scss:58
+src/styles/scss/index.scss:5
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/scss/parser.rb:1278:in `expected'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/scss/parser.rb:1208:in `expected'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/scss/parser.rb:1203:in `tok!'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/scss/parser.rb:677:in `block'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/scss/parser.rb:747:in `declaration_or_ruleset'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/scss/parser.rb:697:in `block_child'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/scss/parser.rb:686:in `block_contents'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/scss/parser.rb:678:in `block'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/scss/parser.rb:670:in `ruleset'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/scss/parser.rb:696:in `block_child'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/scss/parser.rb:689:in `block_contents'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/scss/parser.rb:137:in `stylesheet'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/scss/parser.rb:41:in `parse'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/engine.rb:414:in `_to_tree'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/engine.rb:321:in `to_tree'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/tree/visitors/perform.rb:327:in `block in visit_import'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/stack.rb:88:in `block in with_import'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/stack.rb:135:in `with_frame'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/stack.rb:88:in `with_import'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/tree/visitors/perform.rb:326:in `visit_import'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/tree/visitors/base.rb:36:in `visit'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/tree/visitors/perform.rb:162:in `block in visit'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/stack.rb:79:in `block in with_base'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/stack.rb:135:in `with_frame'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/stack.rb:79:in `with_base'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/tree/visitors/perform.rb:162:in `visit'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/tree/visitors/base.rb:52:in `map'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/tree/visitors/base.rb:52:in `visit_children'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/tree/visitors/perform.rb:171:in `block in visit_children'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/tree/visitors/perform.rb:183:in `with_environment'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/tree/visitors/perform.rb:170:in `visit_children'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/tree/visitors/base.rb:36:in `block in visit'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/tree/visitors/perform.rb:190:in `visit_root'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/tree/visitors/base.rb:36:in `visit'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/tree/visitors/perform.rb:161:in `visit'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/tree/visitors/perform.rb:10:in `visit'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/tree/root_node.rb:36:in `css_tree'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/tree/root_node.rb:29:in `render_with_sourcemap'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/engine.rb:389:in `_render_with_sourcemap'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/engine.rb:307:in `render_with_sourcemap'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/plugin/compiler.rb:462:in `update_stylesheet'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/plugin/compiler.rb:209:in `each'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/plugin/compiler.rb:443:in `on_file_changed'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/plugin/compiler.rb:320:in `block in watch'
+/Library/Ruby/Gems/2.3.0/gems/sass-listen-4.0.0/lib/sass-listen/event/config.rb:23:in `call'
+/Library/Ruby/Gems/2.3.0/gems/sass-listen-4.0.0/lib/sass-listen/event/processor.rb:115:in `_process_changes'
+/Library/Ruby/Gems/2.3.0/gems/sass-listen-4.0.0/lib/sass-listen/event/processor.rb:19:in `block in loop_for'
+/Library/Ruby/Gems/2.3.0/gems/sass-listen-4.0.0/lib/sass-listen/event/processor.rb:15:in `loop'
+/Library/Ruby/Gems/2.3.0/gems/sass-listen-4.0.0/lib/sass-listen/event/processor.rb:15:in `loop_for'
+/Library/Ruby/Gems/2.3.0/gems/sass-listen-4.0.0/lib/sass-listen/event/loop.rb:84:in `_wait_for_changes'
+/Library/Ruby/Gems/2.3.0/gems/sass-listen-4.0.0/lib/sass-listen/event/loop.rb:42:in `block in setup'
+/Library/Ruby/Gems/2.3.0/gems/sass-listen-4.0.0/lib/sass-listen/internals/thread_pool.rb:6:in `block in add'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: Invalid CSS after \"...ax-width: 400px\": expected \"{\", was \";\"\A         on line 58 of src/styles/scss/Properties.scss\A         from line 5 of src/styles/scss/index.scss\A \A 53:     margin: 10px;\A 54: }\A 55: \A 56: .properties-img {\A 57: <<<<<<< HEAD\A 58:     max-width: 400px;\A 59:     max-height: 200px;\A 60: =======\A 61:     width: 360px;\A 62: >>>>>>> master\A 63:     padding-bottom: 20px;"; }
