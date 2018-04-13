@@ -4,8 +4,8 @@
         rgba(#404040, 0.6),
         rgba(#404040, 0.6)),
       url("../../assets/windows.jpg");
-    // background: #009be0;
-    background-size: 100%;
+    background-size: cover;
+    width: 100%;
     background-repeat: no-repeat;
     height: 73vh;
     clip-path: polygon(0 0, 100% 0, 100% 82%, 0 100%);  
@@ -97,10 +97,14 @@
         padding-top: 15px;
         width: 90%;
         color: #545454;
-        font-size: 1.75em;
-        line-height: 40px;
+        font-size: 25px;
+        line-height: 35px;
         font-family: $header;
         letter-spacing: 1.5px;
+    }
+    hr {
+        border: 1px solid black;
+        width: 80px;
     }
   }
 }
@@ -126,4 +130,110 @@
    bottom: 7px;
    padding-bottom: 35px;
    color: white;
+}
+
+@media only screen and(max-width: 725px) {
+    .logo {
+        height: 7vh;
+    }
+    
+    .splash-header {
+        font-size: 12px;
+    }
+
+    .first-container > div:first-of-type {
+        padding: 25px 60px 0 35px;
+    }
+    
+    .first-container > div:nth-child(2) {
+        margin-top: 15px;
+        margin-left: 70px;
+        width: 450px;
+        font-size: 22px;
+        p {
+            width: 450px;
+            line-height: 30px;
+            font-size: 18px;
+        }
+    }
+    .started-btn {
+        padding: 12px 55px 12px 55px;
+        font-size: 16px;
+        width: 250px;
+        margin-top: 10px;
+    }
+
+}
+
+
+@media only screen and(max-width: 520px) {
+    .logo {
+        height: 7vh;
+        padding: 0;
+    }
+    
+    .splash-header {
+        h1 {
+            display: none;
+        }
+    }
+
+    .first-container > div:first-of-type {
+        padding: 25px 60px 0 35px;
+    }
+    
+    .first-container > div:nth-child(2) {
+        margin-top: 15px;
+        margin-left: 50px;
+        width: 420px;
+        font-size: 20px;
+        p {
+            width: 420px;
+            line-height: 25px;
+            font-size: 17px;
+        }
+    }
+    .started-btn {
+        padding: 12px 55px 12px 55px;
+        font-size: 16px;
+        width: 250px;
+        margin-top: 10px;
+    }
+         
+}
+
+@media only screen and(max-width: 475px) {
+    .logo {
+        height: 7vh;
+        padding: 0;
+    }
+    
+    .splash-header {
+        h1 {
+            display: none;
+        }
+    }
+
+    .first-container > div:first-of-type {
+        padding: 25px 60px 0 35px;
+    }
+    
+    .first-container > div:nth-child(2) {
+        margin-top: 30px;
+        margin-left: 30px;
+        width: 350px;
+        font-size: 20px;
+        p {
+            width: 320px;
+            line-height: 25px;
+            font-size: 17px;
+        }
+    }
+    .started-btn {
+        padding: 12px 55px 12px 55px;
+        font-size: 16px;
+        width: 250px;
+        margin-top: 10px;
+    }
+         
 }

@@ -1,63 +1,11 @@
 .chart-contain{
-    display: flex;
-	flex-direction: row;
-	flex-wrap: nowrap;
-	justify-content: center;
-	align-items: center;
-	align-content: stretch;
-    height: 100%;
-    width: 40vw;
-    background-color: white;
-    margin-bottom: 5%;
-    border-radius: 20px;
-    padding: 20px;
-    box-shadow: 9px 9px 5px lightgray;
-    margin: 0 auto;
-    padding: 10px;
+       height: 100%;
+       margin: 25px 60px 25px 60px;
+       background-color: white;
+       border-radius: 4px;
+       box-shadow: 0 12px 22px 0 rgba(0,0,0,.15);
 }
 
-
-
-
-// .single-prop-chart {
-//     display: flex;
-//     height: auto; 
-//     width: 75vw;
-//     justify-content: center;
-// 	flex-direction: row;
-// 	flex-wrap: nowrap;
-// 	align-items: center;
-// 	align-content: stretch;
-// }
-
-// .total-prop-contain {
-//     display: flex;
-// 	flex-direction: row;
-// 	flex-wrap: nowrap;
-// 	justify-content: flex-start;
-// 	align-items: center;
-// 	align-content: stretch;
-//     height: 80vh;
-//     width: 50vw;
-//     background-color: white;
-//     margin-bottom: 5%;
-//     border-radius: 20px;
-//     padding: 40px;
-//     box-shadow: 9px 9px 5px lightgray;
-//     margin: 0 auto;
-//     padding: 10px;
-// }
-
-// .total-prop-chart {
-//     display: flex;
-//     height: auto; 
-//     width: 100%;
-//     justify-content: center;
-// 	flex-direction: row;
-// 	flex-wrap: nowrap;
-// 	align-items: center;
-// 	align-content: stretch;
-// }
-
-
-
+.single-prop-chart {
+    padding: 30px;
+}
