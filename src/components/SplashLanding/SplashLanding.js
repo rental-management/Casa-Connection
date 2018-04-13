@@ -33,7 +33,7 @@ class SplashLanding extends Component {
                                 />
                                 <hr />
                             <h1> Organize Property Information </h1>
-                            {/* <p> aslkdjfas </p>  */}
+                        
                         </div>
                         <div> 
                         <FontAwesome 
@@ -42,8 +42,9 @@ class SplashLanding extends Component {
                                 size='6x'
                                 style={{ color: '#ff3776', opacity: '0.8'}}
                                 />
+                                <hr />
                             <h1> Visualize Financial Data </h1> 
-                            {/* <p> lasdf </p> */}
+                           
                         </div>
                         <div> 
                         <FontAwesome 
@@ -52,8 +53,9 @@ class SplashLanding extends Component {
                                 size='6x'
                                 style={{ color: '#ff3776', opacity: '0.8' }}
                                 />
+                                <hr />
                             <h1> Streamline Service Requests </h1> 
-                            {/* <p> lahsdf </p> */}
+                         
                         </div>
                 </div>
                 <div className="third-container">
