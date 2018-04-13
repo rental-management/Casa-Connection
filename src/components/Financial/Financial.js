@@ -28,7 +28,6 @@ class Financial extends Component {
       return(
         <div>
             <NavBar/>
-            
                 <h1>PROPERTIES OVERVIEW</h1>
               <TotalExpensesChart/>
                 <div>
