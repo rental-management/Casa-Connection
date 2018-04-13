@@ -55,6 +55,7 @@ class TotalExpensesChart extends Component {
 
 
       newChartData = (
+        <div className="single-prop-chart">
         <div>
             <Doughnut
               data={{
@@ -104,16 +105,19 @@ class TotalExpensesChart extends Component {
               },
               title:{
                 display: true,
-                text: "Expense Overview",
-                fontSize: 35
+                text: "EXPENSE OVERVIEW",
+                fontSize: 25,
+                fontColor: ' #3799d6',
+                fontFamily: 'Roboto'
               },
               maintainAspectRatio: true
               }}
             />
             </div>
+            </div>
       );
     }
-      
+    
       return(
         <div>
         {newChartData}

@@ -27,7 +27,8 @@ class SinglePropValue extends Component {
             console.log("all prop names: ", propNames)
             console.log("all assessed vals: ", assessedVals)
             return (
-                <div>
+                <div className="single-prop-chart">
+
                     <Pie
                         data={{
                           labels:[
@@ -58,8 +59,10 @@ class SinglePropValue extends Component {
                               },
                               title:{
                                 display: true,
-                                text: "Assessed Property Values",
-                                fontSize: 35
+                                text: "PROPERTY VALUES",
+                                fontSize: 25,
+                                fontColor: '#3799d6',
+                                fontFamily: 'Roboto'
                               },
                               
                               maintainAspectRatio: true,

@@ -10,7 +10,7 @@ class Profitability extends Component {
             
                 datasets:[{
                     
-                        label:'Gains',
+                        
                         data:[ 1200, 1050, 2500, 870, 1500, 2100],
                         backgroundColor:[
                             "rgba(255, 99, 132, 0.5)",
@@ -21,7 +21,7 @@ class Profitability extends Component {
                             'rgba(255, 159, 64, 0.6)',
                             'rgba(255, 99, 132, 0.6)'],
                         }, {
-                        label: 'Losses',
+                       
                         data:[350, 790, 1100, 1350, 1000, 970],
                         backgroundColor:[
                             "rgba(255, 99, 132, 0.5)",
@@ -40,19 +40,21 @@ class Profitability extends Component {
                             'Tenant Late Fees',
                             'Insurance'
                             ],
+                        },
 
-                        }
-                    }}
+                    }}      
+                    
+                    
                 
             
             render(){
                 return(
                     <div className="prof-chart">
-                        <Bar
-                            data={this.state.chartData}
-                             />
-                    </div>
-                )
-            }
-        }
+                    <h1>PROFIT</h1>
+                        <Bar data={this.state.chartData}
+                            />
+                     </div>
+                 )}}
+    
+        
         export default Profitability;

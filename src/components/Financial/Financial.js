@@ -31,16 +31,19 @@ class Financial extends Component {
             <NavBar/>
             
                 <h1>PROPERTIES OVERVIEW</h1>
-              <div className="total-prop-contain">
               
-              <TotalExpensesChart/>
-                    
+              
+            
+             <div className="chart-contain">
+             <TotalExpensesChart/>
              </div>
-             <div className="total-prop-contain">
-             
+             <div className="chart-contain">
                     <SinglePropValue/>
+                    </div>
+                    <div className="chart-contain">
                   <Profitability />
                     </div>
+                 
             <Footer />
         </div>
       )
