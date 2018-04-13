@@ -1,3 +1,0 @@
-{
-"version": 3,
-"sources": ["../scss/App.scss","../scss/SplashLanding.scss","../scss/Login.scss","../scss/NavBar.scss","../scss/Properties.scss","../scss/SingleProperty.scss","../scss/PropForm.scss","../scss/Contractors.scss","../scss/WorkOrders.scss","../scss/ExpenseChart.scss","../scss/Footer.scss","../scss/TotalExpensesChart.scss"],
