@@ -349,7 +349,7 @@ class SingleProperty extends Component {
                  
                   <br />
                 <div className="save-btn">
-                  {this.state.isEditable ? <RaisedButton label="save" onClick={() => {this.handleExpensesEdit(propValue, downPayment, mortgage, dues, taxes, insurance, utilities, propId)}} />: null}
+                  {this.state.isEditable ? <RaisedButton label="save" onClick={() => {this.handleExpensesEdit(propValue, downPayment, mortgage, dues, taxes, insurance, utilities, rent, propId)}} />: null}
                   <br /> 
                 </div>                 
               </div>
