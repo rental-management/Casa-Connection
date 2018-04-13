@@ -11,11 +11,11 @@ class ExpenseChart extends Component {
         }
     } 
 
-    render(){
-      console.log("Data: ", this.props)
+    render(){     
         let chartData = this.props.properties.property;
         let newChartData;
-        if(chartData.length !== 0 && chartData !== undefined){         
+        if(chartData.length !== 0 && chartData !== undefined){
+            console.log(chartData);         
              newChartData  = (
                  
                 <div className="single-prop-chart">
@@ -33,11 +33,11 @@ class ExpenseChart extends Component {
                     
                            
                             data: [
-                               this.props.properties.property[0].monthly_dues,
-                               this.props.properties.property[0].monthly_insurance,
-                               this.props.properties.property[0].monthly_mortgage,
-                               this.props.properties.property[0].monthly_taxes,
-                               this.props.properties.property[0].monthly_utilities
+                               chartData[0].monthly_dues,
+                               chartData[0].monthly_insurance,
+                               chartData[0].monthly_mortgage,
+                               chartData[0].monthly_taxes,
+                               chartData[0].monthly_utilities
                             ],
                             backgroundColor: [
                                 'rgba(255, 99, 132, 0.6)',
