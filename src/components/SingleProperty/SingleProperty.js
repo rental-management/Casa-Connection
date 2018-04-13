@@ -67,6 +67,17 @@ class SingleProperty extends Component {
 
     }
 
+   componentWillReceiveProps(nextProps){
+     console.log('props', this.props);
+     console.log('nextProps', nextProps);
+     if(this.props !== nextProps){
+      this.forceUpdate();
+     }
+
+
+   }
+
+
     handleTenantEdit(fName, lName, phone, email, emergContact, emergNum, propId) {
       this.props.editTenant(fName, lName, phone, email, emergContact, emergNum, propId).then( (res) => {
         this.props.getTenant(propId);
@@ -207,7 +218,7 @@ class SingleProperty extends Component {
                     <br />
                     <span>{curr.memo}</span>
                   </div>
-                  <div onClick={() => this.handleOrderDelete(curr.workorders_id, curr.prop_id)}> <FontAwesome size='2x' style={{ color: '#686868'}} className="far fa-times-circle" /> </div>
+                  <div onClick={() => this.handleOrderDelete(curr.workorders_id, curr.prop_id)}> <FontAwesome size='2x' style={{ color: '#686868'}} className="far fa-times-circle" name = "button"/> </div>
                     <br />
                 </div>
                 </div>
@@ -349,7 +360,7 @@ class SingleProperty extends Component {
                  
                   <br />
                 <div className="save-btn">
-                  {this.state.isEditable ? <RaisedButton label="save" onClick={() => {this.handleExpensesEdit(propValue, downPayment, mortgage, dues, taxes, insurance, utilities, propId)}} />: null}
+                  {this.state.isEditable ? <RaisedButton label="save" onClick={() => {this.handleExpensesEdit(propValue, downPayment, mortgage, dues, taxes, insurance, utilities, rent, propId)}} />: null}
                   <br /> 
                 </div>                 
               </div>

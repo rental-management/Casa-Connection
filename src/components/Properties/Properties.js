@@ -15,10 +15,13 @@ class Properties extends Component {
         super(props);
 
         this.handleDelete = this.handleDelete.bind(this);
+        
     }
 
     componentDidMount() {
         this.props.getProperties();
+        
+        
     }
 
     handleDelete(propId){
@@ -31,6 +34,10 @@ class Properties extends Component {
         })
     }
 
+    handleReRender(){
+        this.forceUpdate();
+    }
+
     render() {
         let propertiesList;
         console.log(this.props);
@@ -38,7 +45,7 @@ class Properties extends Component {
             propertiesList = this.props.properties.properties.map((curr, index) => {
                 return(
                   <div className="individual-property" key={index}>
-                    <Link to = {`/property/${curr.id}`} key = {index}>
+                    <Link to = {`/property/${curr.id}`} key = {index} >
                       <h1 className="properties-name"> {curr.prop_name.toUpperCase()} </h1>
                        <img className="properties-img" src={curr.img} />
                     </Link>
