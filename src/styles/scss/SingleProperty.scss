@@ -15,7 +15,7 @@
 
 .tenant-container {
     width: 620px;
-    height: 415px;
+    height: 430px;
     display: flex;
     margin-top: 82px;
     justify-content: center;
@@ -141,5 +141,73 @@
 .save-btn {
     text-align: center;
     margin-left: 200px;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
+    font-family: $body;
+    color: $gray;
+    div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media only screen and(max-width: 600px) {
+
+    // property container 
+    .property-container {
+        width: 300px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .single-property-photo {
+        width: 300px;
+        box-shadow: 0 10px 22px 0 rgba(0,0,0,.15);
+    }
+
+    .breadcrumb {
+        font-size: 22px; 
+        text-align: center;
+    }
+
+    .address {
+        font-size: 18px;
+        margin-top: 15px;
+    }
+
+    // tenant container 
+    .tenant-container {
+        width: 350px;
+        height: 550px;
+        margin-top: 20px;
+    }
+
+    // expenses container 
+    .expenses-container {
+        width: 350px;
+        margin-top: 20px;
+    }
+
+    .expenses-header {
+        padding-bottom: 10px;
+    }
+
+    // workorders container 
+    .work-orders-container {
+        width: 350px;
+        padding-bottom: 30px;
+    }
+
+    .requests {
+        width: 75%;
+        margin-bottom: 10px;
+        margin-left: 25px;
+    }
+
+
+    // save btn 
+    .save-btn {
+        margin-left: 60px;
+    }
+
 }
