@@ -15,7 +15,7 @@ Error: Undefined variable: "$header".
 54: }
 
 Backtrace:
-src/styles/scss/Contractors.scss:49
+src/styles/scss/Contractors.scss:48
 /Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/script/tree/variable.rb:49:in `_perform'
 /Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/script/tree/node.rb:50:in `perform'
 /Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/tree/visitors/perform.rb:402:in `visit_prop'

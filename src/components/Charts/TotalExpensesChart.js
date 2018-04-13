@@ -55,7 +55,7 @@ class TotalExpensesChart extends Component {
 
 
       newChartData = (
-        <div className="total-prop-chart">
+        <div>
             <Doughnut
               data={{
                 labels: [
@@ -115,7 +115,7 @@ class TotalExpensesChart extends Component {
     }
       
       return(
-        <div className="total-prop-contain">
+        <div>
         {newChartData}
         </div>
       )

@@ -14,3 +14,9 @@
     color: #4d4d4d;
 
 }
+
+@media only screen and(max-width: 725px) {
+    .login-btn {
+        padding: 10px 16px 10px 16px;
+    }
+}
