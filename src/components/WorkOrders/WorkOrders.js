@@ -46,7 +46,7 @@ return textA < textB ? -1 : textA > textB ? 1 : 0;
             <div className="work-order-container">
                 <h2 className="work-order-prop-name">{curr.prop_name.toUpperCase()}</h2>
                     <div className="type-memo">
-                        <div className="type"> {curr.type.toUpperCase()}</div><br/>
+                        <div className="type"> {curr.type.toUpperCase()}</div>
                         <div className="memo"> {curr.memo}</div>
                     </div>
                 <span className="delete-work-order" onClick = {() => {this.handleDelete(curr.workorders_id)}}> <FontAwesome size='1.7x' className="far fa-times-circle" /> </span>

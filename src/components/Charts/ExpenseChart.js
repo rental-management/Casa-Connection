@@ -58,7 +58,7 @@ class ExpenseChart extends Component {
                           title:{
                               display: true,
                               text: 'Monthly Expenses',
-                              fontSize: 25
+                              fontSize: 25,
                           },
                           maintainAspectRatio: true,
                        

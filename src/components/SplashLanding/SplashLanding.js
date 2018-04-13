@@ -42,6 +42,7 @@ class SplashLanding extends Component {
                                 size='6x'
                                 style={{ color: '#ff3776', opacity: '0.8'}}
                                 />
+                                <hr />
                             <h1> Visualize Financial Data </h1> 
                            
                         </div>
@@ -52,6 +53,7 @@ class SplashLanding extends Component {
                                 size='6x'
                                 style={{ color: '#ff3776', opacity: '0.8' }}
                                 />
+                                <hr />
                             <h1> Streamline Service Requests </h1> 
                          
                         </div>
