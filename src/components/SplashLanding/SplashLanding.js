@@ -33,7 +33,7 @@ class SplashLanding extends Component {
                                 />
                                 <hr />
                             <h1> Organize Property Information </h1>
-                            {/* <p> aslkdjfas </p>  */}
+                        
                         </div>
                         <div> 
                         <FontAwesome 
@@ -44,7 +44,7 @@ class SplashLanding extends Component {
                                 />
                                 <hr />
                             <h1> Visualize Financial Data </h1> 
-                            {/* <p> lasdf </p> */}
+                           
                         </div>
                         <div> 
                         <FontAwesome 
@@ -55,7 +55,7 @@ class SplashLanding extends Component {
                                 />
                                 <hr />
                             <h1> Streamline Service Requests </h1> 
-                            {/* <p> lahsdf </p> */}
+                         
                         </div>
                 </div>
                 <div className="third-container">

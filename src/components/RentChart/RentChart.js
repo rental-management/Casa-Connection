@@ -9,6 +9,7 @@ class RentChart extends Component {
                 chartData: {}
             
         }
+
         this.handleTotal = this.handleTotal.bind(this);
     }
 
@@ -19,8 +20,7 @@ class RentChart extends Component {
         return total;
     }
 
-    render(){
-        
+    render(){       
        
         let dataToRender;
         if(this.props.properties.property.length > 0 && this.props.properties.property[0] !== undefined){
@@ -69,20 +69,16 @@ class RentChart extends Component {
 </div>
    
               
-               )     
+               )   
         
         }
-
 
         return(
             <div className="chart-contain">
                 {dataToRender}
             </div>
         )
-
     }
-
-
 }
 
 const mapStateToProps = (state) => {
