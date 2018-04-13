@@ -16,15 +16,18 @@
 .type {
     font-family: $body;
     font-weight: bold;
+    padding: 4px;
 }
 
 .memo {
     font-family: $body;
+    padding: 4px;
 }
 
 .work-order-prop-name {
     font-size: 18px;
     font-family: $header;
+    color: $header-color;
 }
 
 .delete-work-order {
@@ -58,7 +61,66 @@
 }
 
 // media queries 
-@media only screen and(max-width: 1040px) {
+@media only screen and(max-width: 900px) {
+    .work-order-container {
+        display: flex;
+        flex-direction: column;
+        margin: 15px 80px 15px 80px;
+        padding: 8px 15px 8px 15px;
+    }
+
+    .work-order-prop-name {
+        color: $header-color;
+        border-bottom: 1px solid lightgray;
+        padding-bottom: 10px;
+    }
+
+    .type-memo {
+        padding: 0px 5px 5px 5px;
+        margin: 0px;
+    }
+
+    .type {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        padding: 2px;
+
+    }
+    
+    .memo {
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        padding: 2px;
+    }
+
+    .delete-work-order {
+        padding : 8px;
+        height: auto;
+        border: none;
+    }
+}
+
+@media only screen and(max-width: 500px) {
+    .work-order-container {
+        display: flex;
+        flex-direction: column;
+        margin: 15px 40px 15px 40px;
+        padding: 8px 15px 8px 15px;
+    }    
+
+    .type {
+        padding: 4px;
+
+    }
+    
+    .memo {
+
+        padding: 4px;
+    }
+
 
 
 }

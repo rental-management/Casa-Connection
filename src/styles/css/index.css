@@ -109,7 +109,6 @@ body {
     margin: 50px 30px 0px 30px;
     box-shadow: 0 10px 22px 0 rgba(0, 0, 0, 0.15); }
     .second-container div h1 {
-      padding-top: 15px;
       width: 90%;
       color: #545454;
       font-size: 25px;
@@ -117,8 +116,9 @@ body {
       font-family: "Roboto", sans-serif;
       letter-spacing: 1.5px; }
     .second-container div hr {
-      border: 1px solid black;
-      width: 80px; }
+      border: 1px solid #3799d6;
+      width: 70px;
+      margin-top: 20px; }
 
 .third-container {
   width: 100%;
@@ -464,6 +464,9 @@ body {
     justify-content: center;
     align-items: center; }
 
+@media only screen and (max-width: 1200px) {
+  .work-orders-container {
+    padding-bottom: 50px; } }
 @media only screen and (max-width: 600px) {
   .property-container {
     width: 300px;
@@ -530,16 +533,17 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  flex: 1 0 auto; }
+  margin-top: 30px; }
 
 .individual-contractor {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 20px; }
-  .individual-contractor h1 {
-    margin-top: 0;
-    margin-bottom: 0; }
+  width: 500px;
+  margin-bottom: 20px; }
+  .individual-contractor div {
+    width: 90%;
+    margin: 0 auto; }
 
 .contractors-header {
   padding-top: 20px;
@@ -562,7 +566,37 @@ body {
   flex-direction: row-reverse;
   align-items: center;
   flex-wrap: wrap; }
+  .buttons div {
+    width: 90px; }
 
+@media only screen and (max-width: 900px) {
+  .contractors-header {
+    width: 90%; }
+    .contractors-header h1 {
+      margin-left: 80px;
+      font-family: "Roboto", sans-serif;
+      color: #3799d6;
+      font-size: 26px;
+      margin-bottom: 30px; } }
+@media only screen and (max-width: 900px) and (max-width: 500px) {
+  .contractors-info input {
+    text-align: center; } }
+@media only screen and (max-width: 900px) and (max-width: 600px) {
+  .contractors-header {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0; }
+    .contractors-header h1 {
+      margin-left: 0px;
+      font-size: 30px;
+      padding-bottom: 10px; }
+    .contractors-header div {
+      margin-right: 40px;
+      margin-bottom: 20px; }
+      .contractors-header div svg {
+        margin-left: 16px; } }
 .work-order-container {
   display: flex;
   flex-direction: row;
@@ -579,14 +613,17 @@ body {
 
 .type {
   font-family: "Lato", sans-serif;
-  font-weight: bold; }
+  font-weight: bold;
+  padding: 4px; }
 
 .memo {
-  font-family: "Lato", sans-serif; }
+  font-family: "Lato", sans-serif;
+  padding: 4px; }
 
 .work-order-prop-name {
   font-size: 18px;
-  font-family: "Roboto", sans-serif; }
+  font-family: "Roboto", sans-serif;
+  color: #3799d6; }
 
 .delete-work-order {
   padding: 0px 40px 0px 75px;
@@ -614,6 +651,51 @@ body {
   flex-direction: column;
   flex: 1 0 auto; }
 
+@media only screen and (max-width: 900px) {
+  .work-order-container {
+    display: flex;
+    flex-direction: column;
+    margin: 15px 80px 15px 80px;
+    padding: 8px 15px 8px 15px; }
+
+  .work-order-prop-name {
+    color: #3799d6;
+    border-bottom: 1px solid lightgray;
+    padding-bottom: 10px; }
+
+  .type-memo {
+    padding: 0px 5px 5px 5px;
+    margin: 0px; }
+
+  .type {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 2px; }
+
+  .memo {
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 2px; }
+
+  .delete-work-order {
+    padding: 8px;
+    height: auto;
+    border: none; } }
+@media only screen and (max-width: 500px) {
+  .work-order-container {
+    display: flex;
+    flex-direction: column;
+    margin: 15px 40px 15px 40px;
+    padding: 8px 15px 8px 15px; }
+
+  .type {
+    padding: 4px; }
+
+  .memo {
+    padding: 4px; } }
 .chart-contain {
   height: 100%;
   margin: 25px 60px 25px 60px;
@@ -652,5 +734,21 @@ body {
   height: 700px;
   width: 800px;
   margin: 0 auto; }
+
+.chart-container {
+  position: relative;
+  margin: auto;
+  height: 60vh;
+  width: 70vw;
+  margin: auto; }
+
+.single-prop-contain {
+  position: relative;
+  height: 200px;
+  width: 90%;
+  margin: 30px;
+  background-color: lightgrey;
+  border-radius: 20px;
+  margin-left: 5%; }
 
 /*# sourceMappingURL=index.css.map */

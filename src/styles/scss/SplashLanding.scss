@@ -94,7 +94,6 @@
     margin: 50px 30px 0px 30px;
     box-shadow: 0 10px 22px 0 rgba(0,0,0,.15);
     h1 {
-        padding-top: 15px;
         width: 90%;
         color: #545454;
         font-size: 25px;
@@ -103,8 +102,9 @@
         letter-spacing: 1.5px;
     }
     hr {
-        border: 1px solid black;
-        width: 80px;
+        border: 1px solid $header-color;
+        width: 70px;
+        margin-top: 20px;
     }
   }
 }

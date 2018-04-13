@@ -151,6 +151,12 @@
     }
 }
 
+@media only screen and(max-width: 1200px) {
+    .work-orders-container {
+        padding-bottom: 50px;
+    }
+}
+
 @media only screen and(max-width: 600px) {
 
     // property container 

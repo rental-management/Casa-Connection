@@ -66,9 +66,6 @@ class Contractors extends Component {
 
     render() {
 
-        const style = {
-            width: 400,
-        }
 
         const {fName, lName, phone, email, street, city, state, zip} = this.state;
         console.log(this.state)
@@ -81,18 +78,21 @@ class Contractors extends Component {
                 console.log(index," map index");
                 return(
                     <div className="individual-contractor" key={index}>
-                        <Card onClick={() => {this.handleExpandChange(this.state.expanded, curr.f_name, curr.l_name, curr.phone, curr.email, curr.street, curr.city, curr.state, curr.zip, index)}}>
+                        <Card style={{ color: 'blue'}} onClick={() => {this.handleExpandChange(this.state.expanded, curr.f_name, curr.l_name, curr.phone, curr.email, curr.street, curr.city, curr.state, curr.zip, index)}}>
                             <CardHeader
-                                title={curr.company_name}
-                                subtitle={curr.type + " - " + curr.prop_name}
+                                style={{ color: 'blue'}}
+                                title={curr.company_name.toUpperCase()}
+                                subtitle={curr.prop_name}
                                 actAsExpander={true}
                                 showExpandableButton={true}
                                 style = {style}
                             />
+                      
                             <CardText expandable={true}>
-
-                              <span>First: </span>
+                        <div className="contractor-info">
+                              <span>FIRST: </span>
                                 <TextField 
+                             
                                 defaultValue={curr.f_name} 
                                 id="text-field-controlled" 
                                 onChange={ (event) => {
@@ -101,7 +101,7 @@ class Contractors extends Component {
             
                               <br />
             
-                              <span>Last: </span>
+                              <span>LAST: </span>
                               <TextField 
                                 defaultValue={curr.l_name}  
                                 id="text-field-controlled"
@@ -111,7 +111,7 @@ class Contractors extends Component {
 
                               <br />
 
-                              <span>Phone: </span>
+                              <span>PHONE: </span>
                                 <TextField 
                                 defaultValue={curr.phone} 
                                 id="text-field-controlled" 
@@ -121,7 +121,7 @@ class Contractors extends Component {
 
                               <br />
 
-                              <span>Email: </span>
+                              <span>EMAIL: </span>
                                 <TextField 
                                 defaultValue={curr.email}  
                                 id="text-field-controlled"
@@ -131,7 +131,7 @@ class Contractors extends Component {
 
                               <br />
 
-                              <span>Street: </span>
+                              <span>STREET: </span>
                                 <TextField 
                                 defaultValue={curr.street} 
                                 id="text-field-controlled" 
@@ -141,7 +141,7 @@ class Contractors extends Component {
 
                               <br />
 
-                              <span>City: </span>
+                              <span>CITY: </span>
                                 <TextField 
                                 defaultValue={curr.city}  
                                 id="text-field-controlled"
@@ -151,7 +151,7 @@ class Contractors extends Component {
 
                               <br />
 
-                              <span>State: </span>
+                              <span>STATE: </span>
                               <TextField 
                                 defaultValue={curr.state} 
                                 id="text-field-controlled" 
@@ -161,14 +161,14 @@ class Contractors extends Component {
 
                               <br />
 
-                              <span>Zip: </span>
+                              <span>ZIP: </span>
                                 <TextField 
                                 defaultValue={curr.zip}  
                                 id="text-field-controlled"
                                 onChange={ (event) => {
                                 this.setState({ zip: event.target.value })
                               }} />
-
+                        </div>
                               <br />
                             <div className="buttons">
                             <CardActions>
