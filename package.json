@@ -14,6 +14,7 @@
     "firebase": "^4.12.1",
     "firebase-app": "^0.0.1",
     "font-awesome": "^4.7.0",
+    "jest": "^22.4.3",
     "massive": "^4.7.1",
     "material-design-icons": "^3.0.1",
     "material-ui": "^0.20.0",
@@ -35,9 +36,9 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
+    "test": "jest",
     "eject": "react-scripts eject",
-  "sass": "sass --watch src/styles/scss:src/styles/css"
-},
+    "sass": "sass --watch src/styles/scss:src/styles/css"
+  },
   "proxy": "http://localhost:3002"
 }

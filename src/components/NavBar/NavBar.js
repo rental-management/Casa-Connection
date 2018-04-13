@@ -85,7 +85,7 @@ class NavBar extends Component {
           <MenuItem style={{ color: '#686868' }}className="item" onClick={this.handleClose}>Analytics</MenuItem>
         </Link>
         <Link to = '/'>
-                <MenuItem className = 'item'>LOGOUT</MenuItem>
+                <MenuItem style={{ color: '#3799d6', background: 'none', borderRadius: '6px', border: '1px solid #3799d6' }} className = 'item'>LOGOUT</MenuItem>
                 </Link>
 
 
