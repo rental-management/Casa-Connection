@@ -7,10 +7,17 @@ class Profitability extends Component {
         this.state = {
             chartData: {
                 
-            
-                datasets:[{
+                labels: ['Services',
+                'Utility Increase',
+                'Security Deposits',
+                'Rent Increase',
+                'Tenant Late Fees',
+                'Insurance'],
+                datasets:[
+                   
+                        {
                     
-                        
+                        label: "Gains",
                         data:[ 1200, 1050, 2500, 870, 1500, 2100],
                         backgroundColor:[
                             "rgba(255, 99, 132, 0.5)",
@@ -20,8 +27,10 @@ class Profitability extends Component {
                             'rgba(153, 102, 255, 0.6)',
                             'rgba(255, 159, 64, 0.6)',
                             'rgba(255, 99, 132, 0.6)'],
-                        }, {
+                        }, 
+                        {
                        
+                        label: "Losses",
                         data:[350, 790, 1100, 1350, 1000, 970],
                         backgroundColor:[
                             "rgba(255, 99, 132, 0.5)",
@@ -31,24 +40,9 @@ class Profitability extends Component {
                             'rgba(153, 102, 255, 0.6)',
                             'rgba(255, 159, 64, 0.6)',
                             'rgba(255, 99, 132, 0.6)'],
-                        }],
-                        labels: [
-                            'Services',
-                            'Utility Increase',
-                            'Security Deposits',
-                            'Rent Increase',
-                            'Tenant Late Fees',
-                            'Insurance'
-                            ],
-                        },
-                        options:{
-                            legend:{
-                                display: false,
-                                title: {
-                                    display: true,
-                                    text: "PROFIT"
-                                }
-                            }
+                        }
+                    ]
+                       
                         }
 
                     }}      
@@ -60,7 +54,7 @@ class Profitability extends Component {
                 return(
                     <div className="prof-chart">
                   
-                        <Bar data={this.state.chartData} />
+                        <Bar data={this.state.chartData} options={{legend: false, title:{display: true, text: 'PROFIT', fontColor:'#3799d6', fontFamily:'Roboto', fontSize: 25}}}  />
                      </div>
                  )}}
     

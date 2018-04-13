@@ -30,7 +30,7 @@ class Financial extends Component {
         <div>
             <NavBar/>
             
-                <h1>PROPERTIES OVERVIEW</h1>
+            
               
               
             
