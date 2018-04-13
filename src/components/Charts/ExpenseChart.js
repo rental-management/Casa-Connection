@@ -74,7 +74,7 @@ class ExpenseChart extends Component {
         return(
             <div className="chart-contain">
              
-           {chartData.length > 0 && newChartData}
+                {chartData.length > 0 && newChartData}
             
                 </div>
         )

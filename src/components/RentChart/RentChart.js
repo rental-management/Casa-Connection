@@ -74,8 +74,8 @@ class RentChart extends Component {
         }
 
         return(
-            <div>
-    {dataToRender}
+            <div className="chart-contain">
+                {dataToRender}
             </div>
         )
     }
