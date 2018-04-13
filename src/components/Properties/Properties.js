@@ -34,9 +34,6 @@ class Properties extends Component {
         })
     }
 
-    handleReRender(){
-        this.forceUpdate();
-    }
 
     render() {
         let propertiesList;
