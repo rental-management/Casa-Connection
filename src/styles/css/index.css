@@ -1,66 +1,748 @@
-/*
-Error: File to import not found or unreadable: Service.
-       Load path: /Users/sarasmith/Desktop/devmtn/group-project/Rental-Management-/src/styles/scss
-        on line 6 of src/styles/scss/index.scss
+a {
+  cursor: pointer;
+  text-decoration: none; }
 
-1: @import 'App';
-2: @import 'SplashLanding';
-3: @import 'Login';
-4: @import 'NavBar';
-5: @import 'Properties';
-6: @import 'Service';
-7: @import 'SingleProperty';
-8: @import 'PropForm';
-9: @import 'Contractors';
-10: @import 'WorkOrders';
-11: @import 'ExpenseChart';
+.App {
+  text-align: center; }
 
-Backtrace:
-src/styles/scss/index.scss:6
-/Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/tree/import_node.rb:67:in `rescue in import'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/tree/import_node.rb:45:in `import'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/tree/import_node.rb:28:in `imported_file'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/tree/import_node.rb:37:in `css_import?'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/tree/visitors/perform.rb:314:in `visit_import'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/tree/visitors/base.rb:36:in `visit'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/tree/visitors/perform.rb:162:in `block in visit'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/stack.rb:79:in `block in with_base'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/stack.rb:135:in `with_frame'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/stack.rb:79:in `with_base'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/tree/visitors/perform.rb:162:in `visit'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/tree/visitors/base.rb:52:in `map'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/tree/visitors/base.rb:52:in `visit_children'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/tree/visitors/perform.rb:171:in `block in visit_children'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/tree/visitors/perform.rb:183:in `with_environment'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/tree/visitors/perform.rb:170:in `visit_children'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/tree/visitors/base.rb:36:in `block in visit'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/tree/visitors/perform.rb:190:in `visit_root'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/tree/visitors/base.rb:36:in `visit'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/tree/visitors/perform.rb:161:in `visit'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/tree/visitors/perform.rb:10:in `visit'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/tree/root_node.rb:36:in `css_tree'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/tree/root_node.rb:29:in `render_with_sourcemap'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/engine.rb:389:in `_render_with_sourcemap'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/engine.rb:307:in `render_with_sourcemap'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/plugin/compiler.rb:462:in `update_stylesheet'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/plugin/compiler.rb:209:in `each'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/plugin/compiler.rb:443:in `on_file_changed'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/plugin/compiler.rb:320:in `block in watch'
-/Library/Ruby/Gems/2.0.0/gems/sass-listen-4.0.0/lib/sass-listen/event/config.rb:23:in `call'
-/Library/Ruby/Gems/2.0.0/gems/sass-listen-4.0.0/lib/sass-listen/event/config.rb:23:in `call'
-/Library/Ruby/Gems/2.0.0/gems/sass-listen-4.0.0/lib/sass-listen/event/processor.rb:115:in `_process_changes'
-/Library/Ruby/Gems/2.0.0/gems/sass-listen-4.0.0/lib/sass-listen/event/processor.rb:19:in `block in loop_for'
-/Library/Ruby/Gems/2.0.0/gems/sass-listen-4.0.0/lib/sass-listen/event/processor.rb:15:in `loop'
-/Library/Ruby/Gems/2.0.0/gems/sass-listen-4.0.0/lib/sass-listen/event/processor.rb:15:in `loop_for'
-/Library/Ruby/Gems/2.0.0/gems/sass-listen-4.0.0/lib/sass-listen/event/loop.rb:84:in `_wait_for_changes'
-/Library/Ruby/Gems/2.0.0/gems/sass-listen-4.0.0/lib/sass-listen/event/loop.rb:42:in `block in setup'
-/Library/Ruby/Gems/2.0.0/gems/sass-listen-4.0.0/lib/sass-listen/internals/thread_pool.rb:6:in `call'
-/Library/Ruby/Gems/2.0.0/gems/sass-listen-4.0.0/lib/sass-listen/internals/thread_pool.rb:6:in `block in add'
-*/
-body:before {
-  white-space: pre;
-  font-family: monospace;
-  content: "Error: File to import not found or unreadable: Service.\A        Load path: /Users/sarasmith/Desktop/devmtn/group-project/Rental-Management-/src/styles/scss\A         on line 6 of src/styles/scss/index.scss\A \A 1: @import 'App';\A 2: @import 'SplashLanding';\A 3: @import 'Login';\A 4: @import 'NavBar';\A 5: @import 'Properties';\A 6: @import 'Service';\A 7: @import 'SingleProperty';\A 8: @import 'PropForm';\A 9: @import 'Contractors';\A 10: @import 'WorkOrders';\A 11: @import 'ExpenseChart';"; }
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px; }
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white; }
+
+.App-title {
+  font-size: 1.5em; }
+
+.App-intro {
+  font-size: large; }
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serifsf; }
+
+.splash {
+  background: linear-gradient(rgba(64, 64, 64, 0.6) rgba(64, 64, 64, 0.6), rgba(64, 64, 64, 0.6)), url("../../assets/windows.jpg");
+  background-size: cover;
+  width: 100%;
+  background-repeat: no-repeat;
+  height: 73vh;
+  clip-path: polygon(0 0, 100% 0, 100% 82%, 0 100%); }
+
+.logo {
+  height: 8vh;
+  padding: 10px 20px 40px 10px; }
+
+.splash-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: white;
+  letter-spacing: 2px;
+  font-family: "Roboto", sans-serif;
+  font-size: 13px; }
+
+.first-container > div:first-of-type {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-content: space-between;
+  padding: 25px 60px 0 60px; }
+
+.first-container > div:nth-child(2) {
+  margin-top: 22px;
+  margin-left: 90px;
+  width: 700px;
+  display: flex;
+  flex-direction: column;
+  font-size: 26px; }
+  .first-container > div:nth-child(2) h2 {
+    text-align: left;
+    color: white;
+    margin-bottom: 5px;
+    font-family: "Roboto", sans-serif;
+    letter-spacing: 2px; }
+  .first-container > div:nth-child(2) p {
+    text-align: left;
+    width: 550px;
+    color: white;
+    line-height: 35px;
+    font-size: 20px;
+    font-family: "Lato", sans-serif;
+    letter-spacing: 1px; }
+
+.started-btn {
+  background-color: white;
+  padding: 12px 60px 12px 60px;
+  color: #4c4c4b;
+  cursor: pointer;
+  border-radius: 10px;
+  font-size: 18px;
+  width: 300px;
+  margin-top: 10px; }
+
+.started-btn:hover {
+  transition: background-color .2s ease;
+  background: #ff3776;
+  color: white; }
+
+.second-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap; }
+  .second-container div {
+    display: flex;
+    background: white;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 45vh;
+    padding: 10px 10px 0 10px;
+    width: 45vh;
+    margin: 50px 30px 0px 30px;
+    box-shadow: 0 10px 22px 0 rgba(0, 0, 0, 0.15); }
+    .second-container div h1 {
+      width: 90%;
+      color: #545454;
+      font-size: 25px;
+      line-height: 35px;
+      font-family: "Roboto", sans-serif;
+      letter-spacing: 1.5px; }
+    .second-container div hr {
+      border: 1px solid #3799d6;
+      width: 70px;
+      margin-top: 20px; }
+
+.third-container {
+  width: 100%;
+  height: 70vh;
+  background: white;
+  margin: 100px 0 100px 0; }
+
+.footer {
+  background: #009be0;
+  height: 15vh;
+  position: relative;
+  display: flex;
+  justify-content: center; }
+
+.footer div {
+  position: absolute;
+  bottom: 7px;
+  padding-bottom: 35px;
+  color: white; }
+
+@media only screen and (max-width: 725px) {
+  .logo {
+    height: 7vh; }
+
+  .splash-header {
+    font-size: 12px; }
+
+  .first-container > div:first-of-type {
+    padding: 25px 60px 0 35px; }
+
+  .first-container > div:nth-child(2) {
+    margin-top: 15px;
+    margin-left: 70px;
+    width: 450px;
+    font-size: 22px; }
+    .first-container > div:nth-child(2) p {
+      width: 450px;
+      line-height: 30px;
+      font-size: 18px; }
+
+  .started-btn {
+    padding: 12px 55px 12px 55px;
+    font-size: 16px;
+    width: 250px;
+    margin-top: 10px; } }
+@media only screen and (max-width: 520px) {
+  .logo {
+    height: 7vh;
+    padding: 0; }
+
+  .splash-header h1 {
+    display: none; }
+
+  .first-container > div:first-of-type {
+    padding: 25px 60px 0 35px; }
+
+  .first-container > div:nth-child(2) {
+    margin-top: 15px;
+    margin-left: 50px;
+    width: 420px;
+    font-size: 20px; }
+    .first-container > div:nth-child(2) p {
+      width: 420px;
+      line-height: 25px;
+      font-size: 17px; }
+
+  .started-btn {
+    padding: 12px 55px 12px 55px;
+    font-size: 16px;
+    width: 250px;
+    margin-top: 10px; } }
+@media only screen and (max-width: 475px) {
+  .logo {
+    height: 7vh;
+    padding: 0; }
+
+  .splash-header h1 {
+    display: none; }
+
+  .first-container > div:first-of-type {
+    padding: 25px 60px 0 35px; }
+
+  .first-container > div:nth-child(2) {
+    margin-top: 30px;
+    margin-left: 30px;
+    width: 350px;
+    font-size: 20px; }
+    .first-container > div:nth-child(2) p {
+      width: 320px;
+      line-height: 25px;
+      font-size: 17px; }
+
+  .started-btn {
+    padding: 12px 55px 12px 55px;
+    font-size: 16px;
+    width: 250px;
+    margin-top: 10px; } }
+.login-btn {
+  background-color: transparent;
+  border: 2px solid white;
+  padding: 12px 20px 12px 20px;
+  color: white;
+  cursor: pointer;
+  border-radius: 12%;
+  font-size: 15px; }
+
+.login-btn:hover {
+  background: white;
+  transition: background-color 0.3s ease;
+  color: #4d4d4d; }
+
+@media only screen and (max-width: 725px) {
+  .login-btn {
+    padding: 10px 16px 10px 16px; } }
+.full-screen-menu {
+  display: flex;
+  justify-content: space-between;
+  font-size: 2em;
+  margin-left: 57%;
+  padding: 20px; }
+
+@media only screen and (min-width: 500px) {
+  .responsive-menu, .hamburger {
+    display: none; } }
+@media only screen and (max-width: 750px) {
+  .responsive-menu {
+    display: block;
+    padding: 20px;
+    margin-left: 2%; }
+
+  .full-screen-menu {
+    display: none; } }
+@media only screen and (max-width: 1230px) {
+  .full-screen-menu {
+    margin-left: 50%; } }
+@media only screen and (max-width: 1115px) {
+  .full-screen-menu {
+    margin-left: 45%; } }
+@media only screen and (max-width: 990px) {
+  .full-screen-menu {
+    margin-left: 38%; } }
+@media only screen and (max-width: 880px) {
+  .full-screen-menu {
+    margin-left: 32%; } }
+@media only screen and (max-width: 799px) {
+  .full-screen-menu {
+    margin-left: 25%; } }
+.properties-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 85vh; }
+
+.properties-header {
+  padding-top: 20px;
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  justify-content: space-between;
+  width: 90%;
+  align-content: center;
+  align-items: center;
+  color: #3799d6; }
+  .properties-header h1 {
+    font-family: "Roboto", sans-serif;
+    font-size: 26px;
+    margin-left: 80px; }
+
+.properties-name {
+  color: #686868;
+  font-size: 22px;
+  font-family: "Roboto", sans-serif;
+  padding-bottom: 5px;
+  font-weight: bold; }
+
+.delete-prop-btn {
+  color: #149ddc;
+  cursor: pointer; }
+
+.propertiesList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex: 1 0 auto; }
+
+.individual-property {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 18px;
+  background: white;
+  border-radius: 6px;
+  box-shadow: 0 12px 22px 0 rgba(0, 0, 0, 0.15);
+  margin: 10px; }
+
+.properties-img {
+  width: 360px;
+  padding-bottom: 20px; }
+
+@media only screen and (max-width: 500px) {
+  .properties-img {
+    width: 290px; }
+
+  .properties-header {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    padding: 0; }
+    .properties-header h1 {
+      font-size: 30px;
+      margin-left: 0px;
+      padding-bottom: 10px; }
+    .properties-header div {
+      margin-right: 40px;
+      margin-bottom: 20px; }
+      .properties-header div svg {
+        margin-left: 15px; } }
+.property-tenant-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  justify-content: space-evenly;
+  margin-bottom: 80px; }
+
+.property-container {
+  width: 620px;
+  display: flex;
+  justify-content: center; }
+
+.tenant-container {
+  width: 620px;
+  height: 430px;
+  display: flex;
+  margin-top: 82px;
+  justify-content: center;
+  flex-direction: column;
+  background: white;
+  border-radius: 4px;
+  box-shadow: 0 10px 22px 0 rgba(0, 0, 0, 0.15); }
+
+.expenses-container {
+  width: 620px;
+  display: flex;
+  margin-top: 50px;
+  justify-content: center;
+  flex-direction: column;
+  background: white;
+  border-radius: 4px;
+  box-shadow: 0 10px 22px 0 rgba(0, 0, 0, 0.15); }
+
+.work-orders-container {
+  width: 620px;
+  display: flex;
+  margin-top: 50px;
+  background: white;
+  border-radius: 4px;
+  box-shadow: 0 10px 22px 0 rgba(0, 0, 0, 0.15);
+  flex-direction: column; }
+
+.breadcrumb {
+  font-family: "Roboto", sans-serif;
+  font-size: 26px;
+  text-align: left;
+  color: #3799d6; }
+
+.single-property-photo {
+  max-width: 620px;
+  max-height: auto;
+  box-shadow: 0 10px 22px 0 rgba(0, 0, 0, 0.15); }
+
+.address {
+  font-family: "Lato", sans-serif;
+  color: #686868;
+  font-weight: bold;
+  font-size: 20px;
+  margin-top: 15px; }
+
+.tenant-header {
+  font-family: "Roboto", sans-serif;
+  color: #3799d6; }
+
+.tenant-info {
+  display: flex;
+  flex-direction: column;
+  margin-left: 70px;
+  font-family: "Lato", sans-serif;
+  color: #686868; }
+  .tenant-info div {
+    text-align: left; }
+    .tenant-info div span {
+      padding-right: 5px; }
+
+.expenses-header {
+  font-family: "Roboto", sans-serif;
+  color: #3799d6;
+  margin-top: 30px; }
+
+.expenses-info {
+  display: flex;
+  flex-direction: column;
+  margin-left: 70px;
+  font-family: "Lato", sans-serif;
+  color: #686868; }
+  .expenses-info div {
+    text-align: left; }
+    .expenses-info div span {
+      padding-right: 5px; }
+
+.work-order-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  padding: 14px;
+  margin-bottom: 15px; }
+  .work-order-header h2 {
+    margin-right: 155px;
+    font-family: "Roboto", sans-serif;
+    color: #3799d6; }
+
+.requests {
+  background: white;
+  border-radius: 4px;
+  box-shadow: 0 10px 22px 0 rgba(0, 0, 0, 0.15);
+  width: 80%;
+  margin-bottom: 10px;
+  margin-left: 40px;
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  font-family: "Lato", sans-serif;
+  color: #686868; }
+
+.save-btn {
+  text-align: center;
+  margin-left: 200px;
+  margin-bottom: 30px;
+  font-family: "Lato", sans-serif;
+  color: #686868; }
+  .save-btn div {
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+
+@media only screen and (max-width: 1200px) {
+  .work-orders-container {
+    padding-bottom: 50px; } }
+@media only screen and (max-width: 600px) {
+  .property-container {
+    width: 300px;
+    display: flex;
+    justify-content: center; }
+
+  .single-property-photo {
+    width: 300px;
+    box-shadow: 0 10px 22px 0 rgba(0, 0, 0, 0.15); }
+
+  .breadcrumb {
+    font-size: 22px;
+    text-align: center; }
+
+  .address {
+    font-size: 18px;
+    margin-top: 15px; }
+
+  .tenant-container {
+    width: 350px;
+    height: 550px;
+    margin-top: 20px; }
+
+  .expenses-container {
+    width: 350px;
+    margin-top: 20px; }
+
+  .expenses-header {
+    padding-bottom: 10px; }
+
+  .work-orders-container {
+    width: 350px;
+    padding-bottom: 30px; }
+
+  .requests {
+    width: 75%;
+    margin-bottom: 10px;
+    margin-left: 25px; }
+
+  .save-btn {
+    margin-left: 60px; } }
+.dialog-container {
+  display: flex;
+  height: 1000px;
+  width: auto; }
+
+.contractors-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 85vh; }
+
+.delete-con-btn {
+  text-decoration: none;
+  border-style: none;
+  padding: 10px;
+  border-radius: 40px;
+  background-color: #149ddc;
+  color: white;
+  cursor: pointer;
+  width: 40%; }
+
+.contractors-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 30px; }
+
+.individual-contractor {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 500px;
+  margin-bottom: 20px; }
+  .individual-contractor div {
+    width: 90%;
+    margin: 0 auto; }
+
+.contractors-header {
+  padding-top: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  justify-content: space-between;
+  width: 93%;
+  align-content: center;
+  align-items: center; }
+  .contractors-header h1 {
+    margin-left: 80px;
+    font-family: "Roboto", sans-serif;
+    color: #3799d6;
+    font-size: 26px;
+    margin-bottom: 30px; }
+
+.buttons {
+  display: inline-flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  flex-wrap: wrap; }
+  .buttons div {
+    width: 90px; }
+
+@media only screen and (max-width: 900px) {
+  .contractors-header {
+    width: 90%; }
+    .contractors-header h1 {
+      margin-left: 80px;
+      font-family: "Roboto", sans-serif;
+      color: #3799d6;
+      font-size: 26px;
+      margin-bottom: 30px; } }
+@media only screen and (max-width: 900px) and (max-width: 500px) {
+  .contractors-info input {
+    text-align: center; } }
+@media only screen and (max-width: 900px) and (max-width: 600px) {
+  .contractors-header {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0; }
+    .contractors-header h1 {
+      margin-left: 0px;
+      font-size: 30px;
+      padding-bottom: 10px; }
+    .contractors-header div {
+      margin-right: 40px;
+      margin-bottom: 20px; }
+      .contractors-header div svg {
+        margin-left: 16px; } }
+.work-order-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 15px 200px 15px 200px;
+  justify-content: space-between;
+  padding: 8px 30px 8px 40px;
+  border-radius: 4px;
+  background: white;
+  color: #4c4c4b;
+  font-family: "Lato", sans-serif;
+  box-shadow: 0 12px 22px 0 rgba(0, 0, 0, 0.15); }
+
+.type {
+  font-family: "Lato", sans-serif;
+  font-weight: bold;
+  padding: 4px; }
+
+.memo {
+  font-family: "Lato", sans-serif;
+  padding: 4px; }
+
+.work-order-prop-name {
+  font-size: 18px;
+  font-family: "Roboto", sans-serif;
+  color: #3799d6; }
+
+.delete-work-order {
+  padding: 0px 40px 0px 75px;
+  border-left: 1px solid #dddedd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70px;
+  cursor: pointer;
+  font-size: 25px;
+  color: #3799d6; }
+
+.work-orders {
+  display: flex;
+  justify-content: flex-start;
+  margin-left: 80px;
+  margin-top: 35px;
+  margin-bottom: 35px;
+  font-size: 26px;
+  color: #3799d6;
+  font-family: "Roboto", sans-serif; }
+
+.work-orders-list {
+  display: flex;
+  flex-direction: column;
+  flex: 1 0 auto; }
+
+@media only screen and (max-width: 900px) {
+  .work-order-container {
+    display: flex;
+    flex-direction: column;
+    margin: 15px 80px 15px 80px;
+    padding: 8px 15px 8px 15px; }
+
+  .work-order-prop-name {
+    color: #3799d6;
+    border-bottom: 1px solid lightgray;
+    padding-bottom: 10px; }
+
+  .type-memo {
+    padding: 0px 5px 5px 5px;
+    margin: 0px; }
+
+  .type {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 2px; }
+
+  .memo {
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 2px; }
+
+  .delete-work-order {
+    padding: 8px;
+    height: auto;
+    border: none; } }
+@media only screen and (max-width: 500px) {
+  .work-order-container {
+    display: flex;
+    flex-direction: column;
+    margin: 15px 40px 15px 40px;
+    padding: 8px 15px 8px 15px; }
+
+  .type {
+    padding: 4px; }
+
+  .memo {
+    padding: 4px; } }
+.chart-contain {
+  height: 100%;
+  margin: 25px 60px 25px 60px;
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: 0 12px 22px 0 rgba(0, 0, 0, 0.15); }
+
+.single-prop-chart {
+  padding: 30px; }
+
+.real_footer {
+  width: 100%;
+  flex-shrink: 0;
+  font-family: "Lato", sans-serif; }
+  .real_footer-container {
+    position: relative;
+    top: 7em;
+    height: 4em;
+    background-color: #1DAFD5;
+    display: block;
+    padding: 10px; }
+  .real_footer-text {
+    position: relative;
+    display: inline-block;
+    font-size: 15px;
+    margin: 0 auto;
+    color: white;
+    padding-top: 18px; }
+
+#total-expenses-chart {
+  height: 700px;
+  width: 800px;
+  margin: 0 auto; }
+
+.chart-container {
+  position: relative;
+  margin: auto;
+  height: 60vh;
+  width: 70vw;
+  margin: auto; }
+
+.single-prop-contain {
+  position: relative;
+  height: 200px;
+  width: 90%;
+  margin: 30px;
+  background-color: lightgrey;
+  border-radius: 20px;
+  margin-left: 5%; }
+
+/*# sourceMappingURL=index.css.map */
