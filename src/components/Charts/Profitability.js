@@ -41,6 +41,15 @@ class Profitability extends Component {
                             'Insurance'
                             ],
                         },
+                        options:{
+                            legend:{
+                                display: false,
+                                title: {
+                                    display: true,
+                                    text: "PROFIT"
+                                }
+                            }
+                        }
 
                     }}      
                     
@@ -50,9 +59,8 @@ class Profitability extends Component {
             render(){
                 return(
                     <div className="prof-chart">
-                    <h1>PROFIT</h1>
-                        <Bar data={this.state.chartData}
-                            />
+                  
+                        <Bar data={this.state.chartData} />
                      </div>
                  )}}
     
