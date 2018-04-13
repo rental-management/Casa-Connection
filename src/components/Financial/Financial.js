@@ -5,6 +5,7 @@ import NavBar from '../NavBar/NavBar';
 import TotalExpensesChart from '../Charts/TotalExpensesChart';
 import Footer from '../Footer/Footer';
 import SinglePropValue from './../Charts/SinglePropValue';
+import Profitability from './../Charts/Profitability';
 
 
 class Financial extends Component {
@@ -38,7 +39,7 @@ class Financial extends Component {
              <div className="total-prop-contain">
              
                     <SinglePropValue/>
-                  
+                  <Profitability />
                     </div>
             <Footer />
         </div>
