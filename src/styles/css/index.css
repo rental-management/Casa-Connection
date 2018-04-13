@@ -116,6 +116,9 @@ body {
       line-height: 35px;
       font-family: "Roboto", sans-serif;
       letter-spacing: 1.5px; }
+    .second-container div hr {
+      border: 1px solid black;
+      width: 80px; }
 
 .third-container {
   width: 100%;
