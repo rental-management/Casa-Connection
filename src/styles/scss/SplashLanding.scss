@@ -102,6 +102,10 @@
         font-family: $header;
         letter-spacing: 1.5px;
     }
+    hr {
+        border: 1px solid black;
+        width: 80px;
+    }
   }
 }
 
