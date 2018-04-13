@@ -61,11 +61,9 @@ class SingleProperty extends Component {
             emergContact: data.emerg_contact_name,
             emergNum: data.emerg_contact_phone
           })
-
         })
-
-
     }
+
 
     handleTenantEdit(fName, lName, phone, email, emergContact, emergNum, propId) {
       this.props.editTenant(fName, lName, phone, email, emergContact, emergNum, propId).then( (res) => {
@@ -349,7 +347,7 @@ class SingleProperty extends Component {
                  
                   <br />
                 <div className="save-btn">
-                  {this.state.isEditable ? <RaisedButton label="save" onClick={() => {this.handleExpensesEdit(propValue, downPayment, mortgage, dues, taxes, insurance, utilities, propId)}} />: null}
+                  {this.state.isEditable ? <RaisedButton label="save" onClick={() => {this.handleExpensesEdit(propValue, downPayment, mortgage, dues, taxes, insurance, utilities, rent, propId)}} />: null}
                   <br /> 
                 </div>                 
               </div>
