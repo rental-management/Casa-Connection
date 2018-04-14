@@ -17,15 +17,17 @@
 
 .contractors-list {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: wrap; 
     justify-content: center;
     margin-top: 30px;
+    // flex: 1 0 auto;
 }
 
 .individual-contractor {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     width: 500px;
     margin-bottom: 20px;
     div {
@@ -44,7 +46,6 @@
     width: 93%;
     align-content: center;
     align-items: center;
-
     h1 {
         margin-left: 80px; 
         font-family: $header;

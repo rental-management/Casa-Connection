@@ -78,14 +78,12 @@ class Contractors extends Component {
                 console.log(index," map index");
                 return(
                     <div className="individual-contractor" key={index}>
-                        <Card style={{ color: 'blue'}} onClick={() => {this.handleExpandChange(this.state.expanded, curr.f_name, curr.l_name, curr.phone, curr.email, curr.street, curr.city, curr.state, curr.zip, index)}}>
+                        <Card onClick={() => {this.handleExpandChange(this.state.expanded, curr.f_name, curr.l_name, curr.phone, curr.email, curr.street, curr.city, curr.state, curr.zip, index)}}>
                             <CardHeader
-                                style={{ color: 'blue'}}
                                 title={curr.company_name.toUpperCase()}
                                 subtitle={curr.prop_name}
                                 actAsExpander={true}
                                 showExpandableButton={true}
-                                style = {style}
                             />
                       
                             <CardText expandable={true}>
