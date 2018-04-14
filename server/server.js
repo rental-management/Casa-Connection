@@ -102,6 +102,7 @@ app.put('/editcontractor', mainCtrl.editContractor);
 app.put('/edittenant', mainCtrl.editTenant);
 app.get('/allworkorders', mainCtrl.getAllWorkOrders);
 app.put('/editexpenses', mainCtrl.editExpenses);
+app.get('/postmantesting', mainCtrl.postmanTesting);
 
 //server setup 
 app.listen(port, () => {
