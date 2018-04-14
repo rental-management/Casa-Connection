@@ -156,12 +156,7 @@ module.exports = {
         }).catch((err) => {
             res.status(500).json(err);
         })
-    },
-
-    postmanTesting: (req, res) => {
-        req.user = {};
-        req.user.id = 4;
-        res.status(200).json(req.user.id);
-
     }
+
+
 }
