@@ -6720,10 +6720,6 @@ sane@~1.6.0:
     walker "~1.0.5"
     watch "~0.10.0"
 
-sass@^1.1.1:
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/sass/-/sass-1.1.1.tgz#e4415c480c68e054a618e5b2d595bab894018967"
-
 sax@^1.2.1, sax@~1.2.1:
   version "1.2.4"
   resolved "https://registry.yarnpkg.com/sax/-/sax-1.2.4.tgz#2816234e2378bddc4e5354fab5caa895df7100d9"
