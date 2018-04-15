@@ -44,7 +44,7 @@ class Properties extends Component {
                   <div className="individual-property" key={index}>
                     <Link to = {`/property/${curr.id}`} key = {index} >
                       <h1 className="properties-name"> {curr.prop_name.toUpperCase()} </h1>
-                       <img className="properties-img" src={curr.img} />
+                       <div className="crop-properties-img"> <img className="properties-img" src={curr.img} /> </div>
                     </Link>
                        <div className = 'delete-prop-btn' onClick = {() => {this.handleDelete(curr.id)}}><FontAwesome size='2x' className="far fa-times-circle" /> </div>
                   </div>

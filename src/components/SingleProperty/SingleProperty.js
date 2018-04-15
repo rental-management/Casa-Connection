@@ -131,10 +131,11 @@ class SingleProperty extends Component {
             
                 <h1 className="breadcrumb"><Link style={{ color: '#686868' }} to='/properties'>PROPERTIES</Link> <i className="fas fa-angle-right"></i> {curr.prop_name.toUpperCase()}</h1><br/>
                 
-                  <img className="single-property-photo" src={curr.img} />
+                  <div className="crop-property-img"><img className="single-property-photo" src={curr.img} /> </div>
                   <br />
                   <div className="address">{curr.street.toUpperCase()} {curr.city.toUpperCase()}, {curr.state.toUpperCase()} {curr.zip} </div>
                   <br />
+                
 
             </div>
             );
@@ -218,17 +219,16 @@ class SingleProperty extends Component {
           workOrdersList = this.props.properties.workOrders.map(
             (curr, index) => {
               return (
-                <div key={index} id = 'wo-container'>
-                <div className="requests">
-                  <div>
+              <div key={index} id = 'wo-container'>
+                <div className="requests" >
+                  <div onClick={() => this.handleOrderDelete(curr.workorders_id, curr.prop_id)}> <FontAwesome size='2x' style={{ color: '#686868', }} className="far fa-times-circle" name = "button"/> </div>
+                   <div >
                     <span>{curr.type.toUpperCase()}</span>
                     <br />
                     <span>{curr.memo}</span>
-                  </div>
-                  <div onClick={() => this.handleOrderDelete(curr.workorders_id, curr.prop_id)}> <FontAwesome size='2x' style={{ color: '#686868'}} className="far fa-times-circle" name = "button"/> </div>
-                    <br />
+                   </div>
                 </div>
-                </div>
+              </div>
               );
             }
           );
@@ -401,9 +401,10 @@ class SingleProperty extends Component {
                  {workOrdersList}
             </div>
           </div>
-        
+                {/* <div className="two-charts"> */}
                <ExpenseChart />
                <RentChart />
+               {/* </div> */}
                <Footer />  
           </div>
           
