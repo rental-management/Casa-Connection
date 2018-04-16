@@ -59,16 +59,19 @@ class SplashLanding extends Component {
                          
                         </div>
                 </div>
+                <div style={{display: 'flex', justifyContent: 'center'}}>
                 <div className="third-container">
-                <h2>For the DIY Property Manager</h2>
-                <p>We are the premier rental management application for landlords with smaller portfolios. We understand what our users need because we are the users too! Join us and never have to worry about losing important contractor info or organizing your list of pending work requests. We take care of all of that for you. Let us make your life easier. </p>
-                <div className = "testimonial">
-                <img src = {require('../../assets/customer.png')} alt = 'customer' id = 'cust-img'/>
-                <blockquote className = 'quote'><i class="fa fa-quote-left" aria-hidden="true"></i> I use Casa Connection for all my management needs. I've never been so happy with a software product in my entire life. It's unbelievable. Who knew life could be this easy? Two thumbs up from me. Thank you Casa Connection!! <i class="fa fa-quote-right" aria-hidden="true"></i></blockquote><span id = 'author'>- Steven from TX</span>
+                    <h2>Built for the DIY Property Manager</h2>
+                    <p>We are the premier Rental Management application for landlords with smaller portfolios. We understand what our users need because we are the users too! Join us and never have to worry about losing important contractor info or organizing your list of pending work requests. We take care of all of that for you. Let us make your life easier. </p>
                 </div>
                 </div>
+
                 <div className="footer">
-                    <div> Copyright @ 2018 Casa Connection, LLC </div>
+                    <div className = "testimonial">
+                    <img src = {require('../../assets/customer.png')} alt = 'customer' id = 'cust-img'/>
+                    <blockquote className = 'quote'><i class="fa fa-quote-left" aria-hidden="true"></i> I use Casa Connection for all my management needs. I've never been so happy with a software product in my entire life. It's unbelievable. Who knew life could be this easy? Two thumbs up from me. Thank you Casa Connection!! <i class="fa fa-quote-right" aria-hidden="true"></i></blockquote><span id = 'author'>- Steven from TX</span>
+                </div>
+                    <div className="copy-right"> Copyright @ 2018 Casa Connection, LLC </div>
                 </div>
             </div>
         )

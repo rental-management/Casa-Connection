@@ -295,11 +295,16 @@
 
     .requests {
         width: 75%;
+        margin-left: 32px;
         margin-bottom: 10px;
         display: flex;
         flex-direction: row-reverse;
         align-items: center;
         padding: 10px;
+    }
+
+    .workorder-title {
+       color: $header-color;
     }
 
     .requests > div:nth-child(1) {

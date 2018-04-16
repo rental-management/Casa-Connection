@@ -30,6 +30,10 @@
     font-weight: bold;
 }
 
+.properties-name:hover {
+    color: #ff3776;
+}
+
 .delete-prop-btn {
     color: #149ddc;
     cursor: pointer;
@@ -64,6 +68,10 @@
     width: 100%;
 }
 
+.properties-img:hover {
+    width: 105%;
+    transition: .4s ease;
+}
 
 // media queries 
 
