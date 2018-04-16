@@ -107,24 +107,30 @@ body {
 
 .third-container {
   width: 100%;
-  height: auto;
   background: white;
-  margin: 100px 0 100px 0;
-  padding: 10px; }
+  margin: 100px 0 60px 0;
+  padding-top: 15px;
+  box-shadow: 0 10px 22px 0 rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center; }
 
 .third-container > h2 {
-  font-size: 26px;
+  font-size: 30px;
   color: #3799d6;
-  margin: 1em;
-  font-family: "Roboto", sans-serif; }
+  margin-bottom: 0px;
+  font-family: "Roboto", sans-serif;
+  text-align: center; }
 
 .third-container > p {
   font-size: 20px;
   color: #686868;
-  margin: 3em;
   text-align: left;
-  line-height: 25px;
-  font-family: "Lato", sans-serif; }
+  line-height: 36px;
+  font-family: "Lato", sans-serif;
+  width: 60%; }
 
 .testimonial {
   width: 100%;
@@ -135,21 +141,23 @@ body {
   height: 125px;
   width: 125px;
   display: block;
-  float: left; }
+  float: left;
+  margin-top: 10px; }
 
 .quote {
-  font-size: 16px;
-  color: #686868;
-  text-align: right; }
+  font-size: 18px;
+  color: white;
+  text-align: left; }
 
 #author {
-  color: #686868;
+  color: white;
   font-size: 20px; }
 
 .footer {
   background: #009be0;
-  height: 15vh;
+  height: 75vh;
   position: relative;
+  clip-path: polygon(0 25%, 100% 0, 100% 100%, 0% 100%);
   display: flex;
   justify-content: center; }
 
@@ -183,7 +191,19 @@ body {
     padding: 12px 55px 12px 55px;
     font-size: 16px;
     width: 250px;
-    margin-top: 10px; } }
+    margin-top: 10px; }
+
+  .copy-right {
+    display: none; }
+
+  .third-container {
+    padding: 20px 0px 10px 0px; }
+    .third-container h2 {
+      width: 70%;
+      padding-bottom: 10px; }
+
+  .third-container > p {
+    text-align: center; } }
 @media only screen and (max-width: 520px) {
   .logo {
     height: 7vh;
@@ -367,7 +387,7 @@ body {
 
 .properties-img:hover {
   width: 105%;
-  transition: 1s ease; }
+  transition: .4s ease; }
 
 @media only screen and (max-width: 500px) {
   .properties-img {
@@ -882,6 +902,30 @@ p span a {
   display: block;
   line-height: 25px; }
 
+@media only screen and (max-width: 1000px) {
+  .contact-container {
+    width: 620px;
+    height: 60vh;
+    margin: 0 auto; } }
+@media only screen and (max-width: 725px) {
+  .contact-container {
+    width: 410px;
+    height: 40vh; } }
+@media only screen and (max-width: 500px) {
+  .contact-container {
+    width: 260px;
+    height: 26vh;
+    margin-top: 90px; }
+
+  .contact {
+    color: black;
+    margin: auto;
+    font-weight: 200;
+    font-size: 2em;
+    line-height: 20px; }
+
+  .contact-form {
+    margin-top: 30px; } }
 .started-btn {
   background-color: white;
   padding: 12px 60px 12px 60px;
