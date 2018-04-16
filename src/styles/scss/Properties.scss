@@ -53,9 +53,15 @@
     margin: 10px;
 }
 
+.crop-properties-img {
+    width: 380px;
+    height: 230px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
 .properties-img {
-    width: 360px;
-    padding-bottom: 20px;
+    width: 100%;
 }
 
 
