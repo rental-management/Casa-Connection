@@ -83,13 +83,8 @@ class TotalExpensesChart extends Component {
                     ],
                   
                     backgroundColor: [
-                      "rgba(255, 99, 132, 0.5)",
-                      "rgba(54, 162, 235, 0.5)",
-                      "rgba(255, 206, 86, 0.5)",
-                      "rgba(75, 192, 192, 0.5)",
-                      "rgba(153, 102, 255, 0.5)",
-                      "rgba(255, 159, 64, 0.5)",
-                      "rgba(155, 99, 132, 0.5)"
+                      "#42BAB6", "#4BA6B6","#5C92AE",
+                      "#00d8d6","#6C7D9F", "#76698B","#785673"
                     ],
                     borderWidth: 1,
                     borderColor: '#777',
