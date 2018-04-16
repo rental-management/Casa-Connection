@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import FontAwesome from 'react-fontawesome';
 
 import Login from '../Login/Login';
+import GetStarted from '../GetStarted/GetStarted';
 
 class SplashLanding extends Component {
     render() {
@@ -19,7 +20,7 @@ class SplashLanding extends Component {
                         <div>
                             <h2> Simplify Your Renting Routine </h2>
                             <p> The ultimate property management solution to manage your properties with ease and build a better business.  </p>
-                            <button className="started-btn"> GET STARTED </button>
+                            <GetStarted />
                         </div>
                     </div>
                 </div>

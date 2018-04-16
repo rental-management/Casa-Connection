@@ -77,21 +77,6 @@ body {
     font-family: "Lato", sans-serif;
     letter-spacing: 1px; }
 
-.started-btn {
-  background-color: white;
-  padding: 12px 60px 12px 60px;
-  color: #4c4c4b;
-  cursor: pointer;
-  border-radius: 10px;
-  font-size: 18px;
-  width: 300px;
-  margin-top: 10px; }
-
-.started-btn:hover {
-  transition: background-color .2s ease;
-  background: #ff3776;
-  color: white; }
-
 .second-container {
   display: flex;
   flex-direction: row;
@@ -309,9 +294,14 @@ body {
   box-shadow: 0 12px 22px 0 rgba(0, 0, 0, 0.15);
   margin: 10px; }
 
+.crop-properties-img {
+  width: 380px;
+  height: 230px;
+  overflow: hidden;
+  margin-bottom: 20px; }
+
 .properties-img {
-  width: 360px;
-  padding-bottom: 20px; }
+  width: 100%; }
 
 @media only screen and (max-width: 500px) {
   .properties-img {
@@ -345,18 +335,18 @@ body {
   justify-content: center; }
 
 .tenant-container {
-  width: 620px;
+  width: 600px;
   height: 430px;
   display: flex;
-  margin-top: 82px;
   justify-content: center;
   flex-direction: column;
+  margin-top: 80px;
   background: white;
   border-radius: 4px;
   box-shadow: 0 10px 22px 0 rgba(0, 0, 0, 0.15); }
 
 .expenses-container {
-  width: 620px;
+  width: 600px;
   display: flex;
   margin-top: 50px;
   justify-content: center;
@@ -366,7 +356,7 @@ body {
   box-shadow: 0 10px 22px 0 rgba(0, 0, 0, 0.15); }
 
 .work-orders-container {
-  width: 620px;
+  width: 600px;
   display: flex;
   margin-top: 50px;
   background: white;
@@ -380,9 +370,13 @@ body {
   text-align: left;
   color: #3799d6; }
 
+.crop-property-img {
+  width: 620px;
+  height: 430px;
+  overflow: hidden; }
+
 .single-property-photo {
-  max-width: 620px;
-  max-height: auto;
+  height: 100%;
   box-shadow: 0 10px 22px 0 rgba(0, 0, 0, 0.15); }
 
 .address {
@@ -390,7 +384,7 @@ body {
   color: #686868;
   font-weight: bold;
   font-size: 20px;
-  margin-top: 15px; }
+  margin-top: 10px; }
 
 .tenant-header {
   font-family: "Roboto", sans-serif;
@@ -439,14 +433,16 @@ body {
   border-radius: 4px;
   box-shadow: 0 10px 22px 0 rgba(0, 0, 0, 0.15);
   width: 80%;
-  margin-bottom: 10px;
-  margin-left: 40px;
-  padding: 20px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+  margin-left: 63px;
+  margin-bottom: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
   font-family: "Lato", sans-serif;
   color: #686868; }
+
+.requests > div:nth-child(1) {
+  float: right;
+  margin-right: 20px; }
 
 .save-btn {
   text-align: center;
@@ -461,16 +457,39 @@ body {
 
 @media only screen and (max-width: 1200px) {
   .work-orders-container {
+    padding-bottom: 50px; }
+
+  .property-container {
+    width: 670px; }
+
+  .tenant-container {
+    width: 670px;
+    height: 460px; }
+
+  .expenses-container {
+    width: 670px; }
+
+  .work-orders-container {
+    width: 670px; }
+
+  .single-property-photo {
+    max-width: 670px; } }
+@media only screen and (max-width: 1200px) {
+  .work-orders-container {
     padding-bottom: 50px; } }
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 670px) {
+  .property-tenant-container {
+    align-items: center; }
+
   .property-container {
     width: 300px;
     display: flex;
     justify-content: center; }
 
-  .single-property-photo {
-    width: 300px;
-    box-shadow: 0 10px 22px 0 rgba(0, 0, 0, 0.15); }
+  .crop-property-img {
+    width: 430px;
+    height: 240px;
+    overflow: hidden; }
 
   .breadcrumb {
     font-size: 22px;
@@ -483,7 +502,10 @@ body {
   .tenant-container {
     width: 350px;
     height: 550px;
-    margin-top: 20px; }
+    margin-top: 20px;
+    align-items: center;
+    display: flex;
+    justify-content: center; }
 
   .expenses-container {
     width: 350px;
@@ -499,7 +521,13 @@ body {
   .requests {
     width: 75%;
     margin-bottom: 10px;
-    margin-left: 25px; }
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    padding: 10px; }
+
+  .requests > div:nth-child(1) {
+    float: right; }
 
   .save-btn {
     margin-left: 60px; } }
@@ -739,5 +767,24 @@ body {
   background-color: lightgrey;
   border-radius: 20px;
   margin-left: 5%; }
+
+.started-btn {
+  background-color: white;
+  padding: 12px 60px 12px 60px;
+  color: #4c4c4b;
+  cursor: pointer;
+  border-radius: 10px;
+  font-size: 18px;
+  width: 300px;
+  margin-top: 10px; }
+
+.started-btn:hover {
+  transition: background-color .2s ease;
+  background: #ff3776;
+  color: white; }
+
+.get-started {
+  display: flex;
+  justify-content: flex-start; }
 
 /*# sourceMappingURL=index.css.map */
