@@ -107,9 +107,44 @@ body {
 
 .third-container {
   width: 100%;
-  height: 70vh;
+  height: auto;
   background: white;
-  margin: 100px 0 100px 0; }
+  margin: 100px 0 100px 0;
+  padding: 10px; }
+
+.third-container > h2 {
+  font-size: 26px;
+  color: #3799d6;
+  margin: 1em;
+  font-family: "Roboto", sans-serif; }
+
+.third-container > p {
+  font-size: 20px;
+  color: #686868;
+  margin: 3em;
+  text-align: left;
+  line-height: 25px;
+  font-family: "Lato", sans-serif; }
+
+.testimonial {
+  width: 100%;
+  height: auto;
+  line-height: 25px; }
+
+#cust-img {
+  height: 125px;
+  width: 125px;
+  display: block;
+  float: left; }
+
+.quote {
+  font-size: 16px;
+  color: #686868;
+  text-align: right; }
+
+#author {
+  color: #686868;
+  font-size: 20px; }
 
 .footer {
   background: #009be0;
@@ -201,6 +236,30 @@ body {
     font-size: 16px;
     width: 250px;
     margin-top: 10px; } }
+@media only screen and (min-width: 573px) {
+  .testimonial {
+    margin: 0 auto;
+    width: 60%;
+    height: 300px;
+    font-size: 20px; } }
+@media only screen and (min-width: 1050px) {
+  .testimonial {
+    font-size: 2em; }
+
+  #cust-img {
+    height: 175px;
+    width: 175px; }
+
+  .third-container > p {
+    margin: 3em 4em; }
+
+  .quote {
+    position: relative;
+    top: 2em; }
+
+  #author {
+    position: relative;
+    top: 2em; } }
 .login-btn {
   background-color: transparent;
   border: 2px solid white;
@@ -455,7 +514,7 @@ body {
     justify-content: center;
     align-items: center; }
 
-@media only screen and (max-width: 1200px) {
+@media only screen and (min-width: 1200px) {
   .work-orders-container {
     padding-bottom: 50px; }
 
@@ -768,7 +827,7 @@ body {
   border-radius: 20px;
   margin-left: 5%; }
 
-#bg-img background: linear-gradient(rgba(231, 206, 233, 0.5) rgba(147, 193, 211, 0.5), rgba(160, 199, 212, 0.6)), url("../../assets/sam-ellis-265276-unsplash.jpg");
+#bg-img {background: linear-gradient(rgba(231, 206, 233, 0.5) rgba(147, 193, 211, 0.5), rgba(160, 199, 212, 0.6)), url("../../assets/sam-ellis-265276-unsplash.jpg");
   background-size: cover;
   width: 100%;
   height: 90vh;
@@ -788,7 +847,8 @@ body {
   border-radius: 4px;
   box-shadow: 0 10px 22px 0 rgba(0, 0, 0, 0.15);
   margin-top: 7%;
-  -webkit-clip-path: inset(8% 0% 15% 0% round 15% 15% 0 15%); }
+  -webkit-clip-path: inset(8% 0% 15% 0% round 15% 15% 0 15%);
+ }
 
 .main-container {
   display: flex;
