@@ -1,21 +1,21 @@
 /*
 Error: Undefined variable: "$body".
-        on line 12 of src/styles/scss/WorkOrders.scss
+        on line 23 of src/styles/scss/WorkOrders.scss
 
-7:     justify-content: space-between;
-8:     padding: 8px 30px 8px 40px;
-9:     border-radius: 4px;
-10:     background: white;
-11:     color: #4c4c4b;
-12:     font-family: $body;
-13:     box-shadow: 0 12px 22px 0 rgba(0,0,0,.15);
-14: }
-15: 
-16: .type {
-17:     font-family: $body;
+18:     justify-content: space-between;
+19:     padding: 8px 30px 8px 40px;
+20:     border-radius: 4px;
+21:     background: white;
+22:     color: #4c4c4b;
+23:     font-family: $body;
+24:     box-shadow: 0 12px 22px 0 rgba(0,0,0,.15);
+25: }
+26: 
+27: .work-order-container:hover {   
+28:     animation: 1s ease-in-out 0s 1 moveUp;   
 
 Backtrace:
-src/styles/scss/WorkOrders.scss:12
+src/styles/scss/WorkOrders.scss:23
 /Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/script/tree/variable.rb:49:in `_perform'
 /Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/script/tree/node.rb:50:in `perform'
 /Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/tree/visitors/perform.rb:402:in `visit_prop'
@@ -55,17 +55,18 @@ src/styles/scss/WorkOrders.scss:12
 /Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
 /Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/plugin/compiler.rb:209:in `each'
 /Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/plugin/compiler.rb:294:in `watch'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/plugin.rb:109:in `method_missing'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/exec/sass_scss.rb:360:in `watch_or_update'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/exec/sass_scss.rb:51:in `process_result'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/exec/base.rb:52:in `parse'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/exec/base.rb:19:in `parse!'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/bin/sass:13:in `<top (required)>'
-/usr/local/bin/sass:22:in `load'
-/usr/local/bin/sass:22:in `<main>'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/plugin/compiler.rb:443:in `on_file_changed'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/plugin/compiler.rb:320:in `block in watch'
+/Library/Ruby/Gems/2.3.0/gems/sass-listen-4.0.0/lib/sass-listen/event/config.rb:23:in `call'
+/Library/Ruby/Gems/2.3.0/gems/sass-listen-4.0.0/lib/sass-listen/event/processor.rb:115:in `_process_changes'
+/Library/Ruby/Gems/2.3.0/gems/sass-listen-4.0.0/lib/sass-listen/event/processor.rb:19:in `block in loop_for'
+/Library/Ruby/Gems/2.3.0/gems/sass-listen-4.0.0/lib/sass-listen/event/processor.rb:15:in `loop'
+/Library/Ruby/Gems/2.3.0/gems/sass-listen-4.0.0/lib/sass-listen/event/processor.rb:15:in `loop_for'
+/Library/Ruby/Gems/2.3.0/gems/sass-listen-4.0.0/lib/sass-listen/event/loop.rb:84:in `_wait_for_changes'
+/Library/Ruby/Gems/2.3.0/gems/sass-listen-4.0.0/lib/sass-listen/event/loop.rb:42:in `block in setup'
+/Library/Ruby/Gems/2.3.0/gems/sass-listen-4.0.0/lib/sass-listen/internals/thread_pool.rb:6:in `block in add'
 */
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$body\".\A         on line 12 of src/styles/scss/WorkOrders.scss\A \A 7:     justify-content: space-between;\A 8:     padding: 8px 30px 8px 40px;\A 9:     border-radius: 4px;\A 10:     background: white;\A 11:     color: #4c4c4b;\A 12:     font-family: $body;\A 13:     box-shadow: 0 12px 22px 0 rgba(0,0,0,.15);\A 14: }\A 15: \A 16: .type {\A 17:     font-family: $body;"; }
+  content: "Error: Undefined variable: \"$body\".\A         on line 23 of src/styles/scss/WorkOrders.scss\A \A 18:     justify-content: space-between;\A 19:     padding: 8px 30px 8px 40px;\A 20:     border-radius: 4px;\A 21:     background: white;\A 22:     color: #4c4c4b;\A 23:     font-family: $body;\A 24:     box-shadow: 0 12px 22px 0 rgba(0,0,0,.15);\A 25: }\A 26: \A 27: .work-order-container:hover {   \A 28:     animation: 1s ease-in-out 0s 1 moveUp;   "; }

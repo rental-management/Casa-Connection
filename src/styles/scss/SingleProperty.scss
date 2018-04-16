@@ -1,3 +1,23 @@
+//keyframes for slide animations
+@keyframes slideFromLeft {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideFromRight {
+    0% {
+        transform: translateX(200%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+
 // container holding 4 sub containers 
 .property-tenant-container {
     display: flex;
@@ -12,6 +32,8 @@
     width: 620px;
     display: flex;
     justify-content: center;
+    
+
 }
 
 .tenant-container {
@@ -24,6 +46,7 @@
     background: white;
     border-radius: 4px;
     box-shadow: 0 10px 22px 0 rgba(0,0,0,.15);
+    
 }
 
 .expenses-container {
@@ -34,6 +57,7 @@
     flex-direction: column;background: white;
     border-radius: 4px;
     box-shadow: 0 10px 22px 0 rgba(0,0,0,.15);
+    
 }
 
 .work-orders-container {
@@ -44,6 +68,7 @@
     border-radius: 4px;
     box-shadow: 0 10px 22px 0 rgba(0,0,0,.15);
     flex-direction: column;
+    
 }
 
 // breadcrumb, property photo, address styling
@@ -159,6 +184,24 @@
         align-items: center;
     }
 }
+
+@media only screen and (min-width: 450px){
+    .property-container {
+        animation: 1s ease-out 0s 1 slideFromLeft;
+
+    }
+    .tenant-container {
+        animation: 1s ease-out 0s 1 slideFromRight;
+    }
+    .expenses-container{
+        animation: 1s ease-out 0s 1 slideFromLeft;
+    }
+    .work-orders-container {
+        animation: 1s ease-out 0s 1 slideFromRight;
+    }
+}
+
+
 
 @media only screen and(min-width: 1200px) {
     .work-orders-container {
