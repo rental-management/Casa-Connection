@@ -223,7 +223,7 @@ class SingleProperty extends Component {
                 <div className="requests" >
                   <div onClick={() => this.handleOrderDelete(curr.workorders_id, curr.prop_id)}> <FontAwesome size='2x' style={{ color: '#686868', }} className="far fa-times-circle" name = "button"/> </div>
                    <div >
-                    <span>{curr.type.toUpperCase()}</span>
+                    <span className="workorder-title">{curr.type.toUpperCase()}</span>
                     <br />
                     <span>{curr.memo}</span>
                    </div>

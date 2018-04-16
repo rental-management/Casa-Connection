@@ -455,7 +455,7 @@ body {
     justify-content: center;
     align-items: center; }
 
-@media only screen and (max-width: 1200px) {
+@media only screen and (min-width: 1200px) {
   .work-orders-container {
     padding-bottom: 50px; }
 
@@ -520,11 +520,15 @@ body {
 
   .requests {
     width: 75%;
+    margin-left: 32px;
     margin-bottom: 10px;
     display: flex;
     flex-direction: row-reverse;
     align-items: center;
     padding: 10px; }
+
+  .workorder-title {
+    color: #3799d6; }
 
   .requests > div:nth-child(1) {
     float: right; }
