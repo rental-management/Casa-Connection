@@ -160,11 +160,6 @@
     }
 }
 
-// .two-charts {
-//     display: flex;
-//     flex-wrap: wrap;
-// }
-
 @media only screen and(min-width: 1200px) {
     .work-orders-container {
         padding-bottom: 50px;
@@ -257,11 +252,16 @@
 
     .requests {
         width: 75%;
+        margin-left: 32px;
         margin-bottom: 10px;
         display: flex;
         flex-direction: row-reverse;
         align-items: center;
         padding: 10px;
+    }
+
+    .workorder-title {
+       color: $header-color;
     }
 
     .requests > div:nth-child(1) {

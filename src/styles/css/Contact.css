@@ -42,4 +42,29 @@ p span a {
   display: block;
   line-height: 25px; }
 
+@media only screen and (max-width: 1000px) {
+  .contact-container {
+    width: 620px;
+    height: 60vh;
+    margin: 0 auto; } }
+@media only screen and (max-width: 725px) {
+  .contact-container {
+    width: 410px;
+    height: 40vh; } }
+@media only screen and (max-width: 500px) {
+  .contact-container {
+    width: 260px;
+    height: 26vh;
+    margin-top: 90px; }
+
+  .contact {
+    color: black;
+    margin: auto;
+    font-weight: 200;
+    font-size: 2em;
+    line-height: 20px; }
+
+  .contact-form {
+    margin-top: 30px; } }
+
 /*# sourceMappingURL=Contact.css.map */
