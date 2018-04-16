@@ -230,16 +230,16 @@ body {
     margin-left: 45%; } }
 @media only screen and (max-width: 1115px) {
   .full-screen-menu {
-    margin-left: 38%; } }
+    margin-left: 35%; } }
 @media only screen and (max-width: 990px) {
   .full-screen-menu {
-    margin-left: 30%; } }
+    margin-left: 28%; } }
 @media only screen and (max-width: 880px) {
   .full-screen-menu {
-    margin-left: 25%; } }
+    margin-left: 22%; } }
 @media only screen and (max-width: 799px) {
   .full-screen-menu {
-    margin-left: 18%; } }
+    margin-left: 13%; } }
 @media only screen and (max-width: 750px) {
   .full-screen-menu {
     display: none; } }
@@ -274,6 +274,9 @@ body {
   padding-bottom: 5px;
   font-weight: bold; }
 
+.properties-name:hover {
+  color: #ff3776; }
+
 .delete-prop-btn {
   color: #149ddc;
   cursor: pointer; }
@@ -302,6 +305,10 @@ body {
 
 .properties-img {
   width: 100%; }
+
+.properties-img:hover {
+  width: 105%;
+  transition: 1s ease; }
 
 @media only screen and (max-width: 500px) {
   .properties-img {
