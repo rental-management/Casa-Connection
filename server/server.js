@@ -14,6 +14,9 @@ const mainCtrl = require("./controllers/mainCtrl");
 //initialize express
 const app = express();
 
+//for production
+app.use(express.static(`${__dirname}/../build`));
+
 // Database Connection //
 massive(CONNECTION_STRING)
   .then(db => {
@@ -57,11 +60,10 @@ passport.use(
         (accessToken, refreshToken, extraParams, profile, done) => {
             app.get('db').getUserByAuthId([profile.id]).then(response => {
                 if(!response[0]){
-                    // console.log(profile);
+                    
                     app.get('db').createUser([profile.id, profile.name.givenName, profile.name.familyName]).then(createdUser => done(null, createdUser[0]));
                 } else {
-                    // console.log(profile);
-
+                    
                     return done(null, response[0]);
                 }
             });
@@ -103,6 +105,11 @@ app.put('/edittenant', mainCtrl.editTenant);
 app.get('/allworkorders', mainCtrl.getAllWorkOrders);
 app.put('/editexpenses', mainCtrl.editExpenses);
 
+//for hosting
+const path = require("path");
+app.get("*", (req,res) => {
+    res.sendFile(path.join(__dirname, '../build/index.html'));
+})
 
 //server setup 
 app.listen(port, () => {
