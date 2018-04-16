@@ -381,6 +381,16 @@ body {
       margin-bottom: 20px; }
       .properties-header div svg {
         margin-left: 15px; } }
+@keyframes slideFromLeft {
+  0% {
+    transform: translateX(-100%); }
+  100% {
+    transform: translateX(0); } }
+@keyframes slideFromRight {
+  0% {
+    transform: translateX(200%); }
+  100% {
+    transform: translateX(0); } }
 .property-tenant-container {
   display: flex;
   flex-wrap: wrap;
@@ -514,6 +524,18 @@ body {
     justify-content: center;
     align-items: center; }
 
+@media only screen and (min-width: 450px) {
+  .property-container {
+    animation: 1s ease-out 0s 1 slideFromLeft; }
+
+  .tenant-container {
+    animation: 1s ease-out 0s 1 slideFromRight; }
+
+  .expenses-container {
+    animation: 1s ease-out 0s 1 slideFromLeft; }
+
+  .work-orders-container {
+    animation: 1s ease-out 0s 1 slideFromRight; } }
 @media only screen and (min-width: 1200px) {
   .work-orders-container {
     padding-bottom: 50px; }
@@ -678,6 +700,11 @@ body {
       margin-bottom: 20px; }
       .contractors-header div svg {
         margin-left: 16px; } }
+@keyframes moveUp {
+  0% {
+    transform: translateY(-10px); }
+  100% {
+    transform: translateY(-10px); } }
 .work-order-container {
   display: flex;
   flex-direction: row;
@@ -691,6 +718,9 @@ body {
   color: #4c4c4b;
   font-family: "Lato", sans-serif;
   box-shadow: 0 12px 22px 0 rgba(0, 0, 0, 0.15); }
+
+.work-order-container:hover {
+  animation: 1s ease-in-out 0s 1 moveUp; }
 
 .type {
   font-family: "Lato", sans-serif;
@@ -827,7 +857,8 @@ body {
   border-radius: 20px;
   margin-left: 5%; }
 
-#bg-img {background: linear-gradient(rgba(231, 206, 233, 0.5) rgba(147, 193, 211, 0.5), rgba(160, 199, 212, 0.6)), url("../../assets/sam-ellis-265276-unsplash.jpg");
+#bg-img {
+  background: linear-gradient(rgba(231, 206, 233, 0.5) rgba(147, 193, 211, 0.5), rgba(160, 199, 212, 0.6)), url("../../assets/sam-ellis-265276-unsplash.jpg");
   background-size: cover;
   width: 100%;
   height: 90vh;
@@ -847,8 +878,7 @@ body {
   border-radius: 4px;
   box-shadow: 0 10px 22px 0 rgba(0, 0, 0, 0.15);
   margin-top: 7%;
-  -webkit-clip-path: inset(8% 0% 15% 0% round 15% 15% 0 15%);
- }
+  -webkit-clip-path: inset(8% 0% 15% 0% round 15% 15% 0 15%); }
 
 .main-container {
   display: flex;
@@ -870,6 +900,7 @@ body {
 p span a {
   display: block;
   line-height: 25px; }
+
 .started-btn {
   background-color: white;
   padding: 12px 60px 12px 60px;
