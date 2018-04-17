@@ -1,18 +1,18 @@
 /*
 Error: Undefined variable: "$header".
-        on line 51 of src/styles/scss/SingleProperty.scss
+        on line 76 of src/styles/scss/SingleProperty.scss
 
-46:     flex-direction: column;
-47: }
-48: 
-49: // breadcrumb, property photo, address styling
-50: .breadcrumb {
-51:     font-family: $header;
-52:     font-size: 26px;
-53:     text-align: left;
-54:     color: #3799d6;  
-55: }
-56: 
+71:     
+72: }
+73: 
+74: // breadcrumb, property photo, address styling
+75: .breadcrumb {
+76:     font-family: $header;
+77:     font-size: 26px;
+78:     text-align: left;
+79:     color: #3799d6;  
+80: }
+81: 
 
 Backtrace:
 src/styles/scss/SingleProperty.scss:51
@@ -71,4 +71,4 @@ src/styles/scss/SingleProperty.scss:51
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$header\".\A         on line 51 of src/styles/scss/SingleProperty.scss\A \A 46:     flex-direction: column;\A 47: }\A 48: \A 49: // breadcrumb, property photo, address styling\A 50: .breadcrumb {\A 51:     font-family: $header;\A 52:     font-size: 26px;\A 53:     text-align: left;\A 54:     color: #3799d6;  \A 55: }\A 56: "; }
+  content: "Error: Undefined variable: \"$header\".\A         on line 76 of src/styles/scss/SingleProperty.scss\A \A 71:     \A 72: }\A 73: \A 74: // breadcrumb, property photo, address styling\A 75: .breadcrumb {\A 76:     font-family: $header;\A 77:     font-size: 26px;\A 78:     text-align: left;\A 79:     color: #3799d6;  \A 80: }\A 81: "; }

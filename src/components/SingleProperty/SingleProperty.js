@@ -53,9 +53,9 @@ class SingleProperty extends Component {
             this.props.getWorkOrders(id);
             this.props.getExpensesById(id);
             this.props.getTenant(id)
-              console.log(res);
+         
               let data = this.props.properties.property[0];   
-              console.log("data: ", data);       
+                  
               this.setState({
                 fName: data.t_f_name,
                 lName: data.t_l_name,
