@@ -80,7 +80,7 @@ passport.deserializeUser((user, done) => done(null, user));
 
 //auth endpoint
 app.get('/auth', passport.authenticate('auth0', {
-    successRedirect: "http://localhost:3000/#/properties",
+    successRedirect: "/#/properties",
     failureRedirect: "/auth",
     failureFlash: true
 })

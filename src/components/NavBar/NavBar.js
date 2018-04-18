@@ -46,8 +46,6 @@ class NavBar extends Component {
       }
   })
 
-
-
     return (
       <div>
 
