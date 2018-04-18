@@ -5,7 +5,8 @@
   color: white;
   cursor: pointer;
   border-radius: 12%;
-  font-size: 15px; }
+  font-size: 15px;
+  outline: 0; }
 
 .login-btn:hover {
   background: white;
