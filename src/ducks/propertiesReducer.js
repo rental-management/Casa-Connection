@@ -14,6 +14,8 @@ const GET_TENANT = "GET_TENANT";
 const EDIT_TENANT = "EDIT_TENANT";
 const EDIT_EXPENSES = "EDIT_EXPENSES";
 const GET_ALL_WORK_ORDERS = "GET_ALL_WORK_ORDERS";
+const DELETE_ALL_WO_BY_PROP = "DELETE_ALL_WO_BY_PROP";
+
 
 
 // STATE //
@@ -37,7 +39,7 @@ export function getProperties() {
     payload: axios
       .get("/properties")
       .then(response => {
-        console.log(response, "get properties");
+   
         return response.data;
       })
       .catch(console.log)
@@ -76,7 +78,7 @@ export function addProperty(
         emerg_contact_phone: emergNum
       })
       .then(response => {
-        console.log("add property action creator", response);
+     
         return response.data;
       })
       .catch(err => {
@@ -93,7 +95,7 @@ export function getProperty(id) {
         id: id
       })
       .then(response => {
-        console.log(response, "getProperty");
+     
         return response.data;
       })
       .catch(console.log)
@@ -249,9 +251,21 @@ export function getAllWorkOrders() {
   return {
     type: GET_ALL_WORK_ORDERS,
     payload: axios.get("/allworkorders").then(res => {
-      console.log(res.data, "all reducer")
+     
       return res.data;
     })
+  };
+}
+
+//deletes all work orders by property id -- not the same as deleting by work order. This is fn is necessary to allow us to delete properties because we have to delete all WO associated with that property first.
+export function deleteAllWOByProp(id) {
+  return {
+    type: DELETE_ALL_WO_BY_PROP,
+    payload: axios
+      .delete("/deleteallwobyprop", { data: { id: id } })
+      .then(res => {
+        return res.data;
+      })
   };
 }
 
@@ -264,7 +278,7 @@ export default function reducer(state = initialState, action) {
       return Object.assign({}, state, { isLoading: true });
 
     case `${GET_PROPERTIES}_FULFILLED`:
-      console.log(action.payload);
+    
       return Object.assign({}, state, {
         isLoading: false,
         properties: action.payload
@@ -299,7 +313,7 @@ export default function reducer(state = initialState, action) {
       return Object.assign({}, state, { isLoading: true });
 
     case `${GET_PROPERTY}_FULFILLED`:
-      console.log(action.payload, "get prop full");
+     
       return Object.assign({}, state, {
         isLoading: false,
         property: action.payload
@@ -478,6 +492,18 @@ export default function reducer(state = initialState, action) {
         didErr: true,
         errMessage: action.payload
       });
+
+    //DELETE ALL WORK ORDERS BY PROP
+    case `${DELETE_ALL_WO_BY_PROP}_PENDING`:
+    console.log('pending action: ', action.payload);
+      return Object.assign({}, state, {isLoading: true});
+
+    case `${DELETE_ALL_WO_BY_PROP}_FULFILLED`:
+      return Object.assign({}, state, {isLoading: false, workOrders: action.payload});
+    
+    case `${DELETE_ALL_WO_BY_PROP}_REJECTED`:
+    console.log('rejected action: ', action.payload);
+      return Object.assign({}, state, {isLoading: false, didErr: true, errMessage: action.payload});
 
     default:
       return state;

@@ -6,12 +6,14 @@ const GET_CONTRACTORS = 'GET_CONTRACTORS';
 const ADD_CONTRACTOR = 'ADD_CONTRACTOR';
 const DELETE_CONTRACTOR = 'DELETE_CONTRACTOR';
 const EDIT_CONTRACTOR = 'EDIT_CONTRACTOR';
+const DELETE_CONTRACTORS_BY_PROP = "DELETE_CONTRACTORS_BY_PROP";
 
 
 //STATE
 
 const initialState = {
     contractors: [],
+    deletedContractors: [],
     isLoading: false,
     didErr: false,
     errMessage: null
@@ -48,7 +50,7 @@ export function addContractor(propName, compName, type, firstName, lastName, pho
                 state: state,
                 zip: zip,
             }).then(response => {
-                console.log(response, "action creator add cont")
+               
                 return response.data
             }).catch(console.log)
     }
@@ -84,11 +86,25 @@ export function editContractor(fName, lName, phone, email, street, city, state, 
     }
 }
 
+export function deleteContractorsByProp(propName){
+    return {
+        type: DELETE_CONTRACTORS_BY_PROP,
+        payload: axios.delete('/deletecontractorsbyprop', {
+            data : {
+                name: propName
+            }
+        })
+
+    }
+
+
+}
+
 
 //REDUCER
 
 export default function reducer(state = initialState, action) {
-    console.log(action.type)
+
     switch(action.type) {
         //GET CONTRACTORS
         case `${GET_CONTRACTORS}_PENDING`:
@@ -105,7 +121,7 @@ export default function reducer(state = initialState, action) {
             return Object.assign({}, state, { isLoading: true});
         
         case `${ADD_CONTRACTOR}_FULFILLED`:
-        console.log(action.payload);
+        
             return Object.assign({}, state, { isLoading: false, contractors: action.payload });
 
         case `${ADD_CONTRACTOR}_REJECTED`:
@@ -127,13 +143,22 @@ export default function reducer(state = initialState, action) {
             return Object.assign({}, state, { isLoading: true});
         
         case `${EDIT_CONTRACTOR}_FULFILLED`:
-        console.log(action.payload);
             return Object.assign({}, state, { isLoading: false, contractors: action.payload });
 
         case `${EDIT_CONTRACTOR}_REJECTED`:
             return Object.assign({}, state, { isLoading: false, didErr: true, errMessage: action.payload });
 
-    default : return state;
+        //DELETES CONTRACTOR BY PROPERTY ID
+        case `${DELETE_CONTRACTORS_BY_PROP}_PENDING`:
+            return Object.assign({}, state, {isLoading: true});
+
+        case `${DELETE_CONTRACTORS_BY_PROP}_FULFILLED`:
+            return Object.assign({}, state, {isLoading: false, deletedContractors: action.payload});
+        
+        case `${DELETE_CONTRACTORS_BY_PROP}_REJECTED`:
+            return Object.assign({}, state, {isLoading: false, didErr: true, errMessage: action.payload});
+
+    default: return state;
 
     }
 }

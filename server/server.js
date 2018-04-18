@@ -104,6 +104,8 @@ app.put('/editcontractor', mainCtrl.editContractor);
 app.put('/edittenant', mainCtrl.editTenant);
 app.get('/allworkorders', mainCtrl.getAllWorkOrders);
 app.put('/editexpenses', mainCtrl.editExpenses);
+app.delete('/deleteallwobyprop', mainCtrl.deleteAllWOByProp);
+app.delete('/deletecontractorsbyprop', mainCtrl.deleteContractorsByProp);
 
 //for hosting
 const path = require("path");
