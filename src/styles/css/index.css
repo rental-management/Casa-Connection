@@ -384,7 +384,8 @@ body {
   margin-bottom: 20px; }
 
 .properties-img {
-  width: 100%; }
+  width: 100%;
+  overflow: hidden; }
 
 .properties-img:hover {
   width: 105%;
