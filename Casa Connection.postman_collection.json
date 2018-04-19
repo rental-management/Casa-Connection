@@ -1,0 +1,299 @@
+{
+	"info": {
+		"name": "Casa Connection",
+		"_postman_id": "9e822049-f314-500f-c99b-2c92766c892f",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:3002/property/110",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "38f500c0-a944-4895-b32f-076a89a16861",
+						"type": "text/javascript",
+						"exec": [
+							"const responseJSON = pm.response.json();",
+							"",
+							"pm.test(\"Status code is 200\", function () {",
+							"   pm.response.to.have.status(200);",
+							"});",
+							"",
+							"const propertyName = responseJSON",
+							"",
+							"pm.test('responseJSON is an array', function(){",
+							"",
+							"   pm.expect(Array.isArray(responseJSON)).to.eql(true);",
+							"});",
+							"",
+							"pm.test('zipcode.length is 5', function(){",
+							"   pm.expect(responseJSON[0].zip.length).to.eql(5);",
+							"});",
+							"",
+							"pm.test('returned userID is equal to 9', function(){",
+							"   pm.expect(responseJSON[0].user_id).to.eql(9);",
+							"})",
+							"",
+							"pm.test('returned property ID is equal to 110', function(){",
+							"   pm.expect(responseJSON[0].id).to.eql(110);",
+							"})",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:3002/property/110",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3002",
+					"path": [
+						"property",
+						"110"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3002/property/109",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "1e061895-9348-4985-93e3-96c21880435f",
+						"type": "text/javascript",
+						"exec": [
+							"const responseJSON = pm.response.json();",
+							"",
+							"pm.test(\"Status code is 200\", function () {",
+							"   pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test('Street is 445 Buford Avenue', function(){",
+							"   pm.expect(responseJSON[0].street === '445 Buford Avenue');",
+							"   ",
+							"})",
+							"",
+							"pm.test('property name is less than 40 characters', function(){",
+							"   pm.expect(responseJSON[0].prop_name.length < 40);",
+							"});",
+							"",
+							"pm.test('user id is 9', function(){",
+							"   pm.expect(responseJSON[0].user_id).to.eql(9);",
+							"});",
+							"",
+							"pm.test('img is a string', function(){",
+							"   pm.expect(responseJSON[0].img === typeof String);",
+							"});",
+							"",
+							"",
+							"",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:3002/property/109",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3002",
+					"path": [
+						"property",
+						"109"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3002/property/105",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8711721b-2b25-46ac-bee4-e410f78e8f50",
+						"type": "text/javascript",
+						"exec": [
+							"const responseJSON = pm.response.json();",
+							"",
+							"const expectedObject =  {",
+							"        \"id\": 105,",
+							"        \"street\": \"425 Wall Street\",",
+							"        \"city\": \"New York\",",
+							"        \"state\": \"Ny\",",
+							"        \"zip\": \"10010\",",
+							"        \"prop_name\": \"SkyView\",",
+							"        \"assessed_value\": \"945454\",",
+							"        \"down_payment\": \"50000\",",
+							"        \"monthly_mortgage\": \"4000\",",
+							"        \"monthly_dues\": \"500\",",
+							"        \"monthly_taxes\": \"6044\",",
+							"        \"monthly_insurance\": \"676\",",
+							"        \"monthly_utilities\": \"540\",",
+							"        \"user_id\": 9,",
+							"        \"img\": \"https://firebasestorage.googleapis.com/v0/b/casa-connect-b4cb7.appspot.com/o/casa%2FScreen%20Shot%202018-04-03%20at%209.44.30%20AM.png?alt=media&token=ba26f88a-2768-45ae-aa26-869ea76302cf\",",
+							"        \"t_f_name\": \"George\",",
+							"        \"t_l_name\": \"LaFavre\",",
+							"        \"t_phone\": \"433-546-7644\",",
+							"        \"t_email\": \"george@qmail.com\",",
+							"        \"emerg_contact_name\": \"Rose LaFavre\",",
+							"        \"emerg_contact_phone\": \"323-546-5674\",",
+							"        \"rent\": \"2200\"",
+							"    };",
+							"",
+							"pm.test('returned data is expected', function(){",
+							"   pm.expect(responseJSON[0]).to.eql( expectedObject );",
+							"});",
+							"",
+							"",
+							"pm.test('expected name is George', function(){",
+							"   pm.expect(responseJSON[0].t_f_name).to.eql( \"George\");",
+							"});",
+							"",
+							"",
+							"pm.test('rent is a number', function(){",
+							"   pm.expect(responseJSON[0].rent === typeof number);",
+							"});",
+							"",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test('property name is SkyView', function(){",
+							"   pm.expect(responseJSON[0].prop_name).to.eql( \"SkyView\");",
+							"});",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:3002/property/105",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3002",
+					"path": [
+						"property",
+						"105"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3002/property/150",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "cdade8f4-f563-4142-8759-4521d3ec481f",
+						"type": "text/javascript",
+						"exec": [
+							"const responseJSON = pm.response.json();",
+							"",
+							"pm.test('invalid id returns empty object', function(){",
+							"   pm.expect(responseJSON[0]).to.eql(undefined);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:3002/property/150",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3002",
+					"path": [
+						"property",
+						"150"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3002/property/82",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "e5f9a0ab-d074-46a8-b6d0-c92cbb63648e",
+						"type": "text/javascript",
+						"exec": [
+							"const responseJSON = pm.response.json();",
+							"",
+							"pm.test('JSON array length of 1', function(){",
+							"   pm.expect(responseJSON.length).to.eql(1);",
+							"});",
+							"",
+							"pm.test('tenant last name is a string', function(){",
+							"   pm.expect(responseJSON[0].t_l_name === typeof string);",
+							"});",
+							"",
+							"pm.test('down_payment is equal to 20', function(){",
+							"   pm.expect(responseJSON[0].down_payment).to.eql(\"20\");",
+							"});",
+							"",
+							"pm.test('length of state to be 2', function(){",
+							"   pm.expect(responseJSON[0].state.length).to.eql(2);",
+							"});",
+							"",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:3002/property/82",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3002",
+					"path": [
+						"property",
+						"82"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
