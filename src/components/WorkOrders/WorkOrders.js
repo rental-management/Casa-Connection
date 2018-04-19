@@ -38,15 +38,14 @@ let textB = b.prop_name.toUpperCase();
 return textA < textB ? -1 : textA > textB ? 1 : 0; 
         }            
     });
-    
-    workOrdersList = workOrderArr.map((curr, index) => {        
-
+    console.log(workOrderArr);
+    workOrdersList = workOrderArr.map((curr, index) => {
         return(
             <div  key = {index}>
             <div className="work-order-container">
-                <h2 className="work-order-prop-name">{curr.prop_name.toUpperCase()}</h2>
+                <h2 className="work-order-prop-name">{curr.prop_name !== undefined ? curr.prop_name.toUpperCase(): curr.prop_name}</h2>
                     <div className="type-memo">
-                        <div className="type"> {curr.type.toUpperCase()}</div>
+                        <div className="type"> {curr.type !== undefined ? curr.type.toUpperCase(): curr.type}</div>
                         <div className="memo"> {curr.memo}</div>
                     </div>
                 <span className="delete-work-order" onClick = {() => {this.handleDelete(curr.workorders_id)}}> <FontAwesome size='1.7x' className="far fa-times-circle" /> </span>
@@ -63,7 +62,7 @@ return textA < textB ? -1 : textA > textB ? 1 : 0;
                <div className="work_orders-container">
                  <h1 className="work-orders"> Work Orders </h1>       
                  <div className="work-orders-list"> 
-                   {workOrdersList} 
+                   {workOrdersList !== undefined ? workOrdersList: null} 
                  </div> 
                </div>   
                <Footer />

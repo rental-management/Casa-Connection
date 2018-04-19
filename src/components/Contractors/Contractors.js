@@ -34,9 +34,7 @@ class Contractors extends Component {
 
     handleExpandChange = (expanded, fName, lName, phone, email, street, city, state, zip, index) => {
         let data = this.props.contractors.contractors[index];
-        console.log(this.props.contractors.contractors[index]);
-        console.log(data, "data");
-        console.log(index, "index")
+   
         this.setState({
             expanded: expanded,
             fName: data.f_name,
@@ -58,7 +56,7 @@ class Contractors extends Component {
     }
 
     handleContractorEdit(fName, lName, phone, email, street, city, state, zip, conId){
-        console.log(conId)
+     
         this.props.editContractor(fName, lName, phone, email, street, city, state, zip, conId).then((res) => {
             this.props.getContractors();
         })
@@ -66,21 +64,16 @@ class Contractors extends Component {
 
     render() {
 
-        // const conStyle = {
-        //     fontFamily: 'Roboto',
-        //     color: '#3799d6'
-
-        // }
 
         const {fName, lName, phone, email, street, city, state, zip} = this.state;
-        console.log(this.state)
+        
         
         const contractorsData = this.props.contractors.contractors;
         let contractorsList;
         if(contractorsData !== undefined && contractorsData.length !== 0) {
             contractorsList = [].concat(contractorsData)
             .map((curr, index) => {
-                console.log(index," map index");
+           
                 return(
                     <div className="individual-contractor" key={index}>
                         <Card style={{ color: 'blue'}} onClick={() => {this.handleExpandChange(this.state.expanded, curr.f_name, curr.l_name, curr.phone, curr.email, curr.street, curr.city, curr.state, curr.zip, index)}}>

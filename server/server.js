@@ -80,7 +80,7 @@ passport.deserializeUser((user, done) => done(null, user));
 
 //auth endpoint
 app.get('/auth', passport.authenticate('auth0', {
-    successRedirect: "http://localhost:3000/#/properties",
+    successRedirect: "/#/properties",
     failureRedirect: "/auth",
     failureFlash: true
 })
@@ -104,6 +104,8 @@ app.put('/editcontractor', mainCtrl.editContractor);
 app.put('/edittenant', mainCtrl.editTenant);
 app.get('/allworkorders', mainCtrl.getAllWorkOrders);
 app.put('/editexpenses', mainCtrl.editExpenses);
+app.delete('/deleteallwobyprop', mainCtrl.deleteAllWOByProp);
+app.delete('/deletecontractorsbyprop', mainCtrl.deleteContractorsByProp);
 
 //for hosting
 const path = require("path");
