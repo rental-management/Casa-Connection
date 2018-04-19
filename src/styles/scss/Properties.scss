@@ -30,6 +30,10 @@
     font-weight: bold;
 }
 
+.properties-name:hover {
+    color: #ff3776;
+}
+
 .delete-prop-btn {
     color: #149ddc;
     cursor: pointer;
@@ -53,11 +57,21 @@
     margin: 10px;
 }
 
-.properties-img {
-    width: 360px;
-    padding-bottom: 20px;
+.crop-properties-img {
+    width: 380px;
+    height: 230px;
+    overflow: hidden;
+    margin-bottom: 20px;
 }
 
+.properties-img {
+    width: 100%;
+}
+
+.properties-img:hover {
+    width: 105%;
+    transition: .4s ease;
+}
 
 // media queries 
 

@@ -46,8 +46,6 @@ class NavBar extends Component {
       }
   })
 
-
-
     return (
       <div>
 
@@ -57,12 +55,13 @@ class NavBar extends Component {
   
   <div className="responsive-menu">
   <MuiThemeProvider muiTheme={muiTheme}>
-  <IconMenu iconButtonElement={<IconButton className="hamburger"> <i className="material-icons">&#xE5D2;</i> </IconButton>}>
+  <IconMenu iconButtonElement={<IconButton className="hamburger" > <i className="material-icons">&#xE5D2;</i> </IconButton>}>
       <MenuItem primaryText = { <Link style={{ color: '#686868' }} to="/properties" > Properties </Link> } />
       <MenuItem primaryText = { <Link style={{ color: '#686868' }} to="/workorders" > Work Orders </Link> } />
       <MenuItem primaryText = { <Link style={{ color: '#686868' }} to="/contractors" > Contractors </Link> } />
-      <MenuItem primaryText = { <Link style={{ color: '#686868' }} to="/financial" > Financial </Link> } />
+      <MenuItem primaryText = { <Link style={{ color: '#686868' }} to="/financial" > Analytics </Link> } />
       <MenuItem primaryText = { <Link style={{ color: '#686868' }} to="/contact" > Contact </Link> } />
+      <MenuItem className = 'item' primaryText = { <Link style={{ color: '#3799d6'}} to = '/'> LOGOUT </Link> } /> 
  </IconMenu>
 </MuiThemeProvider>
  </div>

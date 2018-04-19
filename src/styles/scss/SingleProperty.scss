@@ -1,3 +1,23 @@
+//keyframes for slide animations
+@keyframes slideFromLeft {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideFromRight {
+    0% {
+        transform: translateX(200%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+
 // container holding 4 sub containers 
 .property-tenant-container {
     display: flex;
@@ -5,44 +25,50 @@
     justify-content: center;
     justify-content: space-evenly;
     margin-bottom: 80px;
+    
 }
 
 .property-container {
     width: 620px;
     display: flex;
     justify-content: center;
+    
+
 }
 
 .tenant-container {
-    width: 620px;
+    width: 600px;
     height: 430px;
     display: flex;
-    margin-top: 82px;
     justify-content: center;
     flex-direction: column;
+    margin-top: 80px;
     background: white;
     border-radius: 4px;
     box-shadow: 0 10px 22px 0 rgba(0,0,0,.15);
+    
 }
 
 .expenses-container {
-    width: 620px;
+    width: 600px;
     display: flex;
     margin-top: 50px;
     justify-content: center;
     flex-direction: column;background: white;
     border-radius: 4px;
     box-shadow: 0 10px 22px 0 rgba(0,0,0,.15);
+    
 }
 
 .work-orders-container {
-    width: 620px;
+    width: 600px;
     display: flex;
     margin-top: 50px;
     background: white;
     border-radius: 4px;
     box-shadow: 0 10px 22px 0 rgba(0,0,0,.15);
     flex-direction: column;
+    
 }
 
 // breadcrumb, property photo, address styling
@@ -50,12 +76,17 @@
     font-family: $header;
     font-size: 26px;
     text-align: left;
-    color: #3799d6;
-    
+    color: #3799d6;  
 }
+
+.crop-property-img {
+    width: 620px;
+    height: 430px;
+    overflow: hidden;
+}
+
 .single-property-photo {
-    max-width: 620px;
-    max-height: auto;
+    height: 100%;
     box-shadow: 0 10px 22px 0 rgba(0,0,0,.15);
 }
 
@@ -64,7 +95,7 @@
     color: $gray;
     font-weight: bold;
     font-size: 20px;
-    margin-top: 15px;
+    margin-top: 10px;
 }
 
 // tenant container styling 
@@ -127,14 +158,17 @@
     border-radius: 4px;
     box-shadow: 0 10px 22px 0 rgba(0,0,0,.15);
     width: 80%;
-    margin-bottom: 10px;
-    margin-left: 40px;
-    padding: 20px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+    margin-left: 63px;
+    margin-bottom: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
     font-family: $body;
     color: $gray;
+}
+
+.requests > div:nth-child(1) {
+        float: right;
+        margin-right: 20px;
 }
 
 // save btns 
@@ -151,13 +185,64 @@
     }
 }
 
+@media only screen and (min-width: 450px){
+    .property-container {
+        animation: 1s ease-out 0s 1 slideFromLeft;
+
+    }
+    .tenant-container {
+        animation: 1s ease-out 0s 1 slideFromRight;
+    }
+    .expenses-container{
+        animation: 1s ease-out 0s 1 slideFromLeft;
+    }
+    .work-orders-container {
+        animation: 1s ease-out 0s 1 slideFromRight;
+    }
+}
+
+
+
+@media only screen and(min-width: 1200px) {
+    .work-orders-container {
+        padding-bottom: 50px;
+    }
+
+    .property-container {
+        width: 670px;
+    }
+    
+    .tenant-container {
+        width: 670px;
+        height: 460px;
+    }
+    
+    .expenses-container {
+        width: 670px;
+    }
+    
+    .work-orders-container {
+        width: 670px;
+    }
+
+    .single-property-photo {
+        max-width: 670px;
+    }
+}
+
+
 @media only screen and(max-width: 1200px) {
     .work-orders-container {
         padding-bottom: 50px;
     }
 }
 
-@media only screen and(max-width: 600px) {
+@media only screen and(max-width: 670px) {
+    
+    .property-tenant-container {
+        align-items: center;
+    }
+
 
     // property container 
     .property-container {
@@ -166,9 +251,10 @@
         justify-content: center;
     }
 
-    .single-property-photo {
-        width: 300px;
-        box-shadow: 0 10px 22px 0 rgba(0,0,0,.15);
+    .crop-property-img {
+        width: 430px;
+        height: 240px;
+        overflow: hidden;
     }
 
     .breadcrumb {
@@ -186,6 +272,9 @@
         width: 350px;
         height: 550px;
         margin-top: 20px;
+        align-items: center;
+        display: flex;
+        justify-content: center;
     }
 
     // expenses container 
@@ -206,10 +295,21 @@
 
     .requests {
         width: 75%;
+        margin-left: 32px;
         margin-bottom: 10px;
-        margin-left: 25px;
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        padding: 10px;
     }
 
+    .workorder-title {
+       color: $header-color;
+    }
+
+    .requests > div:nth-child(1) {
+        float: right;
+    }
 
     // save btn 
     .save-btn {

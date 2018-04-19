@@ -1,21 +1,21 @@
 /*
 Error: Undefined variable: "$header".
-        on line 50 of src/styles/scss/SingleProperty.scss
+        on line 76 of src/styles/scss/SingleProperty.scss
 
-45:     flex-direction: column;
-46: }
-47: 
-48: // breadcrumb, property photo, address styling
-49: .breadcrumb {
-50:     font-family: $header;
-51:     font-size: 26px;
-52:     text-align: left;
-53:     color: #3799d6;
-54:     
-55: }
+71:     
+72: }
+73: 
+74: // breadcrumb, property photo, address styling
+75: .breadcrumb {
+76:     font-family: $header;
+77:     font-size: 26px;
+78:     text-align: left;
+79:     color: #3799d6;  
+80: }
+81: 
 
 Backtrace:
-src/styles/scss/SingleProperty.scss:50
+src/styles/scss/SingleProperty.scss:76
 /Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/script/tree/variable.rb:49:in `_perform'
 /Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/script/tree/node.rb:50:in `perform'
 /Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/tree/visitors/perform.rb:402:in `visit_prop'
@@ -55,18 +55,17 @@ src/styles/scss/SingleProperty.scss:50
 /Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
 /Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/plugin/compiler.rb:209:in `each'
 /Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/plugin/compiler.rb:443:in `on_file_changed'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/plugin/compiler.rb:320:in `block in watch'
-/Library/Ruby/Gems/2.3.0/gems/sass-listen-4.0.0/lib/sass-listen/event/config.rb:23:in `call'
-/Library/Ruby/Gems/2.3.0/gems/sass-listen-4.0.0/lib/sass-listen/event/processor.rb:115:in `_process_changes'
-/Library/Ruby/Gems/2.3.0/gems/sass-listen-4.0.0/lib/sass-listen/event/processor.rb:19:in `block in loop_for'
-/Library/Ruby/Gems/2.3.0/gems/sass-listen-4.0.0/lib/sass-listen/event/processor.rb:15:in `loop'
-/Library/Ruby/Gems/2.3.0/gems/sass-listen-4.0.0/lib/sass-listen/event/processor.rb:15:in `loop_for'
-/Library/Ruby/Gems/2.3.0/gems/sass-listen-4.0.0/lib/sass-listen/event/loop.rb:84:in `_wait_for_changes'
-/Library/Ruby/Gems/2.3.0/gems/sass-listen-4.0.0/lib/sass-listen/event/loop.rb:42:in `block in setup'
-/Library/Ruby/Gems/2.3.0/gems/sass-listen-4.0.0/lib/sass-listen/internals/thread_pool.rb:6:in `block in add'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/plugin/compiler.rb:294:in `watch'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/plugin.rb:109:in `method_missing'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/exec/sass_scss.rb:360:in `watch_or_update'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/exec/sass_scss.rb:51:in `process_result'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/exec/base.rb:52:in `parse'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/exec/base.rb:19:in `parse!'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/bin/sass:13:in `<top (required)>'
+/usr/local/bin/sass:22:in `load'
+/usr/local/bin/sass:22:in `<main>'
 */
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$header\".\A         on line 50 of src/styles/scss/SingleProperty.scss\A \A 45:     flex-direction: column;\A 46: }\A 47: \A 48: // breadcrumb, property photo, address styling\A 49: .breadcrumb {\A 50:     font-family: $header;\A 51:     font-size: 26px;\A 52:     text-align: left;\A 53:     color: #3799d6;\A 54:     \A 55: }"; }
+  content: "Error: Undefined variable: \"$header\".\A         on line 76 of src/styles/scss/SingleProperty.scss\A \A 71:     \A 72: }\A 73: \A 74: // breadcrumb, property photo, address styling\A 75: .breadcrumb {\A 76:     font-family: $header;\A 77:     font-size: 26px;\A 78:     text-align: left;\A 79:     color: #3799d6;  \A 80: }\A 81: "; }

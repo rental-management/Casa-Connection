@@ -7,10 +7,10 @@ Error: Undefined variable: "$body".
 3:     flex-shrink: 0;
 4:     font-family: $body;
 5: 
-6:     &-container {
-7:         position: relative;
-8:         top: 7em;
-9:         height: 4em;
+6:    
+7:     
+8: 
+9:    
 
 Backtrace:
 src/styles/scss/Footer.scss:4
@@ -66,4 +66,4 @@ src/styles/scss/Footer.scss:4
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$body\".\A         on line 4 of src/styles/scss/Footer.scss\A \A 1: .real_footer {\A 2:     width: 100%;\A 3:     flex-shrink: 0;\A 4:     font-family: $body;\A 5: \A 6:     &-container {\A 7:         position: relative;\A 8:         top: 7em;\A 9:         height: 4em;"; }
+  content: "Error: Undefined variable: \"$body\".\A         on line 4 of src/styles/scss/Footer.scss\A \A 1: .real_footer {\A 2:     width: 100%;\A 3:     flex-shrink: 0;\A 4:     font-family: $body;\A 5: \A 6:    \A 7:     \A 8: \A 9:    "; }

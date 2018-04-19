@@ -1,3 +1,4 @@
+
 module.exports = {
     getProperties: (req, res) => {
        
@@ -14,9 +15,7 @@ module.exports = {
         const db = req.app.get("db");
         const { prop_name, street, city, state, zip , img, t_f_name, t_l_name, t_phone, t_email, emerg_contact_name, emerg_contact_phone } = req.body;
         console.log(req.body);
-        db
-        .addProperty([req.user.id, prop_name, street, city, state, zip, img, t_f_name, t_l_name, t_phone, t_email, emerg_contact_name, emerg_contact_phone ])
-        .then(response => res.status(200).json(response))
+        db.addProperty([req.user.id, prop_name, street, city, state, zip, img, t_f_name, t_l_name, t_phone, t_email, emerg_contact_name, emerg_contact_phone]) .then(response => res.status(200).json(response))
         .catch( () => res.status(500).json())
     },
 
@@ -41,7 +40,6 @@ module.exports = {
 
     getContractors: (req, res) => {
         const db = req.app.get("db");
-       
         db
         .getContractors([req.user.id])
         .then(response => res.status(200).json(response))
@@ -76,7 +74,9 @@ module.exports = {
     
     deleteProperty: (req, res) => {      
         const db = req.app.get("db");
-        db.deleteProperty([req.body.id]).then(response => {
+        const {id} = req.body;
+        console.log("delete prop: ", id);
+        db.deleteProperty(id).then(response => {
             res.status(200).json(response);
         }).catch( (err) => {
             res.status(500).json(err);
@@ -127,7 +127,6 @@ module.exports = {
     getAllWorkOrders: (req, res) => {
         const db = req.app.get("db");
         db.getAllWorkOrders(req.user.id).then( (response) => {
-            console.log(response);
             res.status(200).json(response);
         }).catch( () => {
             res.status(500).json();
@@ -148,7 +147,7 @@ module.exports = {
 
     editContractor: (req, res) => {
         const db = req.app.get("db");
-        console.log(req.body);
+       
         const {f_name, l_name, phone, email, street, city, state, zip, id} = req.body;
         db
         .editContractor(f_name, l_name, phone, email, street, city, state, zip, id)
@@ -157,5 +156,30 @@ module.exports = {
         }).catch((err) => {
             res.status(500).json(err);
         })
+    },
+
+    deleteAllWOByProp: (req, res) => {
+        const db = req.app.get("db");
+        const {id} = req.body;     
+        db.deleteAllWOByProp(id).then( (response) => {
+            
+            res.status(200).json(response);
+        }).catch( (err) => {
+            res.status(500).json(err);
+        })
+
+
+    },
+
+    deleteContractorsByProp: (req, res) => {
+        const db = req.app.get("db");
+        const {name} = req.body;
+        db.deleteContractorsByProp(name).then( (response) => {
+            res.status(200).json(response);
+        }).catch( (err) => {
+            res.status(500).json(err);
+        })
     }
+
+
 }
