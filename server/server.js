@@ -23,7 +23,7 @@ massive(CONNECTION_STRING)
     app.set("db", db);
   })
   .catch(err => {
-    console.log(err);
+   
   });
 
 //Top Level Middlewares
@@ -76,7 +76,7 @@ passport.serializeUser((user, done) => done(null, user));
 passport.deserializeUser((user, done) => done(null, user));
 
 
-//ENDPOINTS GO HERE
+//ENDPOINTS
 
 //auth endpoint
 app.get('/auth', passport.authenticate('auth0', {
@@ -86,26 +86,36 @@ app.get('/auth', passport.authenticate('auth0', {
 })
 );
 
+// property endpoints
 app.get('/properties', mainCtrl.getProperties);
-app.post('/addproperty', mainCtrl.addProperty);
 app.get('/property/:id', mainCtrl.getProperty);
+app.post('/addproperty', mainCtrl.addProperty);
+app.delete('/deleteproperty', mainCtrl.deleteProperty);
+
+// work orders endpoints
+app.get('/workorders', mainCtrl.getWorkOrders);
+app.get('/allworkorders', mainCtrl.getAllWorkOrders);
 app.post('/addworkorder', mainCtrl.addWorkOrder);
+app.post('/workorders', mainCtrl.getWorkOrders);
+app.delete('/deleteworkorders', mainCtrl.deleteWorkOrders);
+app.delete('/deleteallwobyprop', mainCtrl.deleteAllWOByProp);
+
+// contractors endpoints
 app.get('/contractors', mainCtrl.getContractors);
 app.post('/addcontractor', mainCtrl.addContractor);
-app.delete('/deletecontractor', mainCtrl.deleteContractor);
-app.post('/expenses', mainCtrl.addExpenses);
-app.delete('/deleteproperty', mainCtrl.deleteProperty);
-app.delete('/deleteworkorders', mainCtrl.deleteWorkOrders);
-app.get('/workorders', mainCtrl.getWorkOrders);
-app.post('/workorders', mainCtrl.getWorkOrders);
-app.post("/getexpenses", mainCtrl.getExpensesById);
-app.post("/gettenant", mainCtrl.getTenant);
 app.put('/editcontractor', mainCtrl.editContractor);
-app.put('/edittenant', mainCtrl.editTenant);
-app.get('/allworkorders', mainCtrl.getAllWorkOrders);
-app.put('/editexpenses', mainCtrl.editExpenses);
-app.delete('/deleteallwobyprop', mainCtrl.deleteAllWOByProp);
+app.delete('/deletecontractor', mainCtrl.deleteContractor);
 app.delete('/deletecontractorsbyprop', mainCtrl.deleteContractorsByProp);
+
+// expenses endpoints
+app.post('/expenses', mainCtrl.addExpenses);
+app.post("/getexpenses", mainCtrl.getExpensesById);
+app.put('/editexpenses', mainCtrl.editExpenses);
+
+// tenant endpoints
+app.post("/gettenant", mainCtrl.getTenant);
+app.put('/edittenant', mainCtrl.editTenant);
+
 
 //for hosting
 const path = require("path");

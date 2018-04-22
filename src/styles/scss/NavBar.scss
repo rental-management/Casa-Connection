@@ -1,50 +1,50 @@
-.full-screen-menu{
-    display: flex;
-    justify-content: space-between;
-    font-size: 2em;
-    margin-left: 50%;
-    padding: 20px;
-    
+.full-screen-menu {
+  display: flex;
+  justify-content: space-between;
+  font-size: 2em;
+  margin-left: 50%;
+  padding: 20px;
 }
 
 @media only screen and(max-width: 1230px) {
-    .full-screen-menu {
-        margin-left: 45%;
-    }
+  .full-screen-menu {
+    margin-left: 45%;
+  }
 }
 
 @media only screen and(max-width: 1115px) {
-    .full-screen-menu {
-        margin-left: 35%;
-    }
+  .full-screen-menu {
+    margin-left: 35%;
+  }
 }
 
 @media only screen and(max-width: 990px) {
-    .full-screen-menu {
-        margin-left: 28%;
-    }
+  .full-screen-menu {
+    margin-left: 28%;
+  }
 }
 
 @media only screen and(max-width: 880px) {
-    .full-screen-menu {
-        margin-left: 22%;
-    }
+  .full-screen-menu {
+    margin-left: 22%;
+  }
 }
 
 @media only screen and(max-width: 799px) {
-    .full-screen-menu {
-        margin-left: 13%;
-    }
+  .full-screen-menu {
+    margin-left: 13%;
+  }
 }
 
-@media only screen and (max-width: 750px){
-    .full-screen-menu {
-        display: none;
-    }
+@media only screen and (max-width: 750px) {
+  .full-screen-menu {
+    display: none;
+  }
 }
 
-@media only screen and (min-width: 750px){
-    .responsive-menu, .hamburger {
-        display: none;
-    }
+@media only screen and (min-width: 750px) {
+  .responsive-menu,
+  .hamburger {
+    display: none;
+  }
 }

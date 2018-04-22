@@ -1,71 +1,70 @@
 .splash {
-    background: linear-gradient(
-        rgba(#404040, 0.6)  
-        rgba(#404040, 0.6),
-        rgba(#404040, 0.6)),
-      url("../../assets/windows.jpg");
-    background-size: cover;
-    width: 100%;
-    background-repeat: no-repeat;
-    height: 73vh;
-    clip-path: polygon(0 0, 100% 0, 100% 82%, 0 100%);  
+  background: linear-gradient(
+      rgba(#404040, 0.6) rgba(#404040, 0.6),
+      rgba(#404040, 0.6)
+    ),
+    url("../../assets/windows.jpg");
+  background-size: cover;
+  width: 100%;
+  background-repeat: no-repeat;
+  height: 73vh;
+  clip-path: polygon(0 0, 100% 0, 100% 82%, 0 100%);
 }
 
 .logo {
-    height: 8vh;
-    padding: 10px 20px 40px 10px;
+  height: 8vh;
+  padding: 10px 20px 40px 10px;
 }
 
 .splash-header {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    color: white;
-    letter-spacing: 2px;
-    font-family: $header;
-    font-size: 13px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: white;
+  letter-spacing: 2px;
+  font-family: $header;
+  font-size: 13px;
 }
 
 .first-container > div:first-of-type {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    justify-content: space-between;
-    padding: 25px 60px 0 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-content: space-between;
+  padding: 25px 60px 0 60px;
 }
 
 .first-container > div:nth-child(2) {
-    margin-top: 22px;
-    margin-left: 90px;
-    width: 700px;
-    display: flex;
-    flex-direction: column;
-    font-size: 26px;
-    h2 {
-        text-align: left;
-        color: white;
-        margin-bottom: 5px;
-        font-family: $header;
-        letter-spacing: 2px;
-    }
-    p {
-        text-align: left;
-        width: 550px;
-        color: white;
-        line-height: 35px;
-        font-size: 20px;
-        font-family: $body;
-        letter-spacing: 1px;
-    }
+  margin-top: 22px;
+  margin-left: 90px;
+  width: 700px;
+  display: flex;
+  flex-direction: column;
+  font-size: 26px;
+  h2 {
+    text-align: left;
+    color: white;
+    margin-bottom: 5px;
+    font-family: $header;
+    letter-spacing: 2px;
+  }
+  p {
+    text-align: left;
+    width: 550px;
+    color: white;
+    line-height: 35px;
+    font-size: 20px;
+    font-family: $body;
+    letter-spacing: 1px;
+  }
 }
 
-
 .second-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    flex-wrap: wrap;
-    div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  div {
     display: flex;
     background: white;
     align-items: center;
@@ -75,256 +74,240 @@
     padding: 10px 10px 0 10px;
     width: 45vh;
     margin: 50px 30px 0px 30px;
-    box-shadow: 0 10px 22px 0 rgba(0,0,0,.15);
+    box-shadow: 0 10px 22px 0 rgba(0, 0, 0, 0.15);
     h1 {
-        width: 90%;
-        color: #545454;
-        font-size: 25px;
-        line-height: 35px;
-        font-family: $header;
-        letter-spacing: 1.5px;
+      width: 90%;
+      color: #545454;
+      font-size: 25px;
+      line-height: 35px;
+      font-family: $header;
+      letter-spacing: 1.5px;
     }
     hr {
-        border: 1px solid $header-color;
-        width: 70px;
-        margin-top: 20px;
+      border: 1px solid $header-color;
+      width: 70px;
+      margin-top: 20px;
     }
   }
 }
 
 .third-container {
-    width: 100%;
-    background: white;
-    margin: 100px 0 60px 0;
-    padding-top: 15px;
-    box-shadow: 0 10px 22px 0 rgba(0,0,0,.15);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
+  width: 100%;
+  background: white;
+  margin: 100px 0 60px 0;
+  padding-top: 15px;
+  box-shadow: 0 10px 22px 0 rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
 }
 
-
-.third-container>h2 {
-    font-size: 30px;
-    color: $header-color;
-    margin-bottom: 0px;
-    font-family: $header;
-    text-align: center;
+.third-container > h2 {
+  font-size: 30px;
+  color: $header-color;
+  margin-bottom: 0px;
+  font-family: $header;
+  text-align: center;
 }
 
-.third-container>p {
-    font-size: 20px;
-    color: $gray;
-    text-align: left;
-    line-height: 36px;
-    font-family: $body;
-    width: 60%;
-    
+.third-container > p {
+  font-size: 20px;
+  color: $gray;
+  text-align: left;
+  line-height: 36px;
+  font-family: $body;
+  width: 60%;
 }
 
-.testimonial {    
-    width: 100%;
-    height: auto;
-    line-height: 25px;
-    
+.testimonial {
+  width: 100%;
+  height: auto;
+  line-height: 25px;
 }
 
 #cust-img {
-    height: 125px;
-    width: 125px;
-    display: block;
-    float: left;
-    margin-top: 10px;
+  height: 125px;
+  width: 125px;
+  display: block;
+  float: left;
+  margin-top: 10px;
 }
 
 .quote {
-    font-size: 18px;
-    color: white;
-    text-align: left;
-   
+  font-size: 18px;
+  color: white;
+  text-align: left;
 }
 
 #author {
-    color: white;
-    font-size: 20px;
+  color: white;
+  font-size: 20px;
 }
 
-
 .footer {
-    background: #009be0;
-    height: 75vh;
-    position: relative;
-    clip-path: polygon(0 25%, 100% 0, 100% 100%, 0% 100%);
-    display: flex;
-    justify-content: center;
+  background: #009be0;
+  height: 75vh;
+  position: relative;
+  clip-path: polygon(0 25%, 100% 0, 100% 100%, 0% 100%);
+  display: flex;
+  justify-content: center;
 }
 
 .footer div {
-   position: absolute;
-   bottom: 7px;
-   padding-bottom: 35px;
-   color: white;
+  position: absolute;
+  bottom: 7px;
+  padding-bottom: 35px;
+  color: white;
 }
 
 @media only screen and(max-width: 725px) {
-    .logo {
-        height: 7vh;
-    }
-    
-    .splash-header {
-        font-size: 12px;
-    }
+  .logo {
+    height: 7vh;
+  }
 
-    .first-container > div:first-of-type {
-        padding: 25px 60px 0 35px;
-    }
-    
-    .first-container > div:nth-child(2) {
-        margin-top: 15px;
-        margin-left: 70px;
-        width: 450px;
-        font-size: 22px;
-        p {
-            width: 450px;
-            line-height: 30px;
-            font-size: 18px;
-        }
-    }
-    .started-btn {
-        padding: 12px 55px 12px 55px;
-        font-size: 16px;
-        width: 250px;
-        margin-top: 10px;
-    }
+  .splash-header {
+    font-size: 12px;
+  }
 
-    .copy-right {
-        display: none;
+  .first-container > div:first-of-type {
+    padding: 25px 60px 0 35px;
+  }
+
+  .first-container > div:nth-child(2) {
+    margin-top: 15px;
+    margin-left: 70px;
+    width: 450px;
+    font-size: 22px;
+    p {
+      width: 450px;
+      line-height: 30px;
+      font-size: 18px;
     }
+  }
+  .started-btn {
+    padding: 12px 55px 12px 55px;
+    font-size: 16px;
+    width: 250px;
+    margin-top: 10px;
+  }
 
-    .third-container {
-        padding: 20px 0px 10px 0px;
-        h2 {
-            width: 70%;
-            padding-bottom: 10px;
-        }
+  .copy-right {
+    display: none;
+  }
+
+  .third-container {
+    padding: 20px 0px 10px 0px;
+    h2 {
+      width: 70%;
+      padding-bottom: 10px;
     }
+  }
 
-    .third-container>p {
-        text-align: center;
-    }
-
-
+  .third-container > p {
+    text-align: center;
+  }
 }
-
 
 @media only screen and(max-width: 520px) {
-    .logo {
-        height: 7vh;
-        padding: 0;
-    }
-    
-    .splash-header {
-        h1 {
-            display: none;
-        }
-    }
+  .logo {
+    height: 7vh;
+    padding: 0;
+  }
 
-    .first-container > div:first-of-type {
-        padding: 25px 60px 0 35px;
+  .splash-header {
+    h1 {
+      display: none;
     }
-    
-    .first-container > div:nth-child(2) {
-        margin-top: 15px;
-        margin-left: 50px;
-        width: 420px;
-        font-size: 20px;
-        p {
-            width: 420px;
-            line-height: 25px;
-            font-size: 17px;
-        }
+  }
+
+  .first-container > div:first-of-type {
+    padding: 25px 60px 0 35px;
+  }
+
+  .first-container > div:nth-child(2) {
+    margin-top: 15px;
+    margin-left: 50px;
+    width: 420px;
+    font-size: 20px;
+    p {
+      width: 420px;
+      line-height: 25px;
+      font-size: 17px;
     }
-    .started-btn {
-        padding: 12px 55px 12px 55px;
-        font-size: 16px;
-        width: 250px;
-        margin-top: 10px;
-    }
-         
+  }
+  .started-btn {
+    padding: 12px 55px 12px 55px;
+    font-size: 16px;
+    width: 250px;
+    margin-top: 10px;
+  }
 }
-
 
 @media only screen and(max-width: 475px) {
-    .logo {
-        height: 7vh;
-        padding: 0;
-    }
-    
-    .splash-header {
-        h1 {
-            display: none;
-        }
-    }
+  .logo {
+    height: 7vh;
+    padding: 0;
+  }
 
-    .first-container > div:first-of-type {
-        padding: 25px 60px 0 35px;
+  .splash-header {
+    h1 {
+      display: none;
     }
-    
-    .first-container > div:nth-child(2) {
-        margin-top: 30px;
-        margin-left: 30px;
-        width: 350px;
-        font-size: 20px;
-        p {
-            width: 320px;
-            line-height: 25px;
-            font-size: 17px;
-        }
+  }
+
+  .first-container > div:first-of-type {
+    padding: 25px 60px 0 35px;
+  }
+
+  .first-container > div:nth-child(2) {
+    margin-top: 30px;
+    margin-left: 30px;
+    width: 350px;
+    font-size: 20px;
+    p {
+      width: 320px;
+      line-height: 25px;
+      font-size: 17px;
     }
-    .started-btn {
-        padding: 12px 55px 12px 55px;
-        font-size: 16px;
-        width: 250px;
-        margin-top: 10px;
-    }
-         
+  }
+  .started-btn {
+    padding: 12px 55px 12px 55px;
+    font-size: 16px;
+    width: 250px;
+    margin-top: 10px;
+  }
 }
 
-@media only screen and (min-width: 573px){
-    .testimonial {
+@media only screen and (min-width: 573px) {
+  .testimonial {
     margin: 0 auto;
     width: 60%;
-    height: 300px;    
+    height: 300px;
     font-size: 20px;
+  }
 }
 
+@media only screen and (min-width: 1050px) {
+  .testimonial {
+    font-size: 2em;
+  }
+  #cust-img {
+    height: 175px;
+    width: 175px;
+  }
+  .third-container > p {
+    margin: 3em 4em;
+  }
 
+  .quote {
+    position: relative;
+    top: 2em;
+  }
+
+  #author {
+    position: relative;
+    top: 2em;
+  }
 }
-
-@media only screen and (min-width: 1050px){
-    .testimonial{
-        font-size: 2em;
-    }
-    #cust-img {
-        height: 175px;
-        width: 175px;
-    }
-    .third-container>p {
-       margin: 3em 4em;
-    }
-
-    .quote {
-       position: relative;
-       top: 2em;
-
-    }
-
-    #author {
-        position: relative;
-        top: 2em;
-    }
-    
-}
-

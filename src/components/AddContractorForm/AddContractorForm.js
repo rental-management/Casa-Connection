@@ -48,15 +48,14 @@ handleClose = () => {
 
 handleChange = (event, index, value) => {
     this.setState({value});
-    console.log(this.props.properties.properties[value].prop_name)
+  
     let propName = this.props.properties.properties[value].prop_name
     this.setState({propName: propName});
 }
 
 
 handleSubmit(propName, compName, type, firstName, lastName, phone, email, street, city, state, zip){
-    console.log(this.state);
-    console.log(propName);
+   
     this.props.addContractor(propName, compName, type, firstName, lastName, phone, email, street, city, state, zip).then( (res) => {
         this.props.getContractors();
         this.setState({open: false});

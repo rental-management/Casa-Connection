@@ -38,7 +38,7 @@ let textB = b.prop_name.toUpperCase();
 return textA < textB ? -1 : textA > textB ? 1 : 0; 
         }            
     });
-    console.log(workOrderArr);
+    
     workOrdersList = workOrderArr.map((curr, index) => {
         return(
             <div  key = {index}>

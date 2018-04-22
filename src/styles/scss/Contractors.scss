@@ -1,115 +1,107 @@
 .contractors-container {
-    display: flex;
-    flex-direction: column;
-    min-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  min-height: 85vh;
 }
 
 .delete-con-btn {
-    text-decoration: none;
-    border-style: none;
-    padding: 10px;
-    border-radius: 40px;
-    background-color: #149ddc;
-    color: white;
-    cursor: pointer;
-    width: 40%;
+  text-decoration: none;
+  border-style: none;
+  padding: 10px;
+  border-radius: 40px;
+  background-color: #149ddc;
+  color: white;
+  cursor: pointer;
+  width: 40%;
 }
 
 .contractors-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-top: 30px;
-    
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 30px;
 }
 
 .individual-contractor {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 500px;
-    margin-bottom: 20px;
-    div {
-        width: 90%;
-        margin: 0 auto;
-
-    }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 500px;
+  margin-bottom: 20px;
+  div {
+    width: 90%;
+    margin: 0 auto;
+  }
 }
 
 .contractors-header {
-    padding-top: 20px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center; 
-    justify-content: space-between;
-    width: 93%;
-    align-content: center;
-    align-items: center;
+  padding-top: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  justify-content: space-between;
+  width: 93%;
+  align-content: center;
+  align-items: center;
 
-    h1 {
-        margin-left: 80px; 
-        font-family: $header;
-        color: $header-color;  
-        font-size: 26px;
-        margin-bottom: 30px;
-    }
+  h1 {
+    margin-left: 80px;
+    font-family: $header;
+    color: $header-color;
+    font-size: 26px;
+    margin-bottom: 30px;
+  }
 }
 
 .buttons {
-    display: inline-flex;
-    flex-direction: row-reverse;
-    align-items: center;
-    flex-wrap: wrap;
-    div {
-        width: 90px;
-    }
+  display: inline-flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  flex-wrap: wrap;
+  div {
+    width: 90px;
+  }
 }
 
-
 @media only screen and (max-width: 900px) {
-
-    .contractors-header {
-        width: 90%;
+  .contractors-header {
+    width: 90%;
     h1 {
-        margin-left: 80px; 
-        font-family: $header;
-        color: $header-color;  
-        font-size: 26px;
-        margin-bottom: 30px;
-      } 
-   }
+      margin-left: 80px;
+      font-family: $header;
+      color: $header-color;
+      font-size: 26px;
+      margin-bottom: 30px;
+    }
+  }
+}
 
 @media only screen and (max-width: 500px) {
-    .contractors-info {
-        input {
-            text-align: center;
-        }
+  .contractors-info {
+    input {
+      text-align: center;
     }
+  }
 }
 
 @media only screen and (max-width: 600px) {
-    .contractors-header {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 0;
+  .contractors-header {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
     h1 {
-        margin-left: 0px; 
-        font-size: 30px;
-        padding-bottom: 10px;
-      } 
-      div {
-        margin-right: 40px;
-        margin-bottom: 20px;
-        svg {
-            margin-left: 16px;
-        }
+      margin-left: 0px;
+      font-size: 30px;
+      padding-bottom: 10px;
     }
-   }
-}
-
-
-
-
+    div {
+      margin-right: 40px;
+      margin-bottom: 20px;
+      svg {
+        margin-left: 16px;
+      }
+    }
+  }
 }

@@ -132,7 +132,6 @@ export default function reducer(state = initialState, action) {
             return Object.assign({}, state, { isLoading: true});
         
         case `${DELETE_CONTRACTOR}_FULFILLED`:
-        console.log(action.payload);
             return Object.assign({}, state, { isLoading: false, contractors: action.payload });
 
         case `${DELETE_CONTRACTOR}_REJECTED`:

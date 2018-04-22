@@ -13,19 +13,15 @@ class SinglePropValue extends Component {
 
 
     render(){
-        console.log("prop vals: ", this.props)
         let propVals = this.props.properties.properties;
         let newPropVals;
         let assessedVals = [];
         let propNames = [];
         if(propVals.length !== 0 && propVals !== undefined){
             newPropVals = propVals.map((curr, index) => {
-                console.log("Current: ", curr);
                 assessedVals.push(curr.assessed_value)
                 propNames.push(curr.prop_name);
             })
-            console.log("all prop names: ", propNames)
-            console.log("all assessed vals: ", assessedVals)
             return (
                 <div className="single-prop-chart">
 
