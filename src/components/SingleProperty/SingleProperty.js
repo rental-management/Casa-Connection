@@ -46,8 +46,7 @@ class SingleProperty extends Component {
 
     
 
-    componentDidMount() {   
-      console.log("hit cdm"); 
+    componentDidMount() {   ; 
       const { id } = this.props.match.params;          
         this.props.getProperty(id).then(res => {
             this.props.getWorkOrders(id);

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-
 import { Link } from 'react-router-dom';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import MenuItem from 'material-ui/MenuItem';
@@ -51,7 +50,6 @@ class NavBar extends Component {
 
 
 <div style={style}>
-{/* <Toolbar className="toolBar" style={style}> */}
   
   <div className="responsive-menu">
   <MuiThemeProvider muiTheme={muiTheme}>

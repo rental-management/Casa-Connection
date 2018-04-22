@@ -22,12 +22,9 @@ class TotalExpensesChart extends Component {
     let monthlyTax = [];
     let monthlyUtility = [];
 
-    
-    console.log("all properties data: ",chartData);
+
     if(chartData.length > 0 && chartData !== undefined) {
-      // console.log(chartData, "CHART DATA!!!!")
       newChartData = chartData.map((curr, i) => {
-        // console.log(curr, "curr here")
       assessedVal.push(parseInt(curr.assessed_value))
       downPayment.push(parseInt(curr.down_payment))
       monthlyDues.push(parseInt(curr.monthly_dues))
@@ -37,7 +34,6 @@ class TotalExpensesChart extends Component {
       monthlyUtility.push(parseInt(curr.monthly_utilities))
         
       })
-      console.log("all assessed values: ",assessedVal);
       function getTotal(total, sum){
         return total+sum
       }
@@ -49,7 +45,6 @@ class TotalExpensesChart extends Component {
   monthlyTax = monthlyTax.reduce(getTotal);
   monthlyUtility = monthlyUtility.reduce(getTotal);
     
-          console.log("Assessed: ", assessedVal)
     
      
 

@@ -1,102 +1,102 @@
 .properties-container {
-    display: flex;
-    flex-direction: column;
-    min-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  min-height: 85vh;
 }
 
 .properties-header {
-    padding-top: 20px;
-    margin-bottom: 30px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center; 
-    justify-content: space-between;
-    width: 90%;
-    align-content: center;
-    align-items: center;
-    color: #3799d6;
-    h1 {
-        font-family: $header;
-        font-size: 26px;
-        margin-left: 80px;
-    }
+  padding-top: 20px;
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  justify-content: space-between;
+  width: 90%;
+  align-content: center;
+  align-items: center;
+  color: #3799d6;
+  h1 {
+    font-family: $header;
+    font-size: 26px;
+    margin-left: 80px;
+  }
 }
 
 .properties-name {
-    color: #686868;
-    font-size: 22px;
-    font-family: $header;
-    padding-bottom: 5px;
-    font-weight: bold;
+  color: #686868;
+  font-size: 22px;
+  font-family: $header;
+  padding-bottom: 5px;
+  font-weight: bold;
 }
 
 .properties-name:hover {
-    color: #ff3776;
+  color: #ff3776;
 }
 
 .delete-prop-btn {
-    color: #149ddc;
-    cursor: pointer;
+  color: #149ddc;
+  cursor: pointer;
 }
 
 .propertiesList {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    flex: 1 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex: 1 0 auto;
 }
 
 .individual-property {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 17px;
-    background: white;
-    border-radius: 6px;
-    box-shadow: 0 12px 22px 0 rgba(0,0,0,.15);
-    margin: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 17px;
+  background: white;
+  border-radius: 6px;
+  box-shadow: 0 12px 22px 0 rgba(0, 0, 0, 0.15);
+  margin: 10px;
 }
 
 .crop-properties-img {
-    width: 380px;
-    height: 230px;
-    overflow: hidden;
-    margin-bottom: 20px;
+  width: 380px;
+  height: 230px;
+  overflow: hidden;
+  margin-bottom: 20px;
 }
 
 .properties-img {
-    width: 100%;
+  width: 100%;
 }
 
 .properties-img:hover {
-    width: 105%;
-    transition: .4s ease;
+  width: 105%;
+  transition: 0.4s ease;
 }
 
-// media queries 
+// media queries
 
 @media only screen and (max-width: 500px) {
-    .properties-img {
-        width: 290px;
-    }
+  .properties-img {
+    width: 290px;
+  }
 
-    .properties-header {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        margin: 0 auto;
-        padding: 0;
-        h1 {
-            font-size: 30px;
-            margin-left: 0px;
-            padding-bottom: 10px;
-        }
-        div {
-            margin-right: 40px;
-            margin-bottom: 20px;
-            svg {
-                margin-left: 15px;
-            }
-        }
+  .properties-header {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    padding: 0;
+    h1 {
+      font-size: 30px;
+      margin-left: 0px;
+      padding-bottom: 10px;
     }
+    div {
+      margin-right: 40px;
+      margin-bottom: 20px;
+      svg {
+        margin-left: 15px;
+      }
+    }
+  }
 }

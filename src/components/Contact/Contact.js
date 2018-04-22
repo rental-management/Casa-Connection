@@ -29,8 +29,6 @@ class Contact extends Component{
                                     <a style={{fontSize:"20px", fontWeight: 200, color:"#ff3776"}} href="mailto:casaconnectionmgmt@gmail.com?Subject=Hello%20Casa%20Connection ">  hello@CasaConnectionMgmt.com  </a></span>
                                     <p>1026 Valencia St,<span> San Francisco, CA 94110</span></p>
                                 </span>
-                           
-                            
                         </form>
                             </span>
                         </div>

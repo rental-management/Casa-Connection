@@ -1,319 +1,306 @@
 //keyframes for slide animations
 @keyframes slideFromLeft {
-    0% {
-        transform: translateX(-100%);
-    }
-    100% {
-        transform: translateX(0);
-    }
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }
 
 @keyframes slideFromRight {
-    0% {
-        transform: translateX(200%);
-    }
-    100% {
-        transform: translateX(0);
-    }
+  0% {
+    transform: translateX(200%);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }
 
-
-// container holding 4 sub containers 
+// container holding 4 sub containers
 .property-tenant-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    justify-content: space-evenly;
-    margin-bottom: 80px;
-    
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  justify-content: space-evenly;
+  margin-bottom: 80px;
 }
 
 .property-container {
-    width: 620px;
-    display: flex;
-    justify-content: center;
-    
-
+  width: 620px;
+  display: flex;
+  justify-content: center;
 }
 
 .tenant-container {
-    width: 600px;
-    height: 430px;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    margin-top: 80px;
-    background: white;
-    border-radius: 4px;
-    box-shadow: 0 10px 22px 0 rgba(0,0,0,.15);
-    
+  width: 600px;
+  height: 430px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 80px;
+  background: white;
+  border-radius: 4px;
+  box-shadow: 0 10px 22px 0 rgba(0, 0, 0, 0.15);
 }
 
 .expenses-container {
-    width: 600px;
-    display: flex;
-    margin-top: 50px;
-    justify-content: center;
-    flex-direction: column;background: white;
-    border-radius: 4px;
-    box-shadow: 0 10px 22px 0 rgba(0,0,0,.15);
-    
+  width: 600px;
+  display: flex;
+  margin-top: 50px;
+  justify-content: center;
+  flex-direction: column;
+  background: white;
+  border-radius: 4px;
+  box-shadow: 0 10px 22px 0 rgba(0, 0, 0, 0.15);
 }
 
 .work-orders-container {
-    width: 600px;
-    display: flex;
-    margin-top: 50px;
-    background: white;
-    border-radius: 4px;
-    box-shadow: 0 10px 22px 0 rgba(0,0,0,.15);
-    flex-direction: column;
-    
+  width: 600px;
+  display: flex;
+  margin-top: 50px;
+  background: white;
+  border-radius: 4px;
+  box-shadow: 0 10px 22px 0 rgba(0, 0, 0, 0.15);
+  flex-direction: column;
 }
 
 // breadcrumb, property photo, address styling
 .breadcrumb {
-    font-family: $header;
-    font-size: 26px;
-    text-align: left;
-    color: #3799d6;  
+  font-family: $header;
+  font-size: 26px;
+  text-align: left;
+  color: #3799d6;
 }
 
 .crop-property-img {
-    width: 620px;
-    height: 430px;
-    overflow: hidden;
+  width: 620px;
+  height: 430px;
+  overflow: hidden;
 }
 
 .single-property-photo {
-    height: 100%;
-    box-shadow: 0 10px 22px 0 rgba(0,0,0,.15);
+  height: 100%;
+  box-shadow: 0 10px 22px 0 rgba(0, 0, 0, 0.15);
 }
 
 .address {
-    font-family: $body;
-    color: $gray;
-    font-weight: bold;
-    font-size: 20px;
-    margin-top: 10px;
+  font-family: $body;
+  color: $gray;
+  font-weight: bold;
+  font-size: 20px;
+  margin-top: 10px;
 }
 
-// tenant container styling 
+// tenant container styling
 .tenant-header {
-    font-family: $header;
-    color: $header-color;
+  font-family: $header;
+  color: $header-color;
 }
 
 .tenant-info {
-    display: flex;
-    flex-direction: column;
-    margin-left: 70px;
-    font-family: $body;
-    color: $gray;
-    div {
-        text-align: left;
-        span {
-            padding-right: 5px;
-        }
+  display: flex;
+  flex-direction: column;
+  margin-left: 70px;
+  font-family: $body;
+  color: $gray;
+  div {
+    text-align: left;
+    span {
+      padding-right: 5px;
     }
+  }
 }
 
-// expenses container styling 
+// expenses container styling
 .expenses-header {
-    font-family: $header;
-    color: $header-color;
-    margin-top: 30px;
+  font-family: $header;
+  color: $header-color;
+  margin-top: 30px;
 }
 
 .expenses-info {
-    display: flex;
-    flex-direction: column;
-    margin-left: 70px;
-    font-family: $body;
-    color: $gray;
-    div {
-        text-align: left;
-        span {
-            padding-right: 5px;
-        }
+  display: flex;
+  flex-direction: column;
+  margin-left: 70px;
+  font-family: $body;
+  color: $gray;
+  div {
+    text-align: left;
+    span {
+      padding-right: 5px;
     }
+  }
 }
 
-// work orders container styling 
+// work orders container styling
 .work-order-header {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    padding: 14px;
-    margin-bottom: 15px;
-    h2 {
-        margin-right: 155px;
-        font-family: $header;
-        color: $header-color;
-    }
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  padding: 14px;
+  margin-bottom: 15px;
+  h2 {
+    margin-right: 155px;
+    font-family: $header;
+    color: $header-color;
+  }
 }
 
 .requests {
-    background: white;
-    border-radius: 4px;
-    box-shadow: 0 10px 22px 0 rgba(0,0,0,.15);
-    width: 80%;
-    margin-left: 63px;
-    margin-bottom: 20px;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    font-family: $body;
-    color: $gray;
+  background: white;
+  border-radius: 4px;
+  box-shadow: 0 10px 22px 0 rgba(0, 0, 0, 0.15);
+  width: 80%;
+  margin-left: 63px;
+  margin-bottom: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  font-family: $body;
+  color: $gray;
 }
 
 .requests > div:nth-child(1) {
-        float: right;
-        margin-right: 20px;
+  float: right;
+  margin-right: 20px;
 }
 
-// save btns 
+// save btns
 .save-btn {
-    text-align: center;
-    margin-left: 200px;
-    margin-bottom: 30px;
-    font-family: $body;
-    color: $gray;
-    div {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
+  text-align: center;
+  margin-left: 200px;
+  margin-bottom: 30px;
+  font-family: $body;
+  color: $gray;
+  div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
-@media only screen and (min-width: 450px){
-    .property-container {
-        animation: 1s ease-out 0s 1 slideFromLeft;
-
-    }
-    .tenant-container {
-        animation: 1s ease-out 0s 1 slideFromRight;
-    }
-    .expenses-container{
-        animation: 1s ease-out 0s 1 slideFromLeft;
-    }
-    .work-orders-container {
-        animation: 1s ease-out 0s 1 slideFromRight;
-    }
+@media only screen and (min-width: 450px) {
+  .property-container {
+    animation: 1s ease-out 0s 1 slideFromLeft;
+  }
+  .tenant-container {
+    animation: 1s ease-out 0s 1 slideFromRight;
+  }
+  .expenses-container {
+    animation: 1s ease-out 0s 1 slideFromLeft;
+  }
+  .work-orders-container {
+    animation: 1s ease-out 0s 1 slideFromRight;
+  }
 }
-
-
 
 @media only screen and(min-width: 1200px) {
-    .work-orders-container {
-        padding-bottom: 50px;
-    }
+  .work-orders-container {
+    padding-bottom: 50px;
+  }
 
-    .property-container {
-        width: 670px;
-    }
-    
-    .tenant-container {
-        width: 670px;
-        height: 460px;
-    }
-    
-    .expenses-container {
-        width: 670px;
-    }
-    
-    .work-orders-container {
-        width: 670px;
-    }
+  .property-container {
+    width: 670px;
+  }
 
-    .single-property-photo {
-        max-width: 670px;
-    }
+  .tenant-container {
+    width: 670px;
+    height: 460px;
+  }
+
+  .expenses-container {
+    width: 670px;
+  }
+
+  .work-orders-container {
+    width: 670px;
+  }
+
+  .single-property-photo {
+    max-width: 670px;
+  }
 }
 
-
 @media only screen and(max-width: 1200px) {
-    .work-orders-container {
-        padding-bottom: 50px;
-    }
+  .work-orders-container {
+    padding-bottom: 50px;
+  }
 }
 
 @media only screen and(max-width: 670px) {
-    
-    .property-tenant-container {
-        align-items: center;
-    }
+  .property-tenant-container {
+    align-items: center;
+  }
 
+  // property container
+  .property-container {
+    width: 300px;
+    display: flex;
+    justify-content: center;
+  }
 
-    // property container 
-    .property-container {
-        width: 300px;
-        display: flex;
-        justify-content: center;
-    }
+  .crop-property-img {
+    width: 430px;
+    height: 240px;
+    overflow: hidden;
+  }
 
-    .crop-property-img {
-        width: 430px;
-        height: 240px;
-        overflow: hidden;
-    }
+  .breadcrumb {
+    font-size: 22px;
+    text-align: center;
+  }
 
-    .breadcrumb {
-        font-size: 22px; 
-        text-align: center;
-    }
+  .address {
+    font-size: 18px;
+    margin-top: 15px;
+  }
 
-    .address {
-        font-size: 18px;
-        margin-top: 15px;
-    }
+  // tenant container
+  .tenant-container {
+    width: 350px;
+    height: 550px;
+    margin-top: 20px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+  }
 
-    // tenant container 
-    .tenant-container {
-        width: 350px;
-        height: 550px;
-        margin-top: 20px;
-        align-items: center;
-        display: flex;
-        justify-content: center;
-    }
+  // expenses container
+  .expenses-container {
+    width: 350px;
+    margin-top: 20px;
+  }
 
-    // expenses container 
-    .expenses-container {
-        width: 350px;
-        margin-top: 20px;
-    }
+  .expenses-header {
+    padding-bottom: 10px;
+  }
 
-    .expenses-header {
-        padding-bottom: 10px;
-    }
+  // workorders container
+  .work-orders-container {
+    width: 350px;
+    padding-bottom: 30px;
+  }
 
-    // workorders container 
-    .work-orders-container {
-        width: 350px;
-        padding-bottom: 30px;
-    }
+  .requests {
+    width: 75%;
+    margin-left: 32px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    padding: 10px;
+  }
 
-    .requests {
-        width: 75%;
-        margin-left: 32px;
-        margin-bottom: 10px;
-        display: flex;
-        flex-direction: row-reverse;
-        align-items: center;
-        padding: 10px;
-    }
+  .workorder-title {
+    color: $header-color;
+  }
 
-    .workorder-title {
-       color: $header-color;
-    }
+  .requests > div:nth-child(1) {
+    float: right;
+  }
 
-    .requests > div:nth-child(1) {
-        float: right;
-    }
-
-    // save btn 
-    .save-btn {
-        margin-left: 60px;
-    }
-
+  // save btn
+  .save-btn {
+    margin-left: 60px;
+  }
 }

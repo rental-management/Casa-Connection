@@ -271,7 +271,6 @@ export function deleteAllWOByProp(id) {
 
 // REDUCER //
 export default function reducer(state = initialState, action) {
-  console.log(action.type);
   switch (action.type) {
     //GET PROPERTIES
     case `${GET_PROPERTIES}_PENDING`:
@@ -495,14 +494,12 @@ export default function reducer(state = initialState, action) {
 
     //DELETE ALL WORK ORDERS BY PROP
     case `${DELETE_ALL_WO_BY_PROP}_PENDING`:
-    console.log('pending action: ', action.payload);
       return Object.assign({}, state, {isLoading: true});
 
     case `${DELETE_ALL_WO_BY_PROP}_FULFILLED`:
       return Object.assign({}, state, {isLoading: false, workOrders: action.payload});
     
     case `${DELETE_ALL_WO_BY_PROP}_REJECTED`:
-    console.log('rejected action: ', action.payload);
       return Object.assign({}, state, {isLoading: false, didErr: true, errMessage: action.payload});
 
     default:

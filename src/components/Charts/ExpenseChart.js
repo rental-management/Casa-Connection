@@ -15,7 +15,7 @@ class ExpenseChart extends Component {
         let chartData = this.props.properties.property;
         let newChartData;
         if(chartData.length !== 0 && chartData !== undefined){
-            console.log(chartData);         
+                  
              newChartData  = (
                  
                 <div className="single-prop-chart">

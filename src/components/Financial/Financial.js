@@ -24,16 +24,10 @@ class Financial extends Component {
     }
 
   render() {
-      console.log("expenses", this.props.properties.properties);
-
       return(
         <div>
             <NavBar/>
-            
-            
-              
-              
-            
+
              <div className="chart-contain">
              <TotalExpensesChart/>
              </div>
