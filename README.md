@@ -18,6 +18,6 @@ Authors
 * **Gabriella DiVentura** - [Github](https://github.com/celias)
 * **Zac Cericola** - [Github](https://github.com/zcericola)
 
-Acknowledgements
+Acknowledgements <br />
 Thank you to BryceD for keeping us out of an endless loop
 
