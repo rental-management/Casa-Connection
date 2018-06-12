@@ -34,6 +34,9 @@ This project is a rental property management application for the browser that is
 ### Contractors Overview
 ![Contractors Overview](https://i.imgur.com/rzoQw0a.png)
 
+### Expenses for Individual Property
+![Individual Property Expenses](https://i.imgur.com/E956cXu.png)
+
 ## Acknowledgements <br />
 Thank you to Bryce Hull for advice and guidance.
 
