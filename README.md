@@ -21,10 +21,10 @@ This project is a rental property management application for the browser that is
 
 ## Screenshots
 ### Splash Page
-[Splash Page](https://i.imgur.com/MHu5xjm.png)
+![Splash Page](https://i.imgur.com/MHu5xjm.png)
 
 ### All Properties View
-![Splash Page](https://i.imgur.com/WMXcR2l.png)
+![All Properties View](https://i.imgur.com/WMXcR2l.png)
 
 ### Single Property View
 ![Single Property View](https://i.imgur.com/uhX9saY.png)
